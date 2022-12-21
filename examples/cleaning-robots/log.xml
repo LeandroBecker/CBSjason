@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-12-14T16:39:58.294160891Z</date>
+  <millis>1671035998294</millis>
+  <nanos>160891</nanos>
+  <sequence>1576</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>option for +!check(slots)[source(self)] is plan p__1[source(self),url("file:r1.asl")] +!check(slots) : not (garbage(r1)) -- with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.294298755Z</date>
+  <millis>1671035998294</millis>
+  <nanos>298755</nanos>
+  <sequence>1577</sequence>
+  <logger>jason.asSemantics.Agent.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSyntax.Literal</class>
+  <method>logicalConsequence</method>
+  <thread>29</thread>
+  <message>     | no candidate belief for garbage(r1) with {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.294385685Z</date>
+  <millis>1671035998294</millis>
+  <nanos>385685</nanos>
+  <sequence>1578</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>     p__1[source(self),url("file:r1.asl")] is applicable with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.294461419Z</date>
+  <millis>1671035998294</millis>
+  <nanos>461419</nanos>
+  <sequence>1579</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>option for +!check(slots)[source(self)] is plan p__2[source(self),url("file:r1.asl")] +!check(slots) : null -- with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.294552573Z</date>
+  <millis>1671035998294</millis>
+  <nanos>552573</nanos>
+  <sequence>1580</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>     p__2[source(self),url("file:r1.asl")] is applicable with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.294767505Z</date>
+  <millis>1671035998294</millis>
+  <nanos>767505</nanos>
+  <sequence>1581</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applySelAppl</method>
+  <thread>29</thread>
+  <message>Selected option (@p__1[source(self),url("file:r1.asl")] +!check(slots) : not (garbage(r1)) &lt;- next(slot); !check(slots).,{}) for event +!check(slots)[source(self)]
+intention 4: 
+    +!check(slots)[source(self)] &lt;- ... !check(slots) / {}
+    +!carry_to(r2)[source(self)] &lt;- ... !check(slots) / {_46=0, _45=6, R=r2, X=1, Y=2, _44=last}
+    +garbage(r1)[source(percept)] &lt;- ... !carry_to(r2) / {}
+</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.295012084Z</date>
+  <millis>1671035998295</millis>
+  <nanos>12084</nanos>
+  <sequence>1582</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>29</thread>
+  <message>LB-cycle time: 3</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.295116149Z</date>
+  <millis>1671035998295</millis>
+  <nanos>116149</nanos>
+  <sequence>1583</sequence>
+  <logger>MarsEnv</logger>
+  <level>INFO</level>
+  <class>MarsEnv</class>
+  <method>executeAction</method>
+  <thread>33</thread>
+  <message>r1 doing: next(slot)</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.295459484Z</date>
+  <millis>1671035998295</millis>
+  <nanos>459484</nanos>
+  <sequence>1584</sequence>
+  <logger>MarsEnv</logger>
+  <level>INFO</level>
+  <class>MarsEnv</class>
+  <method>updatePercepts</method>
+  <thread>33</thread>
+  <message>LBBegin Env - updatePercepts(); elapsed time (ms): -204</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.442323653Z</date>
+  <millis>1671035998442</millis>
+  <nanos>323653</nanos>
+  <sequence>1585</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>30</thread>
+  <message>LBB Start sense 88</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.442605438Z</date>
+  <millis>1671035998442</millis>
+  <nanos>605438</nanos>
+  <sequence>1586</sequence>
+  <logger>jason.infra.local.LocalAgArch.r2</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>perceive</method>
+  <thread>30</thread>
+  <message>percepts: [pos(r1,5,2), pos(r2,3,3)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.443006327Z</date>
+  <millis>1671035998443</millis>
+  <nanos>6327</nanos>
+  <sequence>1587</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>updateEvents</method>
+  <thread>30</thread>
+  <message>Added event +pos(r1,5,2)[source(percept)], events = [+pos(r1,5,2)[source(percept)]]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.443141065Z</date>
+  <millis>1671035998443</millis>
+  <nanos>141065</nanos>
+  <sequence>1588</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>30</thread>
+  <message>Start sense 88</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.443244952Z</date>
+  <millis>1671035998443</millis>
+  <nanos>244952</nanos>
+  <sequence>1589</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applySelEv</method>
+  <thread>30</thread>
+  <message>Selected event +pos(r1,5,2)[source(percept)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.443364388Z</date>
+  <millis>1671035998443</millis>
+  <nanos>364388</nanos>
+  <sequence>1590</sequence>
+  <logger>jason.infra.local.LocalAgArch.r2</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>30</thread>
+  <message>LB-cycle time: 1</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.445219024Z</date>
+  <millis>1671035998445</millis>
+  <nanos>219024</nanos>
+  <sequence>1591</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>29</thread>
+  <message>LBB Start sense 176</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.445409914Z</date>
+  <millis>1671035998445</millis>
+  <nanos>409914</nanos>
+  <sequence>1592</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>perceive</method>
+  <thread>29</thread>
+  <message>percepts: [pos(r1,5,2), pos(r2,3,3)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.445773140Z</date>
+  <millis>1671035998445</millis>
+  <nanos>773140</nanos>
+  <sequence>1593</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>updateEvents</method>
+  <thread>29</thread>
+  <message>Added event +pos(r1,5,2)[source(percept)], events = [-pos(last,3,0)[source(self)], +pos(r1,5,1)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,3,3)[source(percept)], +garbage(r1)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,5,1)[source(percept)], +pos(r1,6,0)[source(percept)], +pos(r1,0,1)[source(percept)], +pos(r1,1,1)[source(percept)], +pos(r1,2,1)[source(percept)], +pos(r1,3,1)[source(percept)], +pos(r1,4,1)[source(percept)], +pos(r1,5,1)[source(percept)], +pos(r1,6,1)[source(percept)], +pos(r1,0,2)[source(percept)], +pos(r1,1,2)[source(percept)], +garbage(r1)[source(percept)], -pos(last,6,0)[source(self)], +pos(r1,2,3)[source(percept)], +pos(r1,3,3)[source(percept)], +garbage(r2)[source(percept)], +garbage(r1)[source(percept)], +pos(r1,2,2)[source(percept)], +pos(r1,1,2)[source(percept)], +pos(r1,2,2)[source(percept)], +pos(r1,3,2)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,5,2)[source(percept)]]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.445898295Z</date>
+  <millis>1671035998445</millis>
+  <nanos>898295</nanos>
+  <sequence>1594</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>29</thread>
+  <message>Start sense 176</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.445991910Z</date>
+  <millis>1671035998445</millis>
+  <nanos>991910</nanos>
+  <sequence>1595</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>29</thread>
+  <message>LB-cycle time: 0</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496374976Z</date>
+  <millis>1671035998496</millis>
+  <nanos>374976</nanos>
+  <sequence>1596</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>29</thread>
+  <message>LBB Start sense 177</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496403377Z</date>
+  <millis>1671035998496</millis>
+  <nanos>403377</nanos>
+  <sequence>1597</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>30</thread>
+  <message>LBB Start sense 89</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496558907Z</date>
+  <millis>1671035998496</millis>
+  <nanos>558907</nanos>
+  <sequence>1598</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>29</thread>
+  <message>Start sense 177</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496703672Z</date>
+  <millis>1671035998496</millis>
+  <nanos>703672</nanos>
+  <sequence>1599</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>30</thread>
+  <message>Start sense 89</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496913890Z</date>
+  <millis>1671035998496</millis>
+  <nanos>913890</nanos>
+  <sequence>1600</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>29</thread>
+  <message>LB-cycle time: 0</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.496938550Z</date>
+  <millis>1671035998496</millis>
+  <nanos>938550</nanos>
+  <sequence>1601</sequence>
+  <logger>jason.infra.local.LocalAgArch.r2</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>30</thread>
+  <message>LB-cycle time: 0</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497009994Z</date>
+  <millis>1671035998497</millis>
+  <nanos>9994</nanos>
+  <sequence>1602</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>29</thread>
+  <message>LBB Start sense 178</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497182325Z</date>
+  <millis>1671035998497</millis>
+  <nanos>182325</nanos>
+  <sequence>1603</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>29</thread>
+  <message>Start sense 178</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497395415Z</date>
+  <millis>1671035998497</millis>
+  <nanos>395415</nanos>
+  <sequence>1604</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>option for +!check(slots)[source(self)] is plan p__1[source(self),url("file:r1.asl")] +!check(slots) : not (garbage(r1)) -- with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497505562Z</date>
+  <millis>1671035998497</millis>
+  <nanos>505562</nanos>
+  <sequence>1605</sequence>
+  <logger>jason.asSemantics.Agent.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSyntax.Literal</class>
+  <method>logicalConsequence</method>
+  <thread>29</thread>
+  <message>     | no candidate belief for garbage(r1) with {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497591195Z</date>
+  <millis>1671035998497</millis>
+  <nanos>591195</nanos>
+  <sequence>1606</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>     p__1[source(self),url("file:r1.asl")] is applicable with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497664336Z</date>
+  <millis>1671035998497</millis>
+  <nanos>664336</nanos>
+  <sequence>1607</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>option for +!check(slots)[source(self)] is plan p__2[source(self),url("file:r1.asl")] +!check(slots) : null -- with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497726244Z</date>
+  <millis>1671035998497</millis>
+  <nanos>726244</nanos>
+  <sequence>1608</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applicablePlans</method>
+  <thread>29</thread>
+  <message>     p__2[source(self),url("file:r1.asl")] is applicable with unification {}</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.497928230Z</date>
+  <millis>1671035998497</millis>
+  <nanos>928230</nanos>
+  <sequence>1609</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applySelAppl</method>
+  <thread>29</thread>
+  <message>Selected option (@p__1[source(self),url("file:r1.asl")] +!check(slots) : not (garbage(r1)) &lt;- next(slot); !check(slots).,{}) for event +!check(slots)[source(self)]
+intention 4: 
+    +!check(slots)[source(self)] &lt;- ... !check(slots) / {}
+    +!carry_to(r2)[source(self)] &lt;- ... !check(slots) / {_46=0, _45=6, R=r2, X=1, Y=2, _44=last}
+    +garbage(r1)[source(percept)] &lt;- ... !carry_to(r2) / {}
+</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.498146430Z</date>
+  <millis>1671035998498</millis>
+  <nanos>146430</nanos>
+  <sequence>1610</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>29</thread>
+  <message>LB-cycle time: 1</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.498206942Z</date>
+  <millis>1671035998498</millis>
+  <nanos>206942</nanos>
+  <sequence>1611</sequence>
+  <logger>MarsEnv</logger>
+  <level>INFO</level>
+  <class>MarsEnv</class>
+  <method>executeAction</method>
+  <thread>34</thread>
+  <message>r1 doing: next(slot)</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.498560729Z</date>
+  <millis>1671035998498</millis>
+  <nanos>560729</nanos>
+  <sequence>1612</sequence>
+  <logger>MarsEnv</logger>
+  <level>INFO</level>
+  <class>MarsEnv</class>
+  <method>updatePercepts</method>
+  <thread>34</thread>
+  <message>LBBegin Env - updatePercepts(); elapsed time (ms): -203</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.548666564Z</date>
+  <millis>1671035998548</millis>
+  <nanos>666564</nanos>
+  <sequence>1613</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>29</thread>
+  <message>LBB Start sense 179</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.548908672Z</date>
+  <millis>1671035998548</millis>
+  <nanos>908672</nanos>
+  <sequence>1614</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>perceive</method>
+  <thread>29</thread>
+  <message>percepts: [pos(r1,6,2), pos(r2,3,3)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.549294045Z</date>
+  <millis>1671035998549</millis>
+  <nanos>294045</nanos>
+  <sequence>1615</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>updateEvents</method>
+  <thread>29</thread>
+  <message>Added event +pos(r1,6,2)[source(percept)], events = [-pos(last,3,0)[source(self)], +pos(r1,5,1)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,3,3)[source(percept)], +garbage(r1)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,5,1)[source(percept)], +pos(r1,6,0)[source(percept)], +pos(r1,0,1)[source(percept)], +pos(r1,1,1)[source(percept)], +pos(r1,2,1)[source(percept)], +pos(r1,3,1)[source(percept)], +pos(r1,4,1)[source(percept)], +pos(r1,5,1)[source(percept)], +pos(r1,6,1)[source(percept)], +pos(r1,0,2)[source(percept)], +pos(r1,1,2)[source(percept)], +garbage(r1)[source(percept)], -pos(last,6,0)[source(self)], +pos(r1,2,3)[source(percept)], +pos(r1,3,3)[source(percept)], +garbage(r2)[source(percept)], +garbage(r1)[source(percept)], +pos(r1,2,2)[source(percept)], +pos(r1,1,2)[source(percept)], +pos(r1,2,2)[source(percept)], +pos(r1,3,2)[source(percept)], +pos(r1,4,2)[source(percept)], +pos(r1,5,2)[source(percept)], +pos(r1,6,2)[source(percept)]]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.549398719Z</date>
+  <millis>1671035998549</millis>
+  <nanos>398719</nanos>
+  <sequence>1616</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r1</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>29</thread>
+  <message>Start sense 179</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.549488571Z</date>
+  <millis>1671035998549</millis>
+  <nanos>488571</nanos>
+  <sequence>1617</sequence>
+  <logger>jason.infra.local.LocalAgArch.r1</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>29</thread>
+  <message>LB-cycle time: 1</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.647570248Z</date>
+  <millis>1671035998647</millis>
+  <nanos>570248</nanos>
+  <sequence>1618</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>senseLBB</method>
+  <thread>30</thread>
+  <message>LBB Start sense 90</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.647789676Z</date>
+  <millis>1671035998647</millis>
+  <nanos>789676</nanos>
+  <sequence>1619</sequence>
+  <logger>jason.infra.local.LocalAgArch.r2</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>perceive</method>
+  <thread>30</thread>
+  <message>percepts: [pos(r1,6,2), pos(r2,3,3)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.648086940Z</date>
+  <millis>1671035998648</millis>
+  <nanos>86940</nanos>
+  <sequence>1620</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>updateEvents</method>
+  <thread>30</thread>
+  <message>Added event +pos(r1,6,2)[source(percept)], events = [+pos(r1,6,2)[source(percept)]]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.648177461Z</date>
+  <millis>1671035998648</millis>
+  <nanos>177461</nanos>
+  <sequence>1621</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>sense</method>
+  <thread>30</thread>
+  <message>Start sense 90</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.648310846Z</date>
+  <millis>1671035998648</millis>
+  <nanos>310846</nanos>
+  <sequence>1622</sequence>
+  <logger>jason.asSemantics.TransitionSystem.r2</logger>
+  <level>FINE</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applySelEv</method>
+  <thread>30</thread>
+  <message>Selected event +pos(r1,6,2)[source(percept)]</message>
+</record>
+<record>
+  <date>2022-12-14T16:39:58.648426905Z</date>
+  <millis>1671035998648</millis>
+  <nanos>426905</nanos>
+  <sequence>1623</sequence>
+  <logger>jason.infra.local.LocalAgArch.r2</logger>
+  <level>FINE</level>
+  <class>jason.infra.local.LocalAgArch</class>
+  <method>reasoningCycle</method>
+  <thread>30</thread>
+  <message>LB-cycle time: 1</message>
+</record>
+</log>

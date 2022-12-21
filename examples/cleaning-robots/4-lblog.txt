@@ -1,0 +1,1245 @@
+Executing /usr/lib/jvm/jdk-15.0.2/bin/java -classpath /home/leandro/jason/build/libs/ant-launcher-1.10.5.jar org.apache.tools.ant.launch.Launcher -e -f bin/mars.xml run
+Buildfile: /home/leandro/jason/examples/cleaning-robots/bin/mars.xml
+
+init:
+
+user-init:
+
+compile:
+
+run:
+Running project mars
+[BaseLocalMAS] Creating environment MarsEnv
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 360
+[BaseLocalMAS] Creating agent r1 (1/1)
+Jason Http Server running on http://127.0.1.1:3272
+[httpserver] HttpServer created http 0.0.0.0/0.0.0.0:3272
+[httpserver] context created: /
+[httpserver] context created: /agents
+[httpserver] context created: /agent-mind/no_ag
+[httpserver] context created: /df
+[r1] as2j: AgentSpeak program 'file:r1.asl' parsed successfully!
+[r1] as2j: AgentSpeak program 'jar:file:/home/leandro/jason/build/libs/jason-3.1.jar!/asl/kqmlPlans.asl' parsed successfully!
+[r1] Doing (add) brf for kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[r1] brf added kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[r1] Added event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], events = [+!check(slots)[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]]
+[r1] Start sense 1
+[r1] LBB TransitionS, perceive+buf time (ns): 20955
+[r1] Selected event +!check(slots)[source(self)]
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 11054942
+[MarsEnv] r1 doing: next(slot)
+[r1] Start sense 2
+[r1] LBB TransitionS, perceive+buf time (ns): 8482
+[r1] Selected event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[r1] LBB LocalAgArch, resCycle time (ns): 4161693
+[r1] Start sense 3
+[r1] LBB TransitionS, perceive+buf time (ns): 10084
+[r1] LBB LocalAgArch, resCycle time (ns): 2043008
+[r1] Start sense 4
+[r1] LBB TransitionS, perceive+buf time (ns): 10404
+[r1] LBB LocalAgArch, resCycle time (ns): 1858548
+[r1] Start sense 5
+[r1] LBB TransitionS, perceive+buf time (ns): 9925
+[r1] LBB LocalAgArch, resCycle time (ns): 1835881
+[r1] Start sense 6
+[r1] LBB TransitionS, perceive+buf time (ns): 9679
+[r1] LBB LocalAgArch, resCycle time (ns): 3061603
+[r1] Start sense 7
+[r1] LBB TransitionS, perceive+buf time (ns): 1695
+[r1] LBB LocalAgArch, resCycle time (ns): 1464505
+[r1] Start sense 8
+[r1] LBB TransitionS, perceive+buf time (ns): 9891
+[r1] LBB LocalAgArch, resCycle time (ns): 1504754
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 2254
+[r1] Start sense 9
+[r1] LBB TransitionS, perceive+buf time (ns): 9300
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2270133
+[r1] Start sense 10
+[r1] LBB TransitionS, perceive+buf time (ns): 8361
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 3240682
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 209
+[r1] Start sense 11
+[r1] LBB TransitionS, perceive+buf time (ns): 9618
+[r1] LBB LocalAgArch, resCycle time (ns): 1557867
+[r1] Start sense 12
+[r1] LBB TransitionS, perceive+buf time (ns): 13650
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2265608
+[r1] Start sense 13
+[r1] LBB TransitionS, perceive+buf time (ns): 8749
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 4512852
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 209
+[r1] Start sense 14
+[r1] LBB TransitionS, perceive+buf time (ns): 1137
+[r1] LBB LocalAgArch, resCycle time (ns): 1421268
+[r1] Start sense 15
+[r1] LBB TransitionS, perceive+buf time (ns): 6382
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1722297
+[r1] Start sense 16
+[r1] LBB TransitionS, perceive+buf time (ns): 5439
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2029299
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 214
+[r1] Start sense 17
+[r1] LBB TransitionS, perceive+buf time (ns): 5924
+[r1] LBB LocalAgArch, resCycle time (ns): 1179339
+[r1] Start sense 18
+[r1] LBB TransitionS, perceive+buf time (ns): 5401
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1736947
+[r1] Start sense 19
+[r1] LBB TransitionS, perceive+buf time (ns): 5704
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1816125
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 20
+[r1] LBB TransitionS, perceive+buf time (ns): 6267
+[r1] LBB LocalAgArch, resCycle time (ns): 1268398
+[r1] Start sense 21
+[r1] LBB TransitionS, perceive+buf time (ns): 1133
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2717946
+[r1] Start sense 22
+[r1] LBB TransitionS, perceive+buf time (ns): 17221
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 3076336
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 208
+[r1] Start sense 23
+[r1] LBB TransitionS, perceive+buf time (ns): 9548
+[r1] LBB LocalAgArch, resCycle time (ns): 1515239
+[r1] Start sense 24
+[r1] LBB TransitionS, perceive+buf time (ns): 14565
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2149255
+[r1] Start sense 25
+[r1] LBB TransitionS, perceive+buf time (ns): 8642
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 3273784
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 211
+[r1] Start sense 26
+[r1] LBB TransitionS, perceive+buf time (ns): 9879
+[r1] LBB LocalAgArch, resCycle time (ns): 1225981
+[r1] Start sense 27
+[r1] LBB TransitionS, perceive+buf time (ns): 9487
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1788201
+[r1] Start sense 28
+[r1] LBB TransitionS, perceive+buf time (ns): 997
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2386569
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 269
+[r1] Start sense 29
+[r1] LBB TransitionS, perceive+buf time (ns): 9222
+[r1] LBB LocalAgArch, resCycle time (ns): 1111681
+[r1] Start sense 30
+[r1] LBB TransitionS, perceive+buf time (ns): 10585
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1822875
+[r1] Start sense 31
+[r1] LBB TransitionS, perceive+buf time (ns): 8357
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2201561
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 207
+[r1] Start sense 32
+[r1] LBB TransitionS, perceive+buf time (ns): 9925
+[r1] LBB LocalAgArch, resCycle time (ns): 1102932
+[r1] Start sense 33
+[r1] LBB TransitionS, perceive+buf time (ns): 9577
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1732995
+[r1] Start sense 34
+[r1] LBB TransitionS, perceive+buf time (ns): 8561
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2064302
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 35
+[r1] LBB TransitionS, perceive+buf time (ns): 1106
+[r1] LBB LocalAgArch, resCycle time (ns): 1030880
+[r1] Start sense 36
+[r1] LBB TransitionS, perceive+buf time (ns): 13986
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1626895
+[r1] Start sense 37
+[r1] LBB TransitionS, perceive+buf time (ns): 8667
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1823616
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 38
+[r1] LBB TransitionS, perceive+buf time (ns): 8969
+[r1] LBB LocalAgArch, resCycle time (ns): 1201726
+[r1] Start sense 39
+[r1] LBB TransitionS, perceive+buf time (ns): 9313
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1774764
+[r1] Start sense 40
+[r1] LBB TransitionS, perceive+buf time (ns): 8602
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1745523
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 41
+[r1] LBB TransitionS, perceive+buf time (ns): 9261
+[r1] LBB LocalAgArch, resCycle time (ns): 1037139
+[r1] Start sense 42
+[r1] LBB TransitionS, perceive+buf time (ns): 1068
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1252849
+[r1] Start sense 43
+[r1] LBB TransitionS, perceive+buf time (ns): 11661
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1761340
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 44
+[r1] LBB TransitionS, perceive+buf time (ns): 10071
+[r1] LBB LocalAgArch, resCycle time (ns): 1225761
+[r1] Start sense 45
+[r1] LBB TransitionS, perceive+buf time (ns): 9493
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1821604
+[r1] Start sense 46
+[r1] LBB TransitionS, perceive+buf time (ns): 8366
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1969285
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 47
+[r1] LBB TransitionS, perceive+buf time (ns): 17592
+[r1] LBB LocalAgArch, resCycle time (ns): 1213248
+[r1] Start sense 48
+[r1] LBB TransitionS, perceive+buf time (ns): 9701
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1819108
+[r1] Start sense 49
+[r1] LBB TransitionS, perceive+buf time (ns): 882
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1926277
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 50
+[r1] LBB TransitionS, perceive+buf time (ns): 9159
+[r1] LBB LocalAgArch, resCycle time (ns): 1164287
+[r1] Start sense 51
+[r1] LBB TransitionS, perceive+buf time (ns): 9939
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 3561598
+[r1] Start sense 52
+[r1] LBB TransitionS, perceive+buf time (ns): 8179
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1925221
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 207
+[r1] Start sense 53
+[r1] LBB TransitionS, perceive+buf time (ns): 10178
+[r1] LBB LocalAgArch, resCycle time (ns): 996423
+[r1] Start sense 54
+[r1] LBB TransitionS, perceive+buf time (ns): 9811
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1577343
+[r1] Start sense 55
+[r1] LBB TransitionS, perceive+buf time (ns): 8520
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1683445
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 56
+[r1] LBB TransitionS, perceive+buf time (ns): 1050
+[r1] LBB LocalAgArch, resCycle time (ns): 817804
+[r1] Start sense 57
+[r1] LBB TransitionS, perceive+buf time (ns): 10288
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1392234
+[r1] Start sense 58
+[r1] LBB TransitionS, perceive+buf time (ns): 8622
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1567595
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 59
+[r1] LBB TransitionS, perceive+buf time (ns): 9129
+[r1] LBB LocalAgArch, resCycle time (ns): 898114
+[r1] Start sense 60
+[r1] LBB TransitionS, perceive+buf time (ns): 13407
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1568779
+[r1] Start sense 61
+[r1] LBB TransitionS, perceive+buf time (ns): 9084
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1308657
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 62
+[r1] LBB TransitionS, perceive+buf time (ns): 9244
+[r1] LBB LocalAgArch, resCycle time (ns): 738949
+[r1] Start sense 63
+[r1] LBB TransitionS, perceive+buf time (ns): 899
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1503273
+[r1] Start sense 64
+[r1] LBB TransitionS, perceive+buf time (ns): 7844
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1299001
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 65
+[r1] LBB TransitionS, perceive+buf time (ns): 9177
+[r1] LBB LocalAgArch, resCycle time (ns): 690093
+[r1] Start sense 66
+[r1] LBB TransitionS, perceive+buf time (ns): 16206
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1785135
+[r1] Start sense 67
+[r1] LBB TransitionS, perceive+buf time (ns): 14292
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1562906
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 68
+[r1] LBB TransitionS, perceive+buf time (ns): 8458
+[r1] LBB LocalAgArch, resCycle time (ns): 830500
+[r1] Start sense 69
+[r1] LBB TransitionS, perceive+buf time (ns): 9714
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1501995
+[r1] Start sense 70
+[r1] LBB TransitionS, perceive+buf time (ns): 830
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1509318
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 71
+[r1] LBB TransitionS, perceive+buf time (ns): 8847
+[r1] LBB LocalAgArch, resCycle time (ns): 969542
+[r1] Start sense 72
+[r1] LBB TransitionS, perceive+buf time (ns): 16293
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1412720
+[r1] Start sense 73
+[r1] LBB TransitionS, perceive+buf time (ns): 8580
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1611751
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 74
+[r1] LBB TransitionS, perceive+buf time (ns): 9516
+[r1] LBB LocalAgArch, resCycle time (ns): 1009621
+[r1] Start sense 75
+[r1] LBB TransitionS, perceive+buf time (ns): 9312
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1165692
+[r1] Start sense 76
+[r1] LBB TransitionS, perceive+buf time (ns): 7848
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1118541
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 77
+[r1] LBB TransitionS, perceive+buf time (ns): 1199
+[r1] LBB LocalAgArch, resCycle time (ns): 1362901
+[r1] Start sense 78
+[r1] LBB TransitionS, perceive+buf time (ns): 15032
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1937584
+[r1] Start sense 79
+[r1] LBB TransitionS, perceive+buf time (ns): 14653
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1783754
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 80
+[r1] LBB TransitionS, perceive+buf time (ns): 9531
+[r1] LBB LocalAgArch, resCycle time (ns): 763772
+[r1] Start sense 81
+[r1] LBB TransitionS, perceive+buf time (ns): 10213
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1328327
+[r1] Start sense 82
+[r1] LBB TransitionS, perceive+buf time (ns): 9064
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1421943
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 83
+[r1] LBB TransitionS, perceive+buf time (ns): 21072
+[r1] LBB LocalAgArch, resCycle time (ns): 802369
+[r1] Start sense 84
+[r1] LBB TransitionS, perceive+buf time (ns): 1250
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1123110
+[r1] Start sense 85
+[r1] LBB TransitionS, perceive+buf time (ns): 9244
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1224693
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 86
+[r1] LBB TransitionS, perceive+buf time (ns): 9907
+[r1] LBB LocalAgArch, resCycle time (ns): 806452
+[r1] Start sense 87
+[r1] LBB TransitionS, perceive+buf time (ns): 10302
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1173905
+[r1] Start sense 88
+[r1] LBB TransitionS, perceive+buf time (ns): 8318
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1191202
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 89
+[r1] LBB TransitionS, perceive+buf time (ns): 9880
+[r1] LBB LocalAgArch, resCycle time (ns): 806634
+[r1] Start sense 90
+[r1] LBB TransitionS, perceive+buf time (ns): 9535
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1102293
+[r1] Start sense 91
+[r1] LBB TransitionS, perceive+buf time (ns): 980
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1183468
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 92
+[r1] LBB TransitionS, perceive+buf time (ns): 9675
+[r1] LBB LocalAgArch, resCycle time (ns): 603746
+[r1] Start sense 93
+[r1] LBB TransitionS, perceive+buf time (ns): 10076
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1281403
+[r1] Start sense 94
+[r1] LBB TransitionS, perceive+buf time (ns): 8892
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1062982
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 95
+[r1] LBB TransitionS, perceive+buf time (ns): 15917
+[r1] LBB LocalAgArch, resCycle time (ns): 602976
+[r1] Start sense 96
+[r1] LBB TransitionS, perceive+buf time (ns): 9152
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1057559
+[r1] Start sense 97
+[r1] LBB TransitionS, perceive+buf time (ns): 8813
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1194980
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 98
+[r1] LBB TransitionS, perceive+buf time (ns): 1122
+[r1] LBB LocalAgArch, resCycle time (ns): 922010
+[r1] Start sense 99
+[r1] LBB TransitionS, perceive+buf time (ns): 10343
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1069857
+[r1] Start sense 100
+[r1] LBB TransitionS, perceive+buf time (ns): 13332
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1379286
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 101
+[r1] LBB TransitionS, perceive+buf time (ns): 9160
+[r1] LBB LocalAgArch, resCycle time (ns): 593139
+[r1] Start sense 102
+[r1] LBB TransitionS, perceive+buf time (ns): 11427
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2688739
+[r1] Start sense 103
+[r1] LBB TransitionS, perceive+buf time (ns): 9004
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1103124
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 206
+[r1] Start sense 104
+[r1] LBB TransitionS, perceive+buf time (ns): 9142
+[r1] LBB LocalAgArch, resCycle time (ns): 554350
+[r1] Start sense 105
+[r1] LBB TransitionS, perceive+buf time (ns): 1010
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 945410
+[r1] Start sense 106
+[r1] LBB TransitionS, perceive+buf time (ns): 9121
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 989047
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 107
+[r1] LBB TransitionS, perceive+buf time (ns): 9899
+[r1] LBB LocalAgArch, resCycle time (ns): 657006
+[r1] Start sense 108
+[r1] LBB TransitionS, perceive+buf time (ns): 16242
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1014011
+[r1] Start sense 109
+[r1] LBB TransitionS, perceive+buf time (ns): 8366
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 916422
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 110
+[r1] LBB TransitionS, perceive+buf time (ns): 10257
+[r1] LBB LocalAgArch, resCycle time (ns): 627240
+[r1] Start sense 111
+[r1] LBB TransitionS, perceive+buf time (ns): 9329
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 917398
+[r1] Start sense 112
+[r1] LBB TransitionS, perceive+buf time (ns): 831
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 904322
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 113
+[r1] LBB TransitionS, perceive+buf time (ns): 10417
+[r1] LBB LocalAgArch, resCycle time (ns): 754543
+[r1] Start sense 114
+[r1] LBB TransitionS, perceive+buf time (ns): 9898
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 995238
+[r1] Start sense 115
+[r1] LBB TransitionS, perceive+buf time (ns): 8485
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1035224
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 116
+[r1] LBB TransitionS, perceive+buf time (ns): 10448
+[r1] LBB LocalAgArch, resCycle time (ns): 737830
+[r1] Start sense 117
+[r1] LBB TransitionS, perceive+buf time (ns): 10171
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 961551
+[r1] Start sense 118
+[r1] LBB TransitionS, perceive+buf time (ns): 8244
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 877365
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 119
+[r1] LBB TransitionS, perceive+buf time (ns): 1224
+[r1] LBB LocalAgArch, resCycle time (ns): 590631
+[r1] Start sense 120
+[r1] LBB TransitionS, perceive+buf time (ns): 54756
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 926299
+[r1] Start sense 121
+[r1] LBB TransitionS, perceive+buf time (ns): 3515
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 919770
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 122
+[r1] LBB TransitionS, perceive+buf time (ns): 4132
+[r1] LBB LocalAgArch, resCycle time (ns): 633753
+[r1] Start sense 123
+[r1] LBB TransitionS, perceive+buf time (ns): 3565
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1003263
+[r1] Start sense 124
+[r1] LBB TransitionS, perceive+buf time (ns): 2427
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 985903
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 125
+[r1] LBB TransitionS, perceive+buf time (ns): 2991
+[r1] LBB LocalAgArch, resCycle time (ns): 632241
+[r1] Start sense 126
+[r1] LBB TransitionS, perceive+buf time (ns): 1622
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 894644
+[r1] Start sense 127
+[r1] LBB TransitionS, perceive+buf time (ns): 2806
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1028492
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 205
+[r1] Start sense 128
+[r1] LBB TransitionS, perceive+buf time (ns): 2729
+[r1] LBB LocalAgArch, resCycle time (ns): 667042
+[r1] Start sense 129
+[r1] LBB TransitionS, perceive+buf time (ns): 2924
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 888473
+[r1] Start sense 130
+[r1] LBB TransitionS, perceive+buf time (ns): 1995
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 848657
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 131
+[r1] LBB TransitionS, perceive+buf time (ns): 3190
+[r1] LBB LocalAgArch, resCycle time (ns): 574880
+[r1] Start sense 132
+[r1] LBB TransitionS, perceive+buf time (ns): 3677
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1025215
+[r1] Start sense 133
+[r1] LBB TransitionS, perceive+buf time (ns): 744
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 744339
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 134
+[r1] LBB TransitionS, perceive+buf time (ns): 3870
+[r1] LBB LocalAgArch, resCycle time (ns): 505906
+[r1] Start sense 135
+[r1] LBB TransitionS, perceive+buf time (ns): 2831
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1040254
+[r1] Start sense 136
+[r1] LBB TransitionS, perceive+buf time (ns): 2022
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 879906
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 137
+[r1] LBB TransitionS, perceive+buf time (ns): 2417
+[r1] LBB LocalAgArch, resCycle time (ns): 487455
+[r1] Start sense 138
+[r1] LBB TransitionS, perceive+buf time (ns): 2919
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 986532
+[r1] Start sense 139
+[r1] LBB TransitionS, perceive+buf time (ns): 2085
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 834291
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 140
+[r1] LBB TransitionS, perceive+buf time (ns): 1298
+[r1] LBB LocalAgArch, resCycle time (ns): 559221
+[r1] Start sense 141
+[r1] LBB TransitionS, perceive+buf time (ns): 4420
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1061482
+[r1] Start sense 142
+[r1] LBB TransitionS, perceive+buf time (ns): 2096
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 852600
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 143
+[r1] LBB TransitionS, perceive+buf time (ns): 2530
+[r1] LBB LocalAgArch, resCycle time (ns): 473305
+[r1] Start sense 144
+[r1] LBB TransitionS, perceive+buf time (ns): 3544
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 965780
+[r1] Start sense 145
+[r1] LBB TransitionS, perceive+buf time (ns): 2144
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 830001
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 146
+[r1] LBB TransitionS, perceive+buf time (ns): 2572
+[r1] LBB LocalAgArch, resCycle time (ns): 486962
+[r1] Start sense 147
+[r1] LBB TransitionS, perceive+buf time (ns): 1267
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 943071
+[r1] Start sense 148
+[r1] LBB TransitionS, perceive+buf time (ns): 2906
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 937308
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 149
+[r1] LBB TransitionS, perceive+buf time (ns): 3586
+[r1] LBB LocalAgArch, resCycle time (ns): 577803
+[r1] Start sense 150
+[r1] LBB TransitionS, perceive+buf time (ns): 4061
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 947354
+[r1] Start sense 151
+[r1] LBB TransitionS, perceive+buf time (ns): 2281
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 913003
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 152
+[r1] LBB TransitionS, perceive+buf time (ns): 4079
+[r1] LBB LocalAgArch, resCycle time (ns): 675430
+[r1] Start sense 153
+[r1] LBB TransitionS, perceive+buf time (ns): 3069
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 2530116
+[r1] Start sense 154
+[r1] LBB TransitionS, perceive+buf time (ns): 1176
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 976185
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 204
+[r1] Start sense 155
+[r1] LBB TransitionS, perceive+buf time (ns): 3291
+[r1] LBB LocalAgArch, resCycle time (ns): 648318
+[r1] Start sense 156
+[r1] LBB TransitionS, perceive+buf time (ns): 3693
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 977815
+[r1] Start sense 157
+[r1] LBB TransitionS, perceive+buf time (ns): 2288
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 857553
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 158
+[r1] LBB TransitionS, perceive+buf time (ns): 3127
+[r1] LBB LocalAgArch, resCycle time (ns): 689376
+[r1] Start sense 159
+[r1] LBB TransitionS, perceive+buf time (ns): 3557
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 964652
+[r1] Start sense 160
+[r1] LBB TransitionS, perceive+buf time (ns): 2250
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 899929
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 161
+[r1] LBB TransitionS, perceive+buf time (ns): 2577
+[r1] LBB LocalAgArch, resCycle time (ns): 589914
+[r1] Start sense 162
+[r1] LBB TransitionS, perceive+buf time (ns): 3341
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1111584
+[r1] Start sense 163
+[r1] LBB TransitionS, perceive+buf time (ns): 2697
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 907302
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 164
+[r1] LBB TransitionS, perceive+buf time (ns): 4136
+[r1] LBB LocalAgArch, resCycle time (ns): 623219
+[r1] Start sense 165
+[r1] LBB TransitionS, perceive+buf time (ns): 3707
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 862508
+[r1] Start sense 166
+[r1] LBB TransitionS, perceive+buf time (ns): 2710
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 1161923
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 167
+[r1] LBB TransitionS, perceive+buf time (ns): 3815
+[r1] LBB LocalAgArch, resCycle time (ns): 591488
+[r1] Start sense 168
+[r1] LBB TransitionS, perceive+buf time (ns): 1818
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 888137
+[r1] Start sense 169
+[r1] LBB TransitionS, perceive+buf time (ns): 2420
+[r1] Selected event +!check(slots)[source(self)]
+intention 1: 
+    +!check(slots)[source(self)] <- ... !check(slots) / {}
+
+[r1]      | no candidate belief for garbage(r1) with {}
+[r1] Selected intention intention 1: 
+    +!check(slots)[source(self)] <- ... next(slot); !check(slots) / {}
+
+[r1] LBB LocalAgArch, resCycle time (ns): 774837
+[MarsEnv] r1 doing: next(slot)
+[MarsEnv] LBBegin Env - updatePercepts(); elapsed time (ms): 203
+[r1] Start sense 170
+[r1] LBB TransitionS, perceive+buf time (ns): 3399
+[r1] LBB LocalAgArch, resCycle time (ns): 579321
