@@ -908,7 +908,8 @@ public class Agent implements Serializable, ToDOM {
         return adds + dels;
     }
 
-    public int bufCBS(Collection<Literal> percepts) {
+//    public int bufCBS(Collection<Literal> percepts) {
+      public int bufCBS(Boolean[] percepts) {        
 
         if (percepts == null) {
             return 0;
@@ -917,7 +918,7 @@ public class Agent implements Serializable, ToDOM {
         // stat
         int adds = 0;
         int dels = 0;
-        int sz = 100;
+        int sz = 1;
         int[] anArray = new int[sz]; 
 
         // LBB: do whatever to spend some time 

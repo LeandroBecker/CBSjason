@@ -1,5 +1,6 @@
 package jason.environment;
 
+import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -156,7 +157,13 @@ public class Environment {
         return p;
     }
 
-    public Collection<Literal> getPerceptsCBS(String agName) {
+//    public Collection<Literal> getPerceptsCBS(String agName) {
+    public Boolean[] getPerceptsCBS(String agName) {
+
+        Boolean[] array = new Boolean[8];
+        Arrays.fill(array, Boolean.FALSE);
+
+        return array;
 
         // // check whether this agent needs the current version of perception
         // if (uptodateAgs.contains(agName)) {
@@ -185,18 +192,19 @@ public class Environment {
         //     }
         // }
 
-        int nBel = 1;
-        Collection<Literal> cLit = new ArrayList<Literal>(1);
-        List<Literal> lagl = new ArrayList<Literal>(nBel);
+        /* */
+        // int nBel = 1;
+        // Collection<Literal> cLit = new ArrayList<Literal>(1);
+        // List<Literal> lagl = new ArrayList<Literal>(nBel);
 
-        for (int i=nBel-1; i >=0; i--)
-            lagl.add(Literal.parseLiteral("pos(r"+i+",1,0)"));
+        // for (int i=nBel-1; i >=0; i--)
+        //     lagl.add(Literal.parseLiteral("pos(r"+i+",1,0)"));
 
-        cLit.addAll(lagl);
+        // cLit.addAll(lagl);
 
 
 
-        return cLit;
+        // return cLit;
     }
 
     /**

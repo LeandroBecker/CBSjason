@@ -162,10 +162,14 @@ public class AgArch implements Comparable<AgArch>, Serializable {
             return successor.perceive();
     }
 
-    public Collection<Literal> perceiveCBS() {
+    // public Collection<Literal> perceiveCBS() {
+    //     return null;
+    // }
+
+    public Boolean[] perceiveCBS() {
         return null;
     }
-
+    
     /** Reads the agent's mailbox and adds messages into
         the agent's circumstance */
     public void checkMail() {

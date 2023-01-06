@@ -1674,17 +1674,23 @@ public class TransitionSystem implements Serializable {
                 // LBB time test code
                 Collection<Literal> cLit = new ArrayList<Literal>(1);
                 List<Literal> lagl = new ArrayList<Literal>(1);
-                lagl.add(Literal.parseLiteral("pos(r1,1,0)"));
-                cLit.addAll(lagl);
+                //lagl.add(Literal.parseLiteral("pos(r1,1,0)"));
+                //lagl.add(Literal.parseLiteral("pos(r2,1,0)"));
+                //lagl.add(Literal.parseLiteral("pos(r3,1,0)"));
+                //lagl.add(Literal.parseLiteral("believe("+ String.valueOf(getAgArch().getCycleNumber() % 8) + ")"));
+                // for(int i=0; i<=(getAgArch().getCycleNumber() % 8); i++){
+                //     lagl.add(Literal.parseLiteral("believe("+ String.valueOf(i) + ")"));
+                //     cLit.addAll(lagl);
+                // }
                 long start = System.nanoTime();
                 synchronized (C.syncApPlanSense) {
-                    if((getAgArch().getCycleNumber() % 7) != 0){
-                        ag.bufCBS(getAgArch().perceiveCBS());
-                        //ag.bufCBS(cLit);
-                    }
-                    else
-                        ag.bufCBS(null);
-                    //ag.buf(getAgArch().perceive()); //original
+                    // if((getAgArch().getCycleNumber() % 7) == 0){
+                    //     ag.bufCBS(getAgArch().perceiveCBS());      
+                    // }
+                    // else
+                    //     ag.bufCBS(null);
+                    // ag.buf(cLit); //LB: in fact does not work properly, as the plan is never invoked
+                    ag.buf(getAgArch().perceive()); //original                        
                 }
                 long end = System.nanoTime();
                 if (logger.isLoggable(Level.FINE)) logger.fine("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB 

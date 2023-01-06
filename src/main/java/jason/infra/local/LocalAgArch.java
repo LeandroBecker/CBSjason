@@ -271,15 +271,20 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         //senseLBB();
 
         sense();
+        long endSen = System.nanoTime();
         deliberate();
+        long endDel = System.nanoTime();
         act();
 
         getFirstAgArch().reasoningCycleFinished();
         //long pass = System.currentTimeMillis() - start;
-        long end = System.nanoTime();
+        long endRC = System.nanoTime();
         //long microseconds = (end - start) / 1000;
         //if (logger.isLoggable(Level.FINE)) logger.fine("LB-cycle time (ns): " + String.valueOf(end-start)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(end-start)); //LB 
+        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start)); //LB 
+        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
+        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
+        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start)); //LB 
 
     }
 
@@ -357,15 +362,25 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         super.perceive();
         if (infraEnv == null) return null;
         Collection<Literal> percepts = infraEnv.getUserEnvironment().getPercepts(getAgName());
-        if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("percepts: " + percepts);
+        //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("percepts: " + percepts);
         return percepts;
     }
 
-    public Collection<Literal> perceiveCBS() {
+    // public Collection<Literal> perceiveCBS() {
+    //     //super.perceive();
+    //     if (infraEnv == null) return null;
+    //     Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
+    //     if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
+    //     return percepts;
+    // }
+
+    public Boolean[] perceiveCBS() {
         //super.perceive();
         if (infraEnv == null) return null;
-        Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-        if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
+        Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
+        //Boolean[] percepts = new Boolean[8];
+        //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
+        //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
         return percepts;
     }
 
