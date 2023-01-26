@@ -268,8 +268,8 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         getFirstAgArch().reasoningCycleStarting();
 
-        //senseLBB();
-
+        senseLBB();
+        long endSenLBB = System.nanoTime();
         sense();
         long endSen = System.nanoTime();
         deliberate();
@@ -281,6 +281,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         long endRC = System.nanoTime();
         //long microseconds = (end - start) / 1000;
         //if (logger.isLoggable(Level.FINE)) logger.fine("LB-cycle time (ns): " + String.valueOf(end-start)); //LB 
+        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, senseLBB time (ns): " + String.valueOf(endSenLBB-start)); //LB 
         if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start)); //LB 
         if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
         if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
@@ -367,15 +368,8 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
     }
 
     // public Collection<Literal> perceiveCBS() {
-    //     //super.perceive();
-    //     if (infraEnv == null) return null;
-    //     Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-    //     if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
-    //     return percepts;
-    // }
-
     public Boolean[] perceiveCBS() {
-        //super.perceive();
+        super.perceiveCBS();
         if (infraEnv == null) return null;
         Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
         //Boolean[] percepts = new Boolean[8];

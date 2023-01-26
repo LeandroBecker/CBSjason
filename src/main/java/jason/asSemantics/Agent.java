@@ -757,6 +757,13 @@ public class Agent implements Serializable, ToDOM {
             return actions.poll();
     }
 
+    public ActionExec selectActionLB() {
+        // make sure the selected Action is removed from actList
+        // (do not return suspended intentions)
+        //return (new ActionExec(new LiteralImpl("manual"), null));
+        return null;        
+    }
+
     /** TS Initialisation (called by the AgArch) */
     public void setTS(TransitionSystem ts) {
         this.ts = ts;

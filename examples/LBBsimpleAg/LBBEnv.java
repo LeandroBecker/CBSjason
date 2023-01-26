@@ -12,31 +12,15 @@ import java.util.logging.Logger;
 
 public class LBBEnv extends Environment {
 
-    //public static final int GSize = 7; // grid size
-    //public static final int GARB  = 16; // garbage code in grid model
+    static Logger logger = Logger.getLogger(LBBEnv.class.getName());
 
-    //public static final Term    ns = Literal.parseLiteral("next(slot)");
-    //public static final Term    pg = Literal.parseLiteral("pick(garb)");
-    //public static final Term    dg = Literal.parseLiteral("drop(garb)");
-    //public static final Term    bg = Literal.parseLiteral("burn(garb)");
-    //public static final Literal g1 = Literal.parseLiteral("garbage(r1)");
-    //public static final Literal g2 = Literal.parseLiteral("garbage(r2)");
-
-    static Logger logger = Logger.getLogger(MarsEnv.class.getName());
-
-    //private MarsModel model;
-    //private MarsView  view;
-    
-    private long t_init = System.nanoTime(); //LB: initial time
+    //private long t_init = System.nanoTime(); //LB: initial time
+    private long t_updt = 0; //LB: update timestamp
     private int cont = 0;
     private Literal bArray[];
 
     @Override
     public void init(String[] args) {
-        //model = new MarsModel();
-        //view  = new MarsView(model);
-        //model.setView(view);
-        
         bArray = new Literal[8];
         for(int i=0; i<8; i++){
             int v = i+1;
@@ -54,11 +38,11 @@ public class LBBEnv extends Environment {
             if (action.getFunctor().equals("faz")) {
                 int x = (int)((NumberTerm)action.getTerm(0)).solve();
                 //int y = (int)((NumberTerm)action.getTerm(1)).solve();
-                fazAction(x); //LB fix here for func of interest
+                fazAction(x); //LB here is a possible critical funcion
             } else if (action.getFunctor().equals("manual")) {
                 //int x = (int)((NumberTerm)action.getTerm(0)).solve();
                 //int y = (int)((NumberTerm)action.getTerm(1)).solve();
-                manualAction(); //LB fix here for func of interest
+                manualAction(); //LB here is another possible critical funcion
             } else {
                 return false;
             }
@@ -66,7 +50,7 @@ public class LBBEnv extends Environment {
             e.printStackTrace();
         }
 
-        updatePercepts(); //LB: see if is realy needed
+        updatePercepts(); 
 
         try {
             Thread.sleep(200);
@@ -76,23 +60,22 @@ public class LBBEnv extends Environment {
     }
     
     void manualAction(){
-        long t_curr = System.nanoTime(); //LB: current time
         //logger.info("LBB fazAction " + String.valueOf(i) + " " + String.valueOf(cont+1) + " (ms): " + String.valueOf(t_curr)); // - t_init));   
         //logger.info("LBB manualAction " + String.valueOf(0) + " time (ms): " + String.valueOf(t_curr - t_init));   
         //logger.info("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB  
         //if(i<7) cont++;
         //else cont = 0;
         //cont++;
+        logger.info("LBB e2eAction " + String.valueOf(cont) + " time (ms): " + String.valueOf(System.nanoTime() - t_updt));   
     }
 
     void fazAction(int i){
-        long t_curr = System.nanoTime(); //LB: current time
-        logger.info("LBB fazAction " + String.valueOf(i) + " " + String.valueOf(cont+1) + " (ms): " + String.valueOf(t_curr)); // - t_init));   
-        logger.info("LBB e2eAction " + String.valueOf(i) + " time (ms): " + String.valueOf(t_curr - t_init));   
+        //long t_curr = System.nanoTime(); //LB: current time
+        //logger.info("LBB fazAction " + String.valueOf(i) + " " + String.valueOf(cont+1) + " (ms): " + String.valueOf(t_curr)); // - t_init));   
         //logger.info("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB  
         //if(i<7) cont++;
         //else cont = 0;
-        cont++;
+        //cont++;
     }
 
     /** creates the agents perception */
@@ -108,19 +91,27 @@ public class LBBEnv extends Environment {
             addPercept(lit);
         }
 
+        t_updt = System.nanoTime(); //LB: collects updt time
+
         //adding the belief that triggers the next action
-        t_init = System.nanoTime();
-        addPercept(bArray[cont%8]);
+        //addPercept(bArray[cont%8]);
     }
 
     @Override
     public boolean updateCBS() {
         //LBB: for testing, only 1 CBS set TRUE
-        cbsArray[0] = Boolean.TRUE;
-        //logger.info("Correct updateCBS");
+        if((cont++ % 2) == 0){
+            logger.info("TRUE updateCBS "+ cont);
+            cbsArray[0] = Boolean.TRUE;
+        }
+        else{
+            logger.info("FALSE updateCBS "+ cont);
+            cbsArray[0] = Boolean.FALSE;
+        }
+        
 
-        long t_curr = System.currentTimeMillis(); //LB: current time
-        t_init = t_curr;
+        //long t_curr = System.currentTimeMillis(); //LB: current time
+        //t_init = t_curr;
 
         return true;
     }   

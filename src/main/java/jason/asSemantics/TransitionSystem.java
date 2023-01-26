@@ -1723,48 +1723,43 @@ public class TransitionSystem implements Serializable {
     }
 
     public void senseLBB() {
+        Boolean[] cbsPercepts =              null;
         try { 
-            //if (logger.isLoggable(Level.FINE)) logger.fine("LBB Start sense " + getAgArch().getCycleNumber() ); //LB
-            if (logger.isLoggable(Level.FINE)) logger.fine("LBB TransitionSystem, Start sense " + getAgArch().getCycleNumber() ); //LB
+            // if (logger.isLoggable(Level.FINE)) logger.fine("LBB Start sense " + getAgArch().getCycleNumber() ); //LB
+            // if (logger.isLoggable(Level.FINE)) logger.fine("LBB TransitionSystem, Start sense " + getAgArch().getCycleNumber() ); //LB
 
-            C.resetSense();
+            // C.resetSense();
 
             if (nrcslbr >= setts.nrcbp()) {
-                nrcslbr = 0;
+                //nrcslbr = 0;
                 synchronized (C.syncApPlanSense) {
-                    ag.buf(getAgArch().perceive()); //LB: stores new perception in the agent buffer (so far the same perception is called); maybe add to a new, temp buffer
+                    cbsPercepts = getAgArch().perceiveCBS();
+                    //ag.bufCBS(getAgArch().perceiveCBS()); //LBB: must FIX
                 }
                 //LB getAgArch().checkMail();
             }
-            nrcslbr++; // counting number of cycles since last belief revision
+            // nrcslbr++; // counting number of cycles since last belief revision
 
-            // LB commenting block - intuitively, no sleep is desired at this point
-            // produce sleep events
-            // if (ag.pl.hasJagPlans()) {
-            //     if (canSleep()) {
-            //         if (!sleepingEvt) {
-            //             sleepingEvt = true;
-            //             C.addExternalEv(PlanLibrary.TE_JAG_SLEEPING);
-            //         }
-            //     } else if (sleepingEvt) { // code to turn idleEvt false again
-            //         sleepingEvt = false;
-            //         C.addExternalEv(PlanLibrary.TE_JAG_AWAKING);
-            //     }
-            // }
-
-            // LB commenting block - intuitively, no sleep is desired at this point
-            // stepSense = State.StartRC;
-            // do {
-            //     applySemanticRuleSense();
-            // } while (stepSense != State.SelEv && getAgArch().isRunning());
-
+            // LB TEMP code: adding beliefs to the BeliefBase; Problem: will add in every RC
+            //for(int i=0; i<=(getAgArch().getCycleNumber() % 8); i++){
+            /*if((getAgArch().getCycleNumber() % 8) == 0){
+                //Literal bel = createLiteral("CBS("+ String.valueOf(getAgArch().getCycleNumber()) + ")");
+                //bel.addAnnot(ts.getAg().getBB().TPercept);
+                //TransitionSystem ts = getTS();
+                Literal bel = new LiteralImpl("CBS("+ String.valueOf(getAgArch().getCycleNumber()) + ")");
+                try {
+                    getAg().addBel(bel);
+                } catch (RevisionFailedException e) {
+                    System.out.println("Error adding new belief");
+                }
+            } */
+            
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (sense). "+C+"\nCreating a new C!", e);
             C.create();
         }
 
         //LB: the continuation is a modification from the code in act()
-        //LB 2: now I think there is no need to work with C, but just going straight to the Agent
         try {
             // C.resetAct();
 
@@ -1773,48 +1768,58 @@ public class TransitionSystem implements Serializable {
             // //     applySemanticRuleAct();
             // // } while (stepAct != State.StartRC && getAgArch().isRunning());
 
+            // LBB: vou comentar para que as acoes sejam executada a cada X ciclos
+            //if(cbsPercepts != null){
+            if((getAgArch().getCycleNumber()%3) == 0){ 
+                //LB comentado a seguir para testes
+                //for(int i=0; i<cbsPercepts.length; i++){
+                    // ActionExec action = C.getAction();
+                    ActionExec action = null;
+                    //if(cbsPercepts[i])
+                        action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                    //else
+                    //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                    if (action != null) {
+                        // C.addPendingAction(action); //LB: is this needed?
+                        // We need to send a wrapper for FA to the user so that add method then calls C.addFA (which control atomic things)
+                        getAgArch().act(action); //, C.getFeedbackActionsWrapper());
+                    }
+                //}
+            }
 
-            // ActionExec action = C.getAction();
-            // if (action != null) {
-            //     C.addPendingAction(action); //LB: is this needed?
-            //     // We need to send a wrapper for FA to the user so that add method then calls C.addFA (which control atomic things)
-            //     getAgArch().act(action); //, C.getFeedbackActionsWrapper());
-            // }
-
-            ActionExec a = null;
             //a = ag.selectActionLB(); //the problem is that this method only returns an element from this list it received as parameter, see bellow
             // synchronized (C.getFeedbackActions()) {
             //     a = ag.selectAction(C.getFeedbackActions());
             // }
-            if (a != null) {
-                //final Intention curInt = a.getIntention();
+            // if (a != null) {
+            //     //final Intention curInt = a.getIntention();
             
-                // remove the intention from PA (PA has all pending action, including those in FA;
-                // but, if the intention is not in PA, it means that the intention was dropped
-                // and should not return to I)
-                //if (C.removePendingAction(curInt.getId()) != null) {
-                    if (a.getResult()) {
-                        // add the intention back in I
-                        // removeActionReQueue(curInt);
-                        // applyClrInt(curInt);
+            //     // remove the intention from PA (PA has all pending action, including those in FA;
+            //     // but, if the intention is not in PA, it means that the intention was dropped
+            //     // and should not return to I)
+            //     //if (C.removePendingAction(curInt.getId()) != null) {
+            //         if (a.getResult()) {
+            //             // add the intention back in I
+            //             // removeActionReQueue(curInt);
+            //             // applyClrInt(curInt);
             
-                        // if (hasGoalListener())
-                        //     for (GoalListener gl: getGoalListeners())
-                        //         for (IntendedMeans im: curInt) //.getIMs())
-                        //             gl.goalExecuting(im.getTrigger(), ASSyntax.createStructure("action_executed", a.getActionTerm()));
-                    } else {
-                        String reason = a.getFailureMsg();
-                        if (reason == null) reason = "";
-                        ListTerm annots = JasonException.createBasicErrorAnnots("action_failed", reason);
-                        if (a.getFailureReason() != null)
-                            annots.append(a.getFailureReason());
-                        // generateGoalDeletion(curInt, annots, ASSyntax.createAtom("action_failed"));
-                        // C.removeAtomicIntention(); // if (potential) atomic intention is not removed, it will be selected in selInt or selEv and runs again
-                    }
-                //} else {
-                //    applyProcAct(); // get next action
-                //}
-            }
+            //             // if (hasGoalListener())
+            //             //     for (GoalListener gl: getGoalListeners())
+            //             //         for (IntendedMeans im: curInt) //.getIMs())
+            //             //             gl.goalExecuting(im.getTrigger(), ASSyntax.createStructure("action_executed", a.getActionTerm()));
+            //         } else {
+            //             String reason = a.getFailureMsg();
+            //             if (reason == null) reason = "";
+            //             ListTerm annots = JasonException.createBasicErrorAnnots("action_failed", reason);
+            //             if (a.getFailureReason() != null)
+            //                 annots.append(a.getFailureReason());
+            //             // generateGoalDeletion(curInt, annots, ASSyntax.createAtom("action_failed"));
+            //             // C.removeAtomicIntention(); // if (potential) atomic intention is not removed, it will be selected in selInt or selEv and runs again
+            //         }
+            //     //} else {
+            //     //    applyProcAct(); // get next action
+            //     //}
+            // }
             
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);

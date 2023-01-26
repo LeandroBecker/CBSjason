@@ -1,0 +1,3028 @@
+Executing /usr/lib/jvm/jdk-15.0.2/bin/java -classpath /home/leandro/jason/build/libs/ant-launcher-1.10.5.jar org.apache.tools.ant.launch.Launcher -e -f bin/mars.xml run
+Buildfile: /home/leandro/jason/examples/cleaning-robots/bin/mars.xml
+
+init:
+
+user-init:
+
+compile:
+
+run:
+Running project mars
+Can't load log handler "#"
+java.lang.ClassNotFoundException: #
+java.lang.ClassNotFoundException: #
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:606)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.logging/java.util.logging.LogManager.createLoggerHandlers(LogManager.java:1000)
+	at java.logging/java.util.logging.LogManager$4.run(LogManager.java:970)
+	at java.logging/java.util.logging.LogManager$4.run(LogManager.java:966)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:312)
+	at java.logging/java.util.logging.LogManager.loadLoggerHandlers(LogManager.java:966)
+	at java.logging/java.util.logging.LogManager.initializeGlobalHandlers(LogManager.java:2417)
+	at java.logging/java.util.logging.LogManager$RootLogger.accessCheckedHandlers(LogManager.java:2511)
+	at java.logging/java.util.logging.Logger.getHandlers(Logger.java:2089)
+	at jason.infra.local.RunLocalMAS.init(RunLocalMAS.java:141)
+	at jason.infra.local.RunLocalMAS.main(RunLocalMAS.java:92)
+[BaseLocalMAS] Creating environment LBBEnv
+Jason Http Server running on http://127.0.1.1:3272
+[BaseLocalMAS] Creating agent agLBB (1/1)
+[httpserver] HttpServer created http 0.0.0.0/0.0.0.0:3272
+[httpserver] context created: /
+[httpserver] context created: /agents
+[httpserver] context created: /agent-mind/no_ag
+[httpserver] context created: /df
+[agLBB] as2j: AgentSpeak program 'file:agLBB.asl' parsed successfully!
+[agLBB] as2j: AgentSpeak program 'jar:file:/home/leandro/jason/build/libs/jason-3.1.jar!/asl/kqmlPlans.asl' parsed successfully!
+[agLBB] Doing (add) brf for kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[agLBB] brf added kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[agLBB] Added event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]]
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 1
+[MarsEnv] LBB manualAction 0 time (ms): 103667033
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +belief(1)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 17110358
+[agLBB] Selected event +!plano[source(self)]
+[agLBB]      | for belief(N), belief belief(1)[source(percept)] is an option -- {N=1}
+[agLBB]      | (N < 9) succeeded  -- {N=1}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=1}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 2006386
+[agLBB] LBB LocalAgArch, sense time (ns): 21000549
+[MarsEnv] LBB fazAction 1 1 (ms): 489741477361232
+[agLBB] LBB LocalAgArch, delib time (ns): 8089114
+[MarsEnv] LBB e2eAction 1 time (ms): 26047063
+[agLBB] LBB LocalAgArch, act time (ns): 2271479
+[agLBB] LBB LocalAgArch, resCycle time (ns): 31361142
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 2
+[MarsEnv] LBB manualAction 0 time (ms): 29684480
+[agLBB] LBB TransitionS, perceive+buf time (ns): 429123
+[agLBB] Selected event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 557775
+[agLBB] LBB LocalAgArch, sense time (ns): 1640441
+[agLBB] LBB LocalAgArch, delib time (ns): 6920614
+[agLBB] LBB LocalAgArch, act time (ns): 14596
+[agLBB] LBB LocalAgArch, resCycle time (ns): 8575651
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 3
+[MarsEnv] LBB manualAction 0 time (ms): 59060349
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(2)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3167157
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 837896
+[agLBB] LBB LocalAgArch, sense time (ns): 4661151
+[agLBB] LBB LocalAgArch, delib time (ns): 1903522
+[agLBB] LBB LocalAgArch, act time (ns): 6691
+[agLBB] LBB LocalAgArch, resCycle time (ns): 6571364
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 4
+[agLBB] LBB TransitionS, perceive+buf time (ns): 147474
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 830454
+[agLBB] LBB LocalAgArch, sense time (ns): 1614975
+[agLBB] LBB LocalAgArch, delib time (ns): 17080
+[agLBB] LBB LocalAgArch, act time (ns): 5863
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1637918
+[MarsEnv] LBB manualAction 0 time (ms): 110616309
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 5
+[MarsEnv] LBB manualAction 0 time (ms): 26323743
+[agLBB] LBB TransitionS, perceive+buf time (ns): 157880
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 654641
+[agLBB] LBB LocalAgArch, sense time (ns): 1629969
+[agLBB] LBB LocalAgArch, delib time (ns): 6803
+[agLBB] LBB LocalAgArch, act time (ns): 810532
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2447304
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 6
+[MarsEnv] LBB manualAction 0 time (ms): 1324365
+[agLBB] LBB TransitionS, perceive+buf time (ns): 156180
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+
+[agLBB]      | for belief(N), belief belief(2)[source(percept)] is an option -- {N=2}
+[agLBB]      | (N < 9) succeeded  -- {N=2}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=2}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 285213
+[agLBB] LBB LocalAgArch, sense time (ns): 1201902
+[agLBB] LBB LocalAgArch, delib time (ns): 1954639
+[agLBB] LBB LocalAgArch, act time (ns): 539958
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3696499
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 7
+[agLBB] LBB TransitionS, perceive+buf time (ns): 140934
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 549219
+[agLBB] LBB LocalAgArch, sense time (ns): 1343853
+[agLBB] LBB LocalAgArch, delib time (ns): 10228
+[agLBB] LBB LocalAgArch, act time (ns): 12239
+[MarsEnv] LBB fazAction 2 2 (ms): 489741744078695
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1366320
+[MarsEnv] LBB e2eAction 2 time (ms): 55509503
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(8)[source(self)]
+[agLBB] brf added CBS(8)[source(self)]
+[agLBB] Added event +CBS(8)[source(self)], events = [+CBS(8)[source(self)]]
+[agLBB] Start sense 8
+[agLBB] Added event +belief(3)[source(percept)], events = [+CBS(8)[source(self)], +belief(3)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 873974
+[agLBB] Selected event +CBS(8)[source(self)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 2437116
+[agLBB] LBB LocalAgArch, sense time (ns): 3893498
+[agLBB] LBB LocalAgArch, delib time (ns): 765333
+[agLBB] LBB LocalAgArch, act time (ns): 8205
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4667036
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 110431697
+[agLBB] Start sense 9
+[agLBB] LBB TransitionS, perceive+buf time (ns): 790062
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 477458
+[agLBB] LBB LocalAgArch, sense time (ns): 2237564
+[agLBB] LBB LocalAgArch, delib time (ns): 8995
+[agLBB] LBB LocalAgArch, act time (ns): 8602
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2255161
+[MarsEnv] LBB manualAction 0 time (ms): 25296090
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 10
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1100940
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[MarsEnv] LBB manualAction 0 time (ms): 815753
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 873073
+[agLBB] LBB LocalAgArch, sense time (ns): 2451676
+[agLBB] LBB LocalAgArch, delib time (ns): 722816
+[agLBB] LBB LocalAgArch, act time (ns): 7083
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3181575
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 11
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)], +dis(14)[source(percept)]]
+[MarsEnv] LBB manualAction 0 time (ms): 55995589
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6211592
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 462287
+[agLBB] LBB LocalAgArch, sense time (ns): 7146422
+[agLBB] LBB LocalAgArch, delib time (ns): 3225756
+[agLBB] LBB LocalAgArch, act time (ns): 483375
+[agLBB] LBB LocalAgArch, resCycle time (ns): 10855553
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 12
+[agLBB] LBB TransitionS, perceive+buf time (ns): 188274
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+
+[agLBB]      | for belief(N), belief belief(3)[source(percept)] is an option -- {N=3}
+[agLBB]      | (N < 9) succeeded  -- {N=3}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=3}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 221947
+[agLBB] LBB LocalAgArch, sense time (ns): 888198
+[agLBB] LBB LocalAgArch, delib time (ns): 1417419
+[agLBB] LBB LocalAgArch, act time (ns): 410078
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2715695
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 13
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6800
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 560767
+[agLBB] LBB LocalAgArch, sense time (ns): 991424
+[agLBB] LBB LocalAgArch, delib time (ns): 41013
+[agLBB] LBB LocalAgArch, act time (ns): 11142
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1043579
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 112038103
+[agLBB] Start sense 14
+[agLBB] LBB TransitionS, perceive+buf time (ns): 904468
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 431524
+[agLBB] LBB LocalAgArch, sense time (ns): 2158519
+[agLBB] LBB LocalAgArch, delib time (ns): 8046
+[agLBB] LBB LocalAgArch, act time (ns): 47692
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2214257
+[MarsEnv] LBB manualAction 0 time (ms): 24631187
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 15
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1109576
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 617895
+[agLBB] LBB LocalAgArch, sense time (ns): 2193434
+[MarsEnv] LBB fazAction 3 3 (ms): 489742091578275
+[agLBB] LBB LocalAgArch, delib time (ns): 606798
+[MarsEnv] LBB e2eAction 3 time (ms): 980155
+[agLBB] LBB LocalAgArch, act time (ns): 5719
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2805951
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(16)[source(self)]
+[agLBB] brf added CBS(16)[source(self)]
+[agLBB] Added event +CBS(16)[source(self)], events = [+CBS(16)[source(self)]]
+[agLBB] Start sense 16
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[MarsEnv] LBB manualAction 0 time (ms): 55441221
+[agLBB] Added event +belief(4)[source(percept)], events = [+CBS(16)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)], +belief(4)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5280564
+[agLBB] Selected event +CBS(16)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +belief(4)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 1386292
+[agLBB] LBB LocalAgArch, sense time (ns): 7155004
+[agLBB] LBB LocalAgArch, delib time (ns): 3457128
+[agLBB] LBB LocalAgArch, act time (ns): 6287
+[agLBB] LBB LocalAgArch, resCycle time (ns): 10618419
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 17
+[agLBB] LBB TransitionS, perceive+buf time (ns): 136146
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 481013
+[agLBB] LBB LocalAgArch, sense time (ns): 1051171
+[agLBB] LBB LocalAgArch, delib time (ns): 4618
+[agLBB] LBB LocalAgArch, act time (ns): 28220
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1084009
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 113214031
+[agLBB] Start sense 18
+[agLBB] LBB TransitionS, perceive+buf time (ns): 804165
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 420872
+[agLBB] LBB LocalAgArch, sense time (ns): 1962858
+[agLBB] LBB LocalAgArch, delib time (ns): 6510
+[agLBB] LBB LocalAgArch, act time (ns): 6395
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1975763
+[MarsEnv] LBB manualAction 0 time (ms): 23996686
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 19
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1343731
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[MarsEnv] LBB manualAction 0 time (ms): 1573625
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 584166
+[agLBB] LBB LocalAgArch, sense time (ns): 2274588
+[agLBB] LBB LocalAgArch, delib time (ns): 1289918
+[agLBB] LBB LocalAgArch, act time (ns): 500007
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4064513
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 20
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] Added event +belief(4)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)], +belief(4)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4195438
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+
+[agLBB]      | for belief(N), belief belief(4)[source(percept)] is an option -- {N=4}
+[agLBB]      | (N < 9) succeeded  -- {N=4}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=4}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 183928
+[agLBB] LBB LocalAgArch, sense time (ns): 4717320
+[agLBB] LBB LocalAgArch, delib time (ns): 1007708
+[agLBB] LBB LocalAgArch, act time (ns): 411888
+[agLBB] LBB LocalAgArch, resCycle time (ns): 6136916
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 21
+[agLBB] LBB TransitionS, perceive+buf time (ns): 8291
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +belief(4)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 200722
+[agLBB] LBB LocalAgArch, sense time (ns): 525903
+[agLBB] LBB LocalAgArch, delib time (ns): 2159939
+[agLBB] LBB LocalAgArch, act time (ns): 9668
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2695510
+[MarsEnv] LBB manualAction 0 time (ms): 55768295
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 22
+[agLBB] LBB TransitionS, perceive+buf time (ns): 416721
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 567701
+[agLBB] LBB LocalAgArch, sense time (ns): 1365637
+[agLBB] LBB LocalAgArch, delib time (ns): 5540
+[agLBB] LBB LocalAgArch, act time (ns): 5392
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1376569
+[MarsEnv] LBB manualAction 0 time (ms): 114824540
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 23
+[agLBB] LBB TransitionS, perceive+buf time (ns): 101386
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 657474
+[agLBB] LBB LocalAgArch, sense time (ns): 1150706
+[agLBB] LBB LocalAgArch, delib time (ns): 6776
+[agLBB] LBB LocalAgArch, act time (ns): 7240
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1164722
+[MarsEnv] LBB manualAction 0 time (ms): 23722326
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(24)[source(self)]
+[agLBB] brf added CBS(24)[source(self)]
+[agLBB] Added event +CBS(24)[source(self)], events = [+CBS(24)[source(self)]]
+[agLBB] Start sense 24
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)]]
+[MarsEnv] LBB manualAction 0 time (ms): 1390070
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] Added event +belief(4)[source(percept)], events = [+CBS(24)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)], +belief(4)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3502445
+[agLBB] Selected event +CBS(24)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +belief(4)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 1643621
+[agLBB] LBB LocalAgArch, sense time (ns): 5523879
+[agLBB] LBB LocalAgArch, delib time (ns): 2326265
+[agLBB] LBB LocalAgArch, act time (ns): 6115
+[agLBB] LBB LocalAgArch, resCycle time (ns): 7856259
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 25
+[agLBB] LBB TransitionS, perceive+buf time (ns): 157485
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 342623
+[agLBB] LBB LocalAgArch, sense time (ns): 876560
+[agLBB] LBB LocalAgArch, delib time (ns): 5577
+[agLBB] LBB LocalAgArch, act time (ns): 5455
+[MarsEnv] LBB fazAction 4 4 (ms): 489742553970011
+[agLBB] LBB LocalAgArch, resCycle time (ns): 887592
+[MarsEnv] LBB e2eAction 4 time (ms): 56293877
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 26
+[agLBB] Added event +belief(5)[source(percept)], events = [+belief(5)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 554396
+[agLBB] Selected event +belief(5)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 850661
+[agLBB] LBB LocalAgArch, sense time (ns): 1731058
+[agLBB] LBB LocalAgArch, delib time (ns): 284665
+[agLBB] LBB LocalAgArch, act time (ns): 6021
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2021744
+[MarsEnv] LBB manualAction 0 time (ms): 113938897
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 27
+[agLBB] LBB TransitionS, perceive+buf time (ns): 489513
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 581163
+[agLBB] LBB LocalAgArch, sense time (ns): 1410393
+[agLBB] LBB LocalAgArch, delib time (ns): 5447
+[agLBB] LBB LocalAgArch, act time (ns): 5689
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1421529
+[MarsEnv] LBB manualAction 0 time (ms): 23636452
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 28
+[agLBB] LBB TransitionS, perceive+buf time (ns): 121064
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 514342
+[agLBB] LBB LocalAgArch, sense time (ns): 931851
+[agLBB] LBB LocalAgArch, delib time (ns): 5030
+[agLBB] LBB LocalAgArch, act time (ns): 5228
+[agLBB] LBB LocalAgArch, resCycle time (ns): 942109
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1427020
+[agLBB] Start sense 29
+[agLBB] LBB TransitionS, perceive+buf time (ns): 235407
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 199450
+[agLBB] LBB LocalAgArch, sense time (ns): 987540
+[agLBB] LBB LocalAgArch, delib time (ns): 3991
+[agLBB] LBB LocalAgArch, act time (ns): 4005
+[agLBB] LBB LocalAgArch, resCycle time (ns): 995536
+[MarsEnv] LBB manualAction 0 time (ms): 57356503
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 30
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1163380
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 515189
+[agLBB] LBB LocalAgArch, sense time (ns): 1954206
+[agLBB] LBB LocalAgArch, delib time (ns): 664114
+[agLBB] LBB LocalAgArch, act time (ns): 424422
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3042742
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 31
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +belief(5)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+, +dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3310038
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=4}
+
+[agLBB]      | for belief(N), belief belief(5)[source(percept)] is an option -- {N=5}
+[agLBB]      | (N < 9) succeeded  -- {N=5}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=5}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 135531
+[agLBB] LBB LocalAgArch, sense time (ns): 3696024
+[agLBB] LBB LocalAgArch, delib time (ns): 1029554
+[agLBB] LBB LocalAgArch, act time (ns): 299386
+[agLBB] LBB LocalAgArch, resCycle time (ns): 5024964
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(32)[source(self)]
+[agLBB] brf added CBS(32)[source(self)]
+[agLBB] Added event +CBS(32)[source(self)], events = [+dis(18)[source(percept)], +belief(5)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)], +CBS(32)[source(self)]]
+[agLBB] Start sense 32
+[agLBB] LBB TransitionS, perceive+buf time (ns): 7637
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(5)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +CBS(32)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 871732
+[agLBB] LBB LocalAgArch, sense time (ns): 1097503
+[agLBB] LBB LocalAgArch, delib time (ns): 1940283
+[agLBB] LBB LocalAgArch, act time (ns): 10279
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3048065
+[MarsEnv] LBB manualAction 0 time (ms): 114150355
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 33
+[agLBB] LBB TransitionS, perceive+buf time (ns): 360697
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 528139
+[agLBB] LBB LocalAgArch, sense time (ns): 1205628
+[agLBB] LBB LocalAgArch, delib time (ns): 5458
+[agLBB] LBB LocalAgArch, act time (ns): 5410
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1216496
+[MarsEnv] LBB manualAction 0 time (ms): 23882922
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 34
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 445318
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 628799
+[agLBB] LBB LocalAgArch, sense time (ns): 1335099
+[agLBB] LBB LocalAgArch, delib time (ns): 210538
+[agLBB] LBB LocalAgArch, act time (ns): 5435
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1551072
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1626618
+[agLBB] Start sense 35
+[agLBB] LBB TransitionS, perceive+buf time (ns): 324818
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 143868
+[agLBB] LBB LocalAgArch, sense time (ns): 925485
+[agLBB] LBB LocalAgArch, delib time (ns): 5158
+[agLBB] LBB LocalAgArch, act time (ns): 5148
+[agLBB] LBB LocalAgArch, resCycle time (ns): 935791
+[MarsEnv] LBB manualAction 0 time (ms): 57618614
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 36
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1157789
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 476130
+[agLBB] LBB LocalAgArch, sense time (ns): 1862776
+[agLBB] LBB LocalAgArch, delib time (ns): 577345
+[agLBB] LBB LocalAgArch, act time (ns): 5596
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2445717
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 114068601
+[agLBB] Start sense 37
+[agLBB] LBB TransitionS, perceive+buf time (ns): 200158
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313432
+[agLBB] LBB LocalAgArch, sense time (ns): 937636
+[agLBB] LBB LocalAgArch, delib time (ns): 6674
+[agLBB] LBB LocalAgArch, act time (ns): 6357
+[agLBB] LBB LocalAgArch, resCycle time (ns): 950667
+[MarsEnv] LBB manualAction 0 time (ms): 23320007
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 38
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 846100
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 502227
+[agLBB] LBB LocalAgArch, sense time (ns): 1600941
+[agLBB] LBB LocalAgArch, delib time (ns): 482430
+[agLBB] LBB LocalAgArch, act time (ns): 5885
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2089256
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1840933
+[agLBB] Start sense 39
+[agLBB] LBB TransitionS, perceive+buf time (ns): 260163
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 147482
+[agLBB] LBB LocalAgArch, sense time (ns): 783239
+[agLBB] LBB LocalAgArch, delib time (ns): 5131
+[agLBB] LBB LocalAgArch, act time (ns): 5438
+[agLBB] LBB LocalAgArch, resCycle time (ns): 793808
+[MarsEnv] LBB fazAction 5 5 (ms): 489743160125773
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 5 time (ms): 57616414
+[agLBB] Doing (add) brf for CBS(40)[source(self)]
+[agLBB] brf added CBS(40)[source(self)]
+[agLBB] Added event +CBS(40)[source(self)], events = [+CBS(40)[source(self)]]
+[agLBB] Start sense 40
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(40)[source(self)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 2116826
+[agLBB] Selected event +CBS(40)[source(self)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 1093850
+[agLBB] LBB LocalAgArch, sense time (ns): 3403784
+[agLBB] LBB LocalAgArch, delib time (ns): 1160738
+[agLBB] LBB LocalAgArch, act time (ns): 6268
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4570790
+[MarsEnv] LBB manualAction 0 time (ms): 114019358
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 41
+[agLBB] LBB TransitionS, perceive+buf time (ns): 361906
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 547034
+[agLBB] LBB LocalAgArch, sense time (ns): 1177092
+[agLBB] LBB LocalAgArch, delib time (ns): 6240
+[agLBB] LBB LocalAgArch, act time (ns): 7482
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1190814
+[MarsEnv] LBB manualAction 0 time (ms): 23168330
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 42
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(12)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 449353
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 467482
+[agLBB] LBB LocalAgArch, sense time (ns): 1169965
+[agLBB] LBB LocalAgArch, delib time (ns): 202656
+[agLBB] LBB LocalAgArch, act time (ns): 5378
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1377999
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1764140
+[agLBB] Start sense 43
+[agLBB] LBB TransitionS, perceive+buf time (ns): 216369
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 127065
+[agLBB] LBB LocalAgArch, sense time (ns): 727560
+[agLBB] LBB LocalAgArch, delib time (ns): 5028
+[agLBB] LBB LocalAgArch, act time (ns): 5192
+[agLBB] LBB LocalAgArch, resCycle time (ns): 737780
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 44
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +belief(6)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3209749
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +belief(6)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 328954
+[agLBB] LBB LocalAgArch, sense time (ns): 3825615
+[agLBB] LBB LocalAgArch, delib time (ns): 1868862
+[agLBB] LBB LocalAgArch, act time (ns): 6579
+[agLBB] LBB LocalAgArch, resCycle time (ns): 5701056
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 58038915
+[agLBB] Start sense 45
+[agLBB] LBB TransitionS, perceive+buf time (ns): 400033
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 210023
+[agLBB] LBB LocalAgArch, sense time (ns): 982242
+[agLBB] LBB LocalAgArch, delib time (ns): 4205
+[agLBB] LBB LocalAgArch, act time (ns): 365029
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1351476
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 46
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +belief(6)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +belief(6)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3824803
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=5}
+
+[agLBB]      | for belief(N), belief belief(6)[source(percept)] is an option -- {N=6}
+[agLBB]      | (N < 9) succeeded  -- {N=6}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=6}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 108479
+[agLBB] LBB LocalAgArch, sense time (ns): 4129457
+[agLBB] LBB LocalAgArch, delib time (ns): 833614
+[agLBB] LBB LocalAgArch, act time (ns): 256579
+[agLBB] LBB LocalAgArch, resCycle time (ns): 5219650
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 47
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5546
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +belief(6)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 101178
+[agLBB] LBB LocalAgArch, sense time (ns): 283000
+[agLBB] LBB LocalAgArch, delib time (ns): 1797955
+[agLBB] LBB LocalAgArch, act time (ns): 11980
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2092935
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(48)[source(self)]
+[agLBB] brf added CBS(48)[source(self)]
+[agLBB] Added event +CBS(48)[source(self)], events = [+CBS(48)[source(self)]]
+[agLBB] Start sense 48
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6397
+[agLBB] Selected event +CBS(48)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 844440
+[agLBB] LBB LocalAgArch, sense time (ns): 1055354
+[agLBB] LBB LocalAgArch, delib time (ns): 345187
+[agLBB] LBB LocalAgArch, act time (ns): 5445
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1405986
+[MarsEnv] LBB manualAction 0 time (ms): 114188301
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 49
+[agLBB] LBB TransitionS, perceive+buf time (ns): 440799
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 415373
+[agLBB] LBB LocalAgArch, sense time (ns): 1143271
+[agLBB] LBB LocalAgArch, delib time (ns): 4300
+[agLBB] LBB LocalAgArch, act time (ns): 4440
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1152011
+[MarsEnv] LBB manualAction 0 time (ms): 23328038
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 50
+[agLBB] LBB TransitionS, perceive+buf time (ns): 138294
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 409561
+[agLBB] LBB LocalAgArch, sense time (ns): 786628
+[agLBB] LBB LocalAgArch, delib time (ns): 4565
+[agLBB] LBB LocalAgArch, act time (ns): 4629
+[agLBB] LBB LocalAgArch, resCycle time (ns): 795822
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1696004
+[agLBB] Start sense 51
+[agLBB] LBB TransitionS, perceive+buf time (ns): 246042
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 120422
+[agLBB] LBB LocalAgArch, sense time (ns): 749286
+[agLBB] LBB LocalAgArch, delib time (ns): 5190
+[agLBB] LBB LocalAgArch, act time (ns): 5390
+[agLBB] LBB LocalAgArch, resCycle time (ns): 759866
+[MarsEnv] LBB manualAction 0 time (ms): 58175789
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 52
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 803598
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 383494
+[agLBB] LBB LocalAgArch, sense time (ns): 1404807
+[agLBB] LBB LocalAgArch, delib time (ns): 606678
+[agLBB] LBB LocalAgArch, act time (ns): 6557
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2018042
+[MarsEnv] LBB manualAction 0 time (ms): 114275613
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 53
+[agLBB] LBB TransitionS, perceive+buf time (ns): 89682
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 410461
+[agLBB] LBB LocalAgArch, sense time (ns): 764746
+[agLBB] LBB LocalAgArch, delib time (ns): 5929
+[agLBB] LBB LocalAgArch, act time (ns): 5815
+[agLBB] LBB LocalAgArch, resCycle time (ns): 776490
+[MarsEnv] LBB manualAction 0 time (ms): 23315334
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 54
+[agLBB] LBB TransitionS, perceive+buf time (ns): 269699
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 386281
+[agLBB] LBB LocalAgArch, sense time (ns): 895238
+[agLBB] LBB LocalAgArch, delib time (ns): 4516
+[agLBB] LBB LocalAgArch, act time (ns): 4479
+[agLBB] LBB LocalAgArch, resCycle time (ns): 904233
+[MarsEnv] LBB manualAction 0 time (ms): 1339158
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 55
+[agLBB] LBB TransitionS, perceive+buf time (ns): 55090
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 392142
+[agLBB] LBB LocalAgArch, sense time (ns): 662090
+[agLBB] LBB LocalAgArch, delib time (ns): 3936
+[agLBB] LBB LocalAgArch, act time (ns): 4387
+[agLBB] LBB LocalAgArch, resCycle time (ns): 670413
+[MarsEnv] LBB manualAction 0 time (ms): 58455258
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(56)[source(self)]
+[agLBB] brf added CBS(56)[source(self)]
+[agLBB] Added event +CBS(56)[source(self)], events = [+CBS(56)[source(self)]]
+[agLBB] Start sense 56
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(56)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1592911
+[agLBB] Selected event +CBS(56)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 964768
+[agLBB] LBB LocalAgArch, sense time (ns): 2720396
+[agLBB] LBB LocalAgArch, delib time (ns): 1129195
+[agLBB] LBB LocalAgArch, act time (ns): 6807
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3856398
+[MarsEnv] LBB manualAction 0 time (ms): 114186324
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 57
+[agLBB] LBB TransitionS, perceive+buf time (ns): 428201
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 423975
+[agLBB] LBB LocalAgArch, sense time (ns): 1121458
+[agLBB] LBB LocalAgArch, delib time (ns): 4879
+[agLBB] LBB LocalAgArch, act time (ns): 23983
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1150320
+[MarsEnv] LBB manualAction 0 time (ms): 23048040
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 58
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 809160
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 390070
+[agLBB] LBB LocalAgArch, sense time (ns): 1398675
+[agLBB] LBB LocalAgArch, delib time (ns): 368104
+[agLBB] LBB LocalAgArch, act time (ns): 5890
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1772669
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 1308188
+[agLBB] Start sense 59
+[agLBB] LBB TransitionS, perceive+buf time (ns): 179303
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 128212
+[agLBB] LBB LocalAgArch, sense time (ns): 663014
+[agLBB] LBB LocalAgArch, delib time (ns): 3919
+[agLBB] LBB LocalAgArch, act time (ns): 3905
+[agLBB] LBB LocalAgArch, resCycle time (ns): 670838
+[MarsEnv] LBB fazAction 6 6 (ms): 489743967035628
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 6 time (ms): 58552800
+[agLBB] Start sense 60
+[agLBB] LBB TransitionS, perceive+buf time (ns): 27416
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 413983
+[agLBB] LBB LocalAgArch, sense time (ns): 738984
+[agLBB] LBB LocalAgArch, delib time (ns): 4765
+[agLBB] LBB LocalAgArch, act time (ns): 4977
+[agLBB] LBB LocalAgArch, resCycle time (ns): 748726
+[MarsEnv] LBB manualAction 0 time (ms): 114214216
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 61
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1086492
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 416012
+[agLBB] LBB LocalAgArch, sense time (ns): 1729096
+[agLBB] LBB LocalAgArch, delib time (ns): 527089
+[agLBB] LBB LocalAgArch, act time (ns): 7393
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2263578
+[MarsEnv] LBB manualAction 0 time (ms): 22689280
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 62
+[agLBB] LBB TransitionS, perceive+buf time (ns): 175619
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 388282
+[agLBB] LBB LocalAgArch, sense time (ns): 800619
+[agLBB] LBB LocalAgArch, delib time (ns): 4147
+[agLBB] LBB LocalAgArch, act time (ns): 4470
+[agLBB] LBB LocalAgArch, resCycle time (ns): 809236
+[MarsEnv] LBB manualAction 0 time (ms): 1618919
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 63
+[agLBB] LBB TransitionS, perceive+buf time (ns): 59829
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 378647
+[agLBB] LBB LocalAgArch, sense time (ns): 644629
+[agLBB] LBB LocalAgArch, delib time (ns): 8584
+[agLBB] LBB LocalAgArch, act time (ns): 6434
+[agLBB] LBB LocalAgArch, resCycle time (ns): 659647
+[MarsEnv] LBB manualAction 0 time (ms): 50079776
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(64)[source(self)]
+[agLBB] brf added CBS(64)[source(self)]
+[agLBB] Added event +CBS(64)[source(self)], events = [+CBS(64)[source(self)]]
+[agLBB] Start sense 64
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(7)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(64)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1857091
+[agLBB] Selected event +CBS(64)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(7)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=6}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 978177
+[agLBB] LBB LocalAgArch, sense time (ns): 3002055
+[agLBB] LBB LocalAgArch, delib time (ns): 999840
+[agLBB] LBB LocalAgArch, act time (ns): 365940
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4367835
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 65
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5602
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=6}
+
+[agLBB]      | for belief(N), belief belief(7)[source(percept)] is an option -- {N=7}
+[agLBB]      | (N < 9) succeeded  -- {N=7}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=7}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 91052
+[agLBB] LBB LocalAgArch, sense time (ns): 249772
+[agLBB] LBB LocalAgArch, delib time (ns): 1042402
+[agLBB] LBB LocalAgArch, act time (ns): 233695
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1525869
+[MarsEnv] LBB manualAction 0 time (ms): 114268898
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 66
+[agLBB] LBB TransitionS, perceive+buf time (ns): 435692
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 470879
+[agLBB] LBB LocalAgArch, sense time (ns): 1144573
+[agLBB] LBB LocalAgArch, delib time (ns): 10588
+[agLBB] LBB LocalAgArch, act time (ns): 14503
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1169664
+[MarsEnv] LBB manualAction 0 time (ms): 22738984
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 67
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 331902
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 390740
+[agLBB] LBB LocalAgArch, sense time (ns): 913106
+[agLBB] LBB LocalAgArch, delib time (ns): 133655
+[agLBB] LBB LocalAgArch, act time (ns): 6810
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1053571
+[MarsEnv] LBB manualAction 0 time (ms): 10172055
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 68
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 990741
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 449060
+[agLBB] LBB LocalAgArch, sense time (ns): 1641067
+[agLBB] LBB LocalAgArch, delib time (ns): 391966
+[agLBB] LBB LocalAgArch, act time (ns): 6506
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2039539
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 50617634
+[agLBB] Start sense 69
+[agLBB] LBB TransitionS, perceive+buf time (ns): 257160
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313005
+[agLBB] LBB LocalAgArch, sense time (ns): 952034
+[agLBB] LBB LocalAgArch, delib time (ns): 5569
+[agLBB] LBB LocalAgArch, act time (ns): 7414
+[agLBB] LBB LocalAgArch, resCycle time (ns): 965017
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 70
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(7)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 2552564
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(7)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 262848
+[agLBB] LBB LocalAgArch, sense time (ns): 3081668
+[agLBB] LBB LocalAgArch, delib time (ns): 1111844
+[agLBB] LBB LocalAgArch, act time (ns): 9445
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4202957
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 114658268
+[agLBB] Start sense 71
+[agLBB] LBB TransitionS, perceive+buf time (ns): 270696
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 272035
+[agLBB] LBB LocalAgArch, sense time (ns): 899221
+[agLBB] LBB LocalAgArch, delib time (ns): 4384
+[agLBB] LBB LocalAgArch, act time (ns): 4531
+[agLBB] LBB LocalAgArch, resCycle time (ns): 908136
+[MarsEnv] LBB manualAction 0 time (ms): 22738340
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(72)[source(self)]
+[agLBB] brf added CBS(72)[source(self)]
+[agLBB] Added event +CBS(72)[source(self)], events = [+CBS(72)[source(self)]]
+[agLBB] Start sense 72
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(7)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(72)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 2264775
+[agLBB] Selected event +CBS(72)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(7)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 901611
+[agLBB] LBB LocalAgArch, sense time (ns): 3325888
+[agLBB] LBB LocalAgArch, delib time (ns): 1216374
+[agLBB] LBB LocalAgArch, act time (ns): 5763
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4548025
+[MarsEnv] LBB manualAction 0 time (ms): 10160067
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 73
+[agLBB] LBB TransitionS, perceive+buf time (ns): 185817
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 364528
+[agLBB] LBB LocalAgArch, sense time (ns): 763303
+[agLBB] LBB LocalAgArch, delib time (ns): 3595
+[agLBB] LBB LocalAgArch, act time (ns): 3916
+[agLBB] LBB LocalAgArch, resCycle time (ns): 770814
+[MarsEnv] LBB manualAction 0 time (ms): 50368851
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 74
+[agLBB] LBB TransitionS, perceive+buf time (ns): 113479
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 363400
+[agLBB] LBB LocalAgArch, sense time (ns): 695497
+[agLBB] LBB LocalAgArch, delib time (ns): 3713
+[agLBB] LBB LocalAgArch, act time (ns): 4447
+[agLBB] LBB LocalAgArch, resCycle time (ns): 703657
+[MarsEnv] LBB manualAction 0 time (ms): 115126670
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 75
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(15)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 364960
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 462296
+[agLBB] LBB LocalAgArch, sense time (ns): 1022860
+[agLBB] LBB LocalAgArch, delib time (ns): 145178
+[agLBB] LBB LocalAgArch, act time (ns): 7079
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1175117
+[MarsEnv] LBB manualAction 0 time (ms): 22352321
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 76
+[agLBB] LBB TransitionS, perceive+buf time (ns): 139072
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 342927
+[agLBB] LBB LocalAgArch, sense time (ns): 679939
+[agLBB] LBB LocalAgArch, delib time (ns): 3883
+[agLBB] LBB LocalAgArch, act time (ns): 4291
+[agLBB] LBB LocalAgArch, resCycle time (ns): 688113
+[MarsEnv] LBB manualAction 0 time (ms): 10370779
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 77
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 320897
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 303375
+[agLBB] LBB LocalAgArch, sense time (ns): 796254
+[agLBB] LBB LocalAgArch, delib time (ns): 120270
+[agLBB] LBB LocalAgArch, act time (ns): 4735
+[agLBB] LBB LocalAgArch, resCycle time (ns): 921259
+[MarsEnv] LBB manualAction 0 time (ms): 50246314
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 78
+[agLBB] LBB TransitionS, perceive+buf time (ns): 139676
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 346703
+[agLBB] LBB LocalAgArch, sense time (ns): 692808
+[agLBB] LBB LocalAgArch, delib time (ns): 5148
+[agLBB] LBB LocalAgArch, act time (ns): 5446
+[agLBB] LBB LocalAgArch, resCycle time (ns): 703402
+[MarsEnv] LBB manualAction 0 time (ms): 115442146
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 79
+[agLBB] LBB TransitionS, perceive+buf time (ns): 283282
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 488086
+[agLBB] LBB LocalAgArch, sense time (ns): 1061408
+[agLBB] LBB LocalAgArch, delib time (ns): 7082
+[agLBB] LBB LocalAgArch, act time (ns): 9055
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1077545
+[MarsEnv] LBB manualAction 0 time (ms): 22105343
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(80)[source(self)]
+[agLBB] brf added CBS(80)[source(self)]
+[agLBB] Added event +CBS(80)[source(self)], events = [+CBS(80)[source(self)]]
+[agLBB] Start sense 80
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(7)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(80)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(7)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1995781
+[agLBB] Selected event +CBS(80)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(7)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 1000577
+[agLBB] LBB LocalAgArch, sense time (ns): 3145494
+[agLBB] LBB LocalAgArch, delib time (ns): 1058213
+[agLBB] LBB LocalAgArch, act time (ns): 7331
+[agLBB] LBB LocalAgArch, resCycle time (ns): 4211038
+[MarsEnv] LBB manualAction 0 time (ms): 10063901
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 81
+[agLBB] LBB TransitionS, perceive+buf time (ns): 184253
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313714
+[agLBB] LBB LocalAgArch, sense time (ns): 684067
+[agLBB] LBB LocalAgArch, delib time (ns): 4730
+[agLBB] LBB LocalAgArch, act time (ns): 5145
+[agLBB] LBB LocalAgArch, resCycle time (ns): 693942
+[MarsEnv] LBB fazAction 7 7 (ms): 489744973579596
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 7 time (ms): 50719650
+[agLBB] Start sense 82
+[agLBB] LBB TransitionS, perceive+buf time (ns): 181931
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 430244
+[agLBB] LBB LocalAgArch, sense time (ns): 884601
+[agLBB] LBB LocalAgArch, delib time (ns): 3643
+[agLBB] LBB LocalAgArch, act time (ns): 4559
+[agLBB] LBB LocalAgArch, resCycle time (ns): 892803
+[MarsEnv] LBB manualAction 0 time (ms): 115426327
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 83
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1412347
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 453267
+[agLBB] LBB LocalAgArch, sense time (ns): 2056386
+[agLBB] LBB LocalAgArch, delib time (ns): 653078
+[agLBB] LBB LocalAgArch, act time (ns): 7386
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2716850
+[MarsEnv] LBB manualAction 0 time (ms): 22092830
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 84
+[agLBB] LBB TransitionS, perceive+buf time (ns): 184762
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 346766
+[agLBB] LBB LocalAgArch, sense time (ns): 758635
+[agLBB] LBB LocalAgArch, delib time (ns): 4174
+[agLBB] LBB LocalAgArch, act time (ns): 4200
+[agLBB] LBB LocalAgArch, resCycle time (ns): 767009
+[MarsEnv] LBB manualAction 0 time (ms): 9493545
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 85
+[agLBB] LBB TransitionS, perceive+buf time (ns): 166704
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 374861
+[agLBB] LBB LocalAgArch, sense time (ns): 771473
+[agLBB] LBB LocalAgArch, delib time (ns): 3860
+[agLBB] LBB LocalAgArch, act time (ns): 4198
+[agLBB] LBB LocalAgArch, resCycle time (ns): 779531
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 50847983
+[agLBB] Start sense 86
+[agLBB] LBB TransitionS, perceive+buf time (ns): 160456
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 263833
+[agLBB] LBB LocalAgArch, sense time (ns): 811150
+[agLBB] LBB LocalAgArch, delib time (ns): 4011
+[agLBB] LBB LocalAgArch, act time (ns): 475420
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1290581
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 87
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +belief(8)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+, +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 3886176
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=7}
+
+[agLBB]      | for belief(N), belief belief(8)[source(percept)] is an option -- {N=8}
+[agLBB]      | (N < 9) succeeded  -- {N=8}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=8}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 107814
+[agLBB] LBB LocalAgArch, sense time (ns): 4149696
+[agLBB] LBB LocalAgArch, delib time (ns): 807790
+[agLBB] LBB LocalAgArch, act time (ns): 228630
+[agLBB] LBB LocalAgArch, resCycle time (ns): 5186116
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(88)[source(self)]
+[agLBB] brf added CBS(88)[source(self)]
+[agLBB] Added event +CBS(88)[source(self)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)], +CBS(88)[source(self)]]
+[agLBB] Start sense 88
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5108
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +belief(8)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +CBS(88)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 694983
+[agLBB] LBB LocalAgArch, sense time (ns): 847108
+[agLBB] LBB LocalAgArch, delib time (ns): 1375497
+[agLBB] LBB LocalAgArch, act time (ns): 12860
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2235465
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 89
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6511
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 218827
+[agLBB] LBB LocalAgArch, sense time (ns): 408722
+[agLBB] LBB LocalAgArch, delib time (ns): 3810
+[agLBB] LBB LocalAgArch, act time (ns): 4417
+[agLBB] LBB LocalAgArch, resCycle time (ns): 416949
+[MarsEnv] LBB manualAction 0 time (ms): 115338344
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 90
+[agLBB] LBB TransitionS, perceive+buf time (ns): 176535
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 430807
+[agLBB] LBB LocalAgArch, sense time (ns): 819861
+[agLBB] LBB LocalAgArch, delib time (ns): 4241
+[agLBB] LBB LocalAgArch, act time (ns): 4347
+[agLBB] LBB LocalAgArch, resCycle time (ns): 828449
+[MarsEnv] LBB manualAction 0 time (ms): 22302323
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 91
+[agLBB] LBB TransitionS, perceive+buf time (ns): 207313
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 372922
+[agLBB] LBB LocalAgArch, sense time (ns): 805450
+[agLBB] LBB LocalAgArch, delib time (ns): 4167
+[agLBB] LBB LocalAgArch, act time (ns): 4555
+[agLBB] LBB LocalAgArch, resCycle time (ns): 814172
+[MarsEnv] LBB manualAction 0 time (ms): 9437308
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 92
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(13)[source(percept)], +dis(12)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(13)[source(percept)], +dis(12)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(12)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1452588
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 377699
+[agLBB] LBB LocalAgArch, sense time (ns): 2072543
+[agLBB] LBB LocalAgArch, delib time (ns): 754210
+[agLBB] LBB LocalAgArch, act time (ns): 7184
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2833937
+[MarsEnv] LBB manualAction 0 time (ms): 51255403
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 93
+[agLBB] LBB TransitionS, perceive+buf time (ns): 152269
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 359113
+[agLBB] LBB LocalAgArch, sense time (ns): 717751
+[agLBB] LBB LocalAgArch, delib time (ns): 4025
+[agLBB] LBB LocalAgArch, act time (ns): 4580
+[agLBB] LBB LocalAgArch, resCycle time (ns): 726356
+[MarsEnv] LBB manualAction 0 time (ms): 115062020
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 94
+[agLBB] LBB TransitionS, perceive+buf time (ns): 91374
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 360125
+[agLBB] LBB LocalAgArch, sense time (ns): 685234
+[agLBB] LBB LocalAgArch, delib time (ns): 6146
+[agLBB] LBB LocalAgArch, act time (ns): 6375
+[agLBB] LBB LocalAgArch, resCycle time (ns): 697755
+[MarsEnv] LBB manualAction 0 time (ms): 22359685
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 95
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 373073
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 347243
+[agLBB] LBB LocalAgArch, sense time (ns): 901221
+[agLBB] LBB LocalAgArch, delib time (ns): 279352
+[agLBB] LBB LocalAgArch, act time (ns): 7332
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1187905
+[MarsEnv] LBB manualAction 0 time (ms): 9416259
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(96)[source(self)]
+[agLBB] brf added CBS(96)[source(self)]
+[agLBB] Added event +CBS(96)[source(self)], events = [+CBS(96)[source(self)]]
+[agLBB] Start sense 96
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +belief(8)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(96)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1377128
+[agLBB] Selected event +CBS(96)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +belief(8)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 867527
+[agLBB] LBB LocalAgArch, sense time (ns): 2387824
+[agLBB] LBB LocalAgArch, delib time (ns): 925128
+[agLBB] LBB LocalAgArch, act time (ns): 6202
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3319154
+[MarsEnv] LBB manualAction 0 time (ms): 51574638
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 97
+[agLBB] LBB TransitionS, perceive+buf time (ns): 268711
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 383622
+[agLBB] LBB LocalAgArch, sense time (ns): 877535
+[agLBB] LBB LocalAgArch, delib time (ns): 4214
+[agLBB] LBB LocalAgArch, act time (ns): 4371
+[agLBB] LBB LocalAgArch, resCycle time (ns): 886120
+[MarsEnv] LBB manualAction 0 time (ms): 115208512
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 98
+[agLBB] LBB TransitionS, perceive+buf time (ns): 49373
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 416060
+[agLBB] LBB LocalAgArch, sense time (ns): 661231
+[agLBB] LBB LocalAgArch, delib time (ns): 4149
+[agLBB] LBB LocalAgArch, act time (ns): 4500
+[agLBB] LBB LocalAgArch, resCycle time (ns): 669880
+[MarsEnv] LBB manualAction 0 time (ms): 22083818
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 99
+[agLBB] LBB TransitionS, perceive+buf time (ns): 49217
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 356060
+[agLBB] LBB LocalAgArch, sense time (ns): 595157
+[agLBB] LBB LocalAgArch, delib time (ns): 4245
+[agLBB] LBB LocalAgArch, act time (ns): 4500
+[agLBB] LBB LocalAgArch, resCycle time (ns): 603902
+[MarsEnv] LBB manualAction 0 time (ms): 8898047
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 100
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 530003
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 335561
+[agLBB] LBB LocalAgArch, sense time (ns): 1035898
+[agLBB] LBB LocalAgArch, delib time (ns): 270689
+[agLBB] LBB LocalAgArch, act time (ns): 5640
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1312227
+[MarsEnv] LBB manualAction 0 time (ms): 52070077
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 101
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 451112
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 374996
+[agLBB] LBB LocalAgArch, sense time (ns): 1005098
+[agLBB] LBB LocalAgArch, delib time (ns): 318531
+[agLBB] LBB LocalAgArch, act time (ns): 8355
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1331984
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 115131737
+[agLBB] Start sense 102
+[agLBB] LBB TransitionS, perceive+buf time (ns): 227701
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 269106
+[agLBB] LBB LocalAgArch, sense time (ns): 837172
+[agLBB] LBB LocalAgArch, delib time (ns): 5305
+[agLBB] LBB LocalAgArch, act time (ns): 5513
+[agLBB] LBB LocalAgArch, resCycle time (ns): 847990
+[MarsEnv] LBB manualAction 0 time (ms): 22375074
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 103
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1119910
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 343277
+[agLBB] LBB LocalAgArch, sense time (ns): 1632185
+[agLBB] LBB LocalAgArch, delib time (ns): 702446
+[agLBB] LBB LocalAgArch, act time (ns): 5783
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2340414
+[MarsEnv] LBB manualAction 0 time (ms): 8891383
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(104)[source(self)]
+[agLBB] brf added CBS(104)[source(self)]
+[agLBB] Added event +CBS(104)[source(self)], events = [+CBS(104)[source(self)]]
+[agLBB] Start sense 104
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(104)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(104)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(104)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +belief(8)[source(percept)], events = [+CBS(104)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(104)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)], +belief(8)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 944534
+[agLBB] Selected event +CBS(104)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +belief(8)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 745266
+[agLBB] LBB LocalAgArch, sense time (ns): 1833938
+[agLBB] LBB LocalAgArch, delib time (ns): 613697
+[agLBB] LBB LocalAgArch, act time (ns): 5944
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2453579
+[MarsEnv] LBB manualAction 0 time (ms): 52153236
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 105
+[agLBB] LBB TransitionS, perceive+buf time (ns): 236535
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 342910
+[agLBB] LBB LocalAgArch, sense time (ns): 777100
+[agLBB] LBB LocalAgArch, delib time (ns): 3986
+[agLBB] LBB LocalAgArch, act time (ns): 4882
+[agLBB] LBB LocalAgArch, resCycle time (ns): 785968
+[MarsEnv] LBB manualAction 0 time (ms): 115357048
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 106
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 739343
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 382447
+[agLBB] LBB LocalAgArch, sense time (ns): 1313458
+[agLBB] LBB LocalAgArch, delib time (ns): 301249
+[agLBB] LBB LocalAgArch, act time (ns): 24092
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1638799
+[MarsEnv] LBB manualAction 0 time (ms): 22007563
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 107
+[agLBB] LBB TransitionS, perceive+buf time (ns): 215349
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 344393
+[agLBB] LBB LocalAgArch, sense time (ns): 769968
+[agLBB] LBB LocalAgArch, delib time (ns): 4716
+[agLBB] LBB LocalAgArch, act time (ns): 4591
+[agLBB] LBB LocalAgArch, resCycle time (ns): 779275
+[MarsEnv] LBB fazAction 8 8 (ms): 489746128604758
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 8 time (ms): 9216657
+[agLBB] Start sense 108
+[agLBB] LBB TransitionS, perceive+buf time (ns): 226071
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 366722
+[agLBB] LBB LocalAgArch, sense time (ns): 899473
+[agLBB] LBB LocalAgArch, delib time (ns): 4164
+[agLBB] LBB LocalAgArch, act time (ns): 4383
+[agLBB] LBB LocalAgArch, resCycle time (ns): 908020
+[MarsEnv] LBB manualAction 0 time (ms): 51850617
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 109
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(15)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 855849
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 380003
+[agLBB] LBB LocalAgArch, sense time (ns): 1448033
+[agLBB] LBB LocalAgArch, delib time (ns): 519648
+[agLBB] LBB LocalAgArch, act time (ns): 7587
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1975268
+[MarsEnv] LBB manualAction 0 time (ms): 115261779
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 110
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +belief(1)[source(percept)], events = [+dis(18)[source(percept)], +belief(1)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +belief(1)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +belief(1)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +belief(1)[source(percept)], +dis(17)[source(percept)], +dis(16)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1134240
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 371390
+[agLBB] LBB LocalAgArch, sense time (ns): 1705151
+[agLBB] LBB LocalAgArch, delib time (ns): 539349
+[agLBB] LBB LocalAgArch, act time (ns): 7667
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2252167
+[MarsEnv] LBB manualAction 0 time (ms): 22089539
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 111
+[agLBB] LBB TransitionS, perceive+buf time (ns): 184428
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 348845
+[agLBB] LBB LocalAgArch, sense time (ns): 752254
+[agLBB] LBB LocalAgArch, delib time (ns): 4077
+[agLBB] LBB LocalAgArch, act time (ns): 4395
+[agLBB] LBB LocalAgArch, resCycle time (ns): 760726
+[MarsEnv] LBB manualAction 0 time (ms): 9550117
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(112)[source(self)]
+[agLBB] brf added CBS(112)[source(self)]
+[agLBB] Added event +CBS(112)[source(self)], events = [+CBS(112)[source(self)]]
+[agLBB] Start sense 112
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(112)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +belief(1)[source(percept)], events = [+CBS(112)[source(self)], +dis(18)[source(percept)], +belief(1)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(112)[source(self)], +dis(18)[source(percept)], +belief(1)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(112)[source(self)], +dis(18)[source(percept)], +belief(1)[source(percept)], +dis(17)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 789238
+[agLBB] Selected event +CBS(112)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=8}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 838975
+[agLBB] LBB LocalAgArch, sense time (ns): 1826707
+[agLBB] LBB LocalAgArch, delib time (ns): 584009
+[agLBB] LBB LocalAgArch, act time (ns): 285673
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2696389
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 113
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4692
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=8}
+
+[agLBB]      | for belief(N), belief belief(1)[source(percept)] is an option -- {N=1}
+[agLBB]      | (N < 9) succeeded  -- {N=1}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=1}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 88735
+[agLBB] LBB LocalAgArch, sense time (ns): 236914
+[agLBB] LBB LocalAgArch, delib time (ns): 771564
+[agLBB] LBB LocalAgArch, act time (ns): 227105
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1235583
+[MarsEnv] LBB manualAction 0 time (ms): 51958480
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 114
+[agLBB] LBB TransitionS, perceive+buf time (ns): 130885
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 401248
+[agLBB] LBB LocalAgArch, sense time (ns): 727117
+[agLBB] LBB LocalAgArch, delib time (ns): 5936
+[agLBB] LBB LocalAgArch, act time (ns): 10393
+[agLBB] LBB LocalAgArch, resCycle time (ns): 743446
+[MarsEnv] LBB manualAction 0 time (ms): 115199283
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 115
+[agLBB] LBB TransitionS, perceive+buf time (ns): 73637
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 392680
+[agLBB] LBB LocalAgArch, sense time (ns): 692190
+[agLBB] LBB LocalAgArch, delib time (ns): 5459
+[agLBB] LBB LocalAgArch, act time (ns): 5003
+[agLBB] LBB LocalAgArch, resCycle time (ns): 702652
+[MarsEnv] LBB manualAction 0 time (ms): 22119048
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 116
+[agLBB] LBB TransitionS, perceive+buf time (ns): 128478
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 343956
+[agLBB] LBB LocalAgArch, sense time (ns): 664517
+[agLBB] LBB LocalAgArch, delib time (ns): 4078
+[agLBB] LBB LocalAgArch, act time (ns): 4467
+[agLBB] LBB LocalAgArch, resCycle time (ns): 673062
+[MarsEnv] LBB manualAction 0 time (ms): 9127705
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 117
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 299148
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 341299
+[agLBB] LBB LocalAgArch, sense time (ns): 817714
+[agLBB] LBB LocalAgArch, delib time (ns): 109475
+[agLBB] LBB LocalAgArch, act time (ns): 5525
+[agLBB] LBB LocalAgArch, resCycle time (ns): 932714
+[MarsEnv] LBB manualAction 0 time (ms): 52342286
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 118
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 390273
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 390944
+[agLBB] LBB LocalAgArch, sense time (ns): 961924
+[agLBB] LBB LocalAgArch, delib time (ns): 111987
+[agLBB] LBB LocalAgArch, act time (ns): 6086
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1079997
+[MarsEnv] LBB manualAction 0 time (ms): 115259891
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 119
+[agLBB] Added event +belief(1)[source(percept)], events = [+belief(1)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+belief(1)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 496978
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 428406
+[agLBB] LBB LocalAgArch, sense time (ns): 1108342
+[agLBB] LBB LocalAgArch, delib time (ns): 220612
+[agLBB] LBB LocalAgArch, act time (ns): 7698
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1336652
+[MarsEnv] LBB manualAction 0 time (ms): 22124524
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(120)[source(self)]
+[agLBB] brf added CBS(120)[source(self)]
+[agLBB] Added event +CBS(120)[source(self)], events = [+CBS(120)[source(self)]]
+[agLBB] Start sense 120
+[agLBB] LBB TransitionS, perceive+buf time (ns): 61998
+[agLBB] Selected event +CBS(120)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 822548
+[agLBB] LBB LocalAgArch, sense time (ns): 1026770
+[agLBB] LBB LocalAgArch, delib time (ns): 105767
+[agLBB] LBB LocalAgArch, act time (ns): 29941
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1162478
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 9076930
+[agLBB] Start sense 121
+[agLBB] LBB TransitionS, perceive+buf time (ns): 246920
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 248546
+[agLBB] LBB LocalAgArch, sense time (ns): 860840
+[agLBB] LBB LocalAgArch, delib time (ns): 4032
+[agLBB] LBB LocalAgArch, act time (ns): 4071
+[agLBB] LBB LocalAgArch, resCycle time (ns): 868943
+[MarsEnv] LBB manualAction 0 time (ms): 52165927
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 122
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +belief(1)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +belief(1)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 2405861
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 361659
+[agLBB] LBB LocalAgArch, sense time (ns): 2946063
+[agLBB] LBB LocalAgArch, delib time (ns): 1003475
+[agLBB] LBB LocalAgArch, act time (ns): 15455
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3964993
+[MarsEnv] LBB manualAction 0 time (ms): 115367380
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 123
+[agLBB] LBB TransitionS, perceive+buf time (ns): 166311
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 444754
+[agLBB] LBB LocalAgArch, sense time (ns): 825243
+[agLBB] LBB LocalAgArch, delib time (ns): 3827
+[agLBB] LBB LocalAgArch, act time (ns): 19466
+[agLBB] LBB LocalAgArch, resCycle time (ns): 848536
+[MarsEnv] LBB manualAction 0 time (ms): 22072282
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 124
+[agLBB] LBB TransitionS, perceive+buf time (ns): 105178
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 353128
+[agLBB] LBB LocalAgArch, sense time (ns): 660609
+[agLBB] LBB LocalAgArch, delib time (ns): 3510
+[agLBB] LBB LocalAgArch, act time (ns): 3712
+[agLBB] LBB LocalAgArch, resCycle time (ns): 667831
+[MarsEnv] LBB manualAction 0 time (ms): 9199711
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 125
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 453796
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 334767
+[agLBB] LBB LocalAgArch, sense time (ns): 961882
+[agLBB] LBB LocalAgArch, delib time (ns): 127297
+[agLBB] LBB LocalAgArch, act time (ns): 5518
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1094697
+[MarsEnv] LBB manualAction 0 time (ms): 52169030
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 126
+[agLBB] LBB TransitionS, perceive+buf time (ns): 71654
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 368285
+[agLBB] LBB LocalAgArch, sense time (ns): 618308
+[agLBB] LBB LocalAgArch, delib time (ns): 3542
+[agLBB] LBB LocalAgArch, act time (ns): 3905
+[agLBB] LBB LocalAgArch, resCycle time (ns): 625755
+[MarsEnv] LBB manualAction 0 time (ms): 115472243
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 127
+[agLBB] LBB TransitionS, perceive+buf time (ns): 63059
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 366769
+[agLBB] LBB LocalAgArch, sense time (ns): 626811
+[agLBB] LBB LocalAgArch, delib time (ns): 3761
+[agLBB] LBB LocalAgArch, act time (ns): 28501
+[agLBB] LBB LocalAgArch, resCycle time (ns): 659073
+[MarsEnv] LBB manualAction 0 time (ms): 21734160
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(128)[source(self)]
+[agLBB] brf added CBS(128)[source(self)]
+[agLBB] Added event +CBS(128)[source(self)], events = [+CBS(128)[source(self)]]
+[agLBB] Start sense 128
+[agLBB] Added event +belief(1)[source(percept)], events = [+CBS(128)[source(self)], +belief(1)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(128)[source(self)], +belief(1)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 362311
+[agLBB] Selected event +CBS(128)[source(self)]
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 818266
+[agLBB] LBB LocalAgArch, sense time (ns): 1365982
+[agLBB] LBB LocalAgArch, delib time (ns): 294380
+[agLBB] LBB LocalAgArch, act time (ns): 9544
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1669906
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 9487487
+[agLBB] Start sense 129
+[agLBB] LBB TransitionS, perceive+buf time (ns): 259721
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 222583
+[agLBB] LBB LocalAgArch, sense time (ns): 843771
+[agLBB] LBB LocalAgArch, delib time (ns): 4325
+[agLBB] LBB LocalAgArch, act time (ns): 4020
+[agLBB] LBB LocalAgArch, resCycle time (ns): 852116
+[MarsEnv] LBB manualAction 0 time (ms): 51885533
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 130
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1552612
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 371973
+[agLBB] LBB LocalAgArch, sense time (ns): 2121046
+[agLBB] LBB LocalAgArch, delib time (ns): 810532
+[agLBB] LBB LocalAgArch, act time (ns): 6924
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2938502
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 115477343
+[agLBB] Start sense 131
+[agLBB] LBB TransitionS, perceive+buf time (ns): 276768
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313792
+[agLBB] LBB LocalAgArch, sense time (ns): 1029661
+[agLBB] LBB LocalAgArch, delib time (ns): 4697
+[agLBB] LBB LocalAgArch, act time (ns): 4555
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1038913
+[MarsEnv] LBB manualAction 0 time (ms): 21112513
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 132
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1340810
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 372162
+[agLBB] LBB LocalAgArch, sense time (ns): 1876490
+[agLBB] LBB LocalAgArch, delib time (ns): 721069
+[agLBB] LBB LocalAgArch, act time (ns): 6401
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2603960
+[MarsEnv] LBB manualAction 0 time (ms): 9799282
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 133
+[agLBB] Added event +belief(1)[source(percept)], events = [+belief(1)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+belief(1)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 363459
+[agLBB] Selected event +belief(1)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 342131
+[agLBB] LBB LocalAgArch, sense time (ns): 866932
+[agLBB] LBB LocalAgArch, delib time (ns): 207445
+[agLBB] LBB LocalAgArch, act time (ns): 5568
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1079945
+[MarsEnv] LBB manualAction 0 time (ms): 51949013
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 134
+[agLBB] LBB TransitionS, perceive+buf time (ns): 281356
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 260816
+[agLBB] LBB LocalAgArch, sense time (ns): 725535
+[agLBB] LBB LocalAgArch, delib time (ns): 4225
+[agLBB] LBB LocalAgArch, act time (ns): 4148
+[agLBB] LBB LocalAgArch, resCycle time (ns): 733908
+[MarsEnv] LBB manualAction 0 time (ms): 116156164
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 135
+[agLBB] LBB TransitionS, perceive+buf time (ns): 108722
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 430889
+[agLBB] LBB LocalAgArch, sense time (ns): 751880
+[agLBB] LBB LocalAgArch, delib time (ns): 4898
+[agLBB] LBB LocalAgArch, act time (ns): 4608
+[agLBB] LBB LocalAgArch, resCycle time (ns): 761386
+[MarsEnv] LBB fazAction 1 9 (ms): 489747526191010
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 1 time (ms): 21006250
+[agLBB] Doing (add) brf for CBS(136)[source(self)]
+[agLBB] brf added CBS(136)[source(self)]
+[agLBB] Added event +CBS(136)[source(self)], events = [+CBS(136)[source(self)]]
+[agLBB] Start sense 136
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(136)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(136)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(2)[source(percept)], events = [+CBS(136)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(136)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(136)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(16)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 708308
+[agLBB] Selected event +CBS(136)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 754575
+[agLBB] LBB LocalAgArch, sense time (ns): 1615322
+[agLBB] LBB LocalAgArch, delib time (ns): 493091
+[agLBB] LBB LocalAgArch, act time (ns): 5397
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2113810
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 9553652
+[agLBB] Start sense 137
+[agLBB] LBB TransitionS, perceive+buf time (ns): 170572
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 208400
+[agLBB] LBB LocalAgArch, sense time (ns): 684955
+[agLBB] LBB LocalAgArch, delib time (ns): 3759
+[agLBB] LBB LocalAgArch, act time (ns): 3647
+[agLBB] LBB LocalAgArch, resCycle time (ns): 692361
+[MarsEnv] LBB manualAction 0 time (ms): 51750460
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 138
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1192343
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 482925
+[agLBB] LBB LocalAgArch, sense time (ns): 1860982
+[agLBB] LBB LocalAgArch, delib time (ns): 656194
+[agLBB] LBB LocalAgArch, act time (ns): 5573
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2522749
+[MarsEnv] LBB manualAction 0 time (ms): 116157472
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 139
+[agLBB] LBB TransitionS, perceive+buf time (ns): 123643
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 359414
+[agLBB] LBB LocalAgArch, sense time (ns): 675104
+[agLBB] LBB LocalAgArch, delib time (ns): 4338
+[agLBB] LBB LocalAgArch, act time (ns): 3675
+[agLBB] LBB LocalAgArch, resCycle time (ns): 683117
+[MarsEnv] LBB manualAction 0 time (ms): 20870797
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 140
+[agLBB] LBB TransitionS, perceive+buf time (ns): 95338
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 325847
+[agLBB] LBB LocalAgArch, sense time (ns): 624257
+[agLBB] LBB LocalAgArch, delib time (ns): 3855
+[agLBB] LBB LocalAgArch, act time (ns): 409378
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1037490
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 141
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +belief(2)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+, +dis(18)[source(percept)], +belief(2)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+, +dis(18)[source(percept)], +belief(2)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 647577
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=1}
+
+[agLBB]      | for belief(N), belief belief(2)[source(percept)] is an option -- {N=2}
+[agLBB]      | (N < 9) succeeded  -- {N=2}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=2}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 81369
+[agLBB] LBB LocalAgArch, sense time (ns): 860098
+[agLBB] LBB LocalAgArch, delib time (ns): 555134
+[agLBB] LBB LocalAgArch, act time (ns): 196773
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1612005
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 142
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5103
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 77983
+[agLBB] LBB LocalAgArch, sense time (ns): 204927
+[agLBB] LBB LocalAgArch, delib time (ns): 260485
+[agLBB] LBB LocalAgArch, act time (ns): 10096
+[agLBB] LBB LocalAgArch, resCycle time (ns): 475508
+[MarsEnv] LBB manualAction 0 time (ms): 9922373
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 143
+[agLBB] LBB TransitionS, perceive+buf time (ns): 123111
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 385283
+[agLBB] LBB LocalAgArch, sense time (ns): 693388
+[agLBB] LBB LocalAgArch, delib time (ns): 3738
+[agLBB] LBB LocalAgArch, act time (ns): 3697
+[agLBB] LBB LocalAgArch, resCycle time (ns): 700823
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 51766113
+[agLBB] Doing (add) brf for CBS(144)[source(self)]
+[agLBB] brf added CBS(144)[source(self)]
+[agLBB] Added event +CBS(144)[source(self)], events = [+CBS(144)[source(self)]]
+[agLBB] Start sense 144
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(144)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(144)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(2)[source(percept)], events = [+CBS(144)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(144)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(144)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(16)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 681357
+[agLBB] Selected event +CBS(144)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 735007
+[agLBB] LBB LocalAgArch, sense time (ns): 1548645
+[agLBB] LBB LocalAgArch, delib time (ns): 479792
+[agLBB] LBB LocalAgArch, act time (ns): 5719
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2034156
+[MarsEnv] LBB manualAction 0 time (ms): 115703891
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 145
+[agLBB] LBB TransitionS, perceive+buf time (ns): 110798
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 340944
+[agLBB] LBB LocalAgArch, sense time (ns): 632250
+[agLBB] LBB LocalAgArch, delib time (ns): 3971
+[agLBB] LBB LocalAgArch, act time (ns): 3782
+[agLBB] LBB LocalAgArch, resCycle time (ns): 640003
+[MarsEnv] LBB manualAction 0 time (ms): 21283862
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 146
+[agLBB] LBB TransitionS, perceive+buf time (ns): 98405
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 297575
+[agLBB] LBB LocalAgArch, sense time (ns): 572276
+[agLBB] LBB LocalAgArch, delib time (ns): 3838
+[agLBB] LBB LocalAgArch, act time (ns): 4032
+[agLBB] LBB LocalAgArch, resCycle time (ns): 580146
+[MarsEnv] LBB manualAction 0 time (ms): 10043361
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 147
+[agLBB] LBB TransitionS, perceive+buf time (ns): 59904
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 350537
+[agLBB] LBB LocalAgArch, sense time (ns): 579525
+[agLBB] LBB LocalAgArch, delib time (ns): 3940
+[agLBB] LBB LocalAgArch, act time (ns): 3869
+[agLBB] LBB LocalAgArch, resCycle time (ns): 587334
+[MarsEnv] LBB manualAction 0 time (ms): 51980803
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 148
+[agLBB] LBB TransitionS, perceive+buf time (ns): 95712
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 355235
+[agLBB] LBB LocalAgArch, sense time (ns): 627268
+[agLBB] LBB LocalAgArch, delib time (ns): 3896
+[agLBB] LBB LocalAgArch, act time (ns): 3723
+[agLBB] LBB LocalAgArch, resCycle time (ns): 634887
+[MarsEnv] LBB manualAction 0 time (ms): 115499764
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 149
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 226515
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 334952
+[agLBB] LBB LocalAgArch, sense time (ns): 739683
+[agLBB] LBB LocalAgArch, delib time (ns): 100328
+[agLBB] LBB LocalAgArch, act time (ns): 5062
+[agLBB] LBB LocalAgArch, resCycle time (ns): 845073
+[MarsEnv] LBB manualAction 0 time (ms): 21105236
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 150
+[agLBB] LBB TransitionS, perceive+buf time (ns): 124480
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 310954
+[agLBB] LBB LocalAgArch, sense time (ns): 678926
+[agLBB] LBB LocalAgArch, delib time (ns): 4112
+[agLBB] LBB LocalAgArch, act time (ns): 3872
+[agLBB] LBB LocalAgArch, resCycle time (ns): 686910
+[MarsEnv] LBB manualAction 0 time (ms): 9505521
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 151
+[agLBB] LBB TransitionS, perceive+buf time (ns): 160590
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 336107
+[agLBB] LBB LocalAgArch, sense time (ns): 701904
+[agLBB] LBB LocalAgArch, delib time (ns): 4246
+[agLBB] LBB LocalAgArch, act time (ns): 3811
+[agLBB] LBB LocalAgArch, resCycle time (ns): 709961
+[MarsEnv] LBB manualAction 0 time (ms): 51954412
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(152)[source(self)]
+[agLBB] brf added CBS(152)[source(self)]
+[agLBB] Added event +CBS(152)[source(self)], events = [+CBS(152)[source(self)]]
+[agLBB] Start sense 152
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(2)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(152)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +belief(2)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1341636
+[agLBB] Selected event +CBS(152)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 710878
+[agLBB] LBB LocalAgArch, sense time (ns): 2209754
+[agLBB] LBB LocalAgArch, delib time (ns): 847552
+[agLBB] LBB LocalAgArch, act time (ns): 6686
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3063992
+[MarsEnv] LBB manualAction 0 time (ms): 115956722
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 153
+[agLBB] LBB TransitionS, perceive+buf time (ns): 139810
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 351693
+[agLBB] LBB LocalAgArch, sense time (ns): 687945
+[agLBB] LBB LocalAgArch, delib time (ns): 4926
+[agLBB] LBB LocalAgArch, act time (ns): 4125
+[agLBB] LBB LocalAgArch, resCycle time (ns): 696996
+[MarsEnv] LBB manualAction 0 time (ms): 21025665
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 154
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 338746
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 273455
+[agLBB] LBB LocalAgArch, sense time (ns): 768941
+[agLBB] LBB LocalAgArch, delib time (ns): 195780
+[agLBB] LBB LocalAgArch, act time (ns): 5014
+[agLBB] LBB LocalAgArch, resCycle time (ns): 969735
+[MarsEnv] LBB manualAction 0 time (ms): 9330229
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 155
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 456067
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 4879384
+[agLBB] LBB LocalAgArch, sense time (ns): 5549297
+[agLBB] LBB LocalAgArch, delib time (ns): 252788
+[agLBB] LBB LocalAgArch, act time (ns): 5635
+[agLBB] LBB LocalAgArch, resCycle time (ns): 5807720
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 47760057
+[agLBB] Start sense 156
+[agLBB] LBB TransitionS, perceive+buf time (ns): 124686
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 348731
+[agLBB] LBB LocalAgArch, sense time (ns): 912146
+[agLBB] LBB LocalAgArch, delib time (ns): 4401
+[agLBB] LBB LocalAgArch, act time (ns): 3789
+[agLBB] LBB LocalAgArch, resCycle time (ns): 920336
+[MarsEnv] LBB manualAction 0 time (ms): 115947229
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 157
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 751840
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 364606
+[agLBB] LBB LocalAgArch, sense time (ns): 1291007
+[agLBB] LBB LocalAgArch, delib time (ns): 408605
+[agLBB] LBB LocalAgArch, act time (ns): 5613
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1705225
+[MarsEnv] LBB manualAction 0 time (ms): 20939151
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 158
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 397274
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 283365
+[agLBB] LBB LocalAgArch, sense time (ns): 826415
+[agLBB] LBB LocalAgArch, delib time (ns): 102432
+[agLBB] LBB LocalAgArch, act time (ns): 4798
+[agLBB] LBB LocalAgArch, resCycle time (ns): 933645
+[MarsEnv] LBB manualAction 0 time (ms): 14022727
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 159
+[agLBB] Added event +belief(2)[source(percept)], events = [+belief(2)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 224837
+[agLBB] Selected event +belief(2)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 350264
+[agLBB] LBB LocalAgArch, sense time (ns): 713153
+[agLBB] LBB LocalAgArch, delib time (ns): 83406
+[agLBB] LBB LocalAgArch, act time (ns): 4325
+[agLBB] LBB LocalAgArch, resCycle time (ns): 800884
+[MarsEnv] LBB manualAction 0 time (ms): 48163061
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(160)[source(self)]
+[agLBB] brf added CBS(160)[source(self)]
+[agLBB] Added event +CBS(160)[source(self)], events = [+CBS(160)[source(self)]]
+[agLBB] Start sense 160
+[agLBB] LBB TransitionS, perceive+buf time (ns): 47654
+[agLBB] Selected event +CBS(160)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 712687
+[agLBB] LBB LocalAgArch, sense time (ns): 879058
+[agLBB] LBB LocalAgArch, delib time (ns): 117665
+[agLBB] LBB LocalAgArch, act time (ns): 5133
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1001856
+[MarsEnv] LBB manualAction 0 time (ms): 115990244
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 161
+[agLBB] LBB TransitionS, perceive+buf time (ns): 157023
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 325956
+[agLBB] LBB LocalAgArch, sense time (ns): 660529
+[agLBB] LBB LocalAgArch, delib time (ns): 4801
+[agLBB] LBB LocalAgArch, act time (ns): 4056
+[agLBB] LBB LocalAgArch, resCycle time (ns): 669386
+[MarsEnv] LBB manualAction 0 time (ms): 20857926
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 162
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 300966
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 325309
+[agLBB] LBB LocalAgArch, sense time (ns): 769598
+[agLBB] LBB LocalAgArch, delib time (ns): 194910
+[agLBB] LBB LocalAgArch, act time (ns): 5545
+[agLBB] LBB LocalAgArch, resCycle time (ns): 970053
+[MarsEnv] LBB manualAction 0 time (ms): 14005678
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 163
+[agLBB] LBB TransitionS, perceive+buf time (ns): 78572
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 332404
+[agLBB] LBB LocalAgArch, sense time (ns): 572009
+[agLBB] LBB LocalAgArch, delib time (ns): 3530
+[agLBB] LBB LocalAgArch, act time (ns): 8201
+[agLBB] LBB LocalAgArch, resCycle time (ns): 583740
+[MarsEnv] LBB manualAction 0 time (ms): 48178299
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 164
+[agLBB] LBB TransitionS, perceive+buf time (ns): 73151
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 306580
+[agLBB] LBB LocalAgArch, sense time (ns): 549836
+[agLBB] LBB LocalAgArch, delib time (ns): 3830
+[agLBB] LBB LocalAgArch, act time (ns): 3860
+[agLBB] LBB LocalAgArch, resCycle time (ns): 557526
+[MarsEnv] LBB manualAction 0 time (ms): 115964904
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 165
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 361094
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 316336
+[agLBB] LBB LocalAgArch, sense time (ns): 858533
+[agLBB] LBB LocalAgArch, delib time (ns): 196539
+[agLBB] LBB LocalAgArch, act time (ns): 5727
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1060799
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 20808892
+[agLBB] Start sense 166
+[agLBB] LBB TransitionS, perceive+buf time (ns): 103287
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 236010
+[agLBB] LBB LocalAgArch, sense time (ns): 624549
+[agLBB] LBB LocalAgArch, delib time (ns): 3796
+[agLBB] LBB LocalAgArch, act time (ns): 7964
+[agLBB] LBB LocalAgArch, resCycle time (ns): 636309
+[MarsEnv] LBB fazAction 2 10 (ms): 489748948127784
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 2 time (ms): 13782640
+[agLBB] Start sense 167
+[agLBB] LBB TransitionS, perceive+buf time (ns): 41256
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 340718
+[agLBB] LBB LocalAgArch, sense time (ns): 608827
+[agLBB] LBB LocalAgArch, delib time (ns): 4059
+[agLBB] LBB LocalAgArch, act time (ns): 3748
+[agLBB] LBB LocalAgArch, resCycle time (ns): 616634
+[MarsEnv] LBB manualAction 0 time (ms): 47928078
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(168)[source(self)]
+[agLBB] brf added CBS(168)[source(self)]
+[agLBB] Added event +CBS(168)[source(self)], events = [+CBS(168)[source(self)]]
+[agLBB] Start sense 168
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(168)[source(self)], +dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +belief(3)[source(percept)], +dis(14)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1266923
+[agLBB] Selected event +CBS(168)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 680397
+[agLBB] LBB LocalAgArch, sense time (ns): 2064609
+[agLBB] LBB LocalAgArch, delib time (ns): 799172
+[agLBB] LBB LocalAgArch, act time (ns): 5653
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2869434
+[MarsEnv] LBB manualAction 0 time (ms): 115950421
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 169
+[agLBB] LBB TransitionS, perceive+buf time (ns): 124878
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 315762
+[agLBB] LBB LocalAgArch, sense time (ns): 634002
+[agLBB] LBB LocalAgArch, delib time (ns): 3883
+[agLBB] LBB LocalAgArch, act time (ns): 3806
+[agLBB] LBB LocalAgArch, resCycle time (ns): 641691
+[MarsEnv] LBB manualAction 0 time (ms): 20959479
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 170
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 252691
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 288588
+[agLBB] LBB LocalAgArch, sense time (ns): 694850
+[agLBB] LBB LocalAgArch, delib time (ns): 99422
+[agLBB] LBB LocalAgArch, act time (ns): 4903
+[agLBB] LBB LocalAgArch, resCycle time (ns): 799175
+[MarsEnv] LBB manualAction 0 time (ms): 14124757
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 171
+[agLBB] LBB TransitionS, perceive+buf time (ns): 76157
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 312746
+[agLBB] LBB LocalAgArch, sense time (ns): 596310
+[agLBB] LBB LocalAgArch, delib time (ns): 4064
+[agLBB] LBB LocalAgArch, act time (ns): 313449
+[agLBB] LBB LocalAgArch, resCycle time (ns): 913823
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 172
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+, +dis(18)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+, +dis(18)[source(percept)], +belief(3)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 544405
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=2}
+
+[agLBB]      | for belief(N), belief belief(3)[source(percept)] is an option -- {N=3}
+[agLBB]      | (N < 9) succeeded  -- {N=3}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=3}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 68748
+[agLBB] LBB LocalAgArch, sense time (ns): 720219
+[agLBB] LBB LocalAgArch, delib time (ns): 503753
+[agLBB] LBB LocalAgArch, act time (ns): 166880
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1390852
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 173
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4897
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 64507
+[agLBB] LBB LocalAgArch, sense time (ns): 171826
+[agLBB] LBB LocalAgArch, delib time (ns): 241578
+[agLBB] LBB LocalAgArch, act time (ns): 9735
+[agLBB] LBB LocalAgArch, resCycle time (ns): 423139
+[MarsEnv] LBB manualAction 0 time (ms): 47982653
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 174
+[agLBB] LBB TransitionS, perceive+buf time (ns): 84720
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 356457
+[agLBB] LBB LocalAgArch, sense time (ns): 603748
+[agLBB] LBB LocalAgArch, delib time (ns): 3679
+[agLBB] LBB LocalAgArch, act time (ns): 3920
+[agLBB] LBB LocalAgArch, resCycle time (ns): 611347
+[MarsEnv] LBB manualAction 0 time (ms): 115953908
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 175
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 249320
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 445302
+[agLBB] LBB LocalAgArch, sense time (ns): 867463
+[agLBB] LBB LocalAgArch, delib time (ns): 99634
+[agLBB] LBB LocalAgArch, act time (ns): 6599
+[agLBB] LBB LocalAgArch, resCycle time (ns): 973696
+[MarsEnv] LBB manualAction 0 time (ms): 20794854
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(176)[source(self)]
+[agLBB] brf added CBS(176)[source(self)]
+[agLBB] Added event +CBS(176)[source(self)], events = [+CBS(176)[source(self)]]
+[agLBB] Start sense 176
+[agLBB] Added event +belief(3)[source(percept)], events = [+CBS(176)[source(self)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(176)[source(self)], +belief(3)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 342946
+[agLBB] Selected event +CBS(176)[source(self)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 834412
+[agLBB] LBB LocalAgArch, sense time (ns): 1326734
+[agLBB] LBB LocalAgArch, delib time (ns): 241361
+[agLBB] LBB LocalAgArch, act time (ns): 5544
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1573639
+[MarsEnv] LBB manualAction 0 time (ms): 13993086
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 177
+[agLBB] LBB TransitionS, perceive+buf time (ns): 99319
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 337130
+[agLBB] LBB LocalAgArch, sense time (ns): 622489
+[agLBB] LBB LocalAgArch, delib time (ns): 4312
+[agLBB] LBB LocalAgArch, act time (ns): 3778
+[agLBB] LBB LocalAgArch, resCycle time (ns): 630579
+[MarsEnv] LBB manualAction 0 time (ms): 48140864
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 178
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 194651
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 336950
+[agLBB] LBB LocalAgArch, sense time (ns): 677529
+[agLBB] LBB LocalAgArch, delib time (ns): 103287
+[agLBB] LBB LocalAgArch, act time (ns): 4907
+[agLBB] LBB LocalAgArch, resCycle time (ns): 785723
+[MarsEnv] LBB manualAction 0 time (ms): 116036306
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 179
+[agLBB] LBB TransitionS, perceive+buf time (ns): 93503
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313845
+[agLBB] LBB LocalAgArch, sense time (ns): 574443
+[agLBB] LBB LocalAgArch, delib time (ns): 4024
+[agLBB] LBB LocalAgArch, act time (ns): 3881
+[agLBB] LBB LocalAgArch, resCycle time (ns): 582348
+[MarsEnv] LBB manualAction 0 time (ms): 20793094
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 180
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 198976
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 324542
+[agLBB] LBB LocalAgArch, sense time (ns): 668310
+[agLBB] LBB LocalAgArch, delib time (ns): 90463
+[agLBB] LBB LocalAgArch, act time (ns): 5033
+[agLBB] LBB LocalAgArch, resCycle time (ns): 763806
+[MarsEnv] LBB manualAction 0 time (ms): 14032257
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 181
+[agLBB] LBB TransitionS, perceive+buf time (ns): 75701
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 306821
+[agLBB] LBB LocalAgArch, sense time (ns): 550019
+[agLBB] LBB LocalAgArch, delib time (ns): 3513
+[agLBB] LBB LocalAgArch, act time (ns): 4007
+[agLBB] LBB LocalAgArch, resCycle time (ns): 557539
+[MarsEnv] LBB manualAction 0 time (ms): 48137561
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 182
+[agLBB] LBB TransitionS, perceive+buf time (ns): 49373
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 301614
+[agLBB] LBB LocalAgArch, sense time (ns): 513249
+[agLBB] LBB LocalAgArch, delib time (ns): 4425
+[agLBB] LBB LocalAgArch, act time (ns): 3926
+[agLBB] LBB LocalAgArch, resCycle time (ns): 521600
+[MarsEnv] LBB manualAction 0 time (ms): 116086720
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 183
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+dis(18)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+dis(18)[source(percept)], +belief(3)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 505049
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 498563
+[agLBB] LBB LocalAgArch, sense time (ns): 1204740
+[agLBB] LBB LocalAgArch, delib time (ns): 266951
+[agLBB] LBB LocalAgArch, act time (ns): 7330
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1479021
+[MarsEnv] LBB manualAction 0 time (ms): 20675873
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(184)[source(self)]
+[agLBB] brf added CBS(184)[source(self)]
+[agLBB] Added event +CBS(184)[source(self)], events = [+CBS(184)[source(self)]]
+[agLBB] Start sense 184
+[agLBB] LBB TransitionS, perceive+buf time (ns): 56177
+[agLBB] Selected event +CBS(184)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 667029
+[agLBB] LBB LocalAgArch, sense time (ns): 866379
+[agLBB] LBB LocalAgArch, delib time (ns): 99400
+[agLBB] LBB LocalAgArch, act time (ns): 5286
+[agLBB] LBB LocalAgArch, resCycle time (ns): 971065
+[MarsEnv] LBB manualAction 0 time (ms): 14007791
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 185
+[agLBB] LBB TransitionS, perceive+buf time (ns): 91670
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 308391
+[agLBB] LBB LocalAgArch, sense time (ns): 577339
+[agLBB] LBB LocalAgArch, delib time (ns): 3939
+[agLBB] LBB LocalAgArch, act time (ns): 3510
+[agLBB] LBB LocalAgArch, resCycle time (ns): 584788
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB manualAction 0 time (ms): 47889520
+[agLBB] Start sense 186
+[agLBB] LBB TransitionS, perceive+buf time (ns): 107641
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 211037
+[agLBB] LBB LocalAgArch, sense time (ns): 612553
+[agLBB] LBB LocalAgArch, delib time (ns): 5502
+[agLBB] LBB LocalAgArch, act time (ns): 4246
+[agLBB] LBB LocalAgArch, resCycle time (ns): 622301
+[MarsEnv] LBB manualAction 0 time (ms): 116430629
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 187
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(10)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 649414
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 406835
+[agLBB] LBB LocalAgArch, sense time (ns): 1211871
+[agLBB] LBB LocalAgArch, delib time (ns): 363789
+[agLBB] LBB LocalAgArch, act time (ns): 6463
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1582123
+[MarsEnv] LBB manualAction 0 time (ms): 20446893
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 188
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(17)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 360826
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 253647
+[agLBB] LBB LocalAgArch, sense time (ns): 745793
+[agLBB] LBB LocalAgArch, delib time (ns): 291478
+[agLBB] LBB LocalAgArch, act time (ns): 4786
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1042057
+[MarsEnv] LBB manualAction 0 time (ms): 14079370
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 189
+[agLBB] LBB TransitionS, perceive+buf time (ns): 82199
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 248023
+[agLBB] LBB LocalAgArch, sense time (ns): 494307
+[agLBB] LBB LocalAgArch, delib time (ns): 3962
+[agLBB] LBB LocalAgArch, act time (ns): 3243
+[agLBB] LBB LocalAgArch, resCycle time (ns): 501512
+[MarsEnv] LBB manualAction 0 time (ms): 48068372
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 190
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 188534
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 274615
+[agLBB] LBB LocalAgArch, sense time (ns): 625698
+[agLBB] LBB LocalAgArch, delib time (ns): 102270
+[agLBB] LBB LocalAgArch, act time (ns): 4622
+[agLBB] LBB LocalAgArch, resCycle time (ns): 732590
+[MarsEnv] LBB manualAction 0 time (ms): 116255087
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 191
+[agLBB] LBB TransitionS, perceive+buf time (ns): 52140
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 313044
+[agLBB] LBB LocalAgArch, sense time (ns): 525795
+[agLBB] LBB LocalAgArch, delib time (ns): 4237
+[agLBB] LBB LocalAgArch, act time (ns): 4122
+[agLBB] LBB LocalAgArch, resCycle time (ns): 534154
+[MarsEnv] LBB manualAction 0 time (ms): 20747492
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(192)[source(self)]
+[agLBB] brf added CBS(192)[source(self)]
+[agLBB] Added event +CBS(192)[source(self)], events = [+CBS(192)[source(self)]]
+[agLBB] Start sense 192
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(192)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+CBS(192)[source(self)], +dis(18)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(192)[source(self)], +dis(18)[source(percept)], +belief(3)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 402756
+[agLBB] Selected event +CBS(192)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 655389
+[agLBB] LBB LocalAgArch, sense time (ns): 1179104
+[agLBB] LBB LocalAgArch, delib time (ns): 296040
+[agLBB] LBB LocalAgArch, act time (ns): 4884
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1480028
+[MarsEnv] LBB manualAction 0 time (ms): 14037706
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 193
+[agLBB] LBB TransitionS, perceive+buf time (ns): 90283
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 297504
+[agLBB] LBB LocalAgArch, sense time (ns): 553851
+[agLBB] LBB LocalAgArch, delib time (ns): 3570
+[agLBB] LBB LocalAgArch, act time (ns): 3708
+[agLBB] LBB LocalAgArch, resCycle time (ns): 561129
+[MarsEnv] LBB manualAction 0 time (ms): 47649349
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 194
+[agLBB] LBB TransitionS, perceive+buf time (ns): 53182
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 302389
+[agLBB] LBB LocalAgArch, sense time (ns): 516325
+[agLBB] LBB LocalAgArch, delib time (ns): 4520
+[agLBB] LBB LocalAgArch, act time (ns): 3981
+[agLBB] LBB LocalAgArch, resCycle time (ns): 524826
+[MarsEnv] LBB manualAction 0 time (ms): 116647529
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 195
+[agLBB] LBB TransitionS, perceive+buf time (ns): 50819
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 316705
+[agLBB] LBB LocalAgArch, sense time (ns): 529175
+[agLBB] LBB LocalAgArch, delib time (ns): 4251
+[agLBB] LBB LocalAgArch, act time (ns): 3721
+[agLBB] LBB LocalAgArch, resCycle time (ns): 537147
+[MarsEnv] LBB manualAction 0 time (ms): 20298889
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 196
+[agLBB] LBB TransitionS, perceive+buf time (ns): 48696
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 310768
+[agLBB] LBB LocalAgArch, sense time (ns): 537436
+[agLBB] LBB LocalAgArch, delib time (ns): 3929
+[agLBB] LBB LocalAgArch, act time (ns): 3495
+[agLBB] LBB LocalAgArch, resCycle time (ns): 544860
+[MarsEnv] LBB manualAction 0 time (ms): 14409791
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 197
+[agLBB] LBB TransitionS, perceive+buf time (ns): 54741
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 295445
+[agLBB] LBB LocalAgArch, sense time (ns): 509955
+[agLBB] LBB LocalAgArch, delib time (ns): 3755
+[agLBB] LBB LocalAgArch, act time (ns): 3769
+[agLBB] LBB LocalAgArch, resCycle time (ns): 517479
+[MarsEnv] LBB manualAction 0 time (ms): 47624868
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 198
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 231266
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 304958
+[agLBB] LBB LocalAgArch, sense time (ns): 683212
+[agLBB] LBB LocalAgArch, delib time (ns): 98847
+[agLBB] LBB LocalAgArch, act time (ns): 5237
+[agLBB] LBB LocalAgArch, resCycle time (ns): 787296
+[MarsEnv] LBB manualAction 0 time (ms): 116732699
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 199
+[agLBB] LBB TransitionS, perceive+buf time (ns): 100015
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 303599
+[agLBB] LBB LocalAgArch, sense time (ns): 572306
+[agLBB] LBB LocalAgArch, delib time (ns): 3868
+[agLBB] LBB LocalAgArch, act time (ns): 3964
+[agLBB] LBB LocalAgArch, resCycle time (ns): 580138
+[MarsEnv] LBB manualAction 0 time (ms): 20254313
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(200)[source(self)]
+[agLBB] brf added CBS(200)[source(self)]
+[agLBB] Added event +CBS(200)[source(self)], events = [+CBS(200)[source(self)]]
+[agLBB] Start sense 200
+[agLBB] Added event +dis(18)[source(percept)], events = [+CBS(200)[source(self)], +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+CBS(200)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +belief(3)[source(percept)], events = [+CBS(200)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(3)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+CBS(200)[source(self)], +dis(18)[source(percept)], +dis(17)[source(percept)], +belief(3)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 507641
+[agLBB] Selected event +CBS(200)[source(self)]
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +belief(3)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 701295
+[agLBB] LBB LocalAgArch, sense time (ns): 1328319
+[agLBB] LBB LocalAgArch, delib time (ns): 369201
+[agLBB] LBB LocalAgArch, act time (ns): 5217
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1702737
+[MarsEnv] LBB fazAction 3 11 (ms): 489750556449848
+[MarsEnv] Correct updateCBS
+[MarsEnv] LBB e2eAction 3 time (ms): 14377691
+[agLBB] Start sense 201
+[agLBB] LBB TransitionS, perceive+buf time (ns): 107765
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 347266
+[agLBB] LBB LocalAgArch, sense time (ns): 679699
+[agLBB] LBB LocalAgArch, delib time (ns): 3794
+[agLBB] LBB LocalAgArch, act time (ns): 3771
+[agLBB] LBB LocalAgArch, resCycle time (ns): 687264
+[MarsEnv] LBB manualAction 0 time (ms): 47284479
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 202
+[agLBB] Added event +dis(18)[source(percept)], events = [+dis(18)[source(percept)]]
+[agLBB] Added event +dis(13)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)]]
+[agLBB] Added event +dis(11)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)]]
+[agLBB] Added event +dis(12)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(10)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)]]
+[agLBB] Added event +dis(15)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] Added event +dis(14)[source(percept)], events = [+dis(18)[source(percept)], +dis(13)[source(percept)], +dis(11)[source(percept)], +dis(12)[source(percept)], +dis(17)[source(percept)], +dis(10)[source(percept)], +dis(15)[source(percept)], +dis(16)[source(percept)], +dis(14)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 1129474
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(13)[source(percept)]
+[agLBB] Selected event +dis(11)[source(percept)]
+[agLBB] Selected event +dis(12)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(10)[source(percept)]
+[agLBB] Selected event +dis(15)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] Selected event +dis(14)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 350675
+[agLBB] LBB LocalAgArch, sense time (ns): 1653310
+[agLBB] LBB LocalAgArch, delib time (ns): 624263
+[agLBB] LBB LocalAgArch, act time (ns): 5565
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2283138
+[MarsEnv] LBB manualAction 0 time (ms): 116807825
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 203
+[agLBB] LBB TransitionS, perceive+buf time (ns): 91350
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 347836
+[agLBB] LBB LocalAgArch, sense time (ns): 606491
+[agLBB] LBB LocalAgArch, delib time (ns): 4621
+[agLBB] LBB LocalAgArch, act time (ns): 4121
+[agLBB] LBB LocalAgArch, resCycle time (ns): 615233
+[MarsEnv] LBB manualAction 0 time (ms): 19852089
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 204
+[agLBB] Added event +dis(17)[source(percept)], events = [+dis(17)[source(percept)]]
+[agLBB] Added event +dis(16)[source(percept)], events = [+dis(17)[source(percept)], +dis(16)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 299368
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(16)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 308521
+[agLBB] LBB LocalAgArch, sense time (ns): 751986
+[agLBB] LBB LocalAgArch, delib time (ns): 156051
+[agLBB] LBB LocalAgArch, act time (ns): 5278
+[agLBB] LBB LocalAgArch, resCycle time (ns): 913315
+[MarsEnv] LBB manualAction 0 time (ms): 14982293
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 205
+[agLBB] LBB TransitionS, perceive+buf time (ns): 71987
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 310782
+[agLBB] LBB LocalAgArch, sense time (ns): 539204
+[agLBB] LBB LocalAgArch, delib time (ns): 3655
+[agLBB] LBB LocalAgArch, act time (ns): 266996
+[agLBB] LBB LocalAgArch, resCycle time (ns): 809855
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 206
+[agLBB] Added event +dis(18)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)]]
+[agLBB] Added event +dis(17)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(17)[source(percept)]]
+[agLBB] Added event +dis(19)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(19)[source(percept)]]
+[agLBB] Added event +belief(4)[source(percept)], events = [+!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+, +dis(18)[source(percept)], +dis(17)[source(percept)], +dis(19)[source(percept)], +belief(4)[source(percept)]]
+[agLBB] LBB TransitionS, perceive+buf time (ns): 686191
+[agLBB] Selected event +!plano[source(self)]
+intention 1: 
+    +!plano[source(self)] <- ... !plano / {N=3}
+
+[agLBB]      | for belief(N), belief belief(4)[source(percept)] is an option -- {N=4}
+[agLBB]      | (N < 9) succeeded  -- {N=4}
+[agLBB] Selected intention intention 1: 
+    +!plano[source(self)] <- ... faz(N); !plano / {N=4}
+
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 69424
+[agLBB] LBB LocalAgArch, sense time (ns): 867219
+[agLBB] LBB LocalAgArch, delib time (ns): 488343
+[agLBB] LBB LocalAgArch, act time (ns): 168549
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1524111
+[MarsEnv] Correct updateCBS
+[agLBB] Start sense 207
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4716
+[agLBB] Selected event +dis(18)[source(percept)]
+[agLBB] Selected event +dis(17)[source(percept)]
+[agLBB] Selected event +dis(19)[source(percept)]
+[agLBB] Selected event +belief(4)[source(percept)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 65568
+[agLBB] LBB LocalAgArch, sense time (ns): 222952
+[agLBB] LBB LocalAgArch, delib time (ns): 289375
+[agLBB] LBB LocalAgArch, act time (ns): 10288
+[agLBB] LBB LocalAgArch, resCycle time (ns): 522615
+[MarsEnv] LBB manualAction 0 time (ms): 47292187
+[MarsEnv] Correct updateCBS
+[agLBB] Doing (add) brf for CBS(208)[source(self)]
+[agLBB] brf added CBS(208)[source(self)]
+[agLBB] Added event +CBS(208)[source(self)], events = [+CBS(208)[source(self)]]
+[agLBB] Start sense 208
+[agLBB] LBB TransitionS, perceive+buf time (ns): 53786
+[agLBB] Selected event +CBS(208)[source(self)]
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 718826
+[agLBB] LBB LocalAgArch, sense time (ns): 891010
+[agLBB] LBB LocalAgArch, delib time (ns): 86303
+[agLBB] LBB LocalAgArch, act time (ns): 5538
+[agLBB] LBB LocalAgArch, resCycle time (ns): 982851

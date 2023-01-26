@@ -1,10 +1,10 @@
 // Implementation of the example described in chapter 2
 // of the Jason's manual
 
-MAS mars {
+MAS lbb2 {
 
-    environment: LBBEnv
+    environment: BEnv
 
     agents: 
-        agLBB agentClass IdleAgent;
-}
+        agLBB agentArchClass StatArch;
+}   

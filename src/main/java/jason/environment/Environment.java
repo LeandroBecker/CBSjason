@@ -48,8 +48,12 @@ public class Environment {
 
     protected ExecutorService executor; // the thread pool used to execute actions
 
+    protected Boolean[] cbsArray = new Boolean[8]; //by LBB
+
     /** creates an environment class with n threads to execute actions required by the agents */
     public Environment(int n) {
+        Arrays.fill(cbsArray, Boolean.FALSE); //by LBB
+
         // creates a thread pool with n threads
         executor = Executors.newFixedThreadPool(n);
 
@@ -159,51 +163,17 @@ public class Environment {
 
 //    public Collection<Literal> getPerceptsCBS(String agName) {
     public Boolean[] getPerceptsCBS(String agName) {
+        updateCBS();
 
-        Boolean[] array = new Boolean[8];
-        Arrays.fill(array, Boolean.FALSE);
+        return cbsArray;
 
-        return array;
-
-        // // check whether this agent needs the current version of perception
-        // if (uptodateAgs.contains(agName)) {
-        //     return null;
-        // }
-        // // add agName in the set of updated agents
-        // uptodateAgs.add(agName);
-
-        // int size = percepts.size();
-        // List<Literal> agl = agPercepts.get(agName);
-        // if (agl != null) {
-        //     size += agl.size();
-        // }
-        // Collection<Literal> p = new ArrayList<Literal>(size);
-
-        // if (! percepts.isEmpty()) { // has global perception?
-        //     synchronized (percepts) {
-        //         // make a local copy of the environment percepts
-        //         // Note: a deep copy will be done by BB.add
-        //         p.addAll(percepts);
-        //     }
-        // }
-        // if (agl != null) { // add agent personal perception
-        //     synchronized (agl) {
-        //         p.addAll(agl);
-        //     }
-        // }
-
-        /* */
+        /* LBB: my first test for 'Collection<Literal> getPerceptsCBS()'*/
         // int nBel = 1;
         // Collection<Literal> cLit = new ArrayList<Literal>(1);
         // List<Literal> lagl = new ArrayList<Literal>(nBel);
-
         // for (int i=nBel-1; i >=0; i--)
         //     lagl.add(Literal.parseLiteral("pos(r"+i+",1,0)"));
-
         // cLit.addAll(lagl);
-
-
-
         // return cLit;
     }
 
@@ -401,6 +371,13 @@ public class Environment {
         });
     }
 
+    /**
+     * Updates CBS on the environment. This method is probably overridden in the user environment class.
+     */
+    public boolean updateCBS() {
+        logger.info("updateCBS was not implemented in the default environment.");
+        return false;
+    }
     /**
      * Executes an action on the environment. This method is probably overridden in the user environment class.
      */

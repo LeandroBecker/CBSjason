@@ -1,0 +1,88 @@
+[human] Start sense
+[RosEnv] Robot pose received, publishing gantry_position
+[human] Start sense
+[human] percepts: [gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)]
+[human] Added event +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)], events = [+gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)]]
+[human] Selected event +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)]
+[human] Selected intention intention 5: 
+    +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002}
+
+[human]      | for myguardpos(_29,_30,_31)[source(self)], belief annotation myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)] is an option -- {X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8, _29=-7.000000326169189}
+[human] Doing (del) brf for myguardpos(_29,_30,_31)[source(self)] in BB=true
+[human] Removed:myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] Added event -myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)], events = [-myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]]
+[human] Doing (add) brf for myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] brf added myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] Added event +myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+intention 5: 
+    +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_29=-7.000000326169189, X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8}
+, events = [-myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)], +myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+intention 5: 
+    +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_29=-7.000000326169189, X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8}
+]
+[human] Start sense
+[human] Selected event -myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] Selected event +myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+intention 5: 
+    +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_29=-7.000000326169189, X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8}
+
+[human] Selected intention intention 5: 
+    +gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] <- . / {_29=-7.000000326169189, X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8}
+
+[human] Returning from IM p__4[source(self),url("file:src/asl/antagonistic.asl")], te=+gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(percept)] unif={_29=-7.000000326169189, X=-7.000000326169189, Y=8.443999721663431E-8, Z=0.7000000000000002, _31=0.7000000000000002, _30=8.443999721663431E-8}
+[RosEnv] Robot pose received, publishing gantry_position
+[human] Start sense
+[human] percepts: [gantry_position(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)]
+[RosEnv] Robot pose received, publishing gantry_position
+[human] Start sense
+[human] percepts: [gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)]
+[human] Added event +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)], events = [+gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)]]
+[human] Selected event +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)]
+[human] Selected intention intention 6: 
+    +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002}
+
+[human]      | for myguardpos(_32,_33,_34)[source(self)], belief annotation myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)] is an option -- {X=-7.000000326245091, Y=8.44504701724702E-8, _34=0.7000000000000002, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+[human] Doing (del) brf for myguardpos(_32,_33,_34)[source(self)] in BB=true
+[human] Removed:myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] Added event -myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)], events = [-myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]]
+[human] Doing (add) brf for myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)]
+[human] brf added myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)]
+[human] Added event +myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)]
+intention 6: 
+    +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_34=0.7000000000000002, X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+, events = [-myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)], +myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)]
+intention 6: 
+    +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_34=0.7000000000000002, X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+]
+[human] Start sense
+[human] Selected event -myguardpos(-7.000000326169189,8.443999721663431E-8,0.7000000000000002)[source(self)]
+[human] Selected event +myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)]
+intention 6: 
+    +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] <- ... -+myguardpos(X,Y,Z) / {_34=0.7000000000000002, X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+
+[human] Selected intention intention 6: 
+    +gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] <- . / {_34=0.7000000000000002, X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+
+[human] Returning from IM p__4[source(self),url("file:src/asl/antagonistic.asl")], te=+gantry_position(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(percept)] unif={_34=0.7000000000000002, X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, _33=8.443999721663431E-8, _32=-7.000000326169189}
+[human] Start sense
+[RosEnv] I see the Gantry robot in less than 6.039537904595763 meters!
+[human] Start sense
+[ExecutionControl] Cycle 0 finished by timeout!
+[human] percepts: [gantry_detected]
+[RosEnv] I see the Gantry robot in less than 6.0428691516101045 meters!
+[human] Added event +gantry_detected[source(percept)], events = [+gantry_detected[source(percept)]]
+[human] Selected event +gantry_detected[source(percept)]
+[RosEnv] Robot pose received, publishing gantry_position
+[human] option for +gantry_detected[source(percept)] is plan p__5[source(self),url("file:src/asl/antagonistic.asl")] +gantry_detected : (working(Location) & myguardpos(X,Y,Z)) -- with unification {}
+[human]      | for working(Location), belief working(station4)[source(self)] is an option -- {Location=station4}
+[human]      | for myguardpos(X,Y,Z), belief myguardpos(-7.000000326245091,8.44504701724702E-8,0.7000000000000002)[source(self)] is an option -- {X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, Location=station4}
+[RosEnv] I see the Gantry robot in less than 6.04312675764685 meters!
+[human]      p__5[source(self),url("file:src/asl/antagonistic.asl")] is applicable with unification {X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, Location=station4}
+[RosEnv] Robot pose received, publishing gantry_position
+[human] Selected option (@p__5[source(self),url("file:src/asl/antagonistic.asl")] +gantry_detected : (working(Location) & myguardpos(X,Y,Z)) <- .print("Detected the Gantry robot in close proximity and moving towards me, I want to mess with it."); stop_movement; move(X,Y,Z); !work(Location).,{X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, Location=station4}) for event +gantry_detected[source(percept)]
+[human] Selected intention intention 7: 
+    +gantry_detected[source(percept)] <- ... .print("Detected the Gantry robot in close proximity and moving towards me, I want to mess with it."); stop_movement; move(X,Y,Z); !work(Location) / {X=-7.000000326245091, Y=8.44504701724702E-8, Z=0.7000000000000002, Location=station4}
+
+[RosEnv] I see the Gantry robot in less than 6.041396488165132 meters!
+[human] Detected the Gantry robot in close proximity and moving towards me, I want to mess with it.
+[

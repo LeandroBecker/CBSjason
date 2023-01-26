@@ -53,6 +53,8 @@ public class MarsEnv extends Environment {
                 model.dropGarb();
             } else if (action.equals(bg)) {
                 model.burnGarb();
+            } else if (action.getFunctor().equals("manual")) {
+                manualAction(); //LB fix here for func of interest
             } else {
                 return false;
             }
@@ -69,11 +71,16 @@ public class MarsEnv extends Environment {
         return true;
     }
 
+    void manualAction(){
+        long t_curr = System.nanoTime(); //LB: current time
+        logger.info("LBB manualAction " + String.valueOf(0) + " time (ms): " + String.valueOf(t_curr - t_init));   
+    }
+
     /** creates the agents perception based on the MarsModel */
     void updatePercepts() {
-        long t_curr = System.currentTimeMillis(); //LB: current time
-        logger.info("LBBegin Env - updatePercepts(); elapsed time (ms): " + String.valueOf(t_curr - t_init));
-        t_init = t_curr;
+        //long t_curr = System.currentTimeMillis(); //LB: current time
+        //logger.info("LBBegin Env - updatePercepts(); elapsed time (ms): " + String.valueOf(t_curr - t_init));
+        //t_init = t_curr;
         clearPercepts();
 
         Location r1Loc = model.getAgPos(0);
@@ -93,6 +100,19 @@ public class MarsEnv extends Environment {
             addPercept(g2);
         }
     }
+
+    @Override
+    public boolean updateCBS() {
+        //LBB: for testing, only 1 CBS set TRUE
+        cbsArray[0] = Boolean.TRUE;
+        logger.info("Correct updateCBS");
+
+        long t_curr = System.currentTimeMillis(); //LB: current time
+        //logger.info("LBBegin Env - updatePercepts(); elapsed time (ms): " + String.valueOf(t_curr - t_init));
+        t_init = t_curr;
+
+        return true;
+    }   
 
     class MarsModel extends GridWorldModel {
 

@@ -30,8 +30,6 @@ sm7PB = 0.0
 cm7PB = 0
 sumSense = 0.0
 ctdSense = 0
-sumSenseLBB = 0.0
-ctdSenseLBB = 0
 sm7Sense = 0.0
 cm7Sense = 0
 sDel = 0.0
@@ -48,8 +46,7 @@ lastTS = 0  #lastTimeStamp
 sFaz = 0.0
 cFaz = 0
 lFaz = 0
-sE2E = 0.0
-cE2E = 0
+sE2E = 0
 
 #re.compile("^b")):
 #' '.join(mystring.split())
@@ -70,9 +67,6 @@ for tag in Bs_data.find_all('message'):
     		if (cycleNum % rsM) == 0:
     			cm7PB = cm7PB + 1
     			sm7PB = sm7PB + lastTS
-    	elif "senseLBB" in mycollapsedstring:
-    		ctdSenseLBB=ctdSenseLBB+1
-    		sumSenseLBB = sumSenseLBB + lastTS
     	elif "sense" in mycollapsedstring:
     		ctdSense=ctdSense+1
     		sumSense = sumSense + lastTS
@@ -101,27 +95,23 @@ for tag in Bs_data.find_all('message'):
 #    			print("%2d, Faz: %d"  % (cFaz, lastTS-lFaz))
     		lFaz=lastTS
     	elif "e2eAction" in mycollapsedstring:
-    		cE2E=cE2E+1
     		sE2E=sE2E+lastTS
-#    	elif "manualAction" in mycollapsedstring:
-#    		cE2E=cE2E+1
-#    		sE2E=sE2E+lastTS
+    		
+    		
 
 print("RCs: %4d" % (cycleNum))
-print("E2E: %4d" % (cE2E))
 print("Avg   P+B: %12.0f"  % (sPB/cPB))
-#print("Avg m7P+B: %12.0f"  % (sm7PB/cm7PB))
-print("Avg SeLBB: %12.0f"  % (sumSenseLBB/ctdSenseLBB)) 
+print("Avg m7P+B: %12.0f"  % (sm7PB/cm7PB))
 print("Avg Sense: %12.0f"  % (sumSense/ctdSense))
-#print("Avg m7Sen: %12.0f"  % (sm7Sense/cm7Sense))
+print("Avg m7Sen: %12.0f"  % (sm7Sense/cm7Sense))
 print("Avg   Del: %12.0f"  % (sDel/cDel))
 print("Avg   Act: %12.0f"  % (sAct/cAct))
-#print("Avg m7Act: %12.0f"  % (sm7Act/cm7Act))
+print("Avg m7Act: %12.0f"  % (sm7Act/cm7Act))
 print("Avg    RC: %12.0f"  % (sumRC/ctdRC))
-#print("Avg  m7RC: %12.0f"  % (sm7RC/cm7RC))
-#print("Avg   Faz: %12.0f"  % (sFaz/(cFaz-1)))
-print("Avg   E2E: %12.0f"  % (sE2E/(cE2E)))
-#print("%3d Faz: every %4.2f RC"      % (cFaz,cycleNum/cFaz))
+print("Avg  m7RC: %12.0f"  % (sm7RC/cm7RC))
+print("Avg   Faz: %12.0f"  % (sFaz/(cFaz-1)))
+print("Avg   E2E: %12.0f"  % (sE2E/(cFaz)))
+print("%3d Faz: every %4.2f RC"      % (cFaz,cycleNum/cFaz))
     
     
 #    result = third_child.text

@@ -24,6 +24,7 @@ Bs_data = BeautifulSoup(data, "xml")
 rsM = 1
 
 #s->sum; c->counter; m7->multiple-of-7
+cycleNum = 0
 sPB = 0.0
 cPB = 0
 sm7PB = 0.0
@@ -102,25 +103,33 @@ for tag in Bs_data.find_all('message'):
     		lFaz=lastTS
     	elif "e2eAction" in mycollapsedstring:
     		cE2E=cE2E+1
-    		sE2E=sE2E+lastTS
+    		if(cE2E>1):
+    			sE2E=sE2E+lastTS
 #    	elif "manualAction" in mycollapsedstring:
 #    		cE2E=cE2E+1
 #    		sE2E=sE2E+lastTS
 
 print("RCs: %4d" % (cycleNum))
 print("E2E: %4d" % (cE2E))
-print("Avg   P+B: %12.0f"  % (sPB/cPB))
+if(cPB>0):
+	print("Avg   P+B: %12.0f"  % (sPB/cPB))
 #print("Avg m7P+B: %12.0f"  % (sm7PB/cm7PB))
-print("Avg SeLBB: %12.0f"  % (sumSenseLBB/ctdSenseLBB)) 
-print("Avg Sense: %12.0f"  % (sumSense/ctdSense))
+if(ctdSenseLBB>0):
+	print("Avg SeLBB: %12.0f"  % (sumSenseLBB/ctdSenseLBB)) 
+if(ctdSense>0):
+	print("Avg Sense: %12.0f"  % (sumSense/ctdSense))
 #print("Avg m7Sen: %12.0f"  % (sm7Sense/cm7Sense))
-print("Avg   Del: %12.0f"  % (sDel/cDel))
-print("Avg   Act: %12.0f"  % (sAct/cAct))
+if(cDel>0):
+	print("Avg   Del: %12.0f"  % (sDel/cDel))
+if(cAct>0):
+	print("Avg   Act: %12.0f"  % (sAct/cAct))
 #print("Avg m7Act: %12.0f"  % (sm7Act/cm7Act))
-print("Avg    RC: %12.0f"  % (sumRC/ctdRC))
+if(ctdRC>0):
+	print("Avg    RC: %12.0f"  % (sumRC/ctdRC))
 #print("Avg  m7RC: %12.0f"  % (sm7RC/cm7RC))
 #print("Avg   Faz: %12.0f"  % (sFaz/(cFaz-1)))
-print("Avg   E2E: %12.0f"  % (sE2E/(cE2E)))
+if(cE2E>0):
+	print("Avg   E2E: %12.0f"  % (sE2E/(cE2E)))
 #print("%3d Faz: every %4.2f RC"      % (cFaz,cycleNum/cFaz))
     
     
