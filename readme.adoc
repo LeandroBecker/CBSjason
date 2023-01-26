@@ -1,4 +1,4 @@
-= Jason
+= Jason LBB
 :icons: font
 
 ifdef::env-github[]
@@ -10,6 +10,8 @@ ifdef::env-github[]
 endif::[]
 
 ifdef::env-github[:outfilesuffix: .adoc]
+
+This repository contains modifications performed in Jason. 
 
 Jason is an interpreter for an extended version of AgentSpeak. It implements the operational semantics of that language, and provides a platform for the development of multi-agent systems, with many user-customisable features. Jason is available as Open Source, and is distributed under GNU LGPL.
 
