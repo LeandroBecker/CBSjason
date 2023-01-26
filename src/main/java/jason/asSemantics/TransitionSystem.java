@@ -1770,7 +1770,7 @@ public class TransitionSystem implements Serializable {
 
             // LBB: vou comentar para que as acoes sejam executada a cada X ciclos
             //if(cbsPercepts != null){
-            if((getAgArch().getCycleNumber()%3) == 0){ 
+            //if((getAgArch().getCycleNumber()%3) == 0){ 
                 //LB comentado a seguir para testes
                 //for(int i=0; i<cbsPercepts.length; i++){
                     // ActionExec action = C.getAction();
@@ -1785,7 +1785,7 @@ public class TransitionSystem implements Serializable {
                         getAgArch().act(action); //, C.getFeedbackActionsWrapper());
                     }
                 //}
-            }
+            //}
 
             //a = ag.selectActionLB(); //the problem is that this method only returns an element from this list it received as parameter, see bellow
             // synchronized (C.getFeedbackActions()) {

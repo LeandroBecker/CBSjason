@@ -17,16 +17,16 @@ public class LBBEnv extends Environment {
     //private long t_init = System.nanoTime(); //LB: initial time
     private long t_updt = 0; //LB: update timestamp
     private int cont = 0;
-    private Literal bArray[];
+    //private Literal bArray[];
 
     @Override
     public void init(String[] args) {
-        bArray = new Literal[8];
-        for(int i=0; i<8; i++){
-            int v = i+1;
-            Literal lit = Literal.parseLiteral("belief(" + v +")");
-            bArray[i] = lit;
-        }
+        // bArray = new Literal[8];
+        // for(int i=0; i<8; i++){
+        //     int v = i+1;
+        //     Literal lit = Literal.parseLiteral("belief(" + v +")");
+        //     bArray[i] = lit;
+        // }
         
         updatePercepts();
     }
@@ -86,12 +86,10 @@ public class LBBEnv extends Environment {
         clearPercepts();
 
         //LB: adding 10 "DISturbing" beliefs
-        for(int i=10; i<20; i++){
-            Literal lit = Literal.parseLiteral("dis(" + i +")");
-            addPercept(lit);
-        }
-
-        t_updt = System.nanoTime(); //LB: collects updt time
+        // for(int i=10; i<20; i++){
+        //     Literal lit = Literal.parseLiteral("dis(" + i +")");
+        //     addPercept(lit);
+        // }        
 
         //adding the belief that triggers the next action
         //addPercept(bArray[cont%8]);
@@ -100,18 +98,16 @@ public class LBBEnv extends Environment {
     @Override
     public boolean updateCBS() {
         //LBB: for testing, only 1 CBS set TRUE
-        if((cont++ % 2) == 0){
-            logger.info("TRUE updateCBS "+ cont);
-            cbsArray[0] = Boolean.TRUE;
-        }
-        else{
-            logger.info("FALSE updateCBS "+ cont);
-            cbsArray[0] = Boolean.FALSE;
-        }
-        
+        // if((cont++ % 2) == 0){
+        //     logger.info("TRUE updateCBS "+ cont);
+        //     cbsArray[0] = Boolean.TRUE;
+        // }
+        // else{
+        //     logger.info("FALSE updateCBS "+ cont);
+        //     cbsArray[0] = Boolean.FALSE;
+        // }
 
-        //long t_curr = System.currentTimeMillis(); //LB: current time
-        //t_init = t_curr;
+        t_updt = System.nanoTime(); //LB: collects updt time
 
         return true;
     }   

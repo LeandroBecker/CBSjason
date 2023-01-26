@@ -6,6 +6,7 @@ init:
 user-init:
 
 compile:
+Compiling 1 source file to /home/leandro/jason/examples/LBBagArch/bin/classes
 
 run:
 Running project lbb2
@@ -24,34 +25,38 @@ Jason Http Server running on http://127.0.1.1:3272
 [agLBB] Added event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)], events = [+!start[source(self)], +!free(5)[source(self)], +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]]
 [BEnv] TRUE updateCBS 1
 [agLBB] Start sense 1
-[agLBB] LBB TransitionS, perceive+buf time (ns): 600971
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 601499
+[BEnv] LBB e2eAction 0 time (ms): 2434621
 [agLBB] Selected event +!start[source(self)]
 [agLBB] Selected intention intention 1: 
     +!start[source(self)] <- ... .stopMAS(100); !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 941176
-[agLBB] LBB LocalAgArch, sense time (ns): 3552850
-[agLBB] LBB LocalAgArch, delib time (ns): 2593566
-[agLBB] LBB LocalAgArch, act time (ns): 4193680
-[agLBB] LBB LocalAgArch, resCycle time (ns): 10340096
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 2270566
+[agLBB] LBB LocalAgArch, sense time (ns): 4927027
+[agLBB] LBB LocalAgArch, delib time (ns): 2568428
+[agLBB] LBB LocalAgArch, act time (ns): 3828644
+[agLBB] LBB LocalAgArch, resCycle time (ns): 11324099
 [BEnv] FALSE updateCBS 2
 [agLBB] Start sense 2
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6516
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6125
+[BEnv] LBB e2eAction 1 time (ms): 1138393
 [agLBB] Selected event +!free(5)[source(self)]
 [agLBB] Selected intention intention 1: 
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 555346
-[agLBB] LBB LocalAgArch, sense time (ns): 1385801
-[agLBB] LBB LocalAgArch, delib time (ns): 886309
-[agLBB] LBB LocalAgArch, act time (ns): 802692
-[agLBB] LBB LocalAgArch, resCycle time (ns): 3074802
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 770334
+[agLBB] LBB LocalAgArch, sense time (ns): 1928748
+[agLBB] LBB LocalAgArch, delib time (ns): 747116
+[agLBB] LBB LocalAgArch, act time (ns): 673725
+[agLBB] LBB LocalAgArch, resCycle time (ns): 3349589
 [BEnv] TRUE updateCBS 3
 [agLBB] Start sense 3
-[agLBB] LBB TransitionS, perceive+buf time (ns): 7012
 [BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5259
+[BEnv] LBB e2eAction 2 time (ms): 914082
 [agLBB] Selected event +kqml::clear_source_self([],[])[hide_in_mind_inspector,source(self)]
-[BEnv] LBB e2eAction 0 time (ms): 2423485
 [agLBB] Selected event +jag_shutting_down(100)
 [agLBB] Selected event +!go(100)[source(self)]
 intention 1: 
@@ -61,40 +66,44 @@ intention 1:
     +!free(5)[source(self)] <- ... .print(free); !free((X-1)) / {X=5}
 
 [agLBB] free
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 1587265
-[agLBB] LBB LocalAgArch, sense time (ns): 2311501
-[agLBB] LBB LocalAgArch, delib time (ns): 3910393
-[agLBB] LBB LocalAgArch, act time (ns): 1544600
-[agLBB] LBB LocalAgArch, resCycle time (ns): 7766494
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 524614
+[agLBB] LBB LocalAgArch, sense time (ns): 1406004
+[agLBB] LBB LocalAgArch, delib time (ns): 3545688
+[agLBB] LBB LocalAgArch, act time (ns): 1702380
+[agLBB] LBB LocalAgArch, resCycle time (ns): 6654072
 [BEnv] FALSE updateCBS 4
 [agLBB] Start sense 4
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6040
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5505
+[BEnv] LBB e2eAction 3 time (ms): 1007861
 [agLBB] Selected intention intention 1: 
     +!go(100)[source(self)] <- ... .print(X); !go((X-1)) / {X=100}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 100
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 296848
-[agLBB] LBB LocalAgArch, sense time (ns): 900621
-[agLBB] LBB LocalAgArch, delib time (ns): 18610
-[agLBB] LBB LocalAgArch, act time (ns): 1261578
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2180809
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 580503
+[agLBB] LBB LocalAgArch, sense time (ns): 1531161
+[agLBB] LBB LocalAgArch, delib time (ns): 16814
+[agLBB] LBB LocalAgArch, act time (ns): 1102159
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2650134
 [BEnv] TRUE updateCBS 5
 [agLBB] Start sense 5
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5713
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5327
+[BEnv] LBB e2eAction 4 time (ms): 786216
 [agLBB] Selected intention intention 2: 
     +!free(5)[source(self)] <- ... !free((X-1)) / {X=5}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 286832
-[agLBB] LBB LocalAgArch, sense time (ns): 816249
-[agLBB] LBB LocalAgArch, delib time (ns): 16916
-[agLBB] LBB LocalAgArch, act time (ns): 648517
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1481682
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 689697
+[agLBB] LBB LocalAgArch, sense time (ns): 1492605
+[agLBB] LBB LocalAgArch, delib time (ns): 14430
+[agLBB] LBB LocalAgArch, act time (ns): 570810
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2077845
 [BEnv] FALSE updateCBS 6
 [agLBB] Start sense 6
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5937
-[BEnv] LBB e2eAction 1 time (ms): 946038
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4817
+[BEnv] LBB e2eAction 5 time (ms): 597163
 [agLBB] Selected event +!free(4)[source(self)]
 intention 2: 
     +!free(5)[source(self)] <- ... !free((X-1)) / {X=5}
@@ -103,14 +112,16 @@ intention 2:
     +!go(100)[source(self)] <- ... !go((X-1)) / {X=100}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 548155
-[agLBB] LBB LocalAgArch, sense time (ns): 1485150
-[agLBB] LBB LocalAgArch, delib time (ns): 768589
-[agLBB] LBB LocalAgArch, act time (ns): 799521
-[agLBB] LBB LocalAgArch, resCycle time (ns): 3053260
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 268298
+[agLBB] LBB LocalAgArch, sense time (ns): 988912
+[agLBB] LBB LocalAgArch, delib time (ns): 801628
+[agLBB] LBB LocalAgArch, act time (ns): 689843
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2480383
 [BEnv] TRUE updateCBS 7
 [agLBB] Start sense 7
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6184
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4636
+[BEnv] LBB e2eAction 6 time (ms): 601766
 [agLBB] Selected event +!go(99)[source(self)]
 intention 1: 
     +!go(100)[source(self)] <- ... !go((X-1)) / {X=100}
@@ -120,40 +131,44 @@ intention 1:
     +!free(4)[source(self)] <- ... .print(free); !free((X-1)) / {X=4}
 
 [agLBB] free
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 237556
-[agLBB] LBB LocalAgArch, sense time (ns): 718010
-[agLBB] LBB LocalAgArch, delib time (ns): 993274
-[agLBB] LBB LocalAgArch, act time (ns): 911093
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2622377
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 273655
+[agLBB] LBB LocalAgArch, sense time (ns): 1030313
+[agLBB] LBB LocalAgArch, delib time (ns): 828256
+[agLBB] LBB LocalAgArch, act time (ns): 687667
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2546236
 [BEnv] FALSE updateCBS 8
 [agLBB] Start sense 8
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5064
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4621
+[BEnv] LBB e2eAction 7 time (ms): 635017
 [agLBB] Selected intention intention 1: 
     +!go(99)[source(self)] <- ... .print(X); !go((X-1)) / {X=99}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 99
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 199544
-[agLBB] LBB LocalAgArch, sense time (ns): 767274
-[agLBB] LBB LocalAgArch, delib time (ns): 9149
-[agLBB] LBB LocalAgArch, act time (ns): 1059417
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1835840
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 500656
+[agLBB] LBB LocalAgArch, sense time (ns): 1236832
+[agLBB] LBB LocalAgArch, delib time (ns): 6266
+[agLBB] LBB LocalAgArch, act time (ns): 828145
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2071243
 [BEnv] TRUE updateCBS 9
 [agLBB] Start sense 9
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5917
-[BEnv] LBB e2eAction 2 time (ms): 918264
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4698
+[BEnv] LBB e2eAction 8 time (ms): 562812
 [agLBB] Selected intention intention 2: 
     +!free(4)[source(self)] <- ... !free((X-1)) / {X=4}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 603061
-[agLBB] LBB LocalAgArch, sense time (ns): 1412805
-[agLBB] LBB LocalAgArch, delib time (ns): 5625
-[agLBB] LBB LocalAgArch, act time (ns): 674957
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2093387
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 275234
+[agLBB] LBB LocalAgArch, sense time (ns): 977837
+[agLBB] LBB LocalAgArch, delib time (ns): 4575
+[agLBB] LBB LocalAgArch, act time (ns): 502732
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1485144
 [BEnv] FALSE updateCBS 10
 [agLBB] Start sense 10
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5952
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4625
+[BEnv] LBB e2eAction 9 time (ms): 597630
 [agLBB] Selected event +!free(3)[source(self)]
 intention 2: 
     +!free(4)[source(self)] <- ... !free((X-1)) / {X=4}
@@ -162,14 +177,16 @@ intention 2:
     +!go(99)[source(self)] <- ... !go((X-1)) / {X=99}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 215220
-[agLBB] LBB LocalAgArch, sense time (ns): 708717
-[agLBB] LBB LocalAgArch, delib time (ns): 770347
-[agLBB] LBB LocalAgArch, act time (ns): 874950
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2354014
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 239777
+[agLBB] LBB LocalAgArch, sense time (ns): 953631
+[agLBB] LBB LocalAgArch, delib time (ns): 761135
+[agLBB] LBB LocalAgArch, act time (ns): 594124
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2308890
 [BEnv] TRUE updateCBS 11
 [agLBB] Start sense 11
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5174
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4559
+[BEnv] LBB e2eAction 10 time (ms): 523425
 [agLBB] Selected event +!go(98)[source(self)]
 intention 1: 
     +!go(99)[source(self)] <- ... !go((X-1)) / {X=99}
@@ -179,40 +196,44 @@ intention 1:
     +!free(3)[source(self)] <- ... .print(free); !free((X-1)) / {X=3}
 
 [agLBB] free
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 213521
-[agLBB] LBB LocalAgArch, sense time (ns): 633149
-[agLBB] LBB LocalAgArch, delib time (ns): 989129
-[agLBB] LBB LocalAgArch, act time (ns): 1128732
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2751010
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 262098
+[agLBB] LBB LocalAgArch, sense time (ns): 921244
+[agLBB] LBB LocalAgArch, delib time (ns): 845027
+[agLBB] LBB LocalAgArch, act time (ns): 703189
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2469460
 [BEnv] FALSE updateCBS 12
 [agLBB] Start sense 12
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6369
-[BEnv] LBB e2eAction 3 time (ms): 1111797
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4428
+[BEnv] LBB e2eAction 11 time (ms): 514756
 [agLBB] Selected intention intention 1: 
     +!go(98)[source(self)] <- ... .print(X); !go((X-1)) / {X=98}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 98
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 483571
-[agLBB] LBB LocalAgArch, sense time (ns): 1352155
-[agLBB] LBB LocalAgArch, delib time (ns): 8083
-[agLBB] LBB LocalAgArch, act time (ns): 1145146
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2505384
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 206369
+[agLBB] LBB LocalAgArch, sense time (ns): 815820
+[agLBB] LBB LocalAgArch, delib time (ns): 6190
+[agLBB] LBB LocalAgArch, act time (ns): 734192
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1556202
 [BEnv] TRUE updateCBS 13
 [agLBB] Start sense 13
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5761
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4388
+[BEnv] LBB e2eAction 12 time (ms): 609891
 [agLBB] Selected intention intention 2: 
     +!free(3)[source(self)] <- ... !free((X-1)) / {X=3}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 198359
-[agLBB] LBB LocalAgArch, sense time (ns): 625950
-[agLBB] LBB LocalAgArch, delib time (ns): 5237
-[agLBB] LBB LocalAgArch, act time (ns): 518505
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1149692
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 232131
+[agLBB] LBB LocalAgArch, sense time (ns): 917595
+[agLBB] LBB LocalAgArch, delib time (ns): 4013
+[agLBB] LBB LocalAgArch, act time (ns): 532748
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1454356
 [BEnv] FALSE updateCBS 14
 [agLBB] Start sense 14
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4891
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4280
+[BEnv] LBB e2eAction 13 time (ms): 461646
 [agLBB] Selected event +!free(2)[source(self)]
 intention 2: 
     +!free(3)[source(self)] <- ... !free((X-1)) / {X=3}
@@ -221,16 +242,16 @@ intention 2:
     +!go(98)[source(self)] <- ... !go((X-1)) / {X=98}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 199010
-[agLBB] LBB LocalAgArch, sense time (ns): 551877
-[agLBB] LBB LocalAgArch, delib time (ns): 783331
-[agLBB] LBB LocalAgArch, act time (ns): 654094
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1989302
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 207864
+[agLBB] LBB LocalAgArch, sense time (ns): 823643
+[agLBB] LBB LocalAgArch, delib time (ns): 642668
+[agLBB] LBB LocalAgArch, act time (ns): 564407
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2030718
 [BEnv] TRUE updateCBS 15
 [agLBB] Start sense 15
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6226
-[BEnv] LBB e2eAction 4 time (ms): 810699
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4469
+[BEnv] LBB e2eAction 14 time (ms): 504704
 [agLBB] Selected event +!go(97)[source(self)]
 intention 1: 
     +!go(98)[source(self)] <- ... !go((X-1)) / {X=98}
@@ -240,44 +261,44 @@ intention 1:
     +!free(2)[source(self)] <- ... .print(free); !free((X-1)) / {X=2}
 
 [agLBB] free
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 449467
-[agLBB] LBB LocalAgArch, sense time (ns): 1212396
-[agLBB] LBB LocalAgArch, delib time (ns): 985759
-Sent messages: {}
-Total sent messages: 0
-Actions: {manual=12}
-Total actions: 12
-[agLBB] LBB LocalAgArch, act time (ns): 681215
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2879370
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 180239
+[agLBB] LBB LocalAgArch, sense time (ns): 782361
+[agLBB] LBB LocalAgArch, delib time (ns): 683479
+[agLBB] LBB LocalAgArch, act time (ns): 531558
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1997398
 [BEnv] FALSE updateCBS 16
 [agLBB] Start sense 16
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6510
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4375
+[BEnv] LBB e2eAction 15 time (ms): 573021
 [agLBB] Selected intention intention 1: 
     +!go(97)[source(self)] <- ... .print(X); !go((X-1)) / {X=97}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 97
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 181517
-[agLBB] LBB LocalAgArch, sense time (ns): 793595
-[agLBB] LBB LocalAgArch, delib time (ns): 7589
-[agLBB] LBB LocalAgArch, act time (ns): 838516
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1639700
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 203983
+[agLBB] LBB LocalAgArch, sense time (ns): 845611
+[agLBB] LBB LocalAgArch, delib time (ns): 6060
+[agLBB] LBB LocalAgArch, act time (ns): 671682
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1523353
 [BEnv] TRUE updateCBS 17
 [agLBB] Start sense 17
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5253
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4320
+[BEnv] LBB e2eAction 16 time (ms): 485940
 [agLBB] Selected intention intention 2: 
     +!free(2)[source(self)] <- ... !free((X-1)) / {X=2}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 187051
-[agLBB] LBB LocalAgArch, sense time (ns): 566734
-[agLBB] LBB LocalAgArch, delib time (ns): 4840
-[agLBB] LBB LocalAgArch, act time (ns): 494818
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1066392
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 177269
+[agLBB] LBB LocalAgArch, sense time (ns): 733174
+[agLBB] LBB LocalAgArch, delib time (ns): 3768
+[agLBB] LBB LocalAgArch, act time (ns): 417101
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1154043
 [BEnv] FALSE updateCBS 18
 [agLBB] Start sense 18
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5830
-[BEnv] LBB e2eAction 5 time (ms): 611486
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4334
+[BEnv] LBB e2eAction 17 time (ms): 424477
 [agLBB] Selected event +!free(1)[source(self)]
 intention 2: 
     +!free(2)[source(self)] <- ... !free((X-1)) / {X=2}
@@ -286,14 +307,16 @@ intention 2:
     +!go(97)[source(self)] <- ... !go((X-1)) / {X=97}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 239840
-[agLBB] LBB LocalAgArch, sense time (ns): 998331
-[agLBB] LBB LocalAgArch, delib time (ns): 672609
-[agLBB] LBB LocalAgArch, act time (ns): 972370
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2643310
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 202162
+[agLBB] LBB LocalAgArch, sense time (ns): 886737
+[agLBB] LBB LocalAgArch, delib time (ns): 498546
+[agLBB] LBB LocalAgArch, act time (ns): 504314
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1889597
 [BEnv] TRUE updateCBS 19
 [agLBB] Start sense 19
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5835
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4428
+[BEnv] LBB e2eAction 18 time (ms): 432375
 [agLBB] Selected event +!go(96)[source(self)]
 intention 1: 
     +!go(97)[source(self)] <- ... !go((X-1)) / {X=97}
@@ -303,56 +326,62 @@ intention 1:
     +!free(1)[source(self)] <- ... .print(free); !free((X-1)) / {X=1}
 
 [agLBB] free
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 189883
-[agLBB] LBB LocalAgArch, sense time (ns): 533639
-[agLBB] LBB LocalAgArch, delib time (ns): 883234
-[agLBB] LBB LocalAgArch, act time (ns): 732354
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2149227
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 166556
+[agLBB] LBB LocalAgArch, sense time (ns): 687383
+[agLBB] LBB LocalAgArch, delib time (ns): 555648
+[agLBB] LBB LocalAgArch, act time (ns): 497167
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1740198
 [BEnv] FALSE updateCBS 20
 [agLBB] Start sense 20
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5903
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4330
+[BEnv] LBB e2eAction 19 time (ms): 528276
 [agLBB] Selected intention intention 1: 
     +!go(96)[source(self)] <- ... .print(X); !go((X-1)) / {X=96}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 96
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 150762
-[agLBB] LBB LocalAgArch, sense time (ns): 519926
-[agLBB] LBB LocalAgArch, delib time (ns): 7327
-[agLBB] LBB LocalAgArch, act time (ns): 793261
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1320514
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 154020
+[agLBB] LBB LocalAgArch, sense time (ns): 802167
+[agLBB] LBB LocalAgArch, delib time (ns): 5639
+[agLBB] LBB LocalAgArch, act time (ns): 691984
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1499790
 [BEnv] TRUE updateCBS 21
 [agLBB] Start sense 21
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4909
-[BEnv] LBB e2eAction 6 time (ms): 539539
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4396
+[BEnv] LBB e2eAction 20 time (ms): 354947
 [agLBB] Selected intention intention 2: 
     +!free(1)[source(self)] <- ... !free((X-1)) / {X=1}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 231169
-[agLBB] LBB LocalAgArch, sense time (ns): 818298
-[agLBB] LBB LocalAgArch, delib time (ns): 5300
-[agLBB] LBB LocalAgArch, act time (ns): 491428
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1315026
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 190713
+[agLBB] LBB LocalAgArch, sense time (ns): 636727
+[agLBB] LBB LocalAgArch, delib time (ns): 5506
+[agLBB] LBB LocalAgArch, act time (ns): 540231
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1182464
 [BEnv] FALSE updateCBS 22
 [agLBB] Start sense 22
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5093
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4311
+[BEnv] agLBB doing: manual
 [agLBB] Selected event +!free(0)[source(self)]
 intention 2: 
     +!free(1)[source(self)] <- ... !free((X-1)) / {X=1}
 
+[BEnv] LBB e2eAction 21 time (ms): 541908
 [agLBB] Selected intention intention 1: 
     +!go(96)[source(self)] <- ... !go((X-1)) / {X=96}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 146268
-[agLBB] LBB LocalAgArch, sense time (ns): 407342
-[agLBB] LBB LocalAgArch, delib time (ns): 624904
-[agLBB] LBB LocalAgArch, act time (ns): 1050860
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2083106
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 137954
+[agLBB] LBB LocalAgArch, sense time (ns): 395907
+[agLBB] LBB LocalAgArch, delib time (ns): 490898
+[agLBB] LBB LocalAgArch, act time (ns): 440906
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1327711
 [BEnv] TRUE updateCBS 23
 [agLBB] Start sense 23
-[agLBB] LBB TransitionS, perceive+buf time (ns): 6005
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4345
+[BEnv] agLBB doing: manual
+[BEnv] LBB e2eAction 22 time (ms): 514147
 [agLBB] Selected event +!go(95)[source(self)]
 intention 1: 
     +!go(96)[source(self)] <- ... !go((X-1)) / {X=96}
@@ -362,41 +391,45 @@ intention 1:
     +!free(0)[source(self)] <- ...  / {}
 
 [agLBB] Returning from IM p__6[source(self),url("file:agLBB.asl")], te=+!free(0)[source(self)] unif={}
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 203107
-[agLBB] LBB LocalAgArch, sense time (ns): 605115
-[agLBB] LBB LocalAgArch, delib time (ns): 680809
-[agLBB] LBB LocalAgArch, act time (ns): 1633531
-[agLBB] LBB LocalAgArch, resCycle time (ns): 2919455
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 169802
+[agLBB] LBB LocalAgArch, sense time (ns): 409000
+[agLBB] LBB LocalAgArch, delib time (ns): 685026
+[agLBB] LBB LocalAgArch, act time (ns): 1136755
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2230781
 [BEnv] FALSE updateCBS 24
 [agLBB] Start sense 24
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5566
 [BEnv] agLBB doing: manual
-[BEnv] LBB e2eAction 7 time (ms): 607381
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4320
+[BEnv] LBB e2eAction 23 time (ms): 368836
 [agLBB] Selected intention intention 1: 
     +!go(95)[source(self)] <- ... .print(X); !go((X-1)) / {X=95}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 95
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 166113
-[agLBB] LBB LocalAgArch, sense time (ns): 501267
-[agLBB] LBB LocalAgArch, delib time (ns): 6554
-[agLBB] LBB LocalAgArch, act time (ns): 809552
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1317373
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 255664
+[agLBB] LBB LocalAgArch, sense time (ns): 686325
+[agLBB] LBB LocalAgArch, delib time (ns): 5179
+[agLBB] LBB LocalAgArch, act time (ns): 630360
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1321864
 [BEnv] TRUE updateCBS 25
 [agLBB] Start sense 25
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4884
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4232
+[BEnv] LBB e2eAction 24 time (ms): 422852
 [agLBB] Selected intention intention 1: 
     +!go(95)[source(self)] <- ... !go((X-1)) / {X=95}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 130138
-[agLBB] LBB LocalAgArch, sense time (ns): 377099
-[agLBB] LBB LocalAgArch, delib time (ns): 3941
-[agLBB] LBB LocalAgArch, act time (ns): 466120
-[agLBB] LBB LocalAgArch, resCycle time (ns): 847160
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 136927
+[agLBB] LBB LocalAgArch, sense time (ns): 567817
+[agLBB] LBB LocalAgArch, delib time (ns): 3450
+[agLBB] LBB LocalAgArch, act time (ns): 445286
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1016553
 [BEnv] FALSE updateCBS 26
 [agLBB] Start sense 26
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4782
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 4397
+[BEnv] LBB e2eAction 25 time (ms): 434852
 [agLBB] Selected event +!go(94)[source(self)]
 intention 1: 
     +!go(95)[source(self)] <- ... !go((X-1)) / {X=95}
@@ -407,28 +440,30 @@ intention 1:
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 94
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 103047
-[agLBB] LBB LocalAgArch, sense time (ns): 291402
-[agLBB] LBB LocalAgArch, delib time (ns): 603745
-[agLBB] LBB LocalAgArch, act time (ns): 678573
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1573720
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 129680
+[agLBB] LBB LocalAgArch, sense time (ns): 790843
+[agLBB] LBB LocalAgArch, delib time (ns): 928061
+[agLBB] LBB LocalAgArch, act time (ns): 871811
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2590715
 [BEnv] TRUE updateCBS 27
 [agLBB] Start sense 27
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4859
-[BEnv] LBB e2eAction 8 time (ms): 463725
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5953
+[BEnv] LBB e2eAction 26 time (ms): 443801
 [agLBB] Selected intention intention 1: 
     +!go(94)[source(self)] <- ... !go((X-1)) / {X=94}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 467055
-[agLBB] LBB LocalAgArch, sense time (ns): 973517
-[agLBB] LBB LocalAgArch, delib time (ns): 14880
-[agLBB] LBB LocalAgArch, act time (ns): 468011
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1456408
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 228984
+[agLBB] LBB LocalAgArch, sense time (ns): 776314
+[agLBB] LBB LocalAgArch, delib time (ns): 105010
+[agLBB] LBB LocalAgArch, act time (ns): 629260
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1510584
 [BEnv] FALSE updateCBS 28
 [agLBB] Start sense 28
-[agLBB] LBB TransitionS, perceive+buf time (ns): 5124
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6942
+[BEnv] LBB e2eAction 27 time (ms): 472923
 [agLBB] Selected event +!go(93)[source(self)]
 intention 1: 
     +!go(94)[source(self)] <- ... !go((X-1)) / {X=94}
@@ -439,28 +474,30 @@ intention 1:
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 93
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 108323
-[agLBB] LBB LocalAgArch, sense time (ns): 336050
-[agLBB] LBB LocalAgArch, delib time (ns): 635987
-[agLBB] LBB LocalAgArch, act time (ns): 614209
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1586246
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 210279
+[agLBB] LBB LocalAgArch, sense time (ns): 788507
+[agLBB] LBB LocalAgArch, delib time (ns): 833197
+[agLBB] LBB LocalAgArch, act time (ns): 1051756
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2673460
 [BEnv] TRUE updateCBS 29
 [agLBB] Start sense 29
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4712
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6578
+[BEnv] LBB e2eAction 28 time (ms): 432730
 [agLBB] Selected intention intention 1: 
     +!go(93)[source(self)] <- ... !go((X-1)) / {X=93}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 105333
-[agLBB] LBB LocalAgArch, sense time (ns): 297660
-[agLBB] LBB LocalAgArch, delib time (ns): 4889
-[agLBB] LBB LocalAgArch, act time (ns): 493180
-[agLBB] LBB LocalAgArch, resCycle time (ns): 795729
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 199816
+[agLBB] LBB LocalAgArch, sense time (ns): 708593
+[agLBB] LBB LocalAgArch, delib time (ns): 6734
+[agLBB] LBB LocalAgArch, act time (ns): 687885
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1403212
 [BEnv] FALSE updateCBS 30
 [agLBB] Start sense 30
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4750
 [BEnv] agLBB doing: manual
-[BEnv] LBB e2eAction 9 time (ms): 483846
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6343
+[BEnv] LBB e2eAction 29 time (ms): 500407
 [agLBB] Selected event +!go(92)[source(self)]
 intention 1: 
     +!go(93)[source(self)] <- ... !go((X-1)) / {X=93}
@@ -471,26 +508,30 @@ intention 1:
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 92
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 138929
-[agLBB] LBB LocalAgArch, sense time (ns): 345717
-[agLBB] LBB LocalAgArch, delib time (ns): 722257
-[agLBB] LBB LocalAgArch, act time (ns): 563045
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1631019
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 176011
+[agLBB] LBB LocalAgArch, sense time (ns): 816478
+[agLBB] LBB LocalAgArch, delib time (ns): 858639
+[agLBB] LBB LocalAgArch, act time (ns): 620919
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2296036
 [BEnv] TRUE updateCBS 31
 [agLBB] Start sense 31
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4811
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 5598
+[BEnv] LBB e2eAction 30 time (ms): 441155
 [agLBB] Selected intention intention 1: 
     +!go(92)[source(self)] <- ... !go((X-1)) / {X=92}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 93299
-[agLBB] LBB LocalAgArch, sense time (ns): 303208
-[agLBB] LBB LocalAgArch, delib time (ns): 5017
-[agLBB] LBB LocalAgArch, act time (ns): 314858
-[agLBB] LBB LocalAgArch, resCycle time (ns): 623083
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 171615
+[agLBB] LBB LocalAgArch, sense time (ns): 671846
+[agLBB] LBB LocalAgArch, delib time (ns): 6423
+[agLBB] LBB LocalAgArch, act time (ns): 543191
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1221460
 [BEnv] FALSE updateCBS 32
+[BEnv] agLBB doing: manual
 [agLBB] Start sense 32
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4639
+[BEnv] LBB e2eAction 31 time (ms): 358738
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6447
 [agLBB] Selected event +!go(91)[source(self)]
 intention 1: 
     +!go(92)[source(self)] <- ... !go((X-1)) / {X=92}
@@ -501,28 +542,30 @@ intention 1:
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 91
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 90858
-[agLBB] LBB LocalAgArch, sense time (ns): 264203
-[agLBB] LBB LocalAgArch, delib time (ns): 507383
-[agLBB] LBB LocalAgArch, act time (ns): 389329
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1160915
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 189890
+[agLBB] LBB LocalAgArch, sense time (ns): 949553
+[agLBB] LBB LocalAgArch, delib time (ns): 637918
+[agLBB] LBB LocalAgArch, act time (ns): 607141
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2194612
 [BEnv] TRUE updateCBS 33
 [agLBB] Start sense 33
 [BEnv] agLBB doing: manual
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4189
-[BEnv] LBB e2eAction 10 time (ms): 620041
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6531
+[BEnv] LBB e2eAction 32 time (ms): 394785
 [agLBB] Selected intention intention 1: 
     +!go(91)[source(self)] <- ... !go((X-1)) / {X=91}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 147384
-[agLBB] LBB LocalAgArch, sense time (ns): 795159
-[agLBB] LBB LocalAgArch, delib time (ns): 4719
-[agLBB] LBB LocalAgArch, act time (ns): 362393
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1162271
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 193906
+[agLBB] LBB LocalAgArch, sense time (ns): 688015
+[agLBB] LBB LocalAgArch, delib time (ns): 6818
+[agLBB] LBB LocalAgArch, act time (ns): 655137
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1349970
 [BEnv] FALSE updateCBS 34
 [agLBB] Start sense 34
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4493
+[BEnv] agLBB doing: manual
+[agLBB] LBB TransitionS, perceive+buf time (ns): 9290
+[BEnv] LBB e2eAction 33 time (ms): 499838
 [agLBB] Selected event +!go(90)[source(self)]
 intention 1: 
     +!go(91)[source(self)] <- ... !go((X-1)) / {X=91}
@@ -533,34 +576,40 @@ intention 1:
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
 [agLBB] 90
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 90497
-[agLBB] LBB LocalAgArch, sense time (ns): 304372
-[agLBB] LBB LocalAgArch, delib time (ns): 450622
-[agLBB] LBB LocalAgArch, act time (ns): 382852
-[agLBB] LBB LocalAgArch, resCycle time (ns): 1137846
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 276594
+[agLBB] LBB LocalAgArch, sense time (ns): 915643
+[agLBB] LBB LocalAgArch, delib time (ns): 1133080
+[agLBB] LBB LocalAgArch, act time (ns): 910633
+[agLBB] LBB LocalAgArch, resCycle time (ns): 2959356
 [BEnv] TRUE updateCBS 35
 [agLBB] Start sense 35
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4507
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6112
+[BEnv] agLBB doing: manual
+[BEnv] LBB e2eAction 34 time (ms): 514191
 [agLBB] Selected intention intention 1: 
     +!go(90)[source(self)] <- ... !go((X-1)) / {X=90}
     +!start[source(self)] <- ... !go(100); !plan(100000) / {}
 
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 95336
-[agLBB] LBB LocalAgArch, sense time (ns): 260790
-[agLBB] LBB LocalAgArch, delib time (ns): 4469
-[agLBB] LBB LocalAgArch, act time (ns): 358673
-[agLBB] LBB LocalAgArch, resCycle time (ns): 623932
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 173432
+[agLBB] LBB LocalAgArch, sense time (ns): 419424
+[agLBB] LBB LocalAgArch, delib time (ns): 6618
+[agLBB] LBB LocalAgArch, act time (ns): 610178
+[agLBB] LBB LocalAgArch, resCycle time (ns): 1036220
 [BEnv] FALSE updateCBS 36
 [agLBB] Start sense 36
 [BEnv] agLBB doing: manual
-[BEnv] LBB e2eAction 11 time (ms): 372018
-[agLBB] LBB TransitionS, perceive+buf time (ns): 4477
-[agLBB] LBB LocalAgArch, senseLBB time (ns): 132884
-[agLBB] LBB LocalAgArch, sense time (ns): 914496
-[agLBB] LBB LocalAgArch, delib time (ns): 1024
-[agLBB] LBB LocalAgArch, act time (ns): 1579
-[agLBB] LBB LocalAgArch, resCycle time (ns): 917099
+[agLBB] LBB TransitionS, perceive+buf time (ns): 6062
+[BEnv] LBB e2eAction 35 time (ms): 401385
+[agLBB] LBB LocalAgArch, senseLBB time (ns): 170004
+[agLBB] LBB LocalAgArch, sense time (ns): 596954
+[agLBB] LBB LocalAgArch, delib time (ns): 883
+[agLBB] LBB LocalAgArch, act time (ns): 1429
+[agLBB] LBB LocalAgArch, resCycle time (ns): 599266
 [agLBB] I finished!
+Sent messages: {}
+Total sent messages: 0
+Actions: {manual=36}
+Total actions: 36
 
 user-end:
 
