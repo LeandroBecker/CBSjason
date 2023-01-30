@@ -1340,8 +1340,8 @@ public class TransitionSystem implements Serializable {
 
                 for (Option opt: rp) {
                     LogicalFormula context = opt.getPlan().getContext();
-                    if (getLogger().isLoggable(Level.FINE))
-                        getLogger().log(Level.FINE, "option for "+C.SE.getTrigger()+" is plan "+opt.getPlan().getLabel() + " " + opt.getPlan().getTrigger() + " : " + context + " -- with unification "+opt.getUnifier());
+                    //if (getLogger().isLoggable(Level.FINE))
+                    //    getLogger().log(Level.FINE, "option for "+C.SE.getTrigger()+" is plan "+opt.getPlan().getLabel() + " " + opt.getPlan().getTrigger() + " : " + context + " -- with unification "+opt.getUnifier());
 
                     if (context == null) { // context is true
                         if (ap == null) ap = new LinkedList<>();
@@ -1723,22 +1723,16 @@ public class TransitionSystem implements Serializable {
     }
 
     public void senseLBB() {
-        Boolean[] cbsPercepts =              null;
+        Boolean[] cbsPercepts = null;
+
+        if((getAgArch().getCycleNumber()) < 10)
+            return; 
+
         try { 
-            // if (logger.isLoggable(Level.FINE)) logger.fine("LBB Start sense " + getAgArch().getCycleNumber() ); //LB
-            // if (logger.isLoggable(Level.FINE)) logger.fine("LBB TransitionSystem, Start sense " + getAgArch().getCycleNumber() ); //LB
-
-            // C.resetSense();
-
-            if (nrcslbr >= setts.nrcbp()) {
-                //nrcslbr = 0;
-                synchronized (C.syncApPlanSense) {
-                    cbsPercepts = getAgArch().perceiveCBS();
-                    //ag.bufCBS(getAgArch().perceiveCBS()); //LBB: must FIX
-                }
-                //LB getAgArch().checkMail();
+            synchronized (C.syncApPlanSense) {
+                cbsPercepts = getAgArch().perceiveCBS();
+                //ag.bufCBS(getAgArch().perceiveCBS()); //LBB: must FIX
             }
-            // nrcslbr++; // counting number of cycles since last belief revision
 
             // LB TEMP code: adding beliefs to the BeliefBase; Problem: will add in every RC
             //for(int i=0; i<=(getAgArch().getCycleNumber() % 8); i++){
@@ -1761,31 +1755,69 @@ public class TransitionSystem implements Serializable {
 
         //LB: the continuation is a modification from the code in act()
         try {
-            // C.resetAct();
-
-            // // stepAct = State.ProcAct;
-            // // do {
-            // //     applySemanticRuleAct();
-            // // } while (stepAct != State.StartRC && getAgArch().isRunning());
-
-            // LBB: vou comentar para que as acoes sejam executada a cada X ciclos
+            // LBB: to run actions every X cicles
             //if(cbsPercepts != null){
             //if((getAgArch().getCycleNumber()%3) == 0){ 
                 //LB comentado a seguir para testes
                 //for(int i=0; i<cbsPercepts.length; i++){
                     // ActionExec action = C.getAction();
-                    ActionExec action = null;
+                    //ActionExec action = null;
                     //if(cbsPercepts[i])
-                        action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                    //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                     //else
                     //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
-                    if (action != null) {
-                        // C.addPendingAction(action); //LB: is this needed?
-                        // We need to send a wrapper for FA to the user so that add method then calls C.addFA (which control atomic things)
-                        getAgArch().act(action); //, C.getFeedbackActionsWrapper());
-                    }
+                    //if (action != null) {
+                    //    getAgArch().act(action); //, C.getFeedbackActionsWrapper());
+                    //}
                 //}
             //}
+
+            // LBB: new implementation, January/27
+            if(cbsPercepts != null){                
+                //for(int i=0; i<cbsPercepts.length; i++){   
+                    int i=0;
+                    if(cbsPercepts[i] == true){     
+                        ActionExec action = null;
+                        Literal body = new LiteralImpl("cb"+i); //+"[source(percept)]");  //adaptar para o evento que vai disparar a CR
+                        Trigger te = new Trigger(TEOperator.add, TEType.belief, body);
+                        Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
+                        if (logger.isLoggable(Level.FINE)) logger.fine("Fake event " + evt+ ", events = "+C.getEvents());
+                        
+                        List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
+                        if(relPlan == null) 
+                            return; //com for eh break
+                        List<Option> apPlan = applicablePlans(relPlan); // apPlan == C.AP
+                        if(apPlan == null)
+                            return;
+                        Option theOpt = ag.selectOption(apPlan); // theOpt == C.SO
+                        if (logger.isLoggable(Level.FINE)) logger.fine("Logando relev plans " + theOpt); //LB 
+
+                        if(theOpt == null)
+                            return;
+                        IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
+                        if(im == null)
+                            return;
+                        
+                        Intention curInt = new Intention();
+                        curInt.push(im);
+                        Unifier     u = im.unif;
+                        PlanBody    h = im.getCurrentStep();
+                        Term bTerm = h.getBodyTerm();
+                        Literal bodyTer = null;
+                        if (bTerm instanceof Literal)
+                            bodyTer = (Literal)bTerm;            
+                        bodyTer = (Literal)body.capply(u);
+                        action = new ActionExec(bodyTer, curInt); //ActionExec(new LiteralImpl("manual"), null); 
+                    
+                        //if(cbsPercepts[i])
+                        //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                        //else
+                        //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                    if (action != null) 
+                        getAgArch().act(action); 
+                }
+            //}
+        }
 
             //a = ag.selectActionLB(); //the problem is that this method only returns an element from this list it received as parameter, see bellow
             // synchronized (C.getFeedbackActions()) {
