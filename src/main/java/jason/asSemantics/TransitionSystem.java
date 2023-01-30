@@ -1781,23 +1781,34 @@ public class TransitionSystem implements Serializable {
                         Literal body = new LiteralImpl("cb"+i); //+"[source(percept)]");  //adaptar para o evento que vai disparar a CR
                         Trigger te = new Trigger(TEOperator.add, TEType.belief, body);
                         Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
-                        if (logger.isLoggable(Level.FINE)) logger.fine("Fake event " + evt+ ", events = "+C.getEvents());
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Fake event " + evt+ ", events = "+C.getEvents());
                         
+                        // LB commente at Jan-30, 12:50 for a new test
                         List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
                         if(relPlan == null) 
                             return; //com for eh break
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x relevantPlans: " + relPlan.size());
+                        
                         List<Option> apPlan = applicablePlans(relPlan); // apPlan == C.AP
                         if(apPlan == null)
                             return;
-                        Option theOpt = ag.selectOption(apPlan); // theOpt == C.SO
-                        if (logger.isLoggable(Level.FINE)) logger.fine("Logando relev plans " + theOpt); //LB 
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
+
+                        Option theOpt = ag.selectOption(apPlan);  // theOpt == C.SO
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
+
+                        /* / START new test
+                        Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
+                        Unifier relUn = pa.isRelevant(evt.trigger, new Unifier());
+                        Option theOpt = new Option(pa, relUn);
+                        */ // END new test                        
 
                         if(theOpt == null)
                             return;
                         IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
                         if(im == null)
                             return;
-                        
+
                         Intention curInt = new Intention();
                         curInt.push(im);
                         Unifier     u = im.unif;
@@ -1805,10 +1816,13 @@ public class TransitionSystem implements Serializable {
                         Term bTerm = h.getBodyTerm();
                         Literal bodyTer = null;
                         if (bTerm instanceof Literal)
-                            bodyTer = (Literal)bTerm;            
-                        bodyTer = (Literal)body.capply(u);
+                            bodyTer = (Literal)bTerm;  
+                                  
+                        bodyTer = (Literal)bodyTer.capply(u);
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Reached next step " + bodyTer.getAsJsonStr());
                         action = new ActionExec(bodyTer, curInt); //ActionExec(new LiteralImpl("manual"), null); 
-                    
+                        
+                                            
                         //if(cbsPercepts[i])
                         //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         //else

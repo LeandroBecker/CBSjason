@@ -1,12 +1,12 @@
 testBel.
-
+secBel.
 
 !start.
 !free(5).
 
 // very busy (100% go)
-//+!start : true <- .stopMAS(10000); !go(1000000); !plan(100000).
-+!start : true <- .stopMAS(300); !go(100); !plan(100000).
++!start : true <- .stopMAS(10000); !go(1000000); !plan(100000).
+//+!start : true <- .stopMAS(300); !go(100); !plan(100000).
 
 //+!plan(N) : belief(N) <- !plan(N).
 //-!plan(N) : true <- !plan(N).
@@ -22,4 +22,6 @@ testBel.
 
 // +CB0 : true <- manual.
 
+//+cb0 : testBel <- manual.
++cb0 : testBel & secBel <- manual.
 +cb0 : true <- manual.
