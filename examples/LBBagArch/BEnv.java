@@ -13,8 +13,11 @@ public class BEnv extends jason.environment.Environment {
         logger.info(ag+" doing: "+ action);
 
         try {
-            if (action.getFunctor().equals("manual")) {
-                manualAction(); //LB here is another possible critical funcion
+            if (action.getFunctor().equals("critReac0")) {
+                critReac0(); 
+            } 
+            else if (action.getFunctor().equals("dummy")) {
+                dummy(); 
             } else {
                 return false;
             }
@@ -25,7 +28,7 @@ public class BEnv extends jason.environment.Environment {
         return true;
     }
     
-    void manualAction(){
+    void critReac0(){
         //logger.info("LBB fazAction " + String.valueOf(i) + " " + String.valueOf(cont+1) + " (ms): " + String.valueOf(t_curr)); // - t_init));   
         //logger.info("LBB manualAction " + String.valueOf(0) + " time (ms): " + String.valueOf(t_curr - t_init));   
         //logger.info("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB  
@@ -36,22 +39,43 @@ public class BEnv extends jason.environment.Environment {
         logger.info("LBB e2eAction " + String.valueOf(cont++) + " time (ms): " + String.valueOf(System.nanoTime() - t_updt));   
     }
     
+    void dummy(){
+        logger.info("Dummy " + String.valueOf(cont) + " time (ms): " + String.valueOf(System.nanoTime() - t_updt));   
+    }
+    
     @Override
     public boolean updateCBS() {
         //LBB: for testing, only 1 CBS set TRUE
-        if((ctdUpd++ % 2) == 0){
-            logger.info("TRUE updateCBS "+ ctdUpd);
-            cbsArray[0] = Boolean.TRUE;
-        }
-        else{
-            logger.info("FALSE updateCBS "+ ctdUpd);
-            cbsArray[0] = Boolean.FALSE;
-        }       
+        // if((ctdUpd++ % 2) == 0){
+        //     logger.info("TRUE updateCBS "+ ctdUpd);
+        //     cbsArray[0] = Boolean.TRUE;
+        // }
+        // else{
+        //     logger.info("FALSE updateCBS "+ ctdUpd);
+        //     cbsArray[0] = Boolean.FALSE;
+        // }       
 
-        t_updt = System.nanoTime(); //LB: collects updt time
+        t_updt = 10; //System.nanoTime(); //LB: collects updt time
+        cbsArray[0] = Boolean.TRUE;
 
         return true;
     }   
 
+    /** creates the agents perception /
+    void updatePercepts() {
+        //long t_curr = System.currentTimeMillis(); //LB: current time
+        //logger.info("LBBegin Env - updatePercepts(); elapsed time (ms): " + String.valueOf(t_curr - t_init));
+        //t_init = t_curr;
+        clearPercepts();
+
+        //LB: adding 10 "DISturbing" beliefs
+        // for(int i=10; i<20; i++){
+        //     Literal lit = Literal.parseLiteral("dis(" + i +")");
+        //     addPercept(lit);
+        // }        
+
+        //adding the belief that triggers the next action
+        //addPercept(bArray[cont%8]);
+    } */
 }
     

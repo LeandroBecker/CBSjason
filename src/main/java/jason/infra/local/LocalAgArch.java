@@ -281,11 +281,12 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         long endRC = System.nanoTime();
         //long microseconds = (end - start) / 1000;
         //if (logger.isLoggable(Level.FINE)) logger.fine("LB-cycle time (ns): " + String.valueOf(end-start)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, senseLBB time (ns): " + String.valueOf(endSenLBB-start)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
-        if (logger.isLoggable(Level.FINE)) logger.fine("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start)); //LB 
+        logger.info("LBB LocalAgArch, senseLBB time (ns): " + String.valueOf(endSenLBB-start)); //LB 
+        logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start)); //LB 
+        logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
+        logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
+        logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start)); //LB 
+        //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(start-tRelPlan)); //LB 
 
     }
 

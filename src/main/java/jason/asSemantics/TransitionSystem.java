@@ -1665,7 +1665,8 @@ public class TransitionSystem implements Serializable {
 
     public void sense() {
         try {
-            if (logger.isLoggable(Level.FINE)) logger.fine("Start sense " + getAgArch().getCycleNumber() ); //LB 
+            //if (logger.isLoggable(Level.FINE)) logger.fine("Start sense " + getAgArch().getCycleNumber() ); 
+            logger.info("Start sense " + getAgArch().getCycleNumber() ); //LB 
 
             C.resetSense();
 
@@ -1682,7 +1683,7 @@ public class TransitionSystem implements Serializable {
                 //     lagl.add(Literal.parseLiteral("believe("+ String.valueOf(i) + ")"));
                 //     cLit.addAll(lagl);
                 // }
-                long start = System.nanoTime();
+                //long start = System.nanoTime();
                 synchronized (C.syncApPlanSense) {
                     // if((getAgArch().getCycleNumber() % 7) == 0){
                     //     ag.bufCBS(getAgArch().perceiveCBS());      
@@ -1692,8 +1693,8 @@ public class TransitionSystem implements Serializable {
                     // ag.buf(cLit); //LB: in fact does not work properly, as the plan is never invoked
                     ag.buf(getAgArch().perceive()); //original                        
                 }
-                long end = System.nanoTime();
-                if (logger.isLoggable(Level.FINE)) logger.fine("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB 
+                //long end = System.nanoTime();
+                //logger.info("LBB TransitionS, perceive+buf time (ns): " + String.valueOf(end-start)); //LB 
                 getAgArch().checkMail();
             }
             nrcslbr++; // counting number of cycles since last belief revision
@@ -1724,15 +1725,19 @@ public class TransitionSystem implements Serializable {
 
     public void senseLBB() {
         Boolean[] cbsPercepts = null;
+        long start = 0;
+        long endPer = 0;
 
         if((getAgArch().getCycleNumber()) < 10)
             return; 
 
         try { 
+            start = System.nanoTime();
             synchronized (C.syncApPlanSense) {
                 cbsPercepts = getAgArch().perceiveCBS();
                 //ag.bufCBS(getAgArch().perceiveCBS()); //LBB: must FIX
             }
+            endPer = System.nanoTime();
 
             // LB TEMP code: adding beliefs to the BeliefBase; Problem: will add in every RC
             //for(int i=0; i<=(getAgArch().getCycleNumber() % 8); i++){
@@ -1783,19 +1788,23 @@ public class TransitionSystem implements Serializable {
                         Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Fake event " + evt+ ", events = "+C.getEvents());
                         
+                        //long start = System.nanoTime();
                         // LB commente at Jan-30, 12:50 for a new test
                         List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
                         if(relPlan == null) 
                             return; //com for eh break
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x relevantPlans: " + relPlan.size());
+                        long tRelPlan = System.nanoTime();
                         
                         List<Option> apPlan = applicablePlans(relPlan); // apPlan == C.AP
                         if(apPlan == null)
                             return;
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
+                        long tAppPlan = System.nanoTime();
 
                         Option theOpt = ag.selectOption(apPlan);  // theOpt == C.SO
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
+                        long tSelOpt = System.nanoTime();
 
                         /* / START new test
                         Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
@@ -1808,6 +1817,7 @@ public class TransitionSystem implements Serializable {
                         IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
                         if(im == null)
                             return;
+                        
 
                         Intention curInt = new Intention();
                         curInt.push(im);
@@ -1827,8 +1837,16 @@ public class TransitionSystem implements Serializable {
                         //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         //else
                         //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                        long tExec = System.nanoTime();
                     if (action != null) 
                         getAgArch().act(action); 
+                    
+                    // Time logging
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
+                    logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
+                    logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
+                    logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
+                    logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
                 }
             //}
         }
