@@ -3,7 +3,7 @@
 
 MAS lbb2 {
 
-    environment: BEnv
+    environment: BEnv2
 
     agents: 
         agLBB agentArchClass StatArch;

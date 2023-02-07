@@ -35,6 +35,7 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
 
     /** a MAP from TE to a list of relevant plans */
     private Map<PredicateIndicator,List<Plan>> relPlans = new ConcurrentHashMap<>();
+    private Map<Integer,List<Plan>> relCRP = new ConcurrentHashMap<>();
 
     /**
      * All plans as defined in the AS code (maintains the order of the plans)
@@ -62,10 +63,35 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
 
     private boolean hasPlansForUpdateEvents = false;
 
-    public PlanLibrary() {
+    public PlanLibrary() { //FIX: added plans artificially for testing
+        try{
+            List<Plan> codesList = new ArrayList<>();
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & not belB & not belC <- critReac7."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & not belB & belC <- critReac6."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & belB & not belC <- critReac5."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA &  belB & belC <- critReac4."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : belA & not belB & not belC <- critReac3."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & not belB & belC <- critReac2."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & belB & not belC <- critReac1."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & belB & belC <- critReac0."));
+            relCRP.put(0, codesList);        
+        } catch (Exception e) {}
     }
 
     public PlanLibrary(PlanLibrary father) {
+        try{
+            List<Plan> codesList = new ArrayList<>();
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & not belB & not belC <- critReac7."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & not belB & belC <- critReac6."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA & belB & not belC <- critReac5."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : not belA &  belB & belC <- critReac4."));
+            codesList.add(ASSyntax.parsePlan("+cb0 : belA & not belB & not belC <- critReac3."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & not belB & belC <- critReac2."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & belB & not belC <- critReac1."));
+            codesList.add(ASSyntax.parsePlan("+cb0 :  belA & belB & belC <- critReac0."));
+            relCRP.put(0, codesList);        
+        } catch (Exception e) {}
+
         this.father = father;
     }
 
@@ -446,6 +472,28 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
             }
             return l; // if no rel plan, have to return null instead of empty list
         }
+    }
+
+    public List<Plan> getCandidatePlansCT() { //CT - Critical Things 
+        List<Plan> l = null;
+        List<Plan> tmp_l = null;
+        // if (te.getLiteral().isVar() || te.getNS().isVar()) { // add all plans!
+        //     for (Plan p: this)
+        //         if (p.getTrigger().sameType(te)) {
+        //             if (l == null)
+        //                 l = new ArrayList<>();
+        //             l.add(p);
+        //         }
+        // } else {
+        for(int i=0; i<8; i++){ // FIX: change '8' for cbSet.length
+            tmp_l = relCRP.get(i);
+            if (tmp_l != null) {  // no rel plan, try varPlan
+                if (l == null)
+                    l = new ArrayList<>();
+                l.addAll(tmp_l);
+            }
+        }
+        return l; // if no rel plan, have to return null instead of empty list
     }
 
     public static final Trigger TE_JAG_SLEEPING      = new Trigger(TEOperator.add, TEType.belief, new Atom("jag_sleeping"));

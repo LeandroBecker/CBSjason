@@ -6,6 +6,8 @@ import jason.asSyntax.*;
 
 public class StatArch extends AgArch {
 
+    //private transient Logger logger     = null;
+
     Map<String,Integer> msgCount = new HashMap<>();
     Map<String,Integer> actCount = new HashMap<>();
 
@@ -36,11 +38,13 @@ public class StatArch extends AgArch {
 
     @Override
     public void act(ActionExec action) {
-      super.act(action);
+      //super.act(action);
 
-      Integer c = actCount.get(action.getActionTerm().getFunctor());
+      String str = action.getActionTerm().getFunctor();
+      Integer c = actCount.get(str);
       if (c == null)
         c = 0;
-      actCount.put(action.getActionTerm().getFunctor(),c+1);
+      actCount.put(str,c+1);
+      //logger.info("Action-executed: " + str); 
     }
 }

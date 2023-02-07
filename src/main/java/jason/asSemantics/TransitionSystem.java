@@ -1723,7 +1723,7 @@ public class TransitionSystem implements Serializable {
         }
     }
 
-    public void senseLBB() {
+    public void criticalRC() {
         Boolean[] cbsPercepts = null;
         long start = 0;
         long endPer = 0;
@@ -1837,16 +1837,204 @@ public class TransitionSystem implements Serializable {
                         //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         //else
                         //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
-                        long tExec = System.nanoTime();
+                        
+                    // LBB: due testing, not executing the action
                     if (action != null) 
                         getAgArch().act(action); 
-                    
+                    long tExec = System.nanoTime();
                     // Time logging
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
-                    logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
-                    logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
-                    logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
-                    logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
+                    //logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
+                    //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
+                    //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-tSelOpt));
+                }
+            //}
+        }
+
+            //a = ag.selectActionLB(); //the problem is that this method only returns an element from this list it received as parameter, see bellow
+            // synchronized (C.getFeedbackActions()) {
+            //     a = ag.selectAction(C.getFeedbackActions());
+            // }
+            // if (a != null) {
+            //     //final Intention curInt = a.getIntention();
+            
+            //     // remove the intention from PA (PA has all pending action, including those in FA;
+            //     // but, if the intention is not in PA, it means that the intention was dropped
+            //     // and should not return to I)
+            //     //if (C.removePendingAction(curInt.getId()) != null) {
+            //         if (a.getResult()) {
+            //             // add the intention back in I
+            //             // removeActionReQueue(curInt);
+            //             // applyClrInt(curInt);
+            
+            //             // if (hasGoalListener())
+            //             //     for (GoalListener gl: getGoalListeners())
+            //             //         for (IntendedMeans im: curInt) //.getIMs())
+            //             //             gl.goalExecuting(im.getTrigger(), ASSyntax.createStructure("action_executed", a.getActionTerm()));
+            //         } else {
+            //             String reason = a.getFailureMsg();
+            //             if (reason == null) reason = "";
+            //             ListTerm annots = JasonException.createBasicErrorAnnots("action_failed", reason);
+            //             if (a.getFailureReason() != null)
+            //                 annots.append(a.getFailureReason());
+            //             // generateGoalDeletion(curInt, annots, ASSyntax.createAtom("action_failed"));
+            //             // C.removeAtomicIntention(); // if (potential) atomic intention is not removed, it will be selected in selInt or selEv and runs again
+            //         }
+            //     //} else {
+            //     //    applyProcAct(); // get next action
+            //     //}
+            // }
+            
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+    }
+
+    public void criticalRCv2() {
+        Boolean[] cActions = new Boolean[8]; 
+        Boolean[] cbsPercepts = null;
+        long start = 0;
+        long endPer = 0;
+
+        if((getAgArch().getCycleNumber()) < 10)
+            return; 
+
+        try { 
+            start = System.nanoTime();
+            synchronized (C.syncApPlanSense) {
+                cbsPercepts = getAgArch().perceiveCBS();
+            }
+            endPer = System.nanoTime();           
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (sense). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+
+        //LB: the continuation is a modification from the code in act()
+        try {
+            if(cbsPercepts != null){                
+                //for(int i=0; i<cbsPercepts.length; i++){   
+                    int i=0;
+                    if(cbsPercepts[i] == true){     
+                        ActionExec action = null;
+                        Literal body = new LiteralImpl("cb"+i); 
+                        Trigger te = new Trigger(TEOperator.add, TEType.belief, body);
+                        Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
+                                                
+                        //Step.6: find Relevant Plans
+                        //List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
+                        List<Option> rp = null;                
+                        /* (previous to JasonER) */
+                        List<Plan> candidateRPs = ag.pl.getCandidatePlansCT(); 
+                        // List<Plan> candidateRPs = ag.pl.getCandidatePlans(te);
+                        if (candidateRPs != null) {
+                            for (Plan pl : candidateRPs) {
+                                Unifier relUn = new Unifier(); 
+                                // Unifier relUn = pl.isRelevant(te, null);
+                                if (relUn != null) {
+                                    if (rp == null) rp = new LinkedList<>();
+                                    rp.add(new Option(pl, relUn));
+                                }
+                            }
+                        } // END Step.6 - variable 'rp'
+                        if(rp == null) 
+                            return; //com for eh break
+                        long tRelPlan = System.nanoTime();
+                        
+                        //Step.7: find Applicable Plans
+                        //List<Option> apPlan = applicablePlans(rp); // apPlan == C.AP
+                        List<Option> ap = null;
+                        if (rp != null) {
+                            for (Option opt: rp) {
+                                LogicalFormula context = opt.getPlan().getContext();
+                                if (context == null) { // context is true
+                                    if (ap == null) ap = new LinkedList<>();
+                                    ap.add(opt);
+                                } else {
+                                    boolean allUnifs = opt.getPlan().isAllUnifs();
+                                    Iterator<Unifier> r = context.logicalConsequence(ag, opt.getUnifier());
+                                    boolean isApplicable = false;
+                                    if (r != null) {
+                                        while (r.hasNext()) {
+                                            isApplicable = true;
+                                            opt.setUnifier(r.next());
+
+                                            if (ap == null) ap = new LinkedList<>();
+                                            ap.add(opt);
+
+                                            if (!allUnifs) break; // returns only the first unification
+                                            if (r.hasNext()) {
+                                                // create a new option for the next loop step
+                                                opt = new Option(opt.getPlan(), null);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } // END Step.7 - variable 'ap'
+                        if(ap == null)
+                            return;
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
+                        long tAppPlan = System.nanoTime();
+
+                        Option theOpt = ag.selectOption(ap);  // theOpt == C.SO
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
+                        long tSelOpt = System.nanoTime();
+
+                        /* / START new test
+                        Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
+                        Unifier relUn = pa.isRelevant(evt.trigger, new Unifier());
+                        Option theOpt = new Option(pa, relUn);
+                        */ // END new test                        
+
+                        if(theOpt == null)
+                            return;
+                        IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
+                        if(im == null)
+                            return;
+                        
+
+                        Intention curInt = new Intention();
+                        curInt.push(im);
+                        Unifier     u = im.unif;
+                        PlanBody    h = im.getCurrentStep();
+                        Term bTerm = h.getBodyTerm();
+                        Literal bodyTer = null;
+                        if (bTerm instanceof Literal)
+                            bodyTer = (Literal)bTerm;  
+                                  
+                        bodyTer = (Literal)bodyTer.capply(u);
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Reached next step " + bodyTer.getAsJsonStr());
+                        action = new ActionExec(bodyTer, curInt); //ActionExec(new LiteralImpl("manual"), null); 
+                        
+                                            
+                        //if(cbsPercepts[i])
+                        //    action = new ActionExec(new LiteralImpl("manual"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                        //else
+                        //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                        
+                    // LBB: due testing, not executing the action
+                    if (action != null) 
+                        getAgArch().act(action); 
+                    long tExec = System.nanoTime();
+                    // Time logging
+                    //logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
+                    //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
+                    //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }
