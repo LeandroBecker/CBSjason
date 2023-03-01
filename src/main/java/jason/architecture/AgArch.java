@@ -189,6 +189,12 @@ public class AgArch implements Comparable<AgArch>, Serializable {
             successor.act(action);
     }
 
+    /**
+     * Created by LBB to execute only the Critical Reactions (CR)
+     *
+     */
+    public void actCR(Boolean[] cActions) {    }
+
     /** called to inform that the action execution is finished */
     public void actionExecuted(ActionExec act) {
         getTS().getC().addFeedbackAction(act);

@@ -3,7 +3,7 @@ echo "Running Jason in : "
 pwd 
 for i in {0..10};
 do
-    jason lbb2.mas2j
+    jason lbb2.mas2j > outp
 done
-#python3 test.py mas-0.log
+python3 test.py 9
 

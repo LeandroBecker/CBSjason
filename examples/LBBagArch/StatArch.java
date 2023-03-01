@@ -47,4 +47,15 @@ public class StatArch extends AgArch {
       actCount.put(str,c+1);
       //logger.info("Action-executed: " + str); 
     }
+
+    @Override
+    public void actCR(Boolean[] cActions) {    
+      String str = "critical0"; //action.getActionTerm().getFunctor();
+      Integer c = actCount.get(str);
+      if (c == null)
+        c = 0;
+      actCount.put(str,c+1);
+      //logger.info("Action-executed: " + str); 
+    }
+
 }

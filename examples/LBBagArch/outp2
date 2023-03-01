@@ -1,0 +1,21 @@
+Executing /usr/lib/jvm/open-jdk-17/bin/java -classpath /home/leandro/jason/build/libs/ant-launcher-1.10.5.jar org.apache.tools.ant.launch.Launcher -e -f bin/lbb3.xml run
+Buildfile: /home/leandro/jason/examples/LBBagArch/bin/lbb3.xml
+
+init:
+
+user-init:
+
+compile:
+
+run:
+Running project lbb3
+Jason Http Server running on http://127.0.1.1:3272
+Sent messages: {}
+Total sent messages: 0
+Actions: {dummy=22}
+Total actions: 22
+
+user-end:
+
+BUILD SUCCESSFUL
+Total time: 2 seconds
