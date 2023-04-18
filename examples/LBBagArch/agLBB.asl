@@ -43,7 +43,8 @@ belC.
 
 // very busy (100% go)
 //+!start : true <- .stopMAS(10000); !go(1000000); !plan(100000).
-+!start : true <- .stopMAS(1000); !!plan(100000); for ( .range(I,0,20) ) { // creates 6 concurrent intentions for g
+//troquei o tempo de .stopMAS, de 1k para 10k
++!start : true <- .stopMAS(60000); !!plan(100000); for ( .range(I,0,20) ) { // creates 6 concurrent intentions for g
          !!go(1000000);
       }.
 

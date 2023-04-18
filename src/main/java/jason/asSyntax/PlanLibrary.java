@@ -75,10 +75,13 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & not belB & belC <- critReac2."));
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & belB & not belC <- critReac1."));
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & belB & belC <- critReac0."));
-            codesList.add(ASSyntax.parsePlan("+cb1 [cr]:  belA & belB & belC <- critReac10."));
-            codesList.add(ASSyntax.parsePlan("+cb2 [cr]:  belA & belB & belC <- critReac20."));
-            codesList.add(ASSyntax.parsePlan("+cb3 [cr]:  belA & belB & belC <- critReac30."));
             relCRP.put(0, codesList);        
+
+            List<Plan> codesList1 = new ArrayList<>();
+            codesList1.add(ASSyntax.parsePlan("+cb1 [cr]:  belA & belB & belC <- critReac10."));
+            relCRP.put(1, codesList1);        
+            //codesList.add(ASSyntax.parsePlan("+cb2 [cr]:  belA & belB & belC <- critReac20."));
+            //codesList.add(ASSyntax.parsePlan("+cb3 [cr]:  belA & belB & belC <- critReac30."));
         } catch (Exception e) {}
     }
 
@@ -94,10 +97,13 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & not belB & belC <- critReac2."));
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & belB & not belC <- critReac1."));
             codesList.add(ASSyntax.parsePlan("+cb0 [cr]:  belA & belB & belC <- critReac0."));
-            codesList.add(ASSyntax.parsePlan("+cb1 [cr]:  belA & belB & belC <- critReac10."));
-            codesList.add(ASSyntax.parsePlan("+cb2 [cr]:  belA & belB & belC <- critReac20."));
-            codesList.add(ASSyntax.parsePlan("+cb3 [cr]:  belA & belB & belC <- critReac30."));
             relCRP.put(0, codesList);        
+
+            List<Plan> codesList1 = new ArrayList<>();
+            codesList1.add(ASSyntax.parsePlan("+cb1 [cr]:  belA & belB & belC <- critReac10."));
+            relCRP.put(1, codesList1);        
+            //codesList.add(ASSyntax.parsePlan("+cb2 [cr]:  belA & belB & belC <- critReac20."));
+            //codesList.add(ASSyntax.parsePlan("+cb3 [cr]:  belA & belB & belC <- critReac30."));
         } catch (Exception e) {}
 
         this.father = father;
@@ -493,7 +499,7 @@ public class PlanLibrary implements Iterable<Plan>, Serializable, ToDOM {
         //             l.add(p);
         //         }
         // } else {
-        for(int i=0; i<8; i++){ // FIX: change '8' for cbSet.length
+        for(int i=0; i<2; i++){ // FIX: change '8' for cbSet.length
             tmp_l = relCRP.get(i);
             if (tmp_l != null) {  // no rel plan, try varPlan
                 if (l == null)

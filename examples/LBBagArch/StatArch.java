@@ -12,6 +12,14 @@ public class StatArch extends AgArch {
     Map<String,Integer> actCount = new HashMap<>();
 
     @Override
+    public Boolean[] perceiveCBS() {
+      //System.out.println("perceiveCBS: ");   
+      //Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
+      Boolean[] percepts = new Boolean[8];
+      return percepts;
+ }
+
+    @Override
     public void stop() {
         System.out.println("Sent messages: "+msgCount);
         int t = 0;
@@ -50,12 +58,13 @@ public class StatArch extends AgArch {
 
     @Override
     public void actCR(Boolean[] cActions) {    
-      String str = "critical0"; //action.getActionTerm().getFunctor();
+      //FIX: should in fact only trigger those (critical) actions considered TRUE
+      String str = "critReac0"; //action.getActionTerm().getFunctor();
       Integer c = actCount.get(str);
       if (c == null)
         c = 0;
       actCount.put(str,c+1);
-      //logger.info("Action-executed: " + str); 
+      //System.out.println("Action-executed: " + str); 
     }
 
 }

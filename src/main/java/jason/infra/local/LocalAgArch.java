@@ -219,7 +219,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         int i = 0;
         do {
-            ts.criticalRCv3(); // must run at least once, so that perceive() is called
+            ts.criticalRCv2(); // must run at least once, so that perceive() is called
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 
@@ -381,7 +381,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
         //Boolean[] percepts = new Boolean[8];
         //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-        //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
+        if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
         return percepts;
     }
 

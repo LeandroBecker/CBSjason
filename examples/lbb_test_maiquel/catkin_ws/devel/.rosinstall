@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/leandro/embedded-mas/examples/jacamo/ros/lbb_test/catkin_ws/devel/setup.sh
