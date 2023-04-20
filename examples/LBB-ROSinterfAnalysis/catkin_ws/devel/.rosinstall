@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/leandro/jason/examples/LBB-ROSinterfAnalysis/catkin_ws/devel/setup.sh

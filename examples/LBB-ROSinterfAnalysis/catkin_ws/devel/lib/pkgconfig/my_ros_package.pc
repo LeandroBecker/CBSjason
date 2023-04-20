@@ -1,4 +1,4 @@
-prefix=/home/leandro/jason/examples/lbb_test_maiquel/catkin_ws/devel
+prefix=/home/leandro/jason/examples/LBB-ROSinterfAnalysis/catkin_ws/devel
 
 Name: my_ros_package
 Description: Description of my_ros_package
