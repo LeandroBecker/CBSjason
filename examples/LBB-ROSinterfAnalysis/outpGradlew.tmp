@@ -1,4 +1,0 @@
-Connecting to : ws://localhost:9090
-Got connect for ros: WebSocketSession[websocket=JettyAnnotatedEventDriver[ros.RosBridge@2f2976b5],behavior=CLIENT,connection=WebSocketClientConnection@2f4858c3{IDLE}{f=Flusher[queueSize=0,aggregateSize=0,failure=null],g=Generator[CLIENT,validating],p=Parser@4157349a[ExtensionStack,s=START,c=0,len=0,f=null,p=WebSocketPolicy@32579cf3[behavior=CLIENT,maxTextMessageSize=65536,maxTextMessageBufferSize=32768,maxBinaryMessageSize=65536,maxBinaryMessageBufferSize=32768,asyncWriteTimeout=60000,idleTimeout=300000,inputBufferSize=4096]]},remote=WebSocketRemoteEndpoint@56afc8d2[batching=true],incoming=JettyAnnotatedEventDriver[ros.RosBridge@2f2976b5],outgoing=ExtensionStack[queueSize=0,extensions=[],incoming=org.eclipse.jetty.websocket.common.WebSocketSession,outgoing=org.eclipse.jetty.websocket.client.io.WebSocketClientConnection]]
-Jason Http Server running on http://127.0.1.1:3273
-Connection closed: 1001 - Shutdown
