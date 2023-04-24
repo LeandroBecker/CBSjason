@@ -314,7 +314,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
                 getFirstAgArch().incCycleNumber(); // should not increment in case of sync execution
                 reasoningCycle();
                 if (ts.canSleep())
-                    sleep();
+                    sleepCJ(); 
             }
         }
         logger.fine("I finished!");
@@ -333,6 +333,21 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
                     sleepSync.wait(sleepTime); // wait for messages
                     if (sleepTime < MAX_SLEEP)
                         sleepTime += 100;
+                }
+            }
+        } catch (InterruptedException e) {
+        } catch (Exception e) {
+            logger.log(Level.WARNING,"Error in sleep.", e);
+        }
+    }
+
+    // LBB: modified to a fixed 100ms sleep
+    public void sleepCJ() {
+        try {
+            if (!getTS().getSettings().isSync()) {
+                logger.info("Entering in sleep mode....");
+                synchronized (sleepSync) {
+                    sleepSync.wait(100); // wait for messages
                 }
             }
         } catch (InterruptedException e) {
