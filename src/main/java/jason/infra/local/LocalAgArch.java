@@ -343,11 +343,16 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
     // LBB: modified to a fixed 100ms sleep
     public void sleepCJ() {
+        int i=10;
         try {
             if (!getTS().getSettings().isSync()) {
-                logger.info("Entering in sleep mode....");
-                synchronized (sleepSync) {
-                    sleepSync.wait(100); // wait for messages
+                while(i-- > 0){
+                    //logger.info("Entering in sleep mode....");
+                    synchronized (sleepSync) {
+                        sleepSync.wait(20); // wait for messages
+                    }
+                    if(perceiveCBS() != null) 
+                        break;
                 }
             }
         } catch (InterruptedException e) {
