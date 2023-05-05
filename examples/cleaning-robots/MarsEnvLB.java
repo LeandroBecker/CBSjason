@@ -72,7 +72,7 @@ public class MarsEnvLB extends Environment {
                 model.pickGarb();
             } else if (action.equals(dg)) {
                 model.dropGarb();
-            } else if (action.equals(cr0)) { 
+            } else if (action.equals(bg)) { 
                 model.burnGarb();
                 cbsArray[0] = Boolean.FALSE;
                 reaction_times.add(System.nanoTime()); //LB: saves perception time
