@@ -3,7 +3,7 @@
 
 MAS mars {
 
-    environment: MarsEnv
+    environment: MarsEnvLB
 
-    agents: r1; //r2;
+    agents: r1; 
 }

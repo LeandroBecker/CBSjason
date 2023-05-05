@@ -164,9 +164,7 @@ public class Environment {
 //    public Collection<Literal> getPerceptsCBS(String agName) {
     public Boolean[] getPerceptsCBS(String agName) {
         updateCBS();
-
         return cbsArray;
-
         /* LBB: my first test for 'Collection<Literal> getPerceptsCBS()'*/
         // int nBel = 1;
         // Collection<Literal> cLit = new ArrayList<Literal>(1);
@@ -177,6 +175,11 @@ public class Environment {
         // return cLit;
     }
 
+    public void doResetCBS(String agName) {
+        resetCBS();
+        return;
+    }
+        
     /**
      *  Returns a copy of the perception for an agent.
      *
@@ -259,6 +262,7 @@ public class Environment {
             uptodateAgs.clear();
             percepts.clear();
         }
+        cbsArray[0] = Boolean.FALSE;
     }
 
     /** Returns true if the list of common percepts contains the perception <i>per</i>. */
@@ -372,11 +376,27 @@ public class Environment {
     }
 
     /**
-     * Updates CBS on the environment. This method is probably overridden in the user environment class.
+     * LBB: Updates CBS on the environment. 
+     * This method should be overridden in the user environment class.
      */
     public boolean updateCBS() {
         logger.info("updateCBS was not implemented in the default environment.");
         return false;
+    }
+
+    /**
+     * LBB: Reset CBS on the environment. 
+     */
+    public void resetCBS() {
+        cbsArray[0] = Boolean.FALSE;
+        cbsArray[1] = Boolean.FALSE;
+        cbsArray[2] = Boolean.FALSE;
+        cbsArray[3] = Boolean.FALSE;
+        cbsArray[4] = Boolean.FALSE;
+        cbsArray[5] = Boolean.FALSE;
+        cbsArray[6] = Boolean.FALSE;
+        cbsArray[7] = Boolean.FALSE;
+        return;
     }
     /**
      * Executes an action on the environment. This method is probably overridden in the user environment class.

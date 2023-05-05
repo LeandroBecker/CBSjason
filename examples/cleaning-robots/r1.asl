@@ -5,8 +5,21 @@
 at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 
 /* Initial goal */
+//!start.
+!getBusy.
 
-!check(slots).
+// mars robot 2
++!getBusy : true <- !start; for ( .range(I,0,99) ) { // creates 6 concurrent intentions for g
+         !!go(9990000);
+      }.
+
++!go(0).
++!go(X) <- !go(X-1).
+
+//+!start : true <- !start. 
++!start : true <- .stopMAS(15000); !check(slots).
+
+//!check(slots).
 
 /* Plans */
 
@@ -46,3 +59,5 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 +!at(L) <- ?pos(L,X,Y);
            move_towards(X,Y);
            !at(L).
+
++cb0 : true <- burn(garb).

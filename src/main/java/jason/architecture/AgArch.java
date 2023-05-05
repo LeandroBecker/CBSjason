@@ -163,12 +163,11 @@ public class AgArch implements Comparable<AgArch>, Serializable {
     }
 
     // LBB clone
-    // public Collection<Literal> perceiveCBS() {
     public Boolean[] perceiveCBS() {
         if (successor == null)
             return null;
-        else
-            return successor.perceiveCBS();
+        else 
+            return successor.perceiveCBS();            
     }
     
     /** Reads the agent's mailbox and adds messages into

@@ -6,20 +6,23 @@ import jason.asSyntax.*;
 
 public class StatArch extends AgArch {
 
-    //private transient Logger logger     = null;
+  //private transient Logger logger     = null;
 
-    Map<String,Integer> msgCount = new HashMap<>();
-    Map<String,Integer> actCount = new HashMap<>();
+  Map<String,Integer> msgCount = new HashMap<>();
+  Map<String,Integer> actCount = new HashMap<>();
 
-    @Override
-    public Boolean[] perceiveCBS() {
-      //System.out.println("perceiveCBS: ");   
-      //Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-      Boolean[] percepts = new Boolean[8];
-      return percepts;
+  @Override
+  public Boolean[] perceiveCBS() {
+    //System.out.println("perceiveCBS: ");   
+    //Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
+    Boolean[] percepts = new Boolean[8];
+    for(int i=0; i<8; i++)
+      percepts[i] = Boolean.FALSE;
+      
+    return percepts;
  }
 
-    @Override
+ @Override
     public void stop() {
         System.out.println("Sent messages: "+msgCount);
         int t = 0;

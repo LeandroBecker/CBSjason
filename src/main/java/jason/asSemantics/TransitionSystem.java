@@ -1667,7 +1667,7 @@ public class TransitionSystem implements Serializable {
     public void sense() {
         try {
             //if (logger.isLoggable(Level.FINE)) logger.fine("Start sense " + getAgArch().getCycleNumber() ); 
-            logger.info("Start sense " + getAgArch().getCycleNumber() ); //LB 
+            //logger.info("Start sense " + getAgArch().getCycleNumber() ); //LB 
 
             C.resetSense();
 
@@ -1736,6 +1736,7 @@ public class TransitionSystem implements Serializable {
             start = System.nanoTime();
             synchronized (C.syncApPlanSense) {
                 cbsPercepts = getAgArch().perceiveCBS();
+                //getAgArch().perceiveCBS();
                 //ag.bufCBS(getAgArch().perceiveCBS()); //LBB: must FIX
             }
             endPer = System.nanoTime();
@@ -1849,11 +1850,12 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-tSelOpt));
+
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }
@@ -2038,11 +2040,12 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-tSelOpt));
+
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }
@@ -2088,7 +2091,7 @@ public class TransitionSystem implements Serializable {
     }
 
     //LBB: version from March 1st: created to be as parameter of what would be "really fast"
-    // 1) has no Perception, should be further added (l.2092 + 2100-2109)
+    // 1) has no Perception, should be further added (ln.2100-2109)
     public void criticalRCv3() {
         Boolean[] cActions = new Boolean[8]; 
         // Boolean[] cbsPercepts = null;
@@ -2107,8 +2110,8 @@ public class TransitionSystem implements Serializable {
                 if(cbsPercepts == null){
                     cbsPercepts = new Boolean[8]; Arrays.fill(cbsPercepts, Boolean.FALSE); cbsPercepts[0] = Boolean.TRUE;                    
                 }
-                else
-                    cbsPercepts[0] = Boolean.TRUE;
+                // else
+                //     cbsPercepts[0] = Boolean.TRUE; 
             }
            endPer = System.nanoTime();           
         } catch (Exception e) {
@@ -2226,7 +2229,7 @@ public class TransitionSystem implements Serializable {
                         */
                                             
                         //if(cbsPercepts[i])
-                            action = new ActionExec(new LiteralImpl("critReac0"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
+                           action = new ActionExec(new LiteralImpl("critReac0"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         //else
                         //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         // END comment on action perform */
@@ -2244,11 +2247,12 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-tSelOpt));
+
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }
