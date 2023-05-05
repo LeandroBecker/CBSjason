@@ -2110,8 +2110,8 @@ public class TransitionSystem implements Serializable {
                 if(cbsPercepts == null){
                     cbsPercepts = new Boolean[8]; Arrays.fill(cbsPercepts, Boolean.FALSE); cbsPercepts[0] = Boolean.TRUE;                    
                 }
-                // else
-                //     cbsPercepts[0] = Boolean.TRUE; 
+                else
+                    cbsPercepts[0] = Boolean.TRUE; 
             }
            endPer = System.nanoTime();           
         } catch (Exception e) {
