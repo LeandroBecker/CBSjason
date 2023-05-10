@@ -1667,7 +1667,6 @@ public class TransitionSystem implements Serializable {
     public void sense() {
         try {
             //if (logger.isLoggable(Level.FINE)) logger.fine("Start sense " + getAgArch().getCycleNumber() ); 
-            //logger.info("Start sense " + getAgArch().getCycleNumber() ); //LB 
 
             C.resetSense();
 
@@ -1906,7 +1905,10 @@ public class TransitionSystem implements Serializable {
         long start = 0;
         long endPer = 0;
 
-        if((getAgArch().getCycleNumber()) < 10)
+        int cycleCtd = getAgArch().getCycleNumber();
+        logger.info("Start sense " + cycleCtd ); //LB 
+
+        if(cycleCtd < 10)
             return; 
 
         try { 
@@ -2041,11 +2043,11 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
-                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
-                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
-                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }
@@ -2099,19 +2101,22 @@ public class TransitionSystem implements Serializable {
         long start = 0;
         long endPer = 0;
 
-        if((getAgArch().getCycleNumber()) < 10)
+        int cycleCtd = getAgArch().getCycleNumber();
+        logger.info("Start sense " + cycleCtd ); //LB 
+
+        if(cycleCtd < 10)
             return; 
 
         try { 
            start = System.nanoTime();
             synchronized (C.syncApPlanSense) {
                 cbsPercepts = getAgArch().perceiveCBS(); 
-                //LBB: for testing
+                /*/LBB: for testing
                 if(cbsPercepts == null){
                     cbsPercepts = new Boolean[8]; Arrays.fill(cbsPercepts, Boolean.FALSE); cbsPercepts[0] = Boolean.TRUE;                    
                 }
                 else
-                    cbsPercepts[0] = Boolean.TRUE; 
+                    cbsPercepts[0] = Boolean.TRUE; */
             }
            endPer = System.nanoTime();           
         } catch (Exception e) {
@@ -2248,11 +2253,11 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
-                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
-                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
-                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }

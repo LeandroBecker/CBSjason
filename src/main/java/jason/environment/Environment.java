@@ -163,7 +163,6 @@ public class Environment {
 
 //    public Collection<Literal> getPerceptsCBS(String agName) {
     public Boolean[] getPerceptsCBS(String agName) {
-        updateCBS();
         return cbsArray;
         /* LBB: my first test for 'Collection<Literal> getPerceptsCBS()'*/
         // int nBel = 1;
@@ -262,7 +261,6 @@ public class Environment {
             uptodateAgs.clear();
             percepts.clear();
         }
-        cbsArray[0] = Boolean.FALSE;
     }
 
     /** Returns true if the list of common percepts contains the perception <i>per</i>. */
@@ -388,14 +386,14 @@ public class Environment {
      * LBB: Reset CBS on the environment. 
      */
     public void resetCBS() {
-        cbsArray[0] = Boolean.FALSE;
-        cbsArray[1] = Boolean.FALSE;
-        cbsArray[2] = Boolean.FALSE;
-        cbsArray[3] = Boolean.FALSE;
-        cbsArray[4] = Boolean.FALSE;
-        cbsArray[5] = Boolean.FALSE;
-        cbsArray[6] = Boolean.FALSE;
-        cbsArray[7] = Boolean.FALSE;
+        // cbsArray[0] = Boolean.FALSE;
+        // cbsArray[1] = Boolean.FALSE;
+        // cbsArray[2] = Boolean.FALSE;
+        // cbsArray[3] = Boolean.FALSE;
+        // cbsArray[4] = Boolean.FALSE;
+        // cbsArray[5] = Boolean.FALSE;
+        // cbsArray[6] = Boolean.FALSE;
+        // cbsArray[7] = Boolean.FALSE;
         return;
     }
     /**

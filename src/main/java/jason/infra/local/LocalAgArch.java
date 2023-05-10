@@ -219,7 +219,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         int i = 0;
         do { 
-            ts.criticalRCv2(); // must run at least once, so that perceive() is called
+            ts.criticalRCv3(); // must run at least once, so that perceive() is called
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 
@@ -282,11 +282,11 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         //long microseconds = (end - start) / 1000; 
         //if (logger.isLoggable(Level.FINE)) logger.fine("LB-cycle time (ns): " + String.valueOf(end-start)); //LB 
         long LBBtime = endSenLBB-start;
-        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(LBBtime)); //LB 
-        // logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start-LBBtime)); //LB 
-        // logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
-        // logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
-        // logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start-LBBtime)); //LB 
+        logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(LBBtime)); //LB 
+        logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start-LBBtime)); //LB 
+        logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
+        logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
+        logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start-LBBtime)); //LB 
 
         // Bellow is deprecated:
         // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(LBBtime)
@@ -407,7 +407,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         //infraEnv.getUserEnvironment().doResetCBS(getAgName()); //cbsArray[0] = Boolean.FALSE;
         //Boolean[] percepts = new Boolean[8];
         //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-        if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
+        //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
         return percepts;
     }
 

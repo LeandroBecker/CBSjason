@@ -2,142 +2,212 @@ from bs4 import BeautifulSoup
 import sys
 
 if len(sys.argv)>1:
-	fname = sys.argv[1]
-else:
-	fname = 'mas-0.xml'
-# Reading the data inside the xml
-# file to a variable under the name
-# data
-with open(fname, 'r') as f:
-	data = f.read()
+	numRounds = sys.argv[1]
+nr = int(numRounds) + 1
 
-# Passing the stored data inside
-# the beautifulsoup parser, storing
-# the returned object
-Bs_data = BeautifulSoup(data, "xml")
+#s->sum; c->counter;
+cycleNum = [0] * nr
+#sPB = [0] * nr
+#cPB = [0] * nr
+sumSense = [0] * nr
+#ctdSense = [0] * nr
+sumSenseLBB = [0] * nr
+#ctdSenseLBB = [0] * nr
+ctdRCs = [0] * nr
+sDel = [0] * nr
+#cDel = [0] * nr
+sAct = [0] * nr
+#cAct = [0] * nr
+sumRC = [0] * nr
+#ctdRC = [0] * nr
+lastTS = [0] * nr  #lastTimeStamp
+sFaz = [0] * nr
+cFaz = [0] * nr
+lFaz = [0] * nr
+sE2E = [0] * nr
+cE2E = [0] * nr
+cRePl= [0] * nr
+sRePl= [0] * nr
+sApPl = [0] * nr
+sSeOp = [0] * nr
+sESL = [0] * nr
+cLPer = [0] * nr
+sLPer = [0] * nr
 
-# Finding all instances of tag
-# `unique`
-#b_class = Bs_data.find_all('class', limit=2)
+#print  (cycleNum)
 
-#rate for special measure
-rsM = 1
+#Read/parse more than one log file: 
+for i in range(0, nr):
+	# Reading the data inside the xml file
+	fname = 'mas-0.log.'+str(i)
+	#print(fname)
+	with open(fname, 'r') as f:
+		data = f.read()
 
-#s->sum; c->counter; m7->multiple-of-7
-sPB = 0.0
-cPB = 0
-sm7PB = 0.0
-cm7PB = 0
-sumSense = 0.0
-ctdSense = 0
-sumSenseLBB = 0.0
-ctdSenseLBB = 0
-sm7Sense = 0.0
-cm7Sense = 0
-sDel = 0.0
-cDel = 0
-sAct = 0.0
-cAct = 0
-sm7Act = 0.0
-cm7Act = 0
-sumRC = 0.0
-ctdRC = 0
-sm7RC = 0.0
-cm7RC = 0
-lastTS = 0  #lastTimeStamp
-sFaz = 0.0
-cFaz = 0
-lFaz = 0
-sE2E = 0.0
-cE2E = 0
+	# Passing the stored data inside the beautifulsoup parser
+	Bs_data = BeautifulSoup(data, "xml")
 
-#re.compile("^b")):
-#' '.join(mystring.split())
-#, limit=100): 
-for tag in Bs_data.find_all('message'): 
-    #print(tag.text)
-    result = tag.text
-    mycollapsedstring = result.split(' ') 
-    if "Start" in mycollapsedstring:
-    	cycleNum = int(mycollapsedstring[2])
-    elif "LBB" in mycollapsedstring:
-    	#if(mycollapsedstring[0] == 'LBB')
-    	#print(tag.text)
-    	lastTS = int(mycollapsedstring[5])
-    	if "perceive+buf" in mycollapsedstring:
-    		cPB=cPB+1
-    		sPB = sPB + lastTS
-    		if (cycleNum % rsM) == 0:
-    			cm7PB = cm7PB + 1
-    			sm7PB = sm7PB + lastTS
-    	elif "senseLBB" in mycollapsedstring:
-    		ctdSenseLBB=ctdSenseLBB+1
-    		sumSenseLBB = sumSenseLBB + lastTS
-    	elif "sense" in mycollapsedstring:
-    		ctdSense=ctdSense+1
-    		sumSense = sumSense + lastTS
-    		if (cycleNum % rsM) == 0:
-    			cm7Sense = cm7Sense + 1
-    			sm7Sense = sm7Sense + lastTS
-    	elif "delib" in mycollapsedstring:
-    		cDel=cDel+1
-    		sDel = sDel + lastTS
-    	elif "act" in mycollapsedstring:
-    		cAct=cAct+1
-    		sAct = sAct + lastTS
-    		if (cycleNum % rsM) == 0:
-    			cm7Act = cm7Act + 1
-    			sm7Act = sm7Act + lastTS
-    	elif "resCycle" in mycollapsedstring:
-    		ctdRC=ctdRC+1
-    		sumRC = sumRC + lastTS
-    		if (cycleNum % rsM) == 0:
-    			cm7RC = cm7RC + 1
-    			sm7RC = sm7RC + lastTS
-    	elif "fazAction" in mycollapsedstring:
-    		cFaz=cFaz+1
-    		if(cFaz>1):
-    			sFaz = sFaz + (lastTS-lFaz)
-#    			print("%2d, Faz: %d"  % (cFaz, lastTS-lFaz))
-    		lFaz=lastTS
-    	elif "e2eAction" in mycollapsedstring:
-    		cE2E=cE2E+1
-    		sE2E=sE2E+lastTS
-#    	elif "manualAction" in mycollapsedstring:
-#    		cE2E=cE2E+1
-#    		sE2E=sE2E+lastTS
+	for tag in Bs_data.find_all('message'): 
+	    #print(tag.text)
+	    result = tag.text
+	    mycollapsedstring = result.split(' ') 
+	    if "Start" in mycollapsedstring:
+	    	cycleNum[i] = int(mycollapsedstring[2])
+	    elif "LBB" in mycollapsedstring:
+	    	#if(mycollapsedstring[0] == 'LBB')
+	    	#print(tag.text)
+	    	lastTS[i] = int(mycollapsedstring[5])
+	    	#time1 = int(mycollapsedstring[5])
+	    	#if "perceive+buf" in mycollapsedstring:
+	    	#	cPB[i]=cPB[i]+1
+	    	#	sPB[i] = sPB[i] + lastTS[i]
+	    	#if "criticalRC" in mycollapsedstring:
+	    	#	ctdRCs[i]=ctdRCs[i]+1
+	    	#	sumSenseLBB[i] = sumSenseLBB[i] + time1	
+	    	#	sumSense[i] = sumSense[i] + time2
+	    	#	sDel[i] = sDel[i] + time3
+	    	#	sAct[i] = sAct[i] + time4
+	    	#	sumRC[i] = sumRC[i] + time5
+	    	if "criticalRC" in mycollapsedstring:
+	    		ctdRCs[i]=ctdRCs[i]+1
+	    		sumSenseLBB[i] = sumSenseLBB[i] + lastTS[i]
+	    	#	ctdSenseLBB[i]=ctdSenseLBB[i]+1
+	    	elif "sense" in mycollapsedstring:
+	    		sumSense[i] = sumSense[i] + lastTS[i]
+	    	#	ctdSense[i]=ctdSense[i]+1
+	    	elif "delib" in mycollapsedstring:
+	    		sDel[i] = sDel[i] + lastTS[i]
+	    	#	cDel[i]=cDel[i]+1
+	    	elif "act" in mycollapsedstring:
+	    		sAct[i] = sAct[i] + lastTS[i]
+	    	#	cAct[i]=cAct[i]+1
+	    	elif "resCycle" in mycollapsedstring:
+	    		sumRC[i] = sumRC[i] + lastTS[i]
+	    	#	ctdRC[i]=ctdRC[i]+1
+	    	elif "lbbPercept" in mycollapsedstring:
+		    	time1 = int(mycollapsedstring[5])
+		    	time2 = int(mycollapsedstring[6])
+		    	time3 = int(mycollapsedstring[7])
+		    	time4 = int(mycollapsedstring[8])
+		    	time5 = int(mycollapsedstring[9])
+	    		cLPer[i]=cLPer[i]+1
+	    		sLPer[i] = sLPer[i] + time1
+	    		sRePl[i] = sRePl[i] + time2
+	    		sApPl[i] = sApPl[i] + time3
+	    		sSeOp[i] = sSeOp[i] + time4
+	    		sESL[i] = sESL[i] + time5
+	    	#elif "relevantPlans" in mycollapsedstring:
+	    	#	cRePl[i]=cRePl[i]+1
+	    	#	sRePl[i] = sRePl[i] + lastTS[i]
+	    	#elif "applicablePlans" in mycollapsedstring:
+	    	#	sApPl[i] = sApPl[i] + lastTS[i]
+	    	#elif "selectOption" in mycollapsedstring:
+	    	#	sSeOp[i] = sSeOp[i] + lastTS[i]
+	    	#elif "endSenLBB" in mycollapsedstring:
+	    	#	sESL[i] = sESL[i] + lastTS[i]
+	    	elif "fazAction" in mycollapsedstring:
+	    		cFaz[i]=cFaz[i]+1
+	    		if(cFaz[i]>1):
+	    			sFaz[i] = sFaz[i] + (lastTS[i]-lFaz[i])
+	    		lFaz[i]=lastTS[i]
+	    	elif "e2eAction" in mycollapsedstring:
+	    		cE2E[i]=cE2E[i]+1
+	    		if(cE2E[i]>1):
+	    			sE2E[i]=sE2E[i]+lastTS[i]
+	#    	elif "manualAction" in mycollapsedstring:
+	#    		cE2E[i]=cE2E[i]+1
+	#    		sE2E[i]=sE2E[i]+lastTS[i]
+#end for
 
-print("RCs: %4d" % (cycleNum))
-print("E2E: %4d" % (cE2E))
-print("Avg   P+B: %12.0f"  % (sPB/cPB))
-#print("Avg m7P+B: %12.0f"  % (sm7PB/cm7PB))
-print("Avg SeLBB: %12.0f"  % (sumSenseLBB/ctdSenseLBB)) 
-print("Avg Sense: %12.0f"  % (sumSense/ctdSense))
-#print("Avg m7Sen: %12.0f"  % (sm7Sense/cm7Sense))
-print("Avg   Del: %12.0f"  % (sDel/cDel))
-print("Avg   Act: %12.0f"  % (sAct/cAct))
-#print("Avg m7Act: %12.0f"  % (sm7Act/cm7Act))
-print("Avg    RC: %12.0f"  % (sumRC/ctdRC))
-#print("Avg  m7RC: %12.0f"  % (sm7RC/cm7RC))
-#print("Avg   Faz: %12.0f"  % (sFaz/(cFaz-1)))
-print("Avg   E2E: %12.0f"  % (sE2E/(cE2E)))
-#print("%3d Faz: every %4.2f RC"      % (cFaz,cycleNum/cFaz))
-    
-    
-#    result = third_child.text
+#cycleNum - number of cycles 
+avgCN = 0
+print("RCs: " , end='')
+print  (cycleNum)
+for i in range(0, nr):
+	avgCN = avgCN + cycleNum[i]
 
+#cE2E - quantity of observed external functions
+avgcE2E = 0
+print("E2E: " , end='')
+print  (cE2E)
+for i in range(0, nr):
+	avgcE2E = avgcE2E + cE2E[i]
 
+#avgPB = 0
+#for i in range(0, nr):
+#	avgPB = avgPB + (sPB[i]/cPB[i])
 
-# Using find() to extract attributes
-# of the first instance of the tag
-#b_name = Bs_data.find('child', {'name':'Frank'})
+avgSLB = 0
+for i in range(0, nr):
+	avgSLB = avgSLB + (sumSenseLBB[i]/ctdRCs[i])
 
-#print(b_name)
+avgSen = 0
+for i in range(0, nr):
+	avgSen = avgSen + (sumSense[i]/ctdRCs[i])
+#	avgSen = avgSen + (sumSense[i]/ctdSense[i])
 
-# Extracting the data stored in a
-# specific attribute of the
-# `child` tag
-#value = b_name.get('test')
+avgDel = 0
+for i in range(0, nr):
+	avgDel = avgDel + (sDel[i]/ctdRCs[i])
+#	avgDel = avgDel + (sDel[i]/cDel[i])
 
-#print(value)
+avgAct = 0
+for i in range(0, nr):
+	avgAct = avgAct + (sAct[i]/ctdRCs[i])
+#	avgAct = avgAct + (sAct[i]/cAct[i])
+
+avgRC = 0
+for i in range(0, nr):
+	avgRC = avgRC + (sumRC[i]/ctdRCs[i])
+#	avgRC = avgRC + (sumRC[i]/ctdRC[i])
+
+avgLBP = 0
+for i in range(0, nr):
+	avgLBP = avgLBP + (sLPer[i]/cLPer[i])
+
+avgRP = 0
+for i in range(0, nr):
+	avgRP = avgRP + (sRePl[i]/cLPer[i]) 
+
+avgAP = 0
+for i in range(0, nr):
+	avgAP = avgAP + (sApPl[i]/cLPer[i])
+
+avgSO = 0
+for i in range(0, nr):
+	avgSO = avgSO + (sSeOp[i]/cLPer[i])
+
+avgESL = 0
+for i in range(0, nr):
+	avgESL = avgESL + (sESL[i]/cLPer[i])
+
+#Print all average numbers
+print("Avg RCs: %4d " % (avgCN/nr))
+#print("Avg E2E: %4d " % (avgcE2E/nr))
+#print("Avg   P+B: %12.0f"  % avgPB)
+print("Avg Sense: %12.0f"  % avgSen)
+print("Avg   Del: %12.0f"  % avgDel)
+print("Avg   Act: %12.0f"  % avgAct)
+print("Avg    RC: %12.0f"  % avgRC) 
+tlog = avgSLB - (avgLBP + avgRP + avgAP + avgSO + avgESL)
+avgSLB = avgSLB - tlog
+print("Avg  CB2E: %12.0f"  % avgSLB, end='') 
+print(" - %2.2f of RC" % (avgSLB/avgRC))
+print("Avg  CPer: %12.0f"  % avgLBP) 
+print("Avg  RePl: %12.0f"  % avgRP, end='')  
+print(" - %2.2f of CB2E" % (avgRP/avgSLB))
+print("Avg  ApPl: %12.0f"  % avgAP, end='')   
+print(" - %2.2f of CB2E" % (avgAP/avgSLB))
+print("Avg  SeOp: %12.0f"  % avgSO) 
+print("Avg  ExAc: %12.0f"  % avgESL) 
+
+#if(avgcE2E > 0):
+#	avgsE2E = 0
+#	for i in range(0, nr):
+#		avgsE2E = avgsE2E + (sE2E[i]/cE2E[i])
+#	print("Avg   E2E: %12.0f"  % avgsE2E)
+
+#####################################################
+## REPEAT all from 5..9 (change from l.305)
+#####################################################
 

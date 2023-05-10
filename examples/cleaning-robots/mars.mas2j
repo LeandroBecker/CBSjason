@@ -5,5 +5,12 @@ MAS mars {
 
     environment: MarsEnvLB
 
-    agents: r1; 
+    agents:
+        ag1 
+            [beliefs="indifferent"];
+//            [beliefs="helpful"];
+//              [beliefs="antagonistic"];
+
+    aslSourcePath:
+        "src/asl";
 }

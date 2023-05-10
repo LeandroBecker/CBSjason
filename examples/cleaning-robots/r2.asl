@@ -11,4 +11,7 @@
 +!go(0).
 +!go(X) <- !go(X-1).
 
-//+cb0 : true <- burn(garb).
++cb0 : true <- critReac0. //burn(garb).
+
++cr0Per : true <- critReac0. //burn(garb).
+

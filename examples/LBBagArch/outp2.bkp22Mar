@@ -6,16 +6,17 @@ init:
 user-init:
 
 compile:
+Warning: outp2 modified in the future.
 
 run:
 Running project lbb3
-Jason Http Server running on http://127.0.1.1:3273
-Sent messages: {}
+Jason Http SSent messages: {}
+Total sent messages: Sent messages: {}
 Total sent messages: 0
-Actions: {dummy=22, critReac0=362}
-Total actions: 384
+Actions: {dummy=22, critReac0=131}
+Total actions: 153
 
 user-end:
 
 BUILD SUCCESSFUL
-Total time: 1 minute 0 seconds
+Total time: 1 minute 1 second
