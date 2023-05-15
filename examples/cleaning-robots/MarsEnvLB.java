@@ -50,14 +50,16 @@ public class MarsEnvLB extends Environment {
     List<Long> beginAkP_times = new ArrayList<>();
     List<Long> endAkP_times = new ArrayList<>();
 
+    List<Long> cbsUpdate_times = new ArrayList<>();
+
     private TimeOutThread timeoutThread = null;
     private long stepTimeout = 100;
 
     @Override
     public void init(String[] args) {
         model = new MarsModel(); 
-        //view  = new MarsView(model);
-        //model.setView(view);
+//        view  = new MarsView(model);
+//        model.setView(view);
         updatePercepts();
 
         // LBB: implementation of a new thread for the critical perceptions
@@ -78,6 +80,8 @@ public class MarsEnvLB extends Environment {
         //LB: log perception times
         int i=0; 
         long sumT = 0;
+        logger.info("Qtd updates:  "+ beginAkP_times.size());
+        logger.info("Qtd CBSupdat: "+ cbsUpdate_times.size());
         logger.info("Qtd perceive: "+ perception_times.size());
         logger.info("Qtd reaction: "+ reaction_times.size());
         for (Long perT : perception_times) {
@@ -93,11 +97,17 @@ public class MarsEnvLB extends Environment {
         i = 0;
         sumT = 0;
         for (Long perT : beginAkP_times) {
-            if (i < endAkP_times.size()){
+            if (i < endAkP_times.size()-1){
                 sumT = sumT + endAkP_times.get(i++) - perT;   
+                //logger.info(i + " update times: "+ (beginAkP_times.get(i+1) - beginAkP_times.get(i++)));
             }
         }
         if(i>0) logger.info("Avg time to K Percepts: "+ sumT/i); 
+
+        // i = 0;
+        // while(i<10)//beginAkP_times.size()-1)
+        //     logger.info(i + " CBSupdate times: "+ (cbsUpdate_times.get(i+1) - cbsUpdate_times.get(i++)));
+        
 
         //Single original function
         super.stop();
@@ -159,10 +169,17 @@ public class MarsEnvLB extends Environment {
         Location r2Loc = model.getAgPos(1);
 
         // LBB: condition to finish the program
-        if((r1Loc.x >= 6) && (r1Loc.y >= 6)){
+        /*if((r1Loc.x == 3) && (r1Loc.y == 3)){
+            Literal result = new LiteralImpl("onCenter"); 
+            result.addTerm(new NumberTermImpl(beginAkP_times.size())); 
+            addPercept(result);
             logger.info("END END END END END");
-            //stop();
-            addPercept(the);
+        }
+        else*/ if((r1Loc.x >= 6) && (r1Loc.y >= 6)){
+            Literal result = new LiteralImpl("theEnd"); 
+            result.addTerm(new NumberTermImpl(beginAkP_times.size())); 
+            addPercept(result);
+            logger.info("END END END END END");
         }
 
         Literal pos1 = Literal.parseLiteral("pos(r1," + r1Loc.x + "," + r1Loc.y + ")");
@@ -215,15 +232,18 @@ public class MarsEnvLB extends Environment {
 
         // Location r2Loc = model.getAgPos(1);
         // if (model.hasObject(GARB, r2Loc)) {
+        cbsUpdate_times.add(System.nanoTime()); //LB: saves perception time
+
         if((cbsArray[0] == Boolean.FALSE) && (stepCtd >= 10) ) {
             stepCtd = 0;
             perception_times.add(System.nanoTime()); //LB: saves perception time
             // LBB: bellow used for critical things
-            // synchronized (cbsArray) {
-            //     cbsArray[0] = Boolean.TRUE;    
-            // }
-            Literal lit = Literal.parseLiteral("cr0Per");
-            addPercept(lit);
+            synchronized (cbsArray) {
+                cbsArray[0] = Boolean.TRUE;    
+            }
+            // Literal lit = Literal.parseLiteral("cr0Per");
+            // addPercept(lit); 
+            informAgsEnvironmentChanged();
         }
         return true;
     }   
@@ -389,6 +409,8 @@ public class MarsEnvLB extends Environment {
             }
             // finished searching the whole grid
             if (r1.y == getHeight()) {
+                r1.y--; //by LB
+                r1.x = getWidth()-1; //by LB
                 return;
             }
             setAgPos(0, r1);

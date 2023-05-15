@@ -1,0 +1,16 @@
+// Implementation of the example described in chapter 2
+// of the Jason's manual
+
+MAS mars {
+
+    environment: MarsEnvLB
+
+    agents:
+        ag1 
+            [beliefs="indifferent"];
+//            [beliefs="helpful"];
+//              [beliefs="antagonistic"];
+
+    aslSourcePath:
+        "src/asl";
+}
