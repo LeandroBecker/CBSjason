@@ -41,7 +41,7 @@ sourceSets {
 task runIndif (type: JavaExec, dependsOn: 'classes') {
     description 'runs the application'
     main = 'jason.infra.local.RunLocalMAS'
-    args 'mars.mas2j'
+    args 'marsPrjStd.mas2j'
     classpath sourceSets.main.runtimeClasspath
 }
 

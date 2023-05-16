@@ -8,8 +8,8 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 //!start.
 !getBusy.
 
-+!getBusy : true <- !start; for ( .range(I,0,999) ) { // creates 6 concurrent intentions for g
-         !!go(9990000);
++!getBusy : true <- !start; for ( .range(I,0,9) ) { // creates 6 concurrent intentions for g
+         !!go(990000); 
       }.
 
 +!go(0).
@@ -23,21 +23,17 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 /* Plans */
 
 +theEnd(_) : true 
-   <- .print("PERCEPTION to end the program");
-        .stopMAS.
-
-//+onCenter(_) : true 
-//   <- .print("on CENTER");
-//      .stopMAS.
+   <- .stopMAS.
 
 //+!check(slots) : not garbage(r1)
 //   <- next(slot);
 //      !check(slots).
-// +!check(slots).      
+//+!check(slots).      
 
 +!check(slots) : not garbage(r1)
    <- next(slot);
       !check(slots).
++!check(slots).      
 
 //@lg[atomic]
 +garbage(r1) : not .desire(carry_to(r2))

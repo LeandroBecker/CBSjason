@@ -11,6 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import java.io.FileWriter;
+import java.io.IOException;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,7 +23,7 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MarsEnvLB extends Environment {
+public class MarsEnvCritical extends Environment {
 
     public static final int GSize = 7; // grid size
     public static final int GARB  = 16; // garbage code in grid model
@@ -34,10 +36,10 @@ public class MarsEnvLB extends Environment {
     public static final Literal g2 = Literal.parseLiteral("garbage(r2)"); //garbage(r2)"
 
     public static final Term    cr0 = Literal.parseLiteral("critReac0");
-    public static final Literal cp0 = Literal.parseLiteral("cr0Per"); //to end the agent
+    public static final Literal cp0 = Literal.parseLiteral("cr0Per"); 
     public static final Literal the = Literal.parseLiteral("theEnd(r1)"); //to end the agent
 
-    static Logger logger = Logger.getLogger(MarsEnvLB.class.getName());
+    static Logger logger = Logger.getLogger(MarsEnvCritical.class.getName());
 
     private MarsModel model;
     private MarsView  view;
@@ -53,7 +55,7 @@ public class MarsEnvLB extends Environment {
 
     List<Long> cbsUpdate_times = new ArrayList<>();
 
-    private TimeOutThread timeoutThread = null;
+    private TimeOutThread timeoutThread = null;  //FIX: change class name
     private long stepTimeout = 200;
     private boolean flagCvEv = Boolean.FALSE;
 
@@ -77,42 +79,60 @@ public class MarsEnvLB extends Environment {
 
     }
 
-    @Override
+    @Override 
     public void stop() {
-        //LB: log perception times
-        int i=0; 
-        long sumT = 0;
-        logger.info("Qtd updates:  "+ beginAkP_times.size());
-        logger.info("Qtd CBSupdat: "+ cbsUpdate_times.size());
-        logger.info("Qtd perceive: "+ perception_times.size());
-        logger.info("Qtd reaction: "+ reaction_times.size());
-        for (Long perT : perception_times) {
-            if (i == 0){
-                i++;
+        String fileName = "reacTimes.log";
+        try (FileWriter writer = new FileWriter(fileName)) {
+            //writer.write(System.lineSeparator());
+            //LB: log perception times
+            int i=0; 
+            long sumT = 0;
+            long avgT = 0;
+            writer.write("Qtd updates:  "+ beginAkP_times.size());  writer.write(System.lineSeparator());
+            writer.write("Qtd CBSupdat: "+ cbsUpdate_times.size());  writer.write(System.lineSeparator());
+            writer.write("Qtd perceive: "+ perception_times.size());  writer.write(System.lineSeparator());
+            writer.write("Qtd reaction: "+ reaction_times.size());  writer.write(System.lineSeparator());
+            for (Long perT : perception_times) {
+                if (i == 0){
+                    i++;
+                }
+                else if (i < reaction_times.size()){
+                    Long diff = reaction_times.get(i++) - perT;
+                    if(avgT == 0){
+                        avgT = diff;
+                        writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+                    }
+                    else if (diff < avgT*50){
+                        sumT = sumT + diff;
+                        avgT = sumT/i-1;   
+                        writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+                    }
+                    else{
+                        i--;
+                    }    
+                }
             }
-            else if (i < reaction_times.size()){
-                sumT = sumT + reaction_times.get(i) - perT;   
-                Long diff = reaction_times.get(i++) - perT;
-                logger.info(i+"th reacTime: "+ diff);    
+            if(i<perception_times.size()){ 
+                writer.write("Missing reactions: "+ (perception_times.size()-i));  writer.write(System.lineSeparator());
             }
-        }
-        if(i>0) logger.info("Avg reaction times: "+ sumT/i); 
+            writer.write("Avg reaction times: "+ avgT);  writer.write(System.lineSeparator()); 
 
-        //LB: log Avg time to K perceptions
-        i = 0;
-        sumT = 0;
-        for (Long perT : beginAkP_times) {
-            if (i < endAkP_times.size()-1){
-                sumT = sumT + endAkP_times.get(i++) - perT;   
-                //logger.info(i + " update times: "+ (beginAkP_times.get(i+1) - beginAkP_times.get(i++)));
+            //LB: log Avg time to K perceptions
+            i = 0;
+            sumT = 0;
+            for (Long perT : beginAkP_times) {
+                if (i < endAkP_times.size()-1){
+                    sumT = sumT + endAkP_times.get(i++) - perT;   
+                    //logger.info(i + " update times: "+ (beginAkP_times.get(i+1) - beginAkP_times.get(i++)));
+                }
             }
-        }
-        if(i>0) logger.info("Avg time to K Percepts: "+ sumT/i); 
-
-        // i = 0;
-        // while(i<10)//beginAkP_times.size()-1)
-        //     logger.info(i + " CBSupdate times: "+ (cbsUpdate_times.get(i+1) - cbsUpdate_times.get(i++)));
-        
+            if(i>0){
+                writer.write("Avg time to K Percepts: "+ sumT/i);  writer.write(System.lineSeparator()); 
+            }
+        // END log writting
+    } catch (IOException e) {
+        System.err.println("Error writing to file: " + e.getMessage()); 
+    }    
 
         //Single original function
         super.stop();
@@ -481,7 +501,7 @@ public class MarsEnvLB extends Environment {
         @Override
         public void draw(Graphics g, int x, int y, int object) {
             switch (object) {
-            case MarsEnvLB.GARB:
+            case MarsEnvCritical.GARB:
                 drawGarb(g, x, y);
                 break;
             }

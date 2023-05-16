@@ -3,7 +3,7 @@
 
 MAS mars {
 
-    environment: MarsEnvLB
+    environment: MarsEnvCritical
 
     agents:
         ag1 
