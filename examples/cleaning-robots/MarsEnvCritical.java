@@ -55,12 +55,17 @@ public class MarsEnvCritical extends Environment {
 
     List<Long> cbsUpdate_times = new ArrayList<>();
 
-    private TimeOutThread timeoutThread = null;  //FIX: change class name
-    private long stepTimeout = 200;
+    private TimeOutThread timeoutThread = null;
+    private long stepTimeout = 50;
     private boolean flagCvEv = Boolean.FALSE;
+    private int sleepT = 5; //MUST be a multiple of 50
+    private int kPer = 1; //MUST be a multiple of 50
 
     @Override
     public void init(String[] args) {
+        setSleep(Integer.parseInt(args[0]));
+        setKPerc(Integer.parseInt(args[1]));
+
         model = new MarsModel(); 
         // view  = new MarsView(model);
         // model.setView(view);
@@ -79,6 +84,15 @@ public class MarsEnvCritical extends Environment {
 
     }
 
+    /** defines the time for a pause between cycles */
+    public void setSleep(int s) {
+        sleepT = s;
+        }
+
+    public void setKPerc(int s) {
+        kPer = s;
+    }
+
     @Override 
     public void stop() {
         String fileName = "reacTimes.log";
@@ -92,29 +106,34 @@ public class MarsEnvCritical extends Environment {
             writer.write("Qtd CBSupdat: "+ cbsUpdate_times.size());  writer.write(System.lineSeparator());
             writer.write("Qtd perceive: "+ perception_times.size());  writer.write(System.lineSeparator());
             writer.write("Qtd reaction: "+ reaction_times.size());  writer.write(System.lineSeparator());
-            for (Long perT : perception_times) {
-                if (i == 0){
-                    i++;
-                }
-                else if (i < reaction_times.size()){
-                    Long diff = reaction_times.get(i++) - perT;
-                    if(avgT == 0){
-                        avgT = diff;
-                        writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+            if(reaction_times.size() >= (perception_times.size()-1)){
+                for (Long perT : perception_times) {
+                    if (i == 0){
+                        i++;
                     }
-                    else if (diff < avgT*50){
-                        sumT = sumT + diff;
-                        avgT = sumT/i-1;   
-                        writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+                    else if (i < reaction_times.size()){
+                        Long diff = reaction_times.get(i++) - perT;
+                        if(avgT == 0){
+                            avgT = diff;
+                            writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+                        }
+                        else{ // if (diff < avgT*50){
+                            sumT = sumT + diff;
+                            avgT = sumT/i-1;   
+                            writer.write(i+"th reacTime: "+ diff);  writer.write(System.lineSeparator());
+                        }
+                        // else{
+                        //     i--;
+                        // }    
                     }
-                    else{
-                        i--;
-                    }    
                 }
             }
-            if(i<perception_times.size()){ 
-                writer.write("Missing reactions: "+ (perception_times.size()-i));  writer.write(System.lineSeparator());
+            else{
+                writer.write("ERROR ");  writer.write(System.lineSeparator());
             }
+            // if(i<perception_times.size()){ 
+            //     writer.write("Missing reactions: "+ (perception_times.size()-i));  writer.write(System.lineSeparator());
+            // }
             writer.write("Avg reaction times: "+ avgT);  writer.write(System.lineSeparator()); 
 
             //LB: log Avg time to K perceptions
@@ -164,10 +183,9 @@ public class MarsEnvCritical extends Environment {
             e.printStackTrace();
         }
 
-        int sleepT = 50; //MUST be a multiple of 50
         try { //LB comment: this sleep was originally here with 200ms
             Thread.sleep(sleepT);
-            stepCtd = stepCtd + (sleepT/50); //1 step is 50ms
+            //stepCtd = stepCtd + (sleepT/5); //1 step is 5ms
         } catch (Exception e) {}
 
         updatePercepts();
@@ -198,7 +216,7 @@ public class MarsEnvCritical extends Environment {
             Literal result = new LiteralImpl("theEnd"); 
             result.addTerm(new NumberTermImpl(beginAkP_times.size())); 
             addPercept(result);
-            logger.info("END END END END END");
+            //logger.info("END END END END END");
         }
 
         Literal pos1 = Literal.parseLiteral("pos(r1," + r1Loc.x + "," + r1Loc.y + ")");
@@ -220,12 +238,16 @@ public class MarsEnvCritical extends Environment {
         // } catch (Exception e) {}
 
         beginAkP_times.add(System.nanoTime()); //LB: saves perception time
-        addKpercepts(1000);
+        addKpercepts(kPer);
         endAkP_times.add(System.nanoTime()); //LB: saves perception time 
     }
 
     void addKpercepts(int x){
-        if(stepCtd >= 10) {
+        //first test if the Critical-perception must be added (circa every 500ms)
+        int i = beginAkP_times.size();
+        int j = perception_times.size();
+        if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){
+        //if(stepCtd >= 99) {
             stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
             //perception_times.add(System.nanoTime()); //LB: saves perception time
@@ -233,7 +255,7 @@ public class MarsEnvCritical extends Environment {
             flagCvEv = Boolean.TRUE;
         }
 
-        for(int i=0; i<x; i++){
+        for(i=0; i<x; i++){
             Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
             addPercept(lit);
         }

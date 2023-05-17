@@ -1,31 +1,44 @@
 #!/bin/bash
 echo "Running Standard REMOTE Jason "
-cp build-gradle.rafael.standardRemoteJason.txt build.gradle 
+# Check if the parameter is provided
+if [ $# -ne 1 ]; then
+  echo "at least one <integer> param is required"
+  exit 1
+fi
+cp runs/build-gradle.rafael.standardRemoteJason.txt build.gradle 
 ./gradlew clean
 clear
+echo "Running Standard REMOTE Jason "
+# Store the input parameter
+count=$1
+count=$((count - 1))
 
-for i in {0..1};
+for ((k=1; k<=3; k++))
 do
-	echo "RUN number $i "
-	start_time=$(date +%s)
-	./gradlew runIndif -q --console=plain  > outp.tmp 
-	end_time=$(date +%s)
-	elapsed_time=$((end_time - start_time))
-	echo "Elapsed time: $elapsed_time s"
-	echo " "
-	more reacTimes.log
-	mv mas-0.log mas-0.log.$i
-	mv reacTimes.log reacTimes.log.$i
-	echo " "
-#	sleep 3
-#	PID_JAS=$(jps | grep RunLocalMAS | awk 'NR==1{print $1}')
-#	ros2 topic pub /ariac/start_human std_msgs/msg/Bool '{data: true}' --once 
-#	while [ $(date +%s) -lt $END_TIME ]; do 
-	    # Do something while Jason is running (the file doesn't exist)
-#	    ps -p $PID_JAS -o %cpu 
-#	    sleep 1
-#	done
-#	ros2 topic pub /ariac_human/go_home std_msgs/msg/Bool '{data: true}' --once 
-#	touch .stop___MAS
+	runId="rs$k"
+	cp runs/$runId ./marsPrjStd.mas2j
+	echo "  "
+	echo "Begin '$runId' "
+	for ((i=0; i<=count; i++))
+	do
+		echo "RUN $runId - $i/$count"
+		start_time=$(date +%s)
+		./gradlew runIndif -q --console=plain  > $runId-$i.tmp   
+#		jason marsPrjCritical.mas2j > $runId-$i.tmp 
+		end_time=$(date +%s)
+		elapsed_time=$((end_time - start_time))
+		echo "Elapsed time: $elapsed_time s"
+		echo " "
+		more reacTimes.log
+		mv reacTimes.log $runId-$i.reacTimes.log.txt
+		mv mas-0.log mas-0.log.$i
+		echo " "
+	done
+	python3 parseStdJ.py $count > $runId.log.txt
+	more $runId.log.txt
+	tar czvf $runId.tar.gz mas-* 
+	rm mas-*
+	echo "End '$runId' "
 done
-#python3 test.py 0
+mv rs* results
+echo "Experiment FINISHED"

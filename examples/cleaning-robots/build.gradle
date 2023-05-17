@@ -15,17 +15,16 @@ repositories {
     mavenCentral()
 
     //maven { url "http://jacamo.sourceforge.net/maven2" }
-    //maven { url "https://raw.githubusercontent.com/jacamo-lang/mvn-repo/master" }
+    maven { url "https://raw.githubusercontent.com/jacamo-lang/mvn-repo/master" }
     //maven { url "https://jade.tilab.com/maven/" }
 
-    flatDir { dirs 'lib' }
+    //flatDir { dirs 'lib' }
     //implementation files('libs/a.jar', 'libs/b.jar')
 }
 
 dependencies {
-    //implementation('org.jason:jason:3.1')
+    implementation('org.jason:jason:3.1')
     //implementation files('lib/java_rosbridge_all.jar')
-    implementation files('lib/java_rosbridge_all.jar', '/home/leandro/jason/build/libs/jason-3.1.jar')
     implementation group: 'org.glassfish', name: 'javax.json', version: '1.1.4'
 
     //implementation fileTree(dir: 'lib', include: '*.jar')

@@ -3,7 +3,7 @@
 
 MAS mars {
 
-    environment: MarsEnvStd(90, 10) 
+    environment: MarsEnvStd(90, 100) 
         // parameters: 1. sleep time (in ms) after each action - MUST be multiple of 5 ()
         //             2. number of 'K' percepts (10 / 100 / 1000)
 

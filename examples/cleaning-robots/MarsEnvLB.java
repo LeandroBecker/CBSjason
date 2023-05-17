@@ -34,7 +34,7 @@ public class MarsEnvLB extends Environment {
     public static final Literal g2 = Literal.parseLiteral("garbage(r2)"); //garbage(r2)"
 
     public static final Term    cr0 = Literal.parseLiteral("critReac0");
-    public static final Literal cp0 = Literal.parseLiteral("cr0Per"); //to end the agent
+    public static final Literal cp0 = Literal.parseLiteral("cr0Per"); 
     public static final Literal the = Literal.parseLiteral("theEnd(r1)"); //to end the agent
 
     static Logger logger = Logger.getLogger(MarsEnvLB.class.getName());
@@ -54,11 +54,16 @@ public class MarsEnvLB extends Environment {
     List<Long> cbsUpdate_times = new ArrayList<>();
 
     private TimeOutThread timeoutThread = null;
-    private long stepTimeout = 200;
+    private long stepTimeout = 50;
     private boolean flagCvEv = Boolean.FALSE;
+    private int sleepT = 5; //MUST be a multiple of 50
+    private int kPer = 1; //MUST be a multiple of 50
 
     @Override
     public void init(String[] args) {
+        setSleep(Integer.parseInt(args[0]));
+        setKPerc(Integer.parseInt(args[1]));
+
         model = new MarsModel(); 
         // view  = new MarsView(model);
         // model.setView(view);
@@ -73,8 +78,17 @@ public class MarsEnvLB extends Environment {
             }
         } else {
             timeoutThread.allAgFinished();
+        } 
+
+            }
+
+    /** defines the time for a pause between cycles */
+    public void setSleep(int s) {
+        sleepT = s;
         }
 
+    public void setKPerc(int s) {
+        kPer = s;
     }
 
     @Override
@@ -118,7 +132,7 @@ public class MarsEnvLB extends Environment {
         super.stop();
         if (timeoutThread != null) timeoutThread.interrupt(); //LBB new
     }
-
+    
     @Override
     public boolean executeAction(String ag, Structure action) {
         //logger.info(ag+" doing: "+ action);
@@ -144,10 +158,9 @@ public class MarsEnvLB extends Environment {
             e.printStackTrace();
         }
 
-        int sleepT = 50; //MUST be a multiple of 50
         try { //LB comment: this sleep was originally here with 200ms
             Thread.sleep(sleepT);
-            stepCtd = stepCtd + (sleepT/50); //1 step is 50ms
+            //stepCtd = stepCtd + (sleepT/5); //1 step is 5ms
         } catch (Exception e) {}
 
         updatePercepts();
@@ -178,7 +191,7 @@ public class MarsEnvLB extends Environment {
             Literal result = new LiteralImpl("theEnd"); 
             result.addTerm(new NumberTermImpl(beginAkP_times.size())); 
             addPercept(result);
-            logger.info("END END END END END");
+            //logger.info("END END END END END");
         }
 
         Literal pos1 = Literal.parseLiteral("pos(r1," + r1Loc.x + "," + r1Loc.y + ")");
@@ -200,12 +213,16 @@ public class MarsEnvLB extends Environment {
         // } catch (Exception e) {}
 
         beginAkP_times.add(System.nanoTime()); //LB: saves perception time
-        addKpercepts(1000);
+        addKpercepts(kPer);
         endAkP_times.add(System.nanoTime()); //LB: saves perception time 
     }
 
     void addKpercepts(int x){
-        if(stepCtd >= 10) {
+        //first test if the Critical-perception must be added (circa every 500ms)
+        int i = beginAkP_times.size();
+        int j = perception_times.size();
+        if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){
+        //if(stepCtd >= 99) {
             stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
             //perception_times.add(System.nanoTime()); //LB: saves perception time
@@ -213,7 +230,7 @@ public class MarsEnvLB extends Environment {
             flagCvEv = Boolean.TRUE;
         }
 
-        for(int i=0; i<x; i++){
+        for(i=0; i<x; i++){
             Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
             addPercept(lit);
         }
