@@ -1,0 +1,13 @@
+RCs: [1967, 1953, 1939]
+E2E: [0, 0, 0]
+Avg RCs: 1953 
+Avg Sense:      2183015
+Avg   Del:      1085151
+Avg   Act:       110848
+Avg    RC:      3379014
+Avg  CB2E:       265438 - 0.08 of RC
+Avg  CPer:         3593
+Avg  RePl:         1473 - 0.01 of CB2E
+Avg  ApPl:          778 - 0.00 of CB2E
+Avg  SeOp:          300
+Avg  ExAc:       259295

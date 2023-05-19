@@ -8,9 +8,10 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 //!start.
 !getBusy.
 
-+!getBusy : true <- !start; for ( .range(I,0,9) ) { // creates 6 concurrent intentions for g
-         !!go(990000); 
-      }.
++!getBusy : true <- for ( .range(I,0,22) ) { // creates 22 concurrent intentions for g
+         !!go(999); 
+      };
+      !start.
 
 +!go(0).
 +!go(X) <- !go(X-1).

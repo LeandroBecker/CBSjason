@@ -351,10 +351,11 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
                 while(i-- > 0){
                     //logger.info("Entering in sleep mode....");
                     synchronized (sleepSync) {
-                        sleepSync.wait(20); // wait for messages
+                        sleepSync.wait(10); // wait for messages
                     }
-                    if(perceiveCBS() != null) 
+                    if(perceiveCBS() != null){
                         break;
+                    }                         
                 }
             }
         } catch (InterruptedException e) {

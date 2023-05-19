@@ -25,13 +25,14 @@ do
 		elapsed_time=$((end_time - start_time))
 		echo "Elapsed time: $elapsed_time s"
 		echo " "
-		more reacTimes.log
+#		more reacTimes.log
 		mv reacTimes.log $runId-$i.reacTimes.log.txt
 		mv mas-0.log mas-0.log.$i
 		echo " "
+		sleep 5
 	done
 	python3 parseStdJ.py $count > $runId.log.txt
-	more $runId.log.txt
+#	more $runId.log.txt
 	tar czvf $runId.tar.gz mas-* 
 	rm mas-*
 	echo "End '$runId' "

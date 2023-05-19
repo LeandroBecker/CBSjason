@@ -2033,6 +2033,7 @@ public class TransitionSystem implements Serializable {
                         //    action = new ActionExec(new LiteralImpl("outro"), null); //LBB: FIX for proper function, e.g. ag.selectActionLB()
                         
                     // LBB: due testing, not executing the action
+                    long execIni = System.nanoTime();
                     if (action != null) 
                         getAgArch().act(action); 
                     long tExec = System.nanoTime();
@@ -2047,7 +2048,7 @@ public class TransitionSystem implements Serializable {
                                                                          + " " + String.valueOf(tRelPlan-endPer)
                                                                          + " " + String.valueOf(tAppPlan-tRelPlan)
                                                                          + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-tSelOpt));
+                                                                         + " " + String.valueOf(tExec-execIni));
                 }
             //}
         }
@@ -2175,7 +2176,7 @@ public class TransitionSystem implements Serializable {
                                     // boolean allUnifs = opt.getPlan().isAllUnifs();
                                     // Iterator<Unifier> r = context.logicalConsequence(ag, opt.getUnifier());
                                     // boolean isApplicable = false;
-                                    // if (r != null) {
+                                    // i957 (r != null) {
                                     //     while (r.hasNext()) {
                                     //         isApplicable = true;
                                     //         opt.setUnifier(r.next());
