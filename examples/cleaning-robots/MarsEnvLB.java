@@ -218,21 +218,23 @@ public class MarsEnvLB extends Environment {
     }
 
     void addKpercepts(int x){
-        //first test if the Critical-perception must be added (circa every 500ms)
-        int i = beginAkP_times.size();
-        int j = perception_times.size();
+        int i,j;
+        //First add the extra perceptions
+        for(i=0; i<x; i++){
+            Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
+            addPercept(lit);
+        }     
+        // Generate the Critical-perception not before 500ms
+        i = beginAkP_times.size();
+        j = perception_times.size();
         if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){
         //if(stepCtd >= 99) {
             stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
-            //perception_times.add(System.nanoTime()); //LB: saves perception time
-            //addPercept(cp0); 
-            flagCvEv = Boolean.TRUE;
-        }
-
-        for(i=0; i<x; i++){
-            Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
-            addPercept(lit);
+            perception_times.add(System.nanoTime()); //LB: saves perception time
+            cp0.addTerm(i);
+            addPercept(cp0); 
+            // flagCvEv = Boolean.TRUE;
         }
         return;
     }
