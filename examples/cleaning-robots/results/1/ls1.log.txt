@@ -1,7 +1,2 @@
-RCs: [1981]
+RCs: [0]
 E2E: [0]
-Avg RCs: 1981 
-Avg Sense:       724703
-Avg   Del:       379744
-Avg   Act:        39842
-Avg    RC:      1144289

@@ -1,7 +1,0 @@
-RCs: [1970, 2045, 2019]
-E2E: [0, 0, 0]
-Avg RCs: 2011 
-Avg Sense:      2180630
-Avg   Del:      1127878
-Avg   Act:       116161
-Avg    RC:      3424669

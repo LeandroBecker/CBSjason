@@ -1906,7 +1906,7 @@ public class TransitionSystem implements Serializable {
         long endPer = 0;
 
         int cycleCtd = getAgArch().getCycleNumber();
-        logger.info("Start sense " + cycleCtd ); //LB 
+        //logger.info("Start sense " + cycleCtd ); //LB 
 
         if(cycleCtd < 10)
             return; 
@@ -2103,7 +2103,7 @@ public class TransitionSystem implements Serializable {
         long endPer = 0;
 
         int cycleCtd = getAgArch().getCycleNumber();
-        logger.info("Start sense " + cycleCtd ); //LB 
+        //logger.info("Start sense " + cycleCtd ); //LB 
 
         if(cycleCtd < 10)
             return; 
@@ -2254,11 +2254,11 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-tSelOpt));
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-tSelOpt));
                 }
             //}
         }

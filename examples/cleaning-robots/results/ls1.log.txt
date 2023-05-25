@@ -1,7 +1,0 @@
-RCs: [25232]
-E2E: [0]
-Avg RCs: 25232 
-Avg Sense:        11587
-Avg   Del:        11418
-Avg   Act:        13739
-Avg    RC:        36745

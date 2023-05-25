@@ -1,13 +1,2 @@
-RCs: [2013]
+RCs: [0]
 E2E: [0]
-Avg RCs: 2013 
-Avg Sense:       648222
-Avg   Del:       301020
-Avg   Act:        35339
-Avg    RC:       984581
-Avg  CB2E:        95347 - 0.10 of RC
-Avg  CPer:         1547
-Avg  RePl:          762 - 0.01 of CB2E
-Avg  ApPl:          275 - 0.00 of CB2E
-Avg  SeOp:           83
-Avg  ExAc:        92680
