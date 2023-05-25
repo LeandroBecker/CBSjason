@@ -1,0 +1,17 @@
+Executing /usr/lib/jvm/open-jdk-17/bin/java -classpath /home/leandro/jason/build/libs/ant-launcher-1.10.5.jar org.apache.tools.ant.launch.Launcher -e -f bin/mars.xml run
+Buildfile: /home/leandro/jason/examples/cleaning-robots/bin/mars.xml
+
+init:
+
+user-init:
+
+compile:
+
+run:
+Running project mars
+Jason Http Server running on http://127.0.1.1:3272
+
+user-end:
+
+BUILD SUCCESSFUL
+Total time: 21 seconds

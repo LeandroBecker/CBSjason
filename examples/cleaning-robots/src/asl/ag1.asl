@@ -69,7 +69,7 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
            move_towards(X,Y);
            !at(L).
 
-+cb0 : true <- critReac0. //burn(garb).
++cb0(_) : true <- critReac0. //burn(garb).
 
 +cr0Per : true <- critReac0. //burn(garb).
 

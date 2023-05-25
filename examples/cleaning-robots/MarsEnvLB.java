@@ -232,9 +232,9 @@ public class MarsEnvLB extends Environment {
             stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
             perception_times.add(System.nanoTime()); //LB: saves perception time
-            cp0.addTerm(i);
-            addPercept(cp0); 
-            // flagCvEv = Boolean.TRUE;
+            //cp0.addTerm(new NumberTermImpl(i));
+            //addPercept(cp0); 
+            flagCvEv = Boolean.TRUE;
         }
         return;
     }
