@@ -1,7 +1,0 @@
-Qtd updates:  257
-Qtd CBSupdat: 427
-Qtd perceive: 78
-Qtd reaction: 0
-ERROR 
-Avg reaction times: 0
-Avg time to K Percepts: 537386
