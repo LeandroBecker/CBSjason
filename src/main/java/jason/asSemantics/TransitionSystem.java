@@ -2044,11 +2044,11 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-execIni));
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-execIni));
                 }
             //}
         }

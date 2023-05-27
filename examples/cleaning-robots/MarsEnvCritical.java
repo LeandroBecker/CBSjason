@@ -45,7 +45,7 @@ public class MarsEnvCritical extends Environment {
     private MarsView  view;
     
     // LBB: following variables added for the criticalThings experiment
-    int stepCtd = 0; // time in milliseconds
+    //int stepCtd = 0; // time in milliseconds
 
     List<Long> perception_times = new ArrayList<>();
     List<Long> reaction_times = new ArrayList<>();
@@ -61,6 +61,18 @@ public class MarsEnvCritical extends Environment {
     private int sleepT = 5; //MUST be a multiple of 50
     private int kPer = 1; //MUST be a multiple of 50
 
+    public synchronized void setFlag(boolean value) {
+        flagCvEv = value;
+    }
+
+    public synchronized boolean getSetFlag() {
+        if(flagCvEv){
+            flagCvEv = false;
+            return true;
+        }
+        return false;
+    }
+    
     @Override
     public void init(String[] args) {
         setSleep(Integer.parseInt(args[0]));
@@ -251,15 +263,15 @@ public class MarsEnvCritical extends Environment {
         }     
         // Generate the Critical-perception not before 500ms
         i = beginAkP_times.size();
-        j = perception_times.size();
-        if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){
+        j = perception_times.size(); 
+        if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){ //500ms
         //if(stepCtd >= 99) {
-            stepCtd = 0;
+            //stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
-            perception_times.add(System.nanoTime()); //LB: saves perception time
+            //perception_times.add(System.nanoTime()); //LB: saves perception time
             //cp0.addTerm(new NumberTermImpl(i));
             //addPercept(cp0); 
-            flagCvEv = Boolean.TRUE;
+            setFlag(Boolean.TRUE);  // flagCvEv = Boolean.TRUE;
         }
         return;
     }
@@ -287,8 +299,7 @@ public class MarsEnvCritical extends Environment {
 
         // if((cbsArray[0] == Boolean.FALSE) && (stepCtd >= 10) ) {
         //     stepCtd = 0;
-        if((cbsArray[0] == Boolean.FALSE) && flagCvEv ) {
-            flagCvEv = Boolean.FALSE;
+        if((cbsArray[0] == Boolean.FALSE) && getSetFlag() ) {
             perception_times.add(System.nanoTime()); //LB: saves perception time
             // LBB: bellow used for critical things
             synchronized (cbsArray) {
