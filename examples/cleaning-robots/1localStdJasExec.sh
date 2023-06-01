@@ -9,7 +9,7 @@ fi
 count=$1
 count=$((count - 1))
 
-for ((k=1; k<=3; k++))
+for ((k=1; k<=5; k++))
 do
 	runId="ls$k"
 	cp runs/$runId ./marsPrjStd.mas2j
