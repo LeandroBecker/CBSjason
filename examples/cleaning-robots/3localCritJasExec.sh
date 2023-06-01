@@ -19,8 +19,8 @@ do
 	do
 		echo "RUN $runId - $i/$count"
 		start_time=$(date +%s)
-	#	./gradlew runIndif -q --console=plain  > outp.tmp  
-		jason marsPrjCritical.mas2j > $runId-$i.tmp 
+#		./gradlew runIndif -q --console=plain  > outp.tmp  
+		jason marsPrjCritical.mas2j > /dev/null #> $runId-$i.tmp 
 		end_time=$(date +%s)
 		elapsed_time=$((end_time - start_time))
 		echo "Elapsed time: $elapsed_time s"
@@ -29,11 +29,12 @@ do
 		mv reacTimes.log $runId-$i.reacTimes.log.txt
 		mv mas-0.log mas-0.log.$i
 		echo " "
-		sleep 5
+		#sleep 5
+		echo 1 | sudo tee /proc/sys/vm/drop_caches > /dev/null
 	done
-	python3 test.py $count > $runId.log.txt
-	more $runId.log.txt
-	tar czvf $runId.tar.gz mas-* 
+#	python3 parseStdJ.py $count > $runId.log.txt
+#	more $runId.log.txt
+#	tar czvf $runId.tar.gz mas-* 
 	rm mas-*
 	echo "End '$runId' "
 done

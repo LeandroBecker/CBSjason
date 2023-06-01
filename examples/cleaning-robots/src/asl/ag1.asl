@@ -74,3 +74,5 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 +cr0Per(_) : true <- critReac0. //burn(garb).
 
 +garbage(r2) : true <- burn(garb).
+
++fakeP(K) : true <- .drop_desire(gold(K,Y)). 
