@@ -58,8 +58,8 @@ public class MarsEnvStd extends Environment {
     // private TimeOutThread timeoutThread = null;
     private long stepTimeout = 50;
     private boolean flagCvEv = Boolean.FALSE;
-    private int sleepT = 5; //MUST be a multiple of 50
-    private int kPer = 1; //MUST be a multiple of 50
+    private int sleepT = 5; 
+    private int kPer = 0;
 
     @Override
     public void init(String[] args) {
@@ -243,21 +243,24 @@ public class MarsEnvStd extends Environment {
     }
 
     void addKpercepts(int x){
-        int i,j;
-        //First add the extra perceptions
-        for(i=0; i<x; i++){
-            Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
-            addPercept(lit);
-        }     
+        int i,j,k;
+        long elapsedT;
         // Generate the Critical-perception not before 500ms
-        i = beginAkP_times.size();
+        k = beginAkP_times.size();
         j = perception_times.size();
-        if(i<2 || ((beginAkP_times.get(i-1) - perception_times.get(j-1)) >= 500000000)){
+        if(j<=0) elapsedT = 1000000000;
+        else elapsedT = beginAkP_times.get(k-1) - perception_times.get(j-1);
+        if(elapsedT >= 500000000){
+            //First add the extra perceptions
+            for(i=0; i<x; i++){
+                Literal lit = Literal.parseLiteral("fakeP(" + i + ")");
+                addPercept(lit);
+            }     
         //if(stepCtd >= 99) {
-            stepCtd = 0;
+            //stepCtd = 0;
             // LBB: Incomming two lines for Std-Jas, third for Critical-Jas
             perception_times.add(System.nanoTime()); //LB: saves perception time
-            Literal lit = Literal.parseLiteral("cr0Per(" + i + ")");
+            Literal lit = Literal.parseLiteral("cr0Per(" + k + ")");
             addPercept(lit);
             // cp0.addTerm(new NumberTermImpl(i));
             // addPercept(cp0); 

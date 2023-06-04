@@ -5,16 +5,16 @@
 at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 
 /* Initial goal */
-//!start.
-!getBusy.
+!start. 
+//!getBusy.
 
-+!getBusy : true <- for ( .range(I,0,22) ) { // creates 22 concurrent intentions for g
-         !!go(999); 
-      };
-      !start.
+//+!getBusy : true <- for ( .range(I,0,22) ) { // creates 22 concurrent intentions for g
+//         !!go(999); 
+//      };
+//      !start.
 
-+!go(0).
-+!go(X) <- !go(X-1).
+//+!go(0).
+//+!go(X) <- !go(X-1).
 
 +!start : true <- !check(slots). 
 //+!start : true <- .stopMAS(17000); !check(slots).
@@ -71,8 +71,8 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 
 +cb0 : true <- critReac0. //burn(garb).
 
-+cr0Per(_) : true <- critReac0. //burn(garb).
-
 +garbage(r2) : true <- burn(garb).
 
 +fakeP(K) : true <- .drop_desire(gold(K,Y)). 
+
++cr0Per(_) : true <- critReac0. //burn(garb).

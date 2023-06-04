@@ -8,6 +8,7 @@ fi
 # Store the input parameter
 count=$1
 count=$((count - 1))
+cp MarsEnvCritical.jaBAA MarsEnvCritical.java
 
 for ((k=1; k<=5; k++))
 do
@@ -39,4 +40,5 @@ do
 	echo "End '$runId' "
 done
 mv lc* results
+rm MarsEnvCritical.java
 echo "Experiment FINISHED"

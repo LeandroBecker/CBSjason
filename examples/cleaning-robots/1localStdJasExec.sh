@@ -9,7 +9,7 @@ fi
 count=$1
 count=$((count - 1))
 
-for ((k=1; k<=5; k++))
+for ((k=0; k<=5; k++))
 do
 	runId="ls$k"
 	cp runs/$runId ./marsPrjStd.mas2j
@@ -29,8 +29,8 @@ do
 		mv reacTimes.log $runId-$i.reacTimes.log.txt
 		mv mas-0.log mas-0.log.$i
 		echo " "
-		#sleep 5
 		echo 1 | sudo tee /proc/sys/vm/drop_caches > /dev/null
+		#sleep 5 
 	done
 #	python3 parseStdJ.py $count > $runId.log.txt
 #	more $runId.log.txt
