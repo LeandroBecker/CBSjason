@@ -219,7 +219,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         int i = 0;
         do { 
-            ts.criticalRCv2(); // must run at least once, so that perceive() is called
+            ts.criticalRCv2wIA(); // must run at least once, so that perceive() is called
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 

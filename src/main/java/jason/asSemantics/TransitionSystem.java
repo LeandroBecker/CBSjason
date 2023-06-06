@@ -2093,6 +2093,193 @@ public class TransitionSystem implements Serializable {
         }
     }
 
+    public void criticalRCv2wIA() {
+        Boolean[] cActions = new Boolean[8]; 
+        Boolean[] cbsPercepts = null;
+        long start = 0;
+        long endPer = 0;
+
+        int cycleCtd = getAgArch().getCycleNumber();
+        //logger.info("Start sense " + cycleCtd ); //LB 
+
+        if(cycleCtd < 10)
+            return; 
+
+        try { 
+            start = System.nanoTime();
+            synchronized (C.syncApPlanSense) {
+                cbsPercepts = getAgArch().perceiveCBS();
+            }
+            endPer = System.nanoTime();           
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (sense). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+
+        //LB: the continuation is a modification from the code in act()
+        try {
+            if(cbsPercepts != null){                
+                //for(int i=0; i<cbsPercepts.length; i++){   
+                    int i=0;
+                    if(cbsPercepts[i] == true){     
+                        cbsPercepts[i] = false;
+                        ActionExec action = null;
+                        Literal body = new LiteralImpl("cb"+i); 
+                        Trigger te = new Trigger(TEOperator.add, TEType.belief, body);
+                        Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
+                                                
+                        //Step.6: find Relevant Plans
+                        //List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
+                        List<Option> rp = null;                
+                        /* (previous to JasonER) */
+                        // List<Plan> candidateRPs = ag.pl.getCandidatePlansCT(); 
+                        List<Plan> candidateRPs = ag.pl.getCandidatePlans(te);
+                        if (candidateRPs != null) {
+                            for (Plan pl : candidateRPs) {
+                                // Unifier relUn = new Unifier(); 
+                                Unifier relUn = pl.isRelevant(te, null);
+                                if (relUn != null) {
+                                    if (rp == null) rp = new LinkedList<>();
+                                    rp.add(new Option(pl, relUn));
+                                }
+                            }
+                        } // END Step.6 - variable 'rp'
+                        if(rp == null) 
+                            return; //com for eh break
+                        long tRelPlan = System.nanoTime();
+                        
+                        //Step.7: find Applicable Plans
+                        //List<Option> apPlan = applicablePlans(rp); // apPlan == C.AP
+                        List<Option> ap = null;
+                        if (rp != null) {
+                            for (Option opt: rp) {
+                                LogicalFormula context = opt.getPlan().getContext();
+                                if (context == null) { // context is true
+                                    if (ap == null) ap = new LinkedList<>();
+                                    ap.add(opt);
+                                // Test 1: shows that the time required here is the same as the previous step, i.e., only searching the BB
+                                // } else  if (ag.believes(context, opt.getUnifier())){  //test by LB: aims to make a simple BB search instead of evaluating a logical expression
+                                //     if (ap == null) ap = new LinkedList<>();
+                                //     ap.add(opt);
+                                // }
+                                // Test 2: normal context processing
+                                } else {
+                                    boolean allUnifs = opt.getPlan().isAllUnifs();
+                                    Iterator<Unifier> r = context.logicalConsequence(ag, opt.getUnifier());
+                                    boolean isApplicable = false;
+                                    if (r != null) {
+                                        while (r.hasNext()) {
+                                            isApplicable = true;
+                                            opt.setUnifier(r.next());
+
+                                            if (ap == null) ap = new LinkedList<>();
+                                            ap.add(opt);
+
+                                            if (!allUnifs) break; // returns only the first unification
+                                            if (r.hasNext()) {
+                                                // create a new option for the next loop step
+                                                opt = new Option(opt.getPlan(), null);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } // END Step.7 - variable 'ap'
+                        if(ap == null)
+                            return;
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
+                        long tAppPlan = System.nanoTime();
+
+                        Option theOpt = ag.selectOption(ap);  // theOpt == C.SO
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
+                        long tSelOpt = System.nanoTime();
+
+                        /* / START new test
+                        Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
+                        Unifier relUn = pa.isRelevant(evt.trigger, new Unifier());
+                        Option theOpt = new Option(pa, relUn);
+                        */ // END new test                        
+
+                        if(theOpt == null)
+                            return;
+                        IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
+                        if(im == null)
+                            return;
+                        
+
+                        Intention curInt = new Intention();
+                        curInt.push(im);
+                        Unifier     u = im.unif;
+                        PlanBody    h = im.getCurrentStep();
+                        Term bTerm = h.getBodyTerm();
+                        Literal bodyTer = null;
+                        if (bTerm instanceof Literal)
+                            bodyTer = (Literal)bTerm;  
+                                  
+                        long execIni = System.nanoTime();
+                        switch (h.getBodyType()) {
+                        case action:
+                            bodyTer = (Literal)bodyTer.capply(u);
+                            action = new ActionExec(bodyTer, curInt); //ActionExec(new LiteralImpl("manual"), null); 
+                            if (action != null) 
+                                getAgArch().act(action); 
+                            break; //end action
+                        
+                        case internalAction:
+                            boolean ok = false;
+                            List<Term> errorAnnots = null;
+                            try {
+                                InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
+                                Term[] terms      = ia.prepareArguments(bodyTer, u); // clone and apply args
+                                Object oresult    = ia.execute(this, u, terms);
+                                if (oresult != null) {
+                                    ok = oresult instanceof Boolean && (Boolean)oresult;
+                                    if (!ok && oresult instanceof Iterator) { // ia result is an Iterator
+                                        Iterator<Unifier> iu = (Iterator<Unifier>)oresult;
+                                        if (iu.hasNext()) {
+                                            // change the unifier of the current IM to the first returned by the IA
+                                            im.unif = iu.next();
+                                            ok = true;
+                                        }
+                                    }
+                                    if (!ok) { // IA returned false
+                                        errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
+                                    }
+                                }                            
+                                // if (ok && !ia.suspendIntention())
+                                //     removeActionReQueue(curInt);
+                            } catch (Exception e) {
+                                if (bodyTer == null)
+                                    logger.log(Level.SEVERE, "Selected an intention with null body in '"+h+"' and IM "+im, e);
+                                else
+                                    logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                            } catch (Error e) {
+                                logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                            }
+                            break;  //end internalAction
+                    }
+                    long tExec = System.nanoTime();
+                    // Time logging
+                    //logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
+                    //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
+                    //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
+
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-execIni));
+                }
+            //}
+        }            
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+    }
+
     //LBB: version from March 1st: created to be as parameter of what would be "really fast"
     // 1) has no Perception, should be further added (ln.2100-2109)
     public void criticalRCv3() {

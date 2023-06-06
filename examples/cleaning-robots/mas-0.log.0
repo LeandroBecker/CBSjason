@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-06-04T10:15:27.853599206Z</date>
+  <millis>1685873727853</millis>
+  <nanos>599206</nanos>
+  <sequence>0</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>WARNING</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>generateGoalDeletion</method>
+  <thread>26</thread>
+  <message>No failure event was generated for +!carry_to(r2)[code(pos(r1,_78,_79)),code_line(47),code_src("file:src/asl/ag1.asl"),error(test_goal_failed),error_msg("Failed to test 'pos(r1,X,Y)'"),source(self)]
+intention 85: 
+    +!carry_to(r2)[source(self)] &lt;- ... ?pos(r1,X,Y); -+pos(last,X,Y); !take(garb,R); !at(last); !!check(slots) / {R=r2}
+    +garbage(r1)[source(percept)] &lt;- ... !carry_to(r2) / {}
+</message>
+</record>
+</log>
