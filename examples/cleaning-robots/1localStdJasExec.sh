@@ -9,7 +9,7 @@ fi
 count=$1
 count=$((count - 1))
 
-for ((k=0; k<=5; k++))
+for ((k=0; k<=0; k++))
 do
 	runId="ls$k"
 	cp runs/$runId ./marsPrjStd.mas2j
@@ -35,7 +35,7 @@ do
 #	python3 parseStdJ.py $count > $runId.log.txt
 #	more $runId.log.txt
 #	tar czvf $runId.tar.gz mas-* 
-	rm mas-*
+#	rm mas-*
 	echo "End '$runId' "
 done
 mv ls* results

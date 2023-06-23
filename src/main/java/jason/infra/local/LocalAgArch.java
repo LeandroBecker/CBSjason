@@ -219,7 +219,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         int i = 0;
         do { 
-            ts.criticalRCv2wIA(); // must run at least once, so that perceive() is called
+            ts.criticalRCv2wIAv2(); // must run at least once, so that perceive() is called
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 
@@ -269,31 +269,31 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         long start = System.nanoTime();
 
         criticalRC();
-        // long endSenLBB = System.nanoTime();
+        long endSenLBB = System.nanoTime();
         sense();
         long endSen = System.nanoTime();
         deliberate();
         long endDel = System.nanoTime();
         act();
+        long endRC = System.nanoTime();
 
         getFirstAgArch().reasoningCycleFinished();
         //long pass = System.currentTimeMillis() - start;
-        long endRC = System.nanoTime();
 
         // LBB: bellow comment to avoid logging overhead, that is HIGH
         // long LBBtime = endSenLBB-start;
-        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(LBBtime)); //LB 
-        // logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-start-LBBtime)); //LB 
-        // logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
-        // logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
-        // logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-start-LBBtime)); //LB 
+        logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)); //LB 
+        logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-endSenLBB)); //LB 
+        logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
+        logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
+        logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-endSenLBB)); //LB 
 
-        // Bellow is deprecated:
-        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(LBBtime)
-        //                                               + " " + String.valueOf(endSen-start-LBBtime) 
+        // Is bellow deprecated?
+        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)
+        //                                               + " " + String.valueOf(endSen-endSenLBB) 
         //                                               + " " + String.valueOf(endDel-endSen)
         //                                               + " " + String.valueOf(endRC - endDel) 
-        //                                               + " " + String.valueOf(endRC-start-LBBtime));
+        //                                               + " " + String.valueOf(endRC-endSenLBB));
         
 
     }

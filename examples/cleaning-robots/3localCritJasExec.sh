@@ -10,7 +10,7 @@ count=$1
 count=$((count - 1))
 cp MarsEnvCritical.jaBAA MarsEnvCritical.java
 
-for ((k=0; k<=5; k++))
+for ((k=0; k<=2; k++))
 do
 	runId="lc$k"
 	cp runs/$runId ./marsPrjCritical.mas2j
@@ -28,15 +28,15 @@ do
 		echo " "
 #		more reacTimes.log
 		mv reacTimes.log $runId-$i.reacTimes.log.txt
-		mv mas-0.log mas-0.log.$i
+		mv mas-0.log $runId-mas-0.log.$i
 		echo " "
 		#sleep 5
 		echo 1 | sudo tee /proc/sys/vm/drop_caches > /dev/null
 	done
-#	python3 parseStdJ.py $count > $runId.log.txt
-#	more $runId.log.txt
+	python3 parseStdJ.py $count > $runId.log.txt
+	more $runId.log.txt
 #	tar czvf $runId.tar.gz mas-* 
-	rm mas-*
+#	rm mas-*
 	echo "End '$runId' "
 done
 mv lc* results

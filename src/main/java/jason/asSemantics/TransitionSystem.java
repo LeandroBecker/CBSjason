@@ -84,6 +84,11 @@ public class TransitionSystem implements Serializable {
 
     private Queue<RunnableSerializable> taskForBeginOfCycle = new ConcurrentLinkedQueue<>();
 
+    //LBB: CB2A variables next
+    // ArrayList<Triple<Boolean, Integer, Literal>> CRT = new ArrayList<>();
+    ArrayList<Tuple<Boolean, PlanBody>> CRT = new ArrayList<>();
+
+
     public TransitionSystem(Agent a, Circumstance c, Settings s, AgArch ar) {
         ag     = a;
         agArch = ar;
@@ -110,7 +115,25 @@ public class TransitionSystem implements Serializable {
 
         if (ar != null)
             ar.setTS(this);
+
+        tmp_ReplaceAgentParser(); //LBB: FIX, should not exist in future versions
     }
+
+    //LBB: tmp function: used while agent-parser is unfinished
+    private void tmp_ReplaceAgentParser(){
+        // Triple<Boolean, Integer, Literal> innerTriple1 = new Triple<>(true, 1, new LiteralImpl("critReac0"));
+        // CRT.add(innerTriple1);
+
+        Plan pa0 = null;
+        try{
+            pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** LBB ERROR in Plan parsing", e);
+        }
+        PlanBody pb0 = pa0.getBody();
+        Tuple<Boolean, PlanBody> innerTuple1 = new Tuple<>(true, pb0);
+        CRT.add(innerTuple1);
+}
 
     public void setLogger(AgArch arch) {
         if (arch != null)
@@ -2093,6 +2116,200 @@ public class TransitionSystem implements Serializable {
         }
     }
 
+    // LB: new version, using the new dataStructures
+    public void criticalRCv2wIAv2() {
+        Boolean[] cActions = new Boolean[8]; 
+        Boolean[] cbsPercepts = null;
+        long start = 0;
+        long endPer = 0;
+
+        int cycleCtd = getAgArch().getCycleNumber();
+        logger.info("Start sense " + cycleCtd ); //LB 
+
+        if(cycleCtd < 10)
+            return; 
+
+        try { 
+            start = System.nanoTime();
+            synchronized (C.syncApPlanSense) {
+                cbsPercepts = getAgArch().perceiveCBS();
+            }
+            endPer = System.nanoTime();           
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (sense). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+
+        //LB: the continuation is a modification from the code in act()
+        try {
+            if(cbsPercepts != null){                
+                //for(int i=0; i<cbsPercepts.length; i++){   
+                    int i=0;
+                    if(cbsPercepts[i] == true){     
+                        cbsPercepts[i] = false;
+                        ActionExec action = null;
+                        // Literal body = new LiteralImpl("cb"+i); 
+                        // Trigger te = new Trigger(TEOperator.add, TEType.belief, body);
+                        // Event evt = new Event(te, Intention.EmptyInt);  // evt == C.SE  //2nd param is Empty because this is an external event (perception BB update)
+                                                
+                        //Step.6: find Relevant Plans
+                        //List<Option> relPlan = relevantPlans(evt.trigger, evt);  // relPlan = C.RP
+                        // List<Option> rp = null;                
+                        // List<Plan> candidateRPs = ag.pl.getCandidatePlans(te);
+                        // if (candidateRPs != null) {
+                        //     for (Plan pl : candidateRPs) {
+                        //         // Unifier relUn = new Unifier(); 
+                        //         Unifier relUn = pl.isRelevant(te, null);
+                        //         if (relUn != null) {
+                        //             if (rp == null) rp = new LinkedList<>();
+                        //             rp.add(new Option(pl, relUn));
+                        //         }
+                        //     }
+                        // } // END Step.6 - variable 'rp'
+                        // if(rp == null) 
+                        //     return; //com for eh break
+                        long tRelPlan = System.nanoTime();
+                        
+                        //Step.7: find Applicable Plans
+                        //List<Option> apPlan = applicablePlans(rp); // apPlan == C.AP
+                        // List<Option> ap = null;
+                        // if (rp != null) {
+                        //     for (Option opt: rp) {
+                        //         LogicalFormula context = opt.getPlan().getContext();
+                        //         if (context == null) { // context is true
+                        //             if (ap == null) ap = new LinkedList<>();
+                        //             ap.add(opt);
+                        //         } else {
+                        //             boolean allUnifs = opt.getPlan().isAllUnifs();
+                        //             Iterator<Unifier> r = context.logicalConsequence(ag, opt.getUnifier());
+                        //             boolean isApplicable = false;
+                        //             if (r != null) {
+                        //                 while (r.hasNext()) {
+                        //                     isApplicable = true;
+                        //                     opt.setUnifier(r.next());
+
+                        //                     if (ap == null) ap = new LinkedList<>();
+                        //                     ap.add(opt);
+
+                        //                     if (!allUnifs) break; // returns only the first unification
+                        //                     if (r.hasNext()) {
+                        //                         // create a new option for the next loop step
+                        //                         opt = new Option(opt.getPlan(), null);
+                        //                     }
+                        //                 }
+                        //             }
+                        //         }
+                        //     }
+                        // } // END Step.7 - variable 'ap'
+                        // if(ap == null)
+                        //     return;
+                        logger.info("LBBiii " + String.valueOf(endPer-start)); //LB 
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
+                        long tAppPlan = System.nanoTime();
+
+                        // Option theOpt = ag.selectOption(ap);  // theOpt == C.SO
+                        //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
+                        long tSelOpt = System.nanoTime();
+
+                        /* / START new test
+                        Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
+                        Unifier relUn = pa.isRelevant(evt.trigger, new Unifier());
+                        Option theOpt = new Option(pa, relUn);
+                        */ // END new test                        
+
+                        // if(theOpt == null)
+                        //     return;
+                        // IntendedMeans im = new IntendedMeans(theOpt, evt.getTrigger());
+                        // if(im == null)
+                        //     return;
+                        
+
+                        // Intention curInt = new Intention();
+                        // curInt.push(im);
+                        // Unifier     u = im.unif;
+                        // PlanBody    h = im.getCurrentStep();
+                        // Term bTerm = h.getBodyTerm();
+                        // Literal bodyTer = null;
+                        // if (bTerm instanceof Literal)
+                        //     bodyTer = (Literal)bTerm;                                    
+                        long execIni = System.nanoTime();
+                        
+                        // Iterating over the Triples
+                        // Should be one level out (outside the perception-loop)
+                        // for (Triple<Boolean, Integer, Literal> Triple : CRT) {
+                        for (Tuple<Boolean, PlanBody> tp : CRT) {
+                            boolean isEnabled = tp.getFirst();
+                            PlanBody        h = tp.getSecond();
+                            Term        bTerm = h.getBodyTerm();
+                            Literal   bodyTer = null;
+                            if (bTerm instanceof Literal)
+                                bodyTer = (Literal)bTerm;  
+                    
+                            switch (h.getBodyType()) {
+                            case action:
+                                //bodyTer = (Literal)bodyTer.capply(u); //LBB: maybe needed                                  
+                                action = new ActionExec(bodyTer, null); 
+                                if (action != null) 
+                                    getAgArch().act(action); 
+                                break; //end action
+                            
+                            case internalAction:
+                                boolean ok = false;
+                                List<Term> errorAnnots = null;
+                                try {
+                                    InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
+                                    // Term[] terms      = ia.prepareArguments(bodyTer, u); // clone and apply args
+                                    // Object oresult    = ia.execute(this, u, terms);
+                                    Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
+                                    Object oresult    = ia.execute(this, null, terms);
+                                    if (oresult != null) {
+                                        ok = oresult instanceof Boolean && (Boolean)oresult;
+                                        // if (!ok && oresult instanceof Iterator) { // ia result is an Iterator
+                                        //     Iterator<Unifier> iu = (Iterator<Unifier>)oresult;
+                                        //     if (iu.hasNext()) {
+                                        //         // change the unifier of the current IM to the first returned by the IA
+                                        //         im.unif = iu.next();
+                                        //         ok = true;
+                                        //     }
+                                        // }
+                                        if (!ok) { // IA returned false
+                                            errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
+                                        }
+                                    }                            
+                                } catch (Exception e) {
+                                    if (bodyTer == null)
+                                        logger.log(Level.SEVERE, "LBB: intention with null body in '"+h, e);
+                                    else
+                                        logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                                } catch (Error e) {
+                                    logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                                }
+                                break;  //end internalAction
+                        }
+                    }
+                    long tExec = System.nanoTime();
+                    // Time logging
+                    //logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
+                    //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
+                    //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
+                    //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
+
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-execIni));
+                }
+            //}
+        }            
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
+            C.create();
+        }
+    }
+
+    // IA stants for Internal Action, something required by Embedded-MAS
     public void criticalRCv2wIA() {
         Boolean[] cActions = new Boolean[8]; 
         Boolean[] cbsPercepts = null;
@@ -2100,7 +2317,7 @@ public class TransitionSystem implements Serializable {
         long endPer = 0;
 
         int cycleCtd = getAgArch().getCycleNumber();
-        //logger.info("Start sense " + cycleCtd ); //LB 
+        logger.info("Start sense " + cycleCtd ); //LB 
 
         if(cycleCtd < 10)
             return; 
@@ -2266,11 +2483,11 @@ public class TransitionSystem implements Serializable {
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
-                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
-                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
-                    //                                                      + " " + String.valueOf(tExec-execIni));
+                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                                                                         + " " + String.valueOf(tRelPlan-endPer)
+                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
+                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
+                                                                         + " " + String.valueOf(tExec-execIni));
                 }
             //}
         }            
@@ -2794,5 +3011,59 @@ public class TransitionSystem implements Serializable {
     @Override
     public String toString() {
         return "TS of agent "+getAgArch().getAgName();
+    }
+}
+
+// Custom Triple class
+class Triple<T1, T2, T3> {
+    private T1 first;
+    private T2 second;
+    private T3 third;
+
+    public Triple(T1 first, T2 second, T3 third) {
+        this.first = first;
+        this.second = second;
+        this.third = third;
+    }
+
+    public T1 getFirst() {
+        return first;
+    }
+
+    public T2 getSecond() {
+        return second;
+    }
+
+    public T3 getThird() {
+        return third;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + first + ", " + second + ", " + third + ")";
+    }
+}
+
+// Custom Triple class
+class Tuple<T1, T2> {
+    private T1 first;
+    private T2 second;
+
+    public Tuple(T1 first, T2 second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T1 getFirst() {
+        return first;
+    }
+
+    public T2 getSecond() {
+        return second;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + first + ", " + second + ")";
     }
 }
