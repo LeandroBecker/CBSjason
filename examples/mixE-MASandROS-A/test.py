@@ -164,24 +164,24 @@ for i in range(0, nr):
 #	avgRC = avgRC + (sumRC[i]/ctdRC[i])
 
 avgLBP = 0
-#for i in range(0, nr):
-#	avgLBP = avgLBP + (sLPer[i]/cLPer[i])
+for i in range(0, nr):
+	avgLBP = avgLBP + (sLPer[i]/cLPer[i])
 
 avgRP = 0
-#for i in range(0, nr):
-#	avgRP = avgRP + (sRePl[i]/cLPer[i]) 
+for i in range(0, nr):
+	avgRP = avgRP + (sRePl[i]/cLPer[i]) 
 
 avgAP = 0
-#for i in range(0, nr):
-#	avgAP = avgAP + (sApPl[i]/cLPer[i])
+for i in range(0, nr):
+	avgAP = avgAP + (sApPl[i]/cLPer[i])
 
 avgSO = 0
-#for i in range(0, nr):
-#	avgSO = avgSO + (sSeOp[i]/cLPer[i])
+for i in range(0, nr):
+	avgSO = avgSO + (sSeOp[i]/cLPer[i])
 
 avgESL = 0
-#for i in range(0, nr):
-#	avgESL = avgESL + (sESL[i]/cLPer[i])
+for i in range(0, nr):
+	avgESL = avgESL + (sESL[i]/cLPer[i])
 
 #Print all average numbers
 print("Avg RCs: %4d " % (avgCN/nr))
@@ -194,19 +194,12 @@ print("Avg    RC: %12.0f"  % avgRC)
 tlog = avgSLB - (avgLBP + avgRP + avgAP + avgSO + avgESL)
 avgSLB = avgSLB - tlog
 print("Avg  CB2E: %12.0f"  % avgSLB, end='') 
-if avgRC:
-	print(" - %2.2f of RC" % (avgSLB/avgRC))
+print(" - %2.2f of RC" % (avgSLB/avgRC))
 print("Avg  CPer: %12.0f"  % avgLBP) 
 print("Avg  RePl: %12.0f"  % avgRP, end='')  
-if avgSLB:
-	print(" - %2.2f of CB2E" % (avgRP/avgSLB))
-else:
-	print("")
+print(" - %2.2f of CB2E" % (avgRP/avgSLB))
 print("Avg  ApPl: %12.0f"  % avgAP, end='')   
-if avgSLB:
-	print(" - %2.2f of CB2E" % (avgAP/avgSLB))
-else:
-	print("")
+print(" - %2.2f of CB2E" % (avgAP/avgSLB))
 print("Avg  SeOp: %12.0f"  % avgSO) 
 print("Avg  ExAc: %12.0f"  % avgESL) 
 

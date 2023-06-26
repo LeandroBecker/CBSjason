@@ -21,15 +21,15 @@
 +value2(V) 
    <- .print("CRITICAL-P, value 2: ", V);
       //.wait(100);
-      //execute "update_topic2" upon "sample_roscore". Such action is translated to a rostopic pub
       embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction("sample_roscore","update_value", V+1).
+      //embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction("sample_roscore","update_time", "updateMsg").
 
 +cb0 
    <- //.print("Read value 2: ", V);
       //.wait(100);
       //execute "update_topic2" upon "sample_roscore". Such action is translated to a rostopic pub
-      //embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction("sample_roscore","update_time", "updateMsg").
       embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction("sample_roscore","update_time", "updateMsg").
+
 
 /* The plans below illustrate the reading of string values and the writing to ros topics */      
 +current_hour(V) : .time(H,M,S) & .concat(H,":",M,":",S,Msg)

@@ -126,7 +126,8 @@ public class TransitionSystem implements Serializable {
 
         Plan pa0 = null;
         try{
-            pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+            //pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+            pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** LBB ERROR in Plan parsing", e);
         }
@@ -2203,13 +2204,13 @@ public class TransitionSystem implements Serializable {
                         // } // END Step.7 - variable 'ap'
                         // if(ap == null)
                         //     return;
-                        logger.info("LBBiii " + String.valueOf(endPer-start)); //LB 
+                        //logger.info("LBBiii " + String.valueOf(endPer-start)); //LB 
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Encontrados x applicablePlans: " + apPlan.size());
                         long tAppPlan = System.nanoTime();
 
                         // Option theOpt = ag.selectOption(ap);  // theOpt == C.SO
                         //if (logger.isLoggable(Level.FINE)) logger.fine("Logando selectOption " + theOpt.getPlan().toString()); 
-                        long tSelOpt = System.nanoTime();
+                        long tSelOpt = 0; //System.nanoTime();
 
                         /* / START new test
                         Plan pa = ASSyntax.parsePlan("@t1 +cb0 : testBel <- manual.");
@@ -2232,7 +2233,7 @@ public class TransitionSystem implements Serializable {
                         // Literal bodyTer = null;
                         // if (bTerm instanceof Literal)
                         //     bodyTer = (Literal)bTerm;                                    
-                        long execIni = System.nanoTime();
+                        long execIni = 0; //System.nanoTime();
                         
                         // Iterating over the Triples
                         // Should be one level out (outside the perception-loop)
@@ -2249,6 +2250,7 @@ public class TransitionSystem implements Serializable {
                             case action:
                                 //bodyTer = (Literal)bodyTer.capply(u); //LBB: maybe needed                                  
                                 action = new ActionExec(bodyTer, null); 
+                                tSelOpt = System.nanoTime(); execIni = tSelOpt;
                                 if (action != null) 
                                     getAgArch().act(action); 
                                 break; //end action
@@ -2261,17 +2263,10 @@ public class TransitionSystem implements Serializable {
                                     // Term[] terms      = ia.prepareArguments(bodyTer, u); // clone and apply args
                                     // Object oresult    = ia.execute(this, u, terms);
                                     Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
+                                    tSelOpt = System.nanoTime(); execIni = tSelOpt;
                                     Object oresult    = ia.execute(this, null, terms);
                                     if (oresult != null) {
                                         ok = oresult instanceof Boolean && (Boolean)oresult;
-                                        // if (!ok && oresult instanceof Iterator) { // ia result is an Iterator
-                                        //     Iterator<Unifier> iu = (Iterator<Unifier>)oresult;
-                                        //     if (iu.hasNext()) {
-                                        //         // change the unifier of the current IM to the first returned by the IA
-                                        //         im.unif = iu.next();
-                                        //         ok = true;
-                                        //     }
-                                        // }
                                         if (!ok) { // IA returned false
                                             errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
                                         }
