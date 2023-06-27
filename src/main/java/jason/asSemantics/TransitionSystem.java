@@ -2125,7 +2125,7 @@ public class TransitionSystem implements Serializable {
         long endPer = 0;
 
         int cycleCtd = getAgArch().getCycleNumber();
-        logger.info("Start sense " + cycleCtd ); //LB 
+        //logger.info("Start sense " + cycleCtd ); //LB 
 
         if(cycleCtd < 10)
             return; 
@@ -2283,18 +2283,19 @@ public class TransitionSystem implements Serializable {
                         }
                     }
                     long tExec = System.nanoTime();
-                    // Time logging
+                    // Time logging - OLD
                     //logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start)); //LB 
                     //logger.info("LBB TransitionSystem, relevantPlans time (ns): " + String.valueOf(tRelPlan-endPer)); //LB 
                     //logger.info("LBB TransitionSystem, applicablePlans time (ns): " + String.valueOf(tAppPlan-tRelPlan)); //LB 
                     //logger.info("LBB TransitionSystem, selectOption time (ns): " + String.valueOf(tSelOpt-tAppPlan)); //LB 
                     //logger.info("LBB TransitionSystem, endSenLBB time (ns): " + String.valueOf(tExec-tSelOpt)); //LB 
 
-                    logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                                                                         + " " + String.valueOf(tRelPlan-endPer)
-                                                                         + " " + String.valueOf(tAppPlan-tRelPlan)
-                                                                         + " " + String.valueOf(tSelOpt-tAppPlan) 
-                                                                         + " " + String.valueOf(tExec-execIni));
+                    // Time logging - CURRENT
+                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
+                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+                    //                                                      + " " + String.valueOf(tExec-execIni));
                 }
             //}
         }            

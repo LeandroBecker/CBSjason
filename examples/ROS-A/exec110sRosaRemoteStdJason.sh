@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Starting experiments script"
 source catkin_ws/devel/setup.bash 
-cp build.gradle.rosa.stdJason.txt build.gradle
+cp build.gradle.rosa.remoteStdJason.txt build.gradle
 cp src/java/RosEnv.jaBAA src/java/RosEnv.java
 #pwd 
 #cp ../ariac_human/human_control.py .

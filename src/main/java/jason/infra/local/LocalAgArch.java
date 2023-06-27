@@ -282,11 +282,11 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         // LBB: bellow comment to avoid logging overhead, that is HIGH
         // long LBBtime = endSenLBB-start;
-        logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)); //LB 
-        logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-endSenLBB)); //LB 
-        logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
-        logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
-        logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-endSenLBB)); //LB 
+        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)); //LB 
+        // logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-endSenLBB)); //LB 
+        // logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
+        // logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
+        // logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-endSenLBB)); //LB 
 
         // Is bellow deprecated?
         // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)
