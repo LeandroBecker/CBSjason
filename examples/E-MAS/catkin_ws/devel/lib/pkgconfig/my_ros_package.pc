@@ -1,0 +1,8 @@
+prefix=/home/leandro/jason/examples/E-MAS/catkin_ws/devel
+
+Name: my_ros_package
+Description: Description of my_ros_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

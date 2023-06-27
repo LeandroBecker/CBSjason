@@ -88,10 +88,7 @@ sourceSets {
 task run (type: JavaExec, dependsOn: 'classes') {
     description 'runs the application'
     main = 'jason.infra.local.RunLocalMAS'
-    args 'masMaiquel_C.mas2j'
-    // options:
-    //     args = ['teste_embedded_mas.mas2j', '--debug']
-    //     args = ['teste_embedded_mas.mas2j', '--log-conf', 'l.p'] // to use file l.p to configure logging
+    args 'masMaiquel.mas2j'
     classpath sourceSets.main.runtimeClasspath
 }
 

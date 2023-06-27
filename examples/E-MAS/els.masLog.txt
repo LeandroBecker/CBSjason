@@ -1,0 +1,13 @@
+RCs: [869]
+E2E: [0]
+Avg RCs:  869 
+Avg Sense:       121439
+Avg   Del:        69326
+Avg   Act:       388759
+Avg    RC:       579524
+Avg  CB2E:            0 - 0.00 of RC
+Avg  CPer:            0
+Avg  RePl:            0
+Avg  ApPl:            0
+Avg  SeOp:            0
+Avg  ExAc:            0
