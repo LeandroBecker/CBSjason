@@ -1,4 +1,4 @@
-# STANDARD Jason Agent
+# CRITICAL Jason Agent
 - device_id: sample_roscore #device identifier. It is up to the designer to choose this name.
   className:  embedded.mas.bridges.ros.MyRosMaster
   microcontroller: 
@@ -10,7 +10,7 @@
         topicType: std_msgs/Int32
       - topicName: value2
         topicType: std_msgs/Int32
-#        beliefName: critical_percept
+        beliefName: critical_percept
   actions:       
     topicWritingActions:          
       # - actionName: update_value1

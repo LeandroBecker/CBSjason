@@ -48,13 +48,14 @@ public class RosEnv extends Environment {
     public boolean executeAction(String agName, Structure act) {
         if (act.getFunctor().equals("critReac0")) {
             // If has parameter, do as follows:
-            // NumberTerm lx = (NumberTerm) act.getTerm(0);
-            // try{
-            //      failSafe(lx.solve());
-            // } catch(Exception e) {
-            //  e.printStackTrace();
-            // }
-            failSafe();
+            NumberTerm lx = (NumberTerm) act.getTerm(0);
+            try{
+                 failSafe(lx.solve());
+            } catch(Exception e) {
+             e.printStackTrace();
+            }
+            // else (no parameter), do as bellow:
+            //failSafe();
         }
         else {
             logger.info("PROBLEM: requested: "+act.getFunctor()+", but not implemented!");
@@ -63,10 +64,14 @@ public class RosEnv extends Environment {
         return true; // the action was executed with success
     }
     
+    public void failSafe(double dPar) {
+        Publisher pub = new Publisher("/agent_detected_failure_uav1","std_msgs/String",bridge); //"/current_time", "std_msgs/String", bridge);       
+        pub.publish(new PrimitiveMsg<Double>(dPar)); //here goes the published parameters (arguments)
+    }
+    
     public void failSafe() {
         Publisher pub = new Publisher("/agent_detected_failure_uav1","std_msgs/String",bridge); //"/current_time", "std_msgs/String", bridge);       
-        pub.publish(new PrimitiveMsg<String>("whatever ")); //here goes the published parameters (arguments)
-        //logger.info("failSafe requesed"); 
+        pub.publish(); //here goes the published parameters (arguments)
     }
 
     /** Called before the end of MAS execution */

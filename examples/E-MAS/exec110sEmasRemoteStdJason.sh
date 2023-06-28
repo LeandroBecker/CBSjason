@@ -3,7 +3,7 @@ echo "Starting experiments script"
 source catkin_ws/devel/setup.bash 
 cp src/java/MyRosMasterStdJas.jaBAA src/java/MyRosMaster.java
 cp src/agt/sample_agent_M.Std src/agt/sample_agent_M.yaml
-cp build.gradle.maiquel.stdJason.txt build.gradle
+cp build.gradle.maiquel.remoteStdJason.txt build.gradle
 #pwd 
 #cp ../ariac_human/human_control.py .
 SECONDS_TO_RUN=30  # Number of seconds to run
