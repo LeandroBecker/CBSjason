@@ -16,5 +16,5 @@ MAS teste_embedded_mas {
 
     environment: RosEnv
 
-    agents: uav1 agentClass embedded.mas.bridges.jacamo.CyberPhysicalAgent agentArchClass embedded.mas.bridges.jacamo.DemoEmbeddedAgentArch;
+    agents: uav1 agentClass embedded.mas.bridges.jacamo.CyberPhysicalAgent agentArchClass embedded.mas.bridges.jacamo.CriticalEmbeddedAgArch;
 }

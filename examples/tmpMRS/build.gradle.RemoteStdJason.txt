@@ -10,7 +10,7 @@
 defaultTasks 'run'
 
 apply plugin: 'java'
-//apply plugin: 'eclipse'
+apply plugin: 'eclipse'
 
 version '1.0'
 group   'org.jason'
@@ -35,6 +35,10 @@ repositories {
 dependencies {
     implementation('org.jason:jason:3.1')
     implementation('embedded-mas:embedded-mas:0.055-SNAPSHOT')
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.2' 
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.13.3'
 }
 
 sourceSets {
@@ -51,7 +55,7 @@ sourceSets {
 task run (type: JavaExec, dependsOn: 'classes') {
     description 'runs the application'
     main = 'jason.infra.local.RunLocalMAS'
-    args 'masMaiquel.mas2j'
+    args 'agPrj.mas2j'
     classpath sourceSets.main.runtimeClasspath
 }
 

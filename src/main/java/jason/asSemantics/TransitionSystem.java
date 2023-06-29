@@ -126,8 +126,9 @@ public class TransitionSystem implements Serializable {
 
         Plan pa0 = null;
         try{
-            pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
-            //pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
+            // pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+            // pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
+            pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"roscore1\",\"adf\", \"N\").");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** LBB ERROR in Plan parsing", e);
         }
