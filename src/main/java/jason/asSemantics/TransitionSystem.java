@@ -21,6 +21,7 @@ import jason.NoValueException;
 import jason.RevisionFailedException;
 import jason.architecture.AgArch;
 import jason.asSemantics.GoalListener.GoalStates;
+import jason.asSemantics.Tuple;
 import jason.asSyntax.ASSyntax;
 import jason.asSyntax.Atom;
 import jason.asSyntax.BinaryStructure;
@@ -84,11 +85,6 @@ public class TransitionSystem implements Serializable {
 
     private Queue<RunnableSerializable> taskForBeginOfCycle = new ConcurrentLinkedQueue<>();
 
-    //LBB: CB2A variables next
-    // ArrayList<Triple<Boolean, Integer, Literal>> CRT = new ArrayList<>();
-    ArrayList<Tuple<Boolean, PlanBody>> CRT = new ArrayList<>();
-
-
     public TransitionSystem(Agent a, Circumstance c, Settings s, AgArch ar) {
         ag     = a;
         agArch = ar;
@@ -121,20 +117,16 @@ public class TransitionSystem implements Serializable {
 
     //LBB: tmp function: used while agent-parser is unfinished
     private void tmp_ReplaceAgentParser(){
-        // Triple<Boolean, Integer, Literal> innerTriple1 = new Triple<>(true, 1, new LiteralImpl("critReac0"));
-        // CRT.add(innerTriple1);
-
         Plan pa0 = null;
         try{
-            // pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
-            pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
-            // pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"roscore1\",\"adf\", \"N\").");
+            pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+            // pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** LBB ERROR in Plan parsing", e);
         }
         PlanBody pb0 = pa0.getBody();
-        Tuple<Boolean, PlanBody> innerTuple1 = new Tuple<>(true, pb0);
-        CRT.add(innerTuple1);
+        Tuple<Boolean, PlanBody> innerTuple1 = new Tuple<>(false, pb0);
+        C.CRT.add(innerTuple1);
 }
 
     public void setLogger(AgArch arch) {
@@ -1775,18 +1767,13 @@ public class TransitionSystem implements Serializable {
         try {
             if(cbsPercepts != null){                
                 //for(int i=0; i<cbsPercepts.length; i++){   
-                    int i=0;
-                    if(cbsPercepts[i] == true){     
-                        cbsPercepts[i] = false;
+                    // int i=0;
+                    // if(cbsPercepts[i] == true){     
+                    //     cbsPercepts[i] = false;
                         ActionExec action = null;
 
-                        long tSelOpt = 0; //System.nanoTime();
-                        long execIni = 0; //System.nanoTime();
-                        
-                        // Iterating over the Triples/Tuples
-                        // Should be one level out (outside the perception-loop)
-                        // for (Triple<Boolean, Integer, Literal> Triple : CRT) {
-                        for (Tuple<Boolean, PlanBody> tp : CRT) {
+                        // Iterating over the Tuples
+                        for (Tuple<Boolean, PlanBody> tp : C.CRT) {
                             boolean isEnabled = tp.getFirst();
                             PlanBody        h = tp.getSecond();
                             Term        bTerm = h.getBodyTerm();
@@ -1796,9 +1783,7 @@ public class TransitionSystem implements Serializable {
                     
                             switch (h.getBodyType()) {
                             case action:
-                                //bodyTer = (Literal)bodyTer.capply(u); //LBB: maybe needed                                  
                                 action = new ActionExec(bodyTer, null); 
-                                tSelOpt = System.nanoTime(); execIni = tSelOpt;
                                 if (action != null) 
                                     getAgArch().act(action); 
                                 break; //end action
@@ -1808,10 +1793,7 @@ public class TransitionSystem implements Serializable {
                                 List<Term> errorAnnots = null;
                                 try {
                                     InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
-                                    // Term[] terms      = ia.prepareArguments(bodyTer, u); // clone and apply args
-                                    // Object oresult    = ia.execute(this, u, terms);
                                     Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
-                                    tSelOpt = System.nanoTime(); execIni = tSelOpt;
                                     Object oresult    = ia.execute(this, null, terms);
                                     if (oresult != null) {
                                         ok = oresult instanceof Boolean && (Boolean)oresult;
@@ -1829,7 +1811,8 @@ public class TransitionSystem implements Serializable {
                                 }
                                 break;  //end internalAction
                         }
-                    }
+                        C.resetCRT();
+                    // }
                     long tExec = System.nanoTime();
                     // Time logging - CURRENT
                     // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
@@ -2064,29 +2047,5 @@ class Triple<T1, T2, T3> {
     @Override
     public String toString() {
         return "(" + first + ", " + second + ", " + third + ")";
-    }
-}
-
-// Custom Triple class
-class Tuple<T1, T2> {
-    private T1 first;
-    private T2 second;
-
-    public Tuple(T1 first, T2 second) {
-        this.first = first;
-        this.second = second;
-    }
-
-    public T1 getFirst() {
-        return first;
-    }
-
-    public T2 getSecond() {
-        return second;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + first + ", " + second + ")";
     }
 }

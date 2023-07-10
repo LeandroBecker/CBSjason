@@ -236,7 +236,7 @@ my_number_string(S) :- my_number(N)
       -+status("combating_fire");
       .print("Fire found by ", N, ". Suspending trajectory.");
       !goto_fire_position(X+N, Y, 15);
-	  //acao de combate ao fogo/ na simulacao muda a cor do VANT/ no caso da implementacao real tem que ter uma funcao
+      //acao de combate ao fogo/ na simulacao muda a cor do VANT/ no caso da implementacao real tem que ter uma funcao
       !combat_fireR(CW).
       //.wait(10000);
       //+fire_extinguished;
@@ -252,7 +252,7 @@ my_number_string(S) :- my_number(N)
       -+status("combating_fire");
       .print("Fire found by ", N, ". Suspending waiting.");
       !goto_fire_position(X+N, Y, 15);
-	  //acao de combate ao fogo/ na simulacao muda a cor do VANT/ no caso da implementacao real tem que ter uma funcao
+      //acao de combate ao fogo/ na simulacao muda a cor do VANT/ no caso da implementacao real tem que ter uma funcao
       !combat_fire.
       
 

@@ -23,8 +23,10 @@ import jason.asSemantics.Circumstance;
 import jason.asSemantics.Intention;
 import jason.asSemantics.Message;
 import jason.asSemantics.TransitionSystem;
+import jason.asSemantics.Tuple;
 import jason.asSyntax.Atom;
 import jason.asSyntax.Literal;
+import jason.asSyntax.PlanBody;
 import jason.mas2j.ClassParameters;
 import jason.runtime.RuntimeServices;
 import jason.runtime.RuntimeServicesFactory;
@@ -409,6 +411,13 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         //Boolean[] percepts = new Boolean[8];
         //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
         //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
+        
+        Circumstance C = getTS().getC();     
+        int i=0;
+        for (Tuple<Boolean, PlanBody> tp : C.CRT) {
+            if(percepts[i++])
+                tp.setFirst(true);
+        }   
         return percepts;
     }
 
