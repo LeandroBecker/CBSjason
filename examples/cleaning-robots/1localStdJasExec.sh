@@ -9,7 +9,7 @@ fi
 count=$1
 count=$((count - 1))
 
-for ((k=0; k<=0; k++))
+for ((k=0; k<=0; k++)) #k<=5 for complete test
 do
 	runId="ls$k"
 	cp runs/$runId ./marsPrjStd.mas2j

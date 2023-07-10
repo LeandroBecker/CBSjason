@@ -10,7 +10,7 @@ count=$1
 count=$((count - 1))
 cp MarsEnvCritical.jaBAA MarsEnvCritical.java
 
-for ((k=0; k<=2; k++))
+for ((k=0; k<=0; k++)) #k<=5 for complete test
 do
 	runId="lc$k"
 	cp runs/$runId ./marsPrjCritical.mas2j

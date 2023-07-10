@@ -67,8 +67,8 @@ public class MarsEnvStd extends Environment {
         setKPerc(Integer.parseInt(args[1]));
 
         model = new MarsModel(); 
-        // view  = new MarsView(model);
-        // model.setView(view);
+        view  = new MarsView(model);
+        model.setView(view);
         updatePercepts();
 
         // LBB: implementation of a new thread for the critical perceptions

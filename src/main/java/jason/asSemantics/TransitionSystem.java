@@ -1767,17 +1767,20 @@ public class TransitionSystem implements Serializable {
         try {
             if(cbsPercepts != null){                
                 //for(int i=0; i<cbsPercepts.length; i++){   
-                    // int i=0;
-                    // if(cbsPercepts[i] == true){     
-                    //     cbsPercepts[i] = false;
+                    int i=0;
+                    if(cbsPercepts[i] == true){     
+                        cbsPercepts[i] = false;
                         ActionExec action = null;
 
                         // Iterating over the Tuples
+                        int j=0;
                         for (Tuple<Boolean, PlanBody> tp : C.CRT) {
                             boolean isEnabled = tp.getFirst();
                             PlanBody        h = tp.getSecond();
                             Term        bTerm = h.getBodyTerm();
                             Literal   bodyTer = null;
+                            if(isEnabled)
+                                logger.info("YES cbsPer, count: " + j++);
                             if (bTerm instanceof Literal)
                                 bodyTer = (Literal)bTerm;  
                     
@@ -1812,7 +1815,7 @@ public class TransitionSystem implements Serializable {
                                 break;  //end internalAction
                         }
                         C.resetCRT();
-                    // }
+                    }
                     long tExec = System.nanoTime();
                     // Time logging - CURRENT
                     // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
