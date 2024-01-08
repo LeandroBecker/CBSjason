@@ -1,0 +1,10 @@
+// Implementation of the example described in chapter 2
+// of the Jason's manual
+
+MAS lbb2 {
+
+    environment: BEnv2
+
+    agents: 
+        agLBB agentArchClass StatArch;
+}   

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-11-04T07:16:28.747101687Z</date>
+  <millis>1699082188747</millis>
+  <nanos>101687</nanos>
+  <sequence>0</sequence>
+  <logger>jason.mas2j.MAS2JProject</logger>
+  <level>SEVERE</level>
+  <class>jason.mas2j.MAS2JProject</class>
+  <method>registerDirectives</method>
+  <thread>1</thread>
+  <message>Error registering directives {apply_ap=active_perception.DirectiveCT}</message>
+  <exception>
+    <message>java.lang.ClassNotFoundException: active_perception.DirectiveCT</message>
+    <frame>
+      <class>jdk.internal.loader.BuiltinClassLoader</class>
+      <method>loadClass</method>
+      <line>641</line>
+    </frame>
+    <frame>
+      <class>jdk.internal.loader.ClassLoaders$AppClassLoader</class>
+      <method>loadClass</method>
+      <line>188</line>
+    </frame>
+    <frame>
+      <class>java.lang.ClassLoader</class>
+      <method>loadClass</method>
+      <line>520</line>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName0</method>
+    </frame>
+    <frame>
+      <class>java.lang.Class</class>
+      <method>forName</method>
+      <line>375</line>
+    </frame>
+    <frame>
+      <class>jason.mas2j.MAS2JProject</class>
+      <method>registerDirectives</method>
+      <line>192</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.RunLocalMAS</class>
+      <method>init</method>
+      <line>180</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.RunLocalMAS</class>
+      <method>main</method>
+      <line>92</line>
+    </frame>
+  </exception>
+</record>
+<record>
+  <date>2023-11-04T07:16:29.035653226Z</date>
+  <millis>1699082189035</millis>
+  <nanos>653226</nanos>
+  <sequence>1</sequence>
+  <logger>jason.asSyntax.directives.DirectiveProcessor</logger>
+  <level>SEVERE</level>
+  <class>jason.asSyntax.directives.DirectiveProcessor</class>
+  <method>getInstance</method>
+  <thread>1</thread>
+  <message>Unknown directive apply_ap</message>
+</record>
+<record>
+  <date>2023-11-04T07:16:29.036402730Z</date>
+  <millis>1699082189036</millis>
+  <nanos>402730</nanos>
+  <sequence>2</sequence>
+  <logger>jason.infra.local.BaseLocalMAS</logger>
+  <level>SEVERE</level>
+  <class>jason.infra.local.RunLocalMAS</class>
+  <method>createAgs</method>
+  <thread>1</thread>
+  <message>Error creating agent onlyasl</message>
+  <exception>
+    <message>java.lang.NullPointerException: Cannot invoke "jason.asSyntax.directives.Directive.begin(jason.asSyntax.Pred, jason.asSyntax.parser.as2j)" because "d" is null</message>
+    <frame>
+      <class>jason.asSyntax.parser.as2j</class>
+      <method>directive</method>
+      <line>235</line>
+    </frame>
+    <frame>
+      <class>jason.asSyntax.parser.as2j</class>
+      <method>agent_component</method>
+      <line>152</line>
+    </frame>
+    <frame>
+      <class>jason.asSyntax.parser.as2j</class>
+      <method>agent</method>
+      <line>139</line>
+    </frame>
+    <frame>
+      <class>jason.asSemantics.Agent</class>
+      <method>parseAS</method>
+      <line>495</line>
+    </frame>
+    <frame>
+      <class>jason.asSemantics.Agent</class>
+      <method>parseAS</method>
+      <line>463</line>
+    </frame>
+    <frame>
+      <class>jason.asSemantics.Agent</class>
+      <method>parseAS</method>
+      <line>459</line>
+    </frame>
+    <frame>
+      <class>jason.asSemantics.Agent</class>
+      <method>load</method>
+      <line>177</line>
+    </frame>
+    <frame>
+      <class>jason.asSemantics.Agent</class>
+      <method>create</method>
+      <line>125</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.LocalAgArch</class>
+      <method>createArchs</method>
+      <line>96</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.RunLocalMAS</class>
+      <method>createAgs</method>
+      <line>542</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.RunLocalMAS</class>
+      <method>create</method>
+      <line>237</line>
+    </frame>
+    <frame>
+      <class>jason.infra.local.RunLocalMAS</class>
+      <method>main</method>
+      <line>94</line>
+    </frame>
+  </exception>
+</record>
+</log>

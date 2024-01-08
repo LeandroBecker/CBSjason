@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-11-04T07:29:09.427924933Z</date>
+  <millis>1699082949427</millis>
+  <nanos>924933</nanos>
+  <sequence>0</sequence>
+  <logger>jason.asSemantics.TransitionSystem.onlyasl</logger>
+  <level>WARNING</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>generateGoalDeletionFromEvent</method>
+  <thread>25</thread>
+  <message>Could not finish intention:
+intention 2: 
+    +!update(b(1,2)[ap(1000)])[ap,source(self)] &lt;- ... ?X[ap] / {T=1000, X[ap(T)]=b(1,2)}
+    +!g(3,4)[ap,p__3[source(self),url("file:src/asl/onlyasl.asl")],source(self)] &lt;- ... !update(b(1,2)[ap(1000)])[ap]; !update(c[ap(2000)])[ap]; !update(d[ap(3000)])[ap]; !g(Z,W)[p__3[source(self),url("file:src/asl/onlyasl.asl")],rp] / {W=4, Z=3}
+</message>
+</record>
+<record>
+  <date>2023-11-04T07:29:09.431780188Z</date>
+  <millis>1699082949431</millis>
+  <nanos>780188</nanos>
+  <sequence>1</sequence>
+  <logger>jason.asSemantics.TransitionSystem.onlyasl</logger>
+  <level>WARNING</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applyRelApplPlRule2</method>
+  <thread>25</thread>
+  <message>Found a goal for which there is no applicable plan: -!g(3,4)[ap,code(b(1,2)[ap,source(self)]),code_line(16),code_src("file:src/asl/onlyasl.asl"),error(no_applicable),error_msg("Found a goal for which there is no applicable plan: +?b(1,2)[ap,source(self)]"),p__3[source(self),url("file:src/asl/onlyasl.asl")],source(self)]</message>
+</record>
+<record>
+  <date>2023-11-04T07:29:09.542476177Z</date>
+  <millis>1699082949542</millis>
+  <nanos>476177</nanos>
+  <sequence>2</sequence>
+  <logger>jason.asSemantics.TransitionSystem.onlyasl</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>expeditedRP</method>
+  <thread>25</thread>
+  <message>
+
+// plans from file:src/asl/onlyasl.asl
+
+@p__1[source(self),url("file:src/asl/onlyasl.asl")] +e &lt;- .wait(100); !g(3,4)[ap,p__3[source(self),url("file:src/asl/onlyasl.asl")]]; .print("teste").
+@p__2[source(self),url("file:src/asl/onlyasl.asl")] +!z(X,Y)[p__2[source(self),url("file:src/asl/onlyasl.asl")],rp] : (b(1,2)[ap(1000)] &amp; (c[ap(2000)] &amp; d[ap(3000)])) &lt;- .print("GOAL G1").
+@p__3[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__3[source(self),url("file:src/asl/onlyasl.asl")],rp] : (b(1,2)[ap(1000)] &amp; (c[ap(2000)] &amp; d[ap(3000)])) &lt;- .print("GOAL G1").
+@p__4[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__4[source(self),url("file:src/asl/onlyasl.asl")],rp] : (l &amp; i) &lt;- .print("GOAL G9").
+@p__5[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__5[source(self),url("file:src/asl/onlyasl.asl")],rp] : (b(2,Y)[ap(1000)] &amp; c[ap(2000)]) &lt;- .print("GOAL G2").
+@p__6[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__6[source(self),url("file:src/asl/onlyasl.asl")],rp] : (e &amp; c[ap(2000)]) &lt;- .print("GOAL G4").
+@p__7[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__7[source(self),url("file:src/asl/onlyasl.asl")],rp] : (c[ap(2000)] &amp; f) &lt;- .print("GOAL G5").
+@p__8[source(self),url("file:src/asl/onlyasl.asl")] +!g(Z,W)[p__8[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- .print("GOAL G3").
+@p__9[source(self),url("file:src/asl/onlyasl.asl")] -!g(Z,W)[p__8[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- .print("Falhou").
+@p__10[source(self),url("file:src/asl/onlyasl.asl")] +?b(X,Y)[ap(T)] &lt;- .time(HH,MM,SS,MS); +b(X,Y)[ap(T),lu(HH,MM,SS,MS)]; .print("X: ",X," Y: ",Y); .print("Active perception plan for b").
+@p__11[source(self),url("file:src/asl/onlyasl.asl")] +?c[ap(T)] &lt;- .time(HH,MM,SS,MS); +c[ap(T),lu(HH,MM,SS,MS)]; .print("Active perception plan for c").
+@p__12[source(self),url("file:src/asl/onlyasl.asl")] +?d[ap(T)] &lt;- .print("Active perception plan for d").
+
+
+
+// plans without file
+
+@l__13[source(self)] +!z(X,Y)[p__2[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__14[source(self)] +!g(Z,W)[p__3[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- !g(Z,W)[ap,p__4[source(self),url("file:src/asl/onlyasl.asl")]].
+@l__15[source(self)] +!g(Z,W)[p__4[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- !g(Z,W)[ap,p__5[source(self),url("file:src/asl/onlyasl.asl")]].
+@l__16[source(self)] +!g(Z,W)[p__5[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- !g(Z,W)[ap,p__6[source(self),url("file:src/asl/onlyasl.asl")]].
+@l__17[source(self)] +!g(Z,W)[p__6[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- !g(Z,W)[ap,p__7[source(self),url("file:src/asl/onlyasl.asl")]].
+@l__18[source(self)] +!g(Z,W)[p__7[source(self),url("file:src/asl/onlyasl.asl")],rp] &lt;- !g(Z,W)[ap,p__8[source(self),url("file:src/asl/onlyasl.asl")]].
+@l__19[source(self)] +!g(Z,W)[p__8[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__20[source(self)] +!z(X,Y)[ap,p__2[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !update(b(1,2)[ap(1000)])[ap]; !update(c[ap(2000)])[ap]; !update(d[ap(3000)])[ap]; !z(X,Y)[p__2[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__21[source(self)] +!g(Z,W)[ap,p__3[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !update(b(1,2)[ap(1000)])[ap]; !update(c[ap(2000)])[ap]; !update(d[ap(3000)])[ap]; !g(Z,W)[p__3[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__22[source(self)] +!g(Z,W)[ap,p__4[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !g(Z,W)[p__4[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__23[source(self)] +!g(Z,W)[ap,p__5[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !update(b(2,Y)[ap(1000)])[ap]; !update(c[ap(2000)])[ap]; !g(Z,W)[p__5[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__24[source(self)] +!g(Z,W)[ap,p__6[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !update(c[ap(2000)])[ap]; !g(Z,W)[p__6[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__25[source(self)] +!g(Z,W)[ap,p__7[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !update(c[ap(2000)])[ap]; !g(Z,W)[p__7[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__26[source(self)] +!g(Z,W)[ap,p__8[source(self),url("file:src/asl/onlyasl.asl")]] &lt;- !g(Z,W)[p__8[source(self),url("file:src/asl/onlyasl.asl")],rp].
+@l__27[source(self)] +!update(X[ap(T)])[ap] : not (active_perception.isUpdated(X[ap(T)])) &lt;- ?X[ap].
+@l__28[source(self)] +!update(X[ap(T)])[ap].
+</message>
+</record>
+<record>
+  <date>2023-11-04T07:29:09.546669620Z</date>
+  <millis>1699082949546</millis>
+  <nanos>669620</nanos>
+  <sequence>3</sequence>
+  <logger>jason.asSemantics.TransitionSystem.onlyasl</logger>
+  <level>WARNING</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>generateGoalDeletionFromEvent</method>
+  <thread>25</thread>
+  <message>Could not finish intention:
+intention 1: 
+    +!update(b(1,2)[ap(1000)])[ap,source(self)] &lt;- ... ?X[ap] / {T=1000, X[ap(T)]=b(1,2)}
+    +!g(3,4)[ap,p__3[source(self),url("file:src/asl/onlyasl.asl")],source(self)] &lt;- ... !update(b(1,2)[ap(1000)])[ap]; !update(c[ap(2000)])[ap]; !update(d[ap(3000)])[ap]; !g(Z,W)[p__3[source(self),url("file:src/asl/onlyasl.asl")],rp] / {W=4, Z=3}
+    +e[source(self)] &lt;- ... !g(3,4)[ap,p__3[source(self),url("file:src/asl/onlyasl.asl")]]; .print("teste") / {}
+</message>
+</record>
+<record>
+  <date>2023-11-04T07:29:09.547480878Z</date>
+  <millis>1699082949547</millis>
+  <nanos>480878</nanos>
+  <sequence>4</sequence>
+  <logger>jason.asSemantics.TransitionSystem.onlyasl</logger>
+  <level>WARNING</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>applyRelApplPlRule2</method>
+  <thread>25</thread>
+  <message>Found a goal for which there is no applicable plan: -!g(3,4)[ap,code(b(1,2)[ap,source(self)]),code_line(16),code_src("file:src/asl/onlyasl.asl"),error(no_applicable),error_msg("Found a goal for which there is no applicable plan: +?b(1,2)[ap,source(self)]"),p__3[source(self),url("file:src/asl/onlyasl.asl")],source(self)]</message>
+</record>
+</log>

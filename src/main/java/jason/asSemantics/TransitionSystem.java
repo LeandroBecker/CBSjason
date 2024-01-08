@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.naming.Context;
+
 import jason.JasonException;
 import jason.NoValueException;
 import jason.RevisionFailedException;
@@ -38,6 +40,7 @@ import jason.asSyntax.PlanBody;
 import jason.asSyntax.PlanBody.BodyType;
 import jason.asSyntax.PlanBodyImpl;
 import jason.asSyntax.PlanLibrary;
+import jason.asSyntax.PredicateIndicator;
 import jason.asSyntax.SourceInfo;
 import jason.asSyntax.StringTermImpl;
 import jason.asSyntax.Structure;
@@ -117,16 +120,34 @@ public class TransitionSystem implements Serializable {
 
     //LBB: tmp function: used while agent-parser is unfinished
     private void tmp_ReplaceAgentParser(){
-        Plan pa0 = null;
+        Plan cp0 = null;
+        Plan cp1 = null;
+        List<Plan> planL0 = new ArrayList<Plan>();
+        List<Plan> planL1 = new ArrayList<Plan>();
         try{
-            pa0 = ASSyntax.parsePlan("+cb0 : true <- critReac0.");
+            cp0 = ASSyntax.parsePlan("+cb0 [cr]: nope & belA <- critReac0.");
+            cp1 = ASSyntax.parsePlan("+cb0 [cr]: belA <- critReac0.");
             // pa0 = ASSyntax.parsePlan("+cb0 : true <- embedded.mas.bridges.jacamo.defaultEmbeddedInternalAction(\"sample_roscore\",\"update_time\", \"updateMsg\").");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** LBB ERROR in Plan parsing", e);
         }
-        PlanBody pb0 = pa0.getBody();
-        Tuple<Boolean, PlanBody> innerTuple1 = new Tuple<>(false, pb0);
-        C.CRT.add(innerTuple1);
+        PlanBody        pb0 = cp0.getBody();
+        Trigger         tp0 = cp0.getTrigger();
+
+        PlanBody        pb1 = cp1.getBody();
+        Trigger         tp1 = cp1.getTrigger();
+
+        //2. add entry to the map of critical plans
+        // planL0.add(cp0);
+        // C.CLM.put(tp0.getPredicateIndicator(), planL0);
+
+        // planL1.add(cp1);
+        // C.CLM.put(tp1.getPredicateIndicator(), planL1);
+
+        //LBB: testing what should be the final code
+        // C.CLM.putAll(ag.getPL().getCRP());
+
+
 }
 
     public void setLogger(AgArch arch) {
@@ -1368,8 +1389,6 @@ public class TransitionSystem implements Serializable {
                             getLogger().log(Level.FINE, "     "+opt.getPlan().getLabel() + " is applicable with unification "+opt.getUnifier());
                     } else {
                         boolean allUnifs = opt.getPlan().isAllUnifs();
-
-
                         Iterator<Unifier> r = context.logicalConsequence(ag, opt.getUnifier());
                         boolean isApplicable = false;
                         if (r != null) {
@@ -1740,19 +1759,21 @@ public class TransitionSystem implements Serializable {
         }
     }
 
-    // LB: new version, using the new dataStructures
-    public void criticalRC() {
-        Boolean[] cActions = new Boolean[8]; 
+    public void expeditedRP() {
+        //Boolean[] cActions = new Boolean[8];  
         Boolean[] cbsPercepts = null;
         long start = 0;
         long endPer = 0;
 
-        int cycleCtd = getAgArch().getCycleNumber();
-        //logger.info("Start sense " + cycleCtd ); //LB 
-
-        if(cycleCtd < 10)
+        if(getAgArch().getCycleNumber() < 10)
             return; 
+        else if(getAgArch().getCycleNumber() < 11){
+            // C.CLM.putAll(ag.getPL().getCRP());
+            getLogger().info(getAg().getPL().getAsTxt(false));
+            return;
+        }
 
+        // FIX: no need to be synchronized
         try { 
             start = System.nanoTime();
             synchronized (C.syncApPlanSense) {
@@ -1765,72 +1786,198 @@ public class TransitionSystem implements Serializable {
         }
 
         try {
-            if(cbsPercepts != null){                
-                //for(int i=0; i<cbsPercepts.length; i++){   
-                    int i=0;
-                    if(cbsPercepts[i] == true){     
-                        cbsPercepts[i] = false;
-                        ActionExec action = null;
+            // if(C.CPM.size() > 0){ 
+            // if(cbsPercepts != null){  //FIX remove in optmized version (above did not work)
+            if(C.CPM.size()>0){
+                // int i=0;
+                // if(cbsPercepts[i] == true){     
+                //     cbsPercepts[i] = false; 
+                expedited_deliberate();
 
-                        // Iterating over the Tuples
-                        int j=0;
-                        for (Tuple<Boolean, PlanBody> tp : C.CRT) {
-                            boolean isEnabled = tp.getFirst();
-                            PlanBody        h = tp.getSecond();
-                            Term        bTerm = h.getBodyTerm();
-                            Literal   bodyTer = null;
-                            if(isEnabled)
-                                logger.info("YES cbsPer, count: " + j++);
-                            if (bTerm instanceof Literal)
-                                bodyTer = (Literal)bTerm;  
+                //3. trigger all elements within CRL (enabled CRs)
+                ActionExec action = null;
+                for (PlanBody pBody : C.CRL){
+                // for (Tuple<Boolean, PlanBody> tp : C.CRT) {
+                //     boolean isEnabled = tp.getFirst();
+                //     PlanBody        h = tp.getSecond();
+                    Term        bTerm = pBody.getBodyTerm();
+                    Literal   bodyTer = null;
+                    if (bTerm instanceof Literal)
+                        bodyTer = (Literal)bTerm;  
+            
+                    switch (pBody.getBodyType()) {
+                    case action:
+                        action = new ActionExec(bodyTer, null); 
+                        if (action != null) 
+                            getAgArch().act(action); 
+                        break; //end action
                     
-                            switch (h.getBodyType()) {
-                            case action:
-                                action = new ActionExec(bodyTer, null); 
-                                if (action != null) 
-                                    getAgArch().act(action); 
-                                break; //end action
-                            
-                            case internalAction:
-                                boolean ok = false;
-                                List<Term> errorAnnots = null;
-                                try {
-                                    InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
-                                    Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
-                                    Object oresult    = ia.execute(this, null, terms);
-                                    if (oresult != null) {
-                                        ok = oresult instanceof Boolean && (Boolean)oresult;
-                                        if (!ok) { // IA returned false
-                                            errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
-                                        }
-                                    }                            
-                                } catch (Exception e) {
-                                    if (bodyTer == null)
-                                        logger.log(Level.SEVERE, "LBB: intention with null body in '"+h, e);
-                                    else
-                                        logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
-                                } catch (Error e) {
-                                    logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                    case internalAction:
+                        boolean ok = false;
+                        List<Term> errorAnnots = null;
+                        try {
+                            InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
+                            Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
+                            Object oresult    = ia.execute(this, null, terms);
+                            if (oresult != null) {
+                                ok = oresult instanceof Boolean && (Boolean)oresult;
+                                if (!ok) { // IA returned false
+                                    errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
                                 }
-                                break;  //end internalAction
+                            }                            
+                        } catch (Exception e) {
+                            if (bodyTer == null)
+                                logger.log(Level.SEVERE, "LBB: intention with null body in '"+pBody, e);
+                            else
+                                logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+                        } catch (Error e) {
+                            logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
                         }
-                        C.resetCRT();
-                    }
-                    long tExec = System.nanoTime();
-                    // Time logging - CURRENT
-                    // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
-                    //                                                      + " " + String.valueOf(tRelPlan-endPer)
-                    //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
-                    //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
-                    //                                                      + " " + String.valueOf(tExec-execIni));
+                        break;  //end internalAction
                 }
-            //}
-        }            
+            long tExec = System.nanoTime();
+            // Time logging - CURRENT
+            // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+            //                                                      + " " + String.valueOf(tRelPlan-endPer)
+            //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+            //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+            //                                                      + " " + String.valueOf(tExec-execIni));
+        }
+            }                    
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
             C.create();
         }
     }
+
+    private void expedited_deliberate() {
+        C.CRL.clear();
+        for (Map.Entry<PredicateIndicator, Boolean> entry : C.CPM.entrySet()) {
+            //if (entry.getValue()) { \\No need, it only has currently-valid CPs
+                PredicateIndicator  cpKey = entry.getKey();
+                List<Plan> planList = ag.getPL().getCLM().get(cpKey); //C.CLM.get(cpKey);
+
+                for (Plan plan : planList) {
+                    LogicalFormula context = plan.getContext();
+                    // if ((context == null) || (ag.believes(context, new Unifier()))) { 
+                    //     C.CRL.add(plan.getBody());
+                    // }
+                    if (context == null) { // context is true
+                        C.CRL.add(plan.getBody());
+                    }
+                    else{
+                        // boolean allUnifs = plan.isAllUnifs(); //... = opt.getPlan().isAllUnifs();
+                        // Unifier relUn = plan.isRelevant(cpKey, new Unifier()); //
+                    //     //Option theOpt = new Option(plan, relUn);
+                    //     //IntendedMeans im = new IntendedMeans(theOpt, cpKey);
+                    // logger.info("     "+plan.getLabel() + " is applicable with unification "+relUn);
+                    // if (getLogger().isLoggable(Level.INFO))
+                    //     getLogger().log(Level.INFO, "     "+plan.getLabel() + " is applicable with unification "+relUn);
+
+                        Iterator<Unifier> r = context.logicalConsequence(ag, new Unifier()); //relUn); //opt.getUnifier());
+                        // int i=0;
+                        if (r != null && r.hasNext())
+                            C.CRL.add(plan.getBody());
+                    //         // if (r != null)
+                    //         // while (r.hasNext()) {
+                    //         //     r.next();
+                    //         //     C.CRL.add(plan.getBody());
+                    //         // }
+                    }
+                }
+        }
+    }
+
+    // LB: OLD version
+    // public void criticalRC() {
+    //     Boolean[] cActions = new Boolean[8]; 
+    //     Boolean[] cbsPercepts = null;
+    //     long start = 0;
+    //     long endPer = 0;
+
+    //     int cycleCtd = getAgArch().getCycleNumber();
+    //     //logger.info("Start sense " + cycleCtd ); //LB 
+
+    //     if(cycleCtd < 10)
+    //         return; 
+
+    //     try { 
+    //         start = System.nanoTime();
+    //         synchronized (C.syncApPlanSense) {
+    //             cbsPercepts = getAgArch().perceiveCBS();
+    //         }
+    //         endPer = System.nanoTime();           
+    //     } catch (Exception e) {
+    //         logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (sense). "+C+"\nCreating a new C!", e);
+    //         C.create();
+    //     }
+
+    //     try {
+    //         if(cbsPercepts != null){                
+    //             //for(int i=0; i<cbsPercepts.length; i++){   
+    //                 int i=0;
+    //                 if(cbsPercepts[i] == true){     
+    //                     cbsPercepts[i] = false;
+    //                     ActionExec action = null;
+
+    //                     // Iterating over the Tuples
+    //                     int j=0;
+    //                     for (Tuple<Boolean, PlanBody> tp : C.CRT) {
+    //                         boolean isEnabled = tp.getFirst();
+    //                         PlanBody        h = tp.getSecond();
+    //                         Term        bTerm = h.getBodyTerm();
+    //                         Literal   bodyTer = null;
+    //                         // if(isEnabled) // for debugging
+    //                         //     logger.info("YES cbsPer, count: " + j++);
+    //                         if (bTerm instanceof Literal)
+    //                             bodyTer = (Literal)bTerm;  
+                    
+    //                         switch (h.getBodyType()) {
+    //                         case action:
+    //                             action = new ActionExec(bodyTer, null); 
+    //                             if (action != null) 
+    //                                 getAgArch().act(action); 
+    //                             break; //end action
+                            
+    //                         case internalAction:
+    //                             boolean ok = false;
+    //                             List<Term> errorAnnots = null;
+    //                             try {
+    //                                 InternalAction ia = ((InternalActionLiteral)bTerm).getIA(ag);
+    //                                 Term[] terms      = ia.prepareArguments(bodyTer, null); // clone and apply args
+    //                                 Object oresult    = ia.execute(this, null, terms);
+    //                                 if (oresult != null) {
+    //                                     ok = oresult instanceof Boolean && (Boolean)oresult;
+    //                                     if (!ok) { // IA returned false
+    //                                         errorAnnots = JasonException.createBasicErrorAnnots("ia_failed", "");
+    //                                     }
+    //                                 }                            
+    //                             } catch (Exception e) {
+    //                                 if (bodyTer == null)
+    //                                     logger.log(Level.SEVERE, "LBB: intention with null body in '"+h, e);
+    //                                 else
+    //                                     logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+    //                             } catch (Error e) {
+    //                                 logger.log(Level.SEVERE, bodyTer.getErrorMsg()+": "+ e.getMessage(), e);
+    //                             }
+    //                             break;  //end internalAction
+    //                         }
+    //                         //C.resetCRT();
+    //                     }
+    //                     long tExec = System.nanoTime();
+    //                     // Time logging - CURRENT
+    //                     // logger.info("LBB TransitionSystem, lbbPercept time (ns): " + String.valueOf(endPer-start) 
+    //                     //                                                      + " " + String.valueOf(tRelPlan-endPer)
+    //                     //                                                      + " " + String.valueOf(tAppPlan-tRelPlan)
+    //                     //                                                      + " " + String.valueOf(tSelOpt-tAppPlan) 
+    //                     //                                                      + " " + String.valueOf(tExec-execIni));
+    //                 }
+    //         }
+    //     } catch (Exception e) {
+    //         logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
+    //         C.create();
+    //     }
+    // }
 
     public void deliberate() {
         try {

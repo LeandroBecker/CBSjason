@@ -1,0 +1,53 @@
+A. Modo INFO, i.e., nao loga em getPerceptsCBS():
+1) COM Env (lbb2)
+Avg RCs:   82 
+Avg Sense:      2754479
+Avg   Del:      2268138
+Avg   Act:      1078600
+Avg    RC:      6101217
+Avg  CB2E:       110313 - 0.02 of RC
+Avg  CPer:        35904
+Avg  RePl:         8866 - 0.08 of CB2E
+Avg  ApPl:         1763 - 0.02 of CB2E
+Avg  SeOp:          805
+Avg  ExAc:        62975
+
+2) Usando Arch (lbb3):
+Avg Sense:      2774240
+Avg   Del:      2420309
+Avg   Act:      1162745
+Avg    RC:      6357294
+Avg  CB2E:        97336 - 0.02 of RC
+Avg  CPer:        19515
+Avg  RePl:         6628 - 0.07 of CB2E
+Avg  ApPl:         1688 - 0.02 of CB2E
+Avg  SeOp:          821
+Avg  ExAc:        68684
+
+B. Modo FINE (Print em Arch), inclui getPerceptsCBS():
+1) COM Env (lbb2)
+Avg RCs:   82 
+Avg Sense:      1265018
+Avg   Del:      2248587
+Avg   Act:      4261878
+Avg    RC:      7775483
+Avg  CB2E:      1106109 - 0.14 of RC
+Avg  CPer:      1029958
+Avg  RePl:         9041 - 0.01 of CB2E
+Avg  ApPl:         1706 - 0.00 of CB2E
+Avg  SeOp:          771
+Avg  ExAc:        64632
+
+2) Usando Arch (lbb3):
+Avg RCs:   82 
+Avg Sense:      1284830
+Avg   Del:      2445531
+Avg   Act:      4645466
+Avg    RC:      8375828
+Avg  CB2E:       290261 - 0.03 of RC
+Avg  CPer:       215066
+Avg  RePl:         7291 - 0.03 of CB2E
+Avg  ApPl:         1670 - 0.01 of CB2E
+Avg  SeOp:          800
+Avg  ExAc:        65434
+

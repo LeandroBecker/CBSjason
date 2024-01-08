@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-07-20T09:03:46.828927120Z</date>
+  <millis>1689843826828</millis>
+  <nanos>927120</nanos>
+  <sequence>0</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:47.439272108Z</date>
+  <millis>1689843827439</millis>
+  <nanos>272108</nanos>
+  <sequence>1</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:47.991138291Z</date>
+  <millis>1689843827991</millis>
+  <nanos>138291</nanos>
+  <sequence>2</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:48.542462611Z</date>
+  <millis>1689843828542</millis>
+  <nanos>462611</nanos>
+  <sequence>3</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:49.095567637Z</date>
+  <millis>1689843829095</millis>
+  <nanos>567637</nanos>
+  <sequence>4</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:49.649682533Z</date>
+  <millis>1689843829649</millis>
+  <nanos>682533</nanos>
+  <sequence>5</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:50.204334783Z</date>
+  <millis>1689843830204</millis>
+  <nanos>334783</nanos>
+  <sequence>6</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:50.757479406Z</date>
+  <millis>1689843830757</millis>
+  <nanos>479406</nanos>
+  <sequence>7</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:51.309865260Z</date>
+  <millis>1689843831309</millis>
+  <nanos>865260</nanos>
+  <sequence>8</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:51.863705608Z</date>
+  <millis>1689843831863</millis>
+  <nanos>705608</nanos>
+  <sequence>9</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:52.416964381Z</date>
+  <millis>1689843832416</millis>
+  <nanos>964381</nanos>
+  <sequence>10</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:52.970478599Z</date>
+  <millis>1689843832970</millis>
+  <nanos>478599</nanos>
+  <sequence>11</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:53.524635498Z</date>
+  <millis>1689843833524</millis>
+  <nanos>635498</nanos>
+  <sequence>12</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:54.028001533Z</date>
+  <millis>1689843834028</millis>
+  <nanos>1533</nanos>
+  <sequence>13</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:54.580886506Z</date>
+  <millis>1689843834580</millis>
+  <nanos>886506</nanos>
+  <sequence>14</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:55.134725326Z</date>
+  <millis>1689843835134</millis>
+  <nanos>725326</nanos>
+  <sequence>15</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:55.688760247Z</date>
+  <millis>1689843835688</millis>
+  <nanos>760247</nanos>
+  <sequence>16</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:56.243326746Z</date>
+  <millis>1689843836243</millis>
+  <nanos>326746</nanos>
+  <sequence>17</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:56.796035454Z</date>
+  <millis>1689843836796</millis>
+  <nanos>35454</nanos>
+  <sequence>18</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:57.351978582Z</date>
+  <millis>1689843837351</millis>
+  <nanos>978582</nanos>
+  <sequence>19</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:57.905381037Z</date>
+  <millis>1689843837905</millis>
+  <nanos>381037</nanos>
+  <sequence>20</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:58.458598653Z</date>
+  <millis>1689843838458</millis>
+  <nanos>598653</nanos>
+  <sequence>21</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:59.013533536Z</date>
+  <millis>1689843839013</millis>
+  <nanos>533536</nanos>
+  <sequence>22</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:03:59.568967024Z</date>
+  <millis>1689843839568</millis>
+  <nanos>967024</nanos>
+  <sequence>23</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:00.073265450Z</date>
+  <millis>1689843840073</millis>
+  <nanos>265450</nanos>
+  <sequence>24</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:00.627394888Z</date>
+  <millis>1689843840627</millis>
+  <nanos>394888</nanos>
+  <sequence>25</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:01.181157902Z</date>
+  <millis>1689843841181</millis>
+  <nanos>157902</nanos>
+  <sequence>26</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:01.734530704Z</date>
+  <millis>1689843841734</millis>
+  <nanos>530704</nanos>
+  <sequence>27</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:02.288708749Z</date>
+  <millis>1689843842288</millis>
+  <nanos>708749</nanos>
+  <sequence>28</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:02.842791236Z</date>
+  <millis>1689843842842</millis>
+  <nanos>791236</nanos>
+  <sequence>29</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:03.395975669Z</date>
+  <millis>1689843843395</millis>
+  <nanos>975669</nanos>
+  <sequence>30</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:03.948969606Z</date>
+  <millis>1689843843948</millis>
+  <nanos>969606</nanos>
+  <sequence>31</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:04.501874892Z</date>
+  <millis>1689843844501</millis>
+  <nanos>874892</nanos>
+  <sequence>32</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:05.055034829Z</date>
+  <millis>1689843845055</millis>
+  <nanos>34829</nanos>
+  <sequence>33</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:05.558632367Z</date>
+  <millis>1689843845558</millis>
+  <nanos>632367</nanos>
+  <sequence>34</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:06.112053404Z</date>
+  <millis>1689843846112</millis>
+  <nanos>53404</nanos>
+  <sequence>35</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:06.666566654Z</date>
+  <millis>1689843846666</millis>
+  <nanos>566654</nanos>
+  <sequence>36</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:07.219639165Z</date>
+  <millis>1689843847219</millis>
+  <nanos>639165</nanos>
+  <sequence>37</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:07.772997793Z</date>
+  <millis>1689843847772</millis>
+  <nanos>997793</nanos>
+  <sequence>38</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+<record>
+  <date>2023-07-20T09:04:08.326679840Z</date>
+  <millis>1689843848326</millis>
+  <nanos>679840</nanos>
+  <sequence>39</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>criticalRC</method>
+  <thread>33</thread>
+  <message>YES cbsPer, count: 0</message>
+</record>
+</log>

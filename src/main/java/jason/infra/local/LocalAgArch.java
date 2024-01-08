@@ -26,7 +26,12 @@ import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Tuple;
 import jason.asSyntax.Atom;
 import jason.asSyntax.Literal;
+import jason.asSyntax.LiteralImpl;
+import jason.asSyntax.Plan;
 import jason.asSyntax.PlanBody;
+import jason.asSyntax.Trigger;
+import jason.asSyntax.Trigger.TEOperator;
+import jason.asSyntax.Trigger.TEType;
 import jason.mas2j.ClassParameters;
 import jason.runtime.RuntimeServices;
 import jason.runtime.RuntimeServicesFactory;
@@ -216,12 +221,12 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 
-    protected void criticalRC() {
+    protected void expeditedRP() {
         TransitionSystem ts = getTS();
 
         int i = 0;
         do { 
-            ts.criticalRC(); // current: criticalRCv2wIAv2()
+            ts.expeditedRP();
         } while (running && ++i < cyclesSense && !ts.canSleepSense());
     }
 
@@ -270,7 +275,10 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         getFirstAgArch().reasoningCycleStarting();
         long start = System.nanoTime();
 
-        criticalRC();
+        //criticalRC();
+        // TransitionSystem ts = getTS(); 
+        // ts.expeditedRP();
+        getTS().expeditedRP();
         long endSenLBB = System.nanoTime();
         sense();
         long endSen = System.nanoTime();
@@ -400,24 +408,39 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
     }
 
     /* LBB implementartion for critical things
-     * FIX required for when 'infraEnv' is NULL
+     * If 'infraEnv' is NULL it means this function will not be used, and another implementation is provided in a different xxAgArch implementation (eg. DemoEmbeddedAgentArch)
      */
     @Override
     public Boolean[] perceiveCBS() { 
         super.perceiveCBS();
         if (infraEnv == null) return null;
+        //List<Trigger> cpList = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName()); //FIX to return a List
         Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
-        //infraEnv.getUserEnvironment().doResetCBS(getAgName()); //cbsArray[0] = Boolean.FALSE;
-        //Boolean[] percepts = new Boolean[8];
+        Circumstance C = getTS().getC();
+        C.CPM.clear();
+        // if(!cpList){
+        //     C.CPM.clear();
+        //     return false;
+        // }
+        // for (Trigger cpTrigger : cpList)
+        //         C.CPM.put(cpTrigger, true);
+        // return true;
+
         //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
         //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
-        
-        Circumstance C = getTS().getC();     
-        int i=0;
-        for (Tuple<Boolean, PlanBody> tp : C.CRT) {
-            if(percepts[i++])
-                tp.setFirst(true);
-        }   
+        //FIX: temporary code bellow
+        for (int i = 0; i < 8; i++) {
+            if(percepts[i]){
+                Literal percept = new LiteralImpl("cb"+i); 
+                Trigger te = new Trigger(TEOperator.add, TEType.belief, percept);
+                C.CPM.put(te.getPredicateIndicator(), true);
+            }
+        }
+
+        // for (Tuple<Boolean, PlanBody> tp : C.CRT) {
+        //     if(percepts[i++])
+        //         tp.setFirst(true);
+        // }   
         return percepts;
     }
 

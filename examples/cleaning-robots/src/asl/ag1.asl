@@ -1,7 +1,8 @@
 // mars robot 1
 
 /* Initial beliefs */
-
+nope.
+belA.
 at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 
 /* Initial goal */
@@ -22,6 +23,10 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 //!check(slots).
 
 /* Plans */
++cb0 [cr]: nope & belA <- critReac0.
++cb0 [cr] <- critReac1.
+//+any1 [cr]: whatever.
+//+any2 [cr]: bel1 & bel2 <- whatever.
 
 +theEnd(_) : true 
    <- .stopMAS.

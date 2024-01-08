@@ -1,0 +1,15 @@
+RCs: [881, 925, 934]
+E2E: [872, 916, 925]
+Avg RCs:  913 
+Avg E2E:  904 
+Avg   P+B:        12009
+Avg Sense:      1884195
+Avg   Del:       220612
+Avg   Act:       174065
+Avg    RC:      2278871
+Avg  CB2E:      1371043
+Avg  RePl:        63587
+Avg  ApPl:       165807
+Avg  SeOp:         6330
+Avg  ExAc:        26400
+Avg   E2E: 825587910597241

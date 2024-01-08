@@ -59,15 +59,15 @@ public class StatArch extends AgArch {
       //logger.info("Action-executed: " + str); 
     }
 
-    @Override
-    public void actCR(Boolean[] cActions) {    
-      //FIX: should in fact only trigger those (critical) actions considered TRUE
-      String str = "critReac0"; //action.getActionTerm().getFunctor();
-      Integer c = actCount.get(str);
-      if (c == null)
-        c = 0;
-      actCount.put(str,c+1);
-      //System.out.println("Action-executed: " + str); 
-    }
+    // @Override
+    // public void actCR(Boolean[] cActions) {    
+    //   //FIX: should in fact only trigger those (critical) actions considered TRUE
+    //   String str = "critReac0"; //action.getActionTerm().getFunctor();
+    //   Integer c = actCount.get(str);
+    //   if (c == null)
+    //     c = 0;
+    //   actCount.put(str,c+1);
+    //   //System.out.println("Action-executed: " + str); 
+    // }
 
 }
