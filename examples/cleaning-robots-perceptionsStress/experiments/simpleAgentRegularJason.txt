@@ -1,0 +1,13 @@
+RCs:  110
+Avg   P+B:       425365
+Avg m7P+B:       425365
+Avg Sense:      1398064
+Avg m7Sen:      1398064
+Avg   Del:       545261
+Avg   Act:       321796
+Avg m7Act:       321796
+Avg    RC:      2265121
+Avg  m7RC:      2265121
+Avg   Faz:    206258714
+Avg   E2E:    203857023
+ 37 Faz: every 2.97 RC

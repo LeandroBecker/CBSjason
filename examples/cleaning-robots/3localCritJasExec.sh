@@ -28,15 +28,15 @@ do
 		echo " "
 #		more reacTimes.log
 		mv reacTimes.log $runId-$i.reacTimes.log.txt
-		mv mas-0.log $runId-mas-0.log.$i
+		mv mas-0.log $runId-mas-0.log.$i # mas-0.log.$i  
 		echo " "
 		#sleep 5
 		echo 1 | sudo tee /proc/sys/vm/drop_caches > /dev/null
 	done
-	python3 parseStdJ.py $count > $runId.log.txt
-	more $runId.log.txt
-#	tar czvf $runId.tar.gz mas-* 
-#	rm mas-*
+	# python3 parseStdJ.py $count > $runId.log.txt
+	# more $runId.log.txt
+	# tar czvf $runId.tar.gz mas-* 
+	# rm mas-*
 	echo "End '$runId' "
 done
 mv lc* results

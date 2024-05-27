@@ -23,7 +23,7 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 //!check(slots).
 
 /* Plans */
-+cb0 [cr]: nope & belA <- critReac0.
++cb0 [cr]: true <- critReac0.
 +cb0 [cr] <- critReac1.
 //+any1 [cr]: whatever.
 //+any2 [cr]: bel1 & bel2 <- whatever.
@@ -76,7 +76,7 @@ at(P) :- pos(P,X,Y) & pos(r1,X,Y).
 
 +garbage(r2) : true <- burn(garb).
 
-+cb0 : true <- critReac0. 
+//+cb0 : true <- critReac0. 
 
 +cr0Per(_) : true <- critReac0. 
 

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-01-09T14:41:11.286509076Z</date>
+  <millis>1704811271286</millis>
+  <nanos>509076</nanos>
+  <sequence>0</sequence>
+  <logger>jason.asSemantics.TransitionSystem.ag1</logger>
+  <level>INFO</level>
+  <class>jason.asSemantics.TransitionSystem</class>
+  <method>expeditedRP</method>
+  <thread>33</thread>
+  <message>
+
+// plans from file:src/asl/ag1.asl
+
+@p__1[source(self),url("file:src/asl/ag1.asl")] +!start &lt;- !check(slots).
+@p__2[source(self),url("file:src/asl/ag1.asl")] +theEnd(_1) &lt;- .stopMAS.
+@p__3[source(self),url("file:src/asl/ag1.asl")] +!check(slots) : not (garbage(r1)) &lt;- next(slot); !check(slots).
+@p__4[source(self),url("file:src/asl/ag1.asl")] +!check(slots).
+@p__5[source(self),url("file:src/asl/ag1.asl")] +garbage(r1) : not (.desire(carry_to(r2))) &lt;- !carry_to(r2).
+@p__6[source(self),url("file:src/asl/ag1.asl")] +!carry_to(R) &lt;- .drop_desire(check(slots)); ?pos(r1,X,Y); -+pos(last,X,Y); !take(garb,R); !at(last); !!check(slots).
+@p__7[source(self),url("file:src/asl/ag1.asl")] +!take(S,L) &lt;- !ensure_pick(S); !at(L); drop(S).
+@p__8[source(self),url("file:src/asl/ag1.asl")] +!ensure_pick(S) : garbage(r1) &lt;- pick(garb); !ensure_pick(S).
+@p__9[source(self),url("file:src/asl/ag1.asl")] +!ensure_pick(_2).
+@p__10[source(self),url("file:src/asl/ag1.asl")] +!at(L) : at(L).
+@p__11[source(self),url("file:src/asl/ag1.asl")] +!at(L) &lt;- ?pos(L,X,Y); move_towards(X,Y); !at(L).
+@p__12[source(self),url("file:src/asl/ag1.asl")] +garbage(r2) &lt;- burn(garb).
+@p__13[source(self),url("file:src/asl/ag1.asl")] +cb0 &lt;- critReac0.
+@p__14[source(self),url("file:src/asl/ag1.asl")] +cr0Per(_3) &lt;- critReac0.
+@p__15[source(self),url("file:src/asl/ag1.asl")] +fakeP(K) &lt;- .drop_desire(gold(K,Y)).
+
+</message>
+</record>
+<record>
+  <date>2024-01-09T14:41:11.305385028Z</date>
+  <millis>1704811271305</millis>
+  <nanos>385028</nanos>
+  <sequence>1</sequence>
+  <logger>ag1-DefaultBeliefBase</logger>
+  <level>SEVERE</level>
+  <class>jason.bb.DefaultBeliefBase</class>
+  <method>add</method>
+  <thread>33</thread>
+  <message>Error: 'criticalMode' can not be added in the belief base.</message>
+</record>
+<record>
+  <date>2024-01-09T14:41:12.081052922Z</date>
+  <millis>1704811272081</millis>
+  <nanos>52922</nanos>
+  <sequence>2</sequence>
+  <logger>ag1-DefaultBeliefBase</logger>
+  <level>SEVERE</level>
+  <class>jason.bb.DefaultBeliefBase</class>
+  <method>add</method>
+  <thread>33</thread>
+  <message>Error: 'criticalMode' can not be added in the belief base.</message>
+</record>
+<record>
+  <date>2024-01-09T14:41:12.683813090Z</date>
+  <millis>1704811272683</millis>
+  <nanos>813090</nanos>
+  <sequence>3</sequence>
+  <logger>ag1-DefaultBeliefBase</logger>
+  <level>SEVERE</level>
+  <class>jason.bb.DefaultBeliefBase</class>
+  <method>add</method>
+  <thread>33</thread>
+  <message>Error: 'criticalMode' can not be added in the belief base.</message>
+</record>
+<record>
+  <date>2024-01-09T14:41:13.234970652Z</date>
+  <millis>1704811273234</millis>
+  <nanos>970652</nanos>
+  <sequence>4</sequence>
+  <logger>ag1-DefaultBeliefBase</logger>
+  <level>SEVERE</level>
+  <class>jason.bb.DefaultBeliefBase</class>
+  <method>add</method>
+  <thread>33</thread>
+  <message>Error: 'criticalMode' can not be added in the belief base.</message>
+</record>
+<record>
+  <date>2024-01-09T14:41:13.838180343Z</date>
+  <millis>1704811273838</millis>
+  <nanos>180343</nanos>
+  <sequence>5</sequence>
+  <logger>ag1-DefaultBeliefBase</logger>
+  <level>SEVERE</level>
+  <class>jason.bb.DefaultBeliefBase</class>
+  <method>add</method>
+  <thread>33</thread>
+  <message>Error: 'criticalMode' can not be added in the belief base.</message>
+</record>
+</log>

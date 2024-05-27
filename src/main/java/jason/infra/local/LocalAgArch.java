@@ -261,29 +261,18 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
     }
 
     protected void reasoningCycle() {
-    //     getFirstAgArch().reasoningCycleStarting();
-
-    //     sense();
-    //     deliberate();
-    //     act();
-
-    //     getFirstAgArch().reasoningCycleFinished();
-
-    //LBB attempt 1:
-    //long start = System.currentTimeMillis();
-
         getFirstAgArch().reasoningCycleStarting();
         long start = System.nanoTime();
 
-        //criticalRC();
-        // TransitionSystem ts = getTS(); 
-        // ts.expeditedRP();
         getTS().expeditedRP();
-        long endSenLBB = System.nanoTime();
+        long endExpRP = System.nanoTime();
+
         sense();
         long endSen = System.nanoTime();
+
         deliberate();
         long endDel = System.nanoTime();
+
         act();
         long endRC = System.nanoTime();
 
@@ -292,11 +281,11 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
 
         // LBB: bellow comment to avoid logging overhead, that is HIGH
         // long LBBtime = endSenLBB-start;
-        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)); //LB 
+        // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endExpRP-start)); //LB 
         // logger.info("LBB LocalAgArch, sense time (ns): " + String.valueOf(endSen-endSenLBB)); //LB 
         // logger.info("LBB LocalAgArch, delib time (ns): " + String.valueOf(endDel-endSen)); //LB 
         // logger.info("LBB LocalAgArch, act time (ns): " + String.valueOf(endRC - endDel)); //LB 
-        // logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-endSenLBB)); //LB 
+        // logger.info("LBB LocalAgArch, resCycle time (ns): " + String.valueOf(endRC-endExpRP)); //LB 
 
         // Is bellow deprecated?
         // logger.info("LBB LocalAgArch, criticalRC time (ns): " + String.valueOf(endSenLBB-start)
@@ -363,7 +352,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
                     synchronized (sleepSync) {
                         sleepSync.wait(10); // wait for messages
                     }
-                    if(perceiveCBS() != null){
+                    if(perceiveCP() != null){
                         break;
                     }                         
                 }
@@ -411,8 +400,8 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
      * If 'infraEnv' is NULL it means this function will not be used, and another implementation is provided in a different xxAgArch implementation (eg. DemoEmbeddedAgentArch)
      */
     @Override
-    public Boolean[] perceiveCBS() { 
-        super.perceiveCBS();
+    public Boolean[] perceiveCP() { 
+        super.perceiveCP();
         if (infraEnv == null) return null;
         //List<Trigger> cpList = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName()); //FIX to return a List
         Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
@@ -429,7 +418,7 @@ public class LocalAgArch extends AgArch implements Runnable, Serializable {
         //Collection<Literal> percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
         //if (logger.isLoggable(Level.FINE) && percepts != null) logger.fine("perceptsCBS: " + percepts);
         //FIX: temporary code bellow
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 64; i++) {
             if(percepts[i]){
                 Literal percept = new LiteralImpl("cb"+i); 
                 Trigger te = new Trigger(TEOperator.add, TEType.belief, percept);

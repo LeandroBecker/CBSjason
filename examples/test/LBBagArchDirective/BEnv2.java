@@ -56,7 +56,7 @@ public class BEnv2 extends jason.environment.Environment {
         // }       
 
         t_updt = 10; //System.nanoTime(); //LB: collects updt time
-        cbsArray[0] = Boolean.TRUE;
+        cpArray[0] = Boolean.TRUE;
 
         return true;
     }   

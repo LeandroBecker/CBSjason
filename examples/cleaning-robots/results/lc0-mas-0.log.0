@@ -2,15 +2,15 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2023-11-09T17:11:05.901105949Z</date>
-  <millis>1699549865901</millis>
-  <nanos>105949</nanos>
+  <date>2024-01-18T20:10:50.269380542Z</date>
+  <millis>1705608650269</millis>
+  <nanos>380542</nanos>
   <sequence>0</sequence>
   <logger>jason.asSemantics.TransitionSystem.ag1</logger>
   <level>INFO</level>
   <class>jason.asSemantics.TransitionSystem</class>
   <method>expeditedRP</method>
-  <thread>33</thread>
+  <thread>26</thread>
   <message>
 
 // plans from file:src/asl/ag1.asl
@@ -27,9 +27,8 @@
 @p__10[source(self),url("file:src/asl/ag1.asl")] +!at(L) : at(L).
 @p__11[source(self),url("file:src/asl/ag1.asl")] +!at(L) &lt;- ?pos(L,X,Y); move_towards(X,Y); !at(L).
 @p__12[source(self),url("file:src/asl/ag1.asl")] +garbage(r2) &lt;- burn(garb).
-@p__13[source(self),url("file:src/asl/ag1.asl")] +cb0 &lt;- critReac0.
-@p__14[source(self),url("file:src/asl/ag1.asl")] +cr0Per(_3) &lt;- critReac0.
-@p__15[source(self),url("file:src/asl/ag1.asl")] +fakeP(K) &lt;- .drop_desire(gold(K,Y)).
+@p__13[source(self),url("file:src/asl/ag1.asl")] +cr0Per(_3) &lt;- critReac0.
+@p__14[source(self),url("file:src/asl/ag1.asl")] +fakeP(K) &lt;- .drop_desire(gold(K,Y)).
 
 </message>
 </record>

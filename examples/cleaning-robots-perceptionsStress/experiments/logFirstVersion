@@ -1,0 +1,17 @@
+RosEnv] I see the Gantry robot in less than 9.871158851615556 meters!
+[human] Start sense
+[human] percepts: [gantry_detected]
+[human] Added event +gantry_detected[source(percept)], events = [+gantry_detected[source(percept)]]
+[human] Selected event +gantry_detected[source(percept)]
+[human]      | for working(Location), belief working(station4)[source(self)] is an option -- {Location=station4}
+[human]      | no candidate belief for gantry_position(X,Y,Z) with {Location=station4}
+[human]      | NO more options for working(Location)
+[human] Selected intention intention 2: 
+    +gantry_detected[source(percept)] <- ... -gantry_detected / {}
+
+[human]      | for gantry_detected[source(self)], belief annotation gantry_detected[source(percept)] is NOT an option -- {}
+[human]      | NO more options for gantry_detected[source(self)]
+[human] Doing (del) brf for gantry_detected[source(self)] in BB=false
+[human] Returning from IM p__5[source(self),url("file:src/asl/antagonistic.asl")], te=+gantry_detected[source(percept)] unif={}
+[RosEnv] Robot pose received, publishing gantry_position
+[RosE

@@ -12,8 +12,7 @@ public class StatArch extends AgArch {
   Map<String,Integer> actCount = new HashMap<>();
 
   @Override
-  public Boolean[] perceiveCBS() {
-    //System.out.println("perceiveCBS: ");   
+  public Boolean[] perceiveCP() {
     //Boolean[] percepts = infraEnv.getUserEnvironment().getPerceptsCBS(getAgName());
     Boolean[] percepts = new Boolean[8];
     for(int i=0; i<8; i++)

@@ -48,11 +48,11 @@ public class Environment {
 
     protected ExecutorService executor; // the thread pool used to execute actions
 
-    protected Boolean[] cbsArray = new Boolean[8]; //by LBB
+    protected Boolean[] cpArray = new Boolean[64]; //by LBB
 
     /** creates an environment class with n threads to execute actions required by the agents */
     public Environment(int n) {
-        Arrays.fill(cbsArray, Boolean.FALSE); //by LBB
+        Arrays.fill(cpArray, Boolean.FALSE); //by LBB
 
         // creates a thread pool with n threads
         executor = Executors.newFixedThreadPool(n);
@@ -163,7 +163,7 @@ public class Environment {
 
 //    public Collection<Literal> getPerceptsCBS(String agName) {
     public Boolean[] getPerceptsCBS(String agName) {
-        return cbsArray;
+        return cpArray;
         /* LBB: my first test for 'Collection<Literal> getPerceptsCBS()'*/
         // int nBel = 1;
         // Collection<Literal> cLit = new ArrayList<Literal>(1);

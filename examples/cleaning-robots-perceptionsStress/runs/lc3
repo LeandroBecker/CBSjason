@@ -1,0 +1,17 @@
+// Implementation of the example described in chapter 2
+// of the Jason's manual
+
+MAS mars {
+
+    environment: MarsEnvCritical(90, 200) 
+        // parameters: 1. sleep time (in ms) after each action - MUST be multiple of 5 ()
+        //             2. number of 'K' percepts (10 / 100 / 1000)
+
+
+    agents:
+        ag1 
+            [beliefs="whatever"];
+
+    aslSourcePath:
+        "src/asl";
+}

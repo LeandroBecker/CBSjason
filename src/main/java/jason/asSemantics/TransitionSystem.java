@@ -83,6 +83,7 @@ public class TransitionSystem implements Serializable {
     private int           nrcslbr         = Settings.ODefaultNRC; // number of reasoning cycles since last belief revision
 
     private boolean       sleepingEvt     = false;
+    private boolean       cModeActive     = false;
 
     private List<GoalListener>  goalListeners = null;
 
@@ -1761,23 +1762,24 @@ public class TransitionSystem implements Serializable {
 
     public void expeditedRP() {
         //Boolean[] cActions = new Boolean[8];  
+        Literal cModeLit = new LiteralImpl("criticalMode");
         Boolean[] cbsPercepts = null;
         long start = 0;
         long endPer = 0;
 
         if(getAgArch().getCycleNumber() < 10)
             return; 
-        else if(getAgArch().getCycleNumber() < 11){
-            // C.CLM.putAll(ag.getPL().getCRP());
-            getLogger().info(getAg().getPL().getAsTxt(false));
-            return;
-        }
+        // else if(getAgArch().getCycleNumber() < 11){
+        //     // C.CLM.putAll(ag.getPL().getCRP());
+        //     getLogger().info(getAg().getPL().getAsTxt(false)); //LBB: 4debug, can be removed
+        //     return;
+        // }
 
         // FIX: no need to be synchronized
         try { 
             start = System.nanoTime();
             synchronized (C.syncApPlanSense) {
-                cbsPercepts = getAgArch().perceiveCBS();
+                cbsPercepts = getAgArch().perceiveCP();
             }
             endPer = System.nanoTime();           
         } catch (Exception e) {
@@ -1786,9 +1788,10 @@ public class TransitionSystem implements Serializable {
         }
 
         try {
-            // if(C.CPM.size() > 0){ 
             // if(cbsPercepts != null){  //FIX remove in optmized version (above did not work)
-            if(C.CPM.size()>0){
+            if(C.CPM.size() > 0){
+                cModeActive = true;
+                getAg().getBB().add(cModeLit);
                 // int i=0;
                 // if(cbsPercepts[i] == true){     
                 //     cbsPercepts[i] = false; 
@@ -1844,6 +1847,10 @@ public class TransitionSystem implements Serializable {
             //                                                      + " " + String.valueOf(tExec-execIni));
         }
             }                    
+            else if(cModeActive){
+                    getAg().getBB().remove(cModeLit);
+                    cModeActive = false;
+            }
         } catch (Exception e) {
             logger.log(Level.SEVERE, "*** ERROR in the LBB transition system (act). "+C+"\nCreating a new C!", e);
             C.create();
